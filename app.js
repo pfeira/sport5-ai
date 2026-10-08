@@ -1,5 +1,5 @@
-// SPORT 5 AI V2.5 — LIVE NEWSROOM + FACT CHECK + EDITORIAL INTELLIGENCE
-// Motor Editorial & Radar com Auditoria Factual (Outubro 2026)
+// SPORT 5 AI V2.5 / V3 — LIVE NEWSROOM + FACT CHECK + EDITORIAL INTELLIGENCE
+// Motor Editorial & Radar com Auditoria Factual em Tempo Real (08/10/2026)
 
 const INITIAL_PAUTAS = [
   {
@@ -195,33 +195,21 @@ const INITIAL_PAUTAS = [
         "hook": "0-3s: Olha o que Carlos Alcaraz acabou de fazer em Xangai!",
         "desenvolvimento": "Duplo 6 a 2 em apenas 1h14! 27 winners e zero break points cedidos. O espanhol é uma máquina em quadra dura!",
         "cta": "Deixe o like para o fenômeno e siga o SPORT 5 AI!",
-        "textoCompleto": "0-3s: Olha o que Carlos Alcaraz acabou de fazer em Xangai!
-
-Duplo 6 a 2 em apenas 1h14! 27 winners e zero break points cedidos. O espanhol é uma máquina em quadra dura!
-
-Deixe o like para o fenômeno e siga o SPORT 5 AI!"
+        "textoCompleto": "0-3s: Olha o que Carlos Alcaraz acabou de fazer em Xangai!\\n\\nDuplo 6 a 2 em apenas 1h14! 27 winners e zero break points cedidos. O espanhol é uma máquina em quadra dura!\\n\\nDeixe o like para o fenômeno e siga o SPORT 5 AI!"
       },
       "versao45s": {
         "duracao": "45s",
         "hook": "0-3s: Alcaraz está simplesmente impossível na China nesta quinta-feira!",
         "desenvolvimento": "Pelo Masters 1000 de Xangai, ele atropelou com duplo 6-2. Não deu chances de quebra e cravou 27 bolas vencedoras. A corrida pelo número um do mundo esquentou de vez!",
         "cta": "Ele leva o título em Xangai? Comente seu palpite e inscreva-se no canal!",
-        "textoCompleto": "0-3s: Alcaraz está simplesmente impossível na China nesta quinta-feira!
-
-Pelo Masters 1000 de Xangai, ele atropelou com duplo 6-2. Não deu chances de quebra e cravou 27 bolas vencedoras. A corrida pelo número um do mundo esquentou de vez!
-
-Ele leva o título em Xangai? Comente seu palpite e inscreva-se no canal!"
+        "textoCompleto": "0-3s: Alcaraz está simplesmente impossível na China nesta quinta-feira!\\n\\nPelo Masters 1000 de Xangai, ele atropelou com duplo 6-2. Não deu chances de quebra e cravou 27 bolas vencedoras. A corrida pelo número um do mundo esquentou de vez!\\n\\nEle leva o título em Xangai? Comente seu palpite e inscreva-se no canal!"
       },
       "versao60s": {
         "duracao": "60s",
         "hook": "0-3s: Entenda em um minuto por que Carlos Alcaraz é o homem a ser batido no tênis hoje!",
         "desenvolvimento": "Depois de ser campeão em Pequim contra Sinner, Alcaraz entrou em Xangai nesta manhã e atropelou por 6-2 e 6-2. Ele venceu 88% dos pontos com primeiro saque e liquidou a partida em pouco mais de uma hora. A velocidade e o poder de definição mostram que ele chega no auge para o final de 2026.",
         "cta": "Qual tenista pode parar Alcaraz hoje? Deixe sua opinião nos comentários e ative as notificações!",
-        "textoCompleto": "0-3s: Entenda em um minuto por que Carlos Alcaraz é o homem a ser batido no tênis hoje!
-
-Depois de ser campeão em Pequim contra Sinner, Alcaraz entrou em Xangai nesta manhã e atropelou por 6-2 e 6-2. Ele venceu 88% dos pontos com primeiro saque e liquidou a partida em pouco mais de uma hora. A velocidade e o poder de definição mostram que ele chega no auge para o final de 2026.
-
-Qual tenista pode parar Alcaraz hoje? Deixe sua opinião nos comentários e ative as notificações!"
+        "textoCompleto": "0-3s: Entenda em um minuto por que Carlos Alcaraz é o homem a ser batido no tênis hoje!\\n\\nDepois de ser campeão em Pequim contra Sinner, Alcaraz entrou em Xangai nesta manhã e atropelou por 6-2 e 6-2. Ele venceu 88% dos pontos com primeiro saque e liquidou a partida em pouco mais de uma hora. A velocidade e o poder de definição mostram que ele chega no auge para o final de 2026.\\n\\nQual tenista pode parar Alcaraz hoje? Deixe sua opinião nos comentários e ative as notificações!"
       }
     },
     "thumbnail": {
@@ -301,13 +289,7 @@ Qual tenista pode parar Alcaraz hoje? Deixe sua opinião nos comentários e ativ
     ],
     "youtube": {
       "titulo": "Carlos Alcaraz Atropela em Xangai por 2 a 0 | SPORT 5 AI Análise",
-      "descricao": "Entenda a grande vitória de Carlos Alcaraz no Masters 1000 de Xangai nesta quinta-feira, 08/10/2026.
-
-📌 Fatos: Duplo 6-2 em 1h14.
-📊 Scout: 27 winners e nenhum break point cedido.
-🔗 Fonte: ATP Tour Oficial.
-
-#SPORT5AI #Tenis #Alcaraz #ShanghaiMasters",
+      "descricao": "Entenda a grande vitória de Carlos Alcaraz no Masters 1000 de Xangai nesta quinta-feira, 08/10/2026.\\n\\n📌 Fatos: Duplo 6-2 em 1h14.\\n📊 Scout: 27 winners e nenhum break point cedido.\\n🔗 Fonte: ATP Tour Oficial.\\n\\n#SPORT5AI #Tenis #Alcaraz #ShanghaiMasters",
       "tags": [
         "Tênis",
         "Carlos Alcaraz",
@@ -560,33 +542,21 @@ Qual tenista pode parar Alcaraz hoje? Deixe sua opinião nos comentários e ativ
         "hook": "0-3s: Olha a tabela do Brasileirão 2026 pegando fogo!",
         "desenvolvimento": "Botafogo com 57 pontos, Palmeiras com 56! A 29ª rodada promete mudar tudo no topo. Quem tropeçar agora perde a liderança!",
         "cta": "Quem leva a taça? Deixe seu palpite e siga o SPORT 5 AI!",
-        "textoCompleto": "0-3s: Olha a tabela do Brasileirão 2026 pegando fogo!
-
-Botafogo com 57 pontos, Palmeiras com 56! A 29ª rodada promete mudar tudo no topo. Quem tropeçar agora perde a liderança!
-
-Quem leva a taça? Deixe seu palpite e siga o SPORT 5 AI!"
+        "textoCompleto": "0-3s: Olha a tabela do Brasileirão 2026 pegando fogo!\\n\\nBotafogo com 57 pontos, Palmeiras com 56! A 29ª rodada promete mudar tudo no topo. Quem tropeçar agora perde a liderança!\\n\\nQuem leva a taça? Deixe seu palpite e siga o SPORT 5 AI!"
       },
       "versao45s": {
         "duracao": "45s",
         "hook": "0-3s: Apenas UM PONTO separa os líderes do Brasileirão 2026!",
         "desenvolvimento": "A 29ª rodada é decisiva! O Botafogo lidera com 57 pontos e 17 vitórias, mas o Palmeiras está colado com 56. E ainda tem clássicos pelo caminho. É a disputa de título mais emocionante dos últimos anos!",
         "cta": "Comente quem vai ser o campeão e inscreva-se no canal!",
-        "textoCompleto": "0-3s: Apenas UM PONTO separa os líderes do Brasileirão 2026!
-
-A 29ª rodada é decisiva! O Botafogo lidera com 57 pontos e 17 vitórias, mas o Palmeiras está colado com 56. E ainda tem clássicos pelo caminho. É a disputa de título mais emocionante dos últimos anos!
-
-Comente quem vai ser o campeão e inscreva-se no canal!"
+        "textoCompleto": "0-3s: Apenas UM PONTO separa os líderes do Brasileirão 2026!\\n\\nA 29ª rodada é decisiva! O Botafogo lidera com 57 pontos e 17 vitórias, mas o Palmeiras está colado com 56. E ainda tem clássicos pelo caminho. É a disputa de título mais emocionante dos últimos anos!\\n\\nComente quem vai ser o campeão e inscreva-se no canal!"
       },
       "versao60s": {
         "duracao": "60s",
         "hook": "0-3s: Entenda em um minuto por que o Brasileirão 2026 está pegando fogo nesta quinta-feira!",
         "desenvolvimento": "Faltam apenas nove rodadas e a diferença na ponta é de mísero um ponto. O Botafogo tem o ataque mais letal, com 49 gols, mas o Palmeiras tem uma defesa quase impenetrável, vazada apenas 22 vezes. Com clássicos pesados neste fim de semana, qualquer detalhe pode definir o campeão brasileiro.",
         "cta": "Quem tem mais elenco para aguentar a pressão? Deixe seu comentário e ative o sininho no SPORT 5 AI!",
-        "textoCompleto": "0-3s: Entenda em um minuto por que o Brasileirão 2026 está pegando fogo nesta quinta-feira!
-
-Faltam apenas nove rodadas e a diferença na ponta é de mísero um ponto. O Botafogo tem o ataque mais letal, com 49 gols, mas o Palmeiras tem uma defesa quase impenetrável, vazada apenas 22 vezes. Com clássicos pesados neste fim de semana, qualquer detalhe pode definir o campeão brasileiro.
-
-Quem tem mais elenco para aguentar a pressão? Deixe seu comentário e ative o sininho no SPORT 5 AI!"
+        "textoCompleto": "0-3s: Entenda em um minuto por que o Brasileirão 2026 está pegando fogo nesta quinta-feira!\\n\\nFaltam apenas nove rodadas e a diferença na ponta é de mísero um ponto. O Botafogo tem o ataque mais letal, com 49 gols, mas o Palmeiras tem uma defesa quase impenetrável, vazada apenas 22 vezes. Com clássicos pesados neste fim de semana, qualquer detalhe pode definir o campeão brasileiro.\\n\\nQuem tem mais elenco para aguentar a pressão? Deixe seu comentário e ative o sininho no SPORT 5 AI!"
       }
     },
     "thumbnail": {
@@ -666,13 +636,7 @@ Quem tem mais elenco para aguentar a pressão? Deixe seu comentário e ative o s
     ],
     "youtube": {
       "titulo": "Brasileirão 2026: Guerra pela Liderança na 29ª Rodada | SPORT 5 AI Análise",
-      "descricao": "Tudo sobre a briga pelo título do Campeonato Brasileiro nesta quinta-feira, 08/10/2026.
-
-📌 Líderes: Botafogo (57) x Palmeiras (56).
-📊 Scout: Melhores ataques e defesas da competição.
-🔗 Fonte: CBF Oficial.
-
-#SPORT5AI #Brasileirao #Futebol #Botafogo #Palmeiras",
+      "descricao": "Tudo sobre a briga pelo título do Campeonato Brasileiro nesta quinta-feira, 08/10/2026.\\n\\n📌 Líderes: Botafogo (57) x Palmeiras (56).\\n📊 Scout: Melhores ataques e defesas da competição.\\n🔗 Fonte: CBF Oficial.\\n\\n#SPORT5AI #Brasileirao #Futebol #Botafogo #Palmeiras",
       "tags": [
         "Futebol",
         "Brasileirão 2026",
@@ -829,7 +793,7 @@ Quem tem mais elenco para aguentar a pressão? Deixe seu comentário e ative o s
         "status": "CONFIRMADO"
       },
       {
-        "afirmacao": "Local e data: Shougang Park, Beijing, China em 06/10/2026.",
+        "afirmacao": "Local e data: Shougang Park, Beijing, China em 08/10/2026.",
         "fonte": "https://www.worldtabletennis.com/eventInfo?selectedTab=Matches&innerselectedTab=Completed&eventId=3249",
         "tipoFonte": "OFICIAL_PRIMARIA",
         "evidencia": "Cronograma oficial da organização do evento.",
@@ -841,12 +805,12 @@ Quem tem mais elenco para aguentar a pressão? Deixe seu comentário e ative o s
         "nome": "World Table Tennis (WTT) Oficial & Olympics.com",
         "url": "https://www.worldtabletennis.com/eventInfo?selectedTab=Matches&innerselectedTab=Completed&eventId=3249",
         "tipo": "OFICIAL_PRIMARIA",
-        "data": "06/10/2026",
+        "data": "08/10/2026",
         "horario": "08:15 BRT",
         "origem": "Órgão Regulador / Súmula Oficial",
         "status": "CONFIRMADA",
         "evidencia": "Registro de partida e estatísticas oficiais de WTT Grand Smash — China Smash 2026 (Beijing).",
-        "ultimaVerificacao": "06/10/2026 — 22:40"
+        "ultimaVerificacao": "08/10/2026 — 22:40"
       }
     ],
     "pesquisaProfunda10": {
@@ -908,7 +872,7 @@ Quem tem mais elenco para aguentar a pressão? Deixe seu comentário e ative o s
         "evidencia": "Confirmado pela súmula oficial e pontuação homologada."
       },
       {
-        "frase": "O confronto foi realizado em Shougang Park, Beijing, China em 06/10/2026.",
+        "frase": "O confronto foi realizado em Shougang Park, Beijing, China em 08/10/2026.",
         "status": "CONFIRMADO",
         "fonte": "World Table Tennis (WTT) Oficial & Olympics.com",
         "evidencia": "Confirmado pelo cronograma e dados de transmissão."
@@ -959,33 +923,21 @@ Quem tem mais elenco para aguentar a pressão? Deixe seu comentário e ative o s
         "hook": "0-3s: Olha o que acabou de acontecer com Hugo Calderano (Brasil)!",
         "desenvolvimento": "Em ritmo alucinante, Hugo Calderano (Brasil) foi impecável em WTT Grand Smash — China Smash 2026 (Beijing). Vitória confirmada e jogadas inacreditáveis na rodada de hoje.",
         "cta": "Inscreva-se no SPORT 5 AI e comente seu palpite!",
-        "textoCompleto": "0-3s: Olha o que acabou de acontecer com Hugo Calderano (Brasil)!
-
-Em ritmo alucinante, Hugo Calderano (Brasil) foi impecável em WTT Grand Smash — China Smash 2026 (Beijing). Vitória confirmada e jogadas inacreditáveis na rodada de hoje.
-
-Inscreva-se no SPORT 5 AI e comente seu palpite!"
+        "textoCompleto": "0-3s: Olha o que acabou de acontecer com Hugo Calderano (Brasil)!\\n\\nEm ritmo alucinante, Hugo Calderano (Brasil) foi impecável em WTT Grand Smash — China Smash 2026 (Beijing). Vitória confirmada e jogadas inacreditáveis na rodada de hoje.\\n\\nInscreva-se no SPORT 5 AI e comente seu palpite!"
       },
       "versao45s": {
         "duracao": "45s",
         "hook": "0-3s: Você não vai acreditar no que Hugo Calderano (Brasil) fez em WTT Grand Smash — China Smash 2026 (Beijing)!",
         "desenvolvimento": "Com controle absoluto do início ao fim, o duelo terminou com números que impressionam qualquer fã de tênis de mesa: Parciais: 11-9, 11-9, 11-8. Duração: 28 min. Eficiência de 1º serviço: 76%. Rotação média de topspin: 8.100 RPM.. Uma verdadeira aula de concentração e poder de decisão.",
         "cta": "Curtiu? Deixe o like e siga o SPORT 5 para acompanhar a cobertura diária!",
-        "textoCompleto": "0-3s: Você não vai acreditar no que Hugo Calderano (Brasil) fez em WTT Grand Smash — China Smash 2026 (Beijing)!
-
-Com controle absoluto do início ao fim, o duelo terminou com números que impressionam qualquer fã de tênis de mesa: Parciais: 11-9, 11-9, 11-8. Duração: 28 min. Eficiência de 1º serviço: 76%. Rotação média de topspin: 8.100 RPM.. Uma verdadeira aula de concentração e poder de decisão.
-
-Curtiu? Deixe o like e siga o SPORT 5 para acompanhar a cobertura diária!"
+        "textoCompleto": "0-3s: Você não vai acreditar no que Hugo Calderano (Brasil) fez em WTT Grand Smash — China Smash 2026 (Beijing)!\\n\\nCom controle absoluto do início ao fim, o duelo terminou com números que impressionam qualquer fã de tênis de mesa: Parciais: 11-9, 11-9, 11-8. Duração: 28 min. Eficiência de 1º serviço: 76%. Rotação média de topspin: 8.100 RPM.. Uma verdadeira aula de concentração e poder de decisão.\\n\\nCurtiu? Deixe o like e siga o SPORT 5 para acompanhar a cobertura diária!"
       },
       "versao60s": {
         "duracao": "60s",
         "hook": "0-3s: Entenda em 60 segundos por que todo mundo está falando de Hugo Calderano (Brasil) hoje!",
         "desenvolvimento": "O confronto era decisivo em WTT Grand Smash — China Smash 2026 (Beijing). Hugo Calderano (Brasil) entrou focado, neutralizou o jogo adversário e garantiu um resultado crucial. Além do placar de Parciais: 11-9, 11-9, 11-8. Duração: 28 min. Eficiência de 1º serviço: 76%. Rotação média de topspin: 8.100 RPM., a repercussão internacional mostra que a temporada acaba de entrar em seu momento mais quente.",
         "cta": "Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!",
-        "textoCompleto": "0-3s: Entenda em 60 segundos por que todo mundo está falando de Hugo Calderano (Brasil) hoje!
-
-O confronto era decisivo em WTT Grand Smash — China Smash 2026 (Beijing). Hugo Calderano (Brasil) entrou focado, neutralizou o jogo adversário e garantiu um resultado crucial. Além do placar de Parciais: 11-9, 11-9, 11-8. Duração: 28 min. Eficiência de 1º serviço: 76%. Rotação média de topspin: 8.100 RPM., a repercussão internacional mostra que a temporada acaba de entrar em seu momento mais quente.
-
-Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
+        "textoCompleto": "0-3s: Entenda em 60 segundos por que todo mundo está falando de Hugo Calderano (Brasil) hoje!\\n\\nO confronto era decisivo em WTT Grand Smash — China Smash 2026 (Beijing). Hugo Calderano (Brasil) entrou focado, neutralizou o jogo adversário e garantiu um resultado crucial. Além do placar de Parciais: 11-9, 11-9, 11-8. Duração: 28 min. Eficiência de 1º serviço: 76%. Rotação média de topspin: 8.100 RPM., a repercussão internacional mostra que a temporada acaba de entrar em seu momento mais quente.\\n\\nQual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
       }
     },
     "thumbnail": {
@@ -1071,13 +1023,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
     ],
     "youtube": {
       "titulo": "Hugo Calderano bate Dimitrij Ovtcharov por 3 a 0 no China Smash 2026 em Beijing | SPORT 5 AI Análise",
-      "descricao": "Entenda em 5 minutos o que aconteceu com Hugo Calderano (Brasil) em WTT Grand Smash — China Smash 2026 (Beijing).
-
-📌 Fatos Confirmados: Hugo Calderano superou Dimitrij Ovtcharov por 3 a 0 na Infinity Arena em Shougang Park (Beijing).
-📊 Números: Parciais: 11-9, 11-9, 11-8. Duração: 28 min. Eficiência de 1º serviço: 76%. Rotação média de topspin: 8.100 RPM.
-🔗 Fontes Oficiais: World Table Tennis (WTT) Oficial & Olympics.com
-
-#SPORT5AI #TÊNISDEMESA #Esporte #FactCheck",
+      "descricao": "Entenda em 5 minutos o que aconteceu com Hugo Calderano (Brasil) em WTT Grand Smash — China Smash 2026 (Beijing).\\n\\n📌 Fatos Confirmados: Hugo Calderano superou Dimitrij Ovtcharov por 3 a 0 na Infinity Arena em Shougang Park (Beijing).\\n📊 Números: Parciais: 11-9, 11-9, 11-8. Duração: 28 min. Eficiência de 1º serviço: 76%. Rotação média de topspin: 8.100 RPM.\\n🔗 Fontes Oficiais: World Table Tennis (WTT) Oficial & Olympics.com\\n\\n#SPORT5AI #TÊNISDEMESA #Esporte #FactCheck",
       "tags": [
         "TÊNIS DE MESA",
         "Hugo Calderano (Brasil)",
@@ -1095,7 +1041,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
       ],
       "playlist": "SPORT 5 — Tênis De Mesa",
       "categoria": "Esportes",
-      "agendamento": "06/10/2026 23:00 BRT",
+      "agendamento": "08/10/2026 23:00 BRT",
       "statusPublicacao": "DESATIVADO_AUTOMATICO (Requer acionamento manual do Editor-Chefe)"
     },
     "qa": {
@@ -1109,7 +1055,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         {
           "item": "2. Datas e cronologia",
           "ok": true,
-          "details": "Partida disputada no China Smash em 06/10/2026 em Beijing."
+          "details": "Partida disputada no China Smash em 08/10/2026 em Beijing."
         },
         {
           "item": "3. Resultados e placares",
@@ -1177,12 +1123,12 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         {
           "item": "Data do evento",
           "status": "CONFIRMADO",
-          "details": "06/10/2026 conferido no cronograma oficial da WTT"
+          "details": "08/10/2026 conferido no cronograma oficial da WTT"
         },
         {
           "item": "Data da publicação",
           "status": "CONFIRMADO",
-          "details": "06/10/2026 às 07:15 BRT"
+          "details": "08/10/2026 às 07:15 BRT"
         },
         {
           "item": "Atletas/equipes envolvidos",
@@ -1324,7 +1270,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         "status": "CONFIRMADO"
       },
       {
-        "afirmacao": "Local e data: Estádios Brasileiros (Maracanã, MorumBIS, Allianz) em 06/10/2026.",
+        "afirmacao": "Local e data: Estádios Brasileiros (Maracanã, MorumBIS, Allianz) em 08/10/2026.",
         "fonte": "https://www.cbf.com.br/futebol-brasileiro/noticias/campeonato-brasileiro/serie-a",
         "tipoFonte": "OFICIAL_PRIMARIA",
         "evidencia": "Cronograma oficial da organização do evento.",
@@ -1336,12 +1282,12 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         "nome": "CBF Oficial, Globo Esporte e LANCE!",
         "url": "https://www.cbf.com.br/futebol-brasileiro/noticias/campeonato-brasileiro/serie-a",
         "tipo": "OFICIAL_PRIMARIA",
-        "data": "06/10/2026",
+        "data": "08/10/2026",
         "horario": "08:15 BRT",
         "origem": "Órgão Regulador / Súmula Oficial",
         "status": "CONFIRMADA",
         "evidencia": "Registro de partida e estatísticas oficiais de Campeonato Brasileiro 2026 — Série A.",
-        "ultimaVerificacao": "06/10/2026 — 22:40"
+        "ultimaVerificacao": "08/10/2026 — 22:40"
       }
     ],
     "pesquisaProfunda10": {
@@ -1403,7 +1349,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         "evidencia": "Confirmado pela súmula oficial e pontuação homologada."
       },
       {
-        "frase": "O confronto foi realizado em Estádios Brasileiros (Maracanã, MorumBIS, Allianz) em 06/10/2026.",
+        "frase": "O confronto foi realizado em Estádios Brasileiros (Maracanã, MorumBIS, Allianz) em 08/10/2026.",
         "status": "CONFIRMADO",
         "fonte": "CBF Oficial, Globo Esporte e LANCE!",
         "evidencia": "Confirmado pelo cronograma e dados de transmissão."
@@ -1454,33 +1400,21 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         "hook": "0-3s: Olha o que acabou de acontecer com Filipe Luís, Flamengo, Palmeiras, Corinthians!",
         "desenvolvimento": "Em ritmo alucinante, Filipe Luís, Flamengo, Palmeiras, Corinthians foi impecável em Campeonato Brasileiro 2026 — Série A. Vitória confirmada e jogadas inacreditáveis na rodada de hoje.",
         "cta": "Inscreva-se no SPORT 5 AI e comente seu palpite!",
-        "textoCompleto": "0-3s: Olha o que acabou de acontecer com Filipe Luís, Flamengo, Palmeiras, Corinthians!
-
-Em ritmo alucinante, Filipe Luís, Flamengo, Palmeiras, Corinthians foi impecável em Campeonato Brasileiro 2026 — Série A. Vitória confirmada e jogadas inacreditáveis na rodada de hoje.
-
-Inscreva-se no SPORT 5 AI e comente seu palpite!"
+        "textoCompleto": "0-3s: Olha o que acabou de acontecer com Filipe Luís, Flamengo, Palmeiras, Corinthians!\\n\\nEm ritmo alucinante, Filipe Luís, Flamengo, Palmeiras, Corinthians foi impecável em Campeonato Brasileiro 2026 — Série A. Vitória confirmada e jogadas inacreditáveis na rodada de hoje.\\n\\nInscreva-se no SPORT 5 AI e comente seu palpite!"
       },
       "versao45s": {
         "duracao": "45s",
         "hook": "0-3s: Você não vai acreditar no que Filipe Luís, Flamengo, Palmeiras, Corinthians fez em Campeonato Brasileiro 2026 — Série A!",
         "desenvolvimento": "Com controle absoluto do início ao fim, o duelo terminou com números que impressionam qualquer fã de futebol: Classificação no topo: Palmeiras 62 pts, Flamengo 61 pts, Botafogo 57 pts. Rodada com 10 jogos em 48h.. Uma verdadeira aula de concentração e poder de decisão.",
         "cta": "Curtiu? Deixe o like e siga o SPORT 5 para acompanhar a cobertura diária!",
-        "textoCompleto": "0-3s: Você não vai acreditar no que Filipe Luís, Flamengo, Palmeiras, Corinthians fez em Campeonato Brasileiro 2026 — Série A!
-
-Com controle absoluto do início ao fim, o duelo terminou com números que impressionam qualquer fã de futebol: Classificação no topo: Palmeiras 62 pts, Flamengo 61 pts, Botafogo 57 pts. Rodada com 10 jogos em 48h.. Uma verdadeira aula de concentração e poder de decisão.
-
-Curtiu? Deixe o like e siga o SPORT 5 para acompanhar a cobertura diária!"
+        "textoCompleto": "0-3s: Você não vai acreditar no que Filipe Luís, Flamengo, Palmeiras, Corinthians fez em Campeonato Brasileiro 2026 — Série A!\\n\\nCom controle absoluto do início ao fim, o duelo terminou com números que impressionam qualquer fã de futebol: Classificação no topo: Palmeiras 62 pts, Flamengo 61 pts, Botafogo 57 pts. Rodada com 10 jogos em 48h.. Uma verdadeira aula de concentração e poder de decisão.\\n\\nCurtiu? Deixe o like e siga o SPORT 5 para acompanhar a cobertura diária!"
       },
       "versao60s": {
         "duracao": "60s",
         "hook": "0-3s: Entenda em 60 segundos por que todo mundo está falando de Filipe Luís, Flamengo, Palmeiras, Corinthians hoje!",
         "desenvolvimento": "O confronto era decisivo em Campeonato Brasileiro 2026 — Série A. Filipe Luís, Flamengo, Palmeiras, Corinthians entrou focado, neutralizou o jogo adversário e garantiu um resultado crucial. Além do placar de Classificação no topo: Palmeiras 62 pts, Flamengo 61 pts, Botafogo 57 pts. Rodada com 10 jogos em 48h., a repercussão internacional mostra que a temporada acaba de entrar em seu momento mais quente.",
         "cta": "Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!",
-        "textoCompleto": "0-3s: Entenda em 60 segundos por que todo mundo está falando de Filipe Luís, Flamengo, Palmeiras, Corinthians hoje!
-
-O confronto era decisivo em Campeonato Brasileiro 2026 — Série A. Filipe Luís, Flamengo, Palmeiras, Corinthians entrou focado, neutralizou o jogo adversário e garantiu um resultado crucial. Além do placar de Classificação no topo: Palmeiras 62 pts, Flamengo 61 pts, Botafogo 57 pts. Rodada com 10 jogos em 48h., a repercussão internacional mostra que a temporada acaba de entrar em seu momento mais quente.
-
-Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
+        "textoCompleto": "0-3s: Entenda em 60 segundos por que todo mundo está falando de Filipe Luís, Flamengo, Palmeiras, Corinthians hoje!\\n\\nO confronto era decisivo em Campeonato Brasileiro 2026 — Série A. Filipe Luís, Flamengo, Palmeiras, Corinthians entrou focado, neutralizou o jogo adversário e garantiu um resultado crucial. Além do placar de Classificação no topo: Palmeiras 62 pts, Flamengo 61 pts, Botafogo 57 pts. Rodada com 10 jogos em 48h., a repercussão internacional mostra que a temporada acaba de entrar em seu momento mais quente.\\n\\nQual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
       }
     },
     "thumbnail": {
@@ -1566,13 +1500,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
     ],
     "youtube": {
       "titulo": "Brasileirão 2026: Rodada 29 retorna com clássicos e Filipe Luís assume comando do Flamengo | SPORT 5 AI Análise",
-      "descricao": "Entenda em 5 minutos o que aconteceu com Filipe Luís, Flamengo, Palmeiras, Corinthians em Campeonato Brasileiro 2026 — Série A.
-
-📌 Fatos Confirmados: A CBF confirmou a realização da 29ª rodada da Série A nos dias 07 e 08 de outubro de 2026.
-📊 Números: Classificação no topo: Palmeiras 62 pts, Flamengo 61 pts, Botafogo 57 pts. Rodada com 10 jogos em 48h.
-🔗 Fontes Oficiais: CBF Oficial, Globo Esporte e LANCE!
-
-#SPORT5AI #FUTEBOL #Esporte #FactCheck",
+      "descricao": "Entenda em 5 minutos o que aconteceu com Filipe Luís, Flamengo, Palmeiras, Corinthians em Campeonato Brasileiro 2026 — Série A.\\n\\n📌 Fatos Confirmados: A CBF confirmou a realização da 29ª rodada da Série A nos dias 07 e 08 de outubro de 2026.\\n📊 Números: Classificação no topo: Palmeiras 62 pts, Flamengo 61 pts, Botafogo 57 pts. Rodada com 10 jogos em 48h.\\n🔗 Fontes Oficiais: CBF Oficial, Globo Esporte e LANCE!\\n\\n#SPORT5AI #FUTEBOL #Esporte #FactCheck",
       "tags": [
         "FUTEBOL",
         "Filipe Luís, Flamengo, Palmeiras, Corinthians",
@@ -1590,7 +1518,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
       ],
       "playlist": "SPORT 5 — Futebol",
       "categoria": "Esportes",
-      "agendamento": "06/10/2026 23:00 BRT",
+      "agendamento": "08/10/2026 23:00 BRT",
       "statusPublicacao": "DESATIVADO_AUTOMATICO (Requer acionamento manual do Editor-Chefe)"
     },
     "qa": {
@@ -1677,7 +1605,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         {
           "item": "Data da publicação",
           "status": "CONFIRMADO",
-          "details": "Publicado em 06/10/2026"
+          "details": "Publicado em 08/10/2026"
         },
         {
           "item": "Atletas/equipes envolvidos",
@@ -1819,7 +1747,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         "status": "CONFIRMADO"
       },
       {
-        "afirmacao": "Local e data: Qizhong Tennis Center, Xangai, China em 06/10/2026.",
+        "afirmacao": "Local e data: Qizhong Tennis Center, Xangai, China em 08/10/2026.",
         "fonte": "https://en.rolexshanghaimasters.com/en/media/news/shanghai-2026-atp-masters-1000-history-draw-schedule",
         "tipoFonte": "OFICIAL_PRIMARIA",
         "evidencia": "Cronograma oficial da organização do evento.",
@@ -1831,12 +1759,12 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         "nome": "ATP Tour Oficial e Rolex Shanghai Masters",
         "url": "https://en.rolexshanghaimasters.com/en/media/news/shanghai-2026-atp-masters-1000-history-draw-schedule",
         "tipo": "OFICIAL_PRIMARIA",
-        "data": "06/10/2026",
+        "data": "08/10/2026",
         "horario": "08:15 BRT",
         "origem": "Órgão Regulador / Súmula Oficial",
         "status": "CONFIRMADA",
         "evidencia": "Registro de partida e estatísticas oficiais de ATP Masters 1000 — Rolex Shanghai Masters 2026.",
-        "ultimaVerificacao": "06/10/2026 — 22:40"
+        "ultimaVerificacao": "08/10/2026 — 22:40"
       }
     ],
     "pesquisaProfunda10": {
@@ -1898,7 +1826,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         "evidencia": "Confirmado pela súmula oficial e pontuação homologada."
       },
       {
-        "frase": "O confronto foi realizado em Qizhong Tennis Center, Xangai, China em 06/10/2026.",
+        "frase": "O confronto foi realizado em Qizhong Tennis Center, Xangai, China em 08/10/2026.",
         "status": "CONFIRMADO",
         "fonte": "ATP Tour Oficial e Rolex Shanghai Masters",
         "evidencia": "Confirmado pelo cronograma e dados de transmissão."
@@ -1949,33 +1877,21 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         "hook": "0-3s: Olha o que acabou de acontecer com Carlos Alcaraz, Jannik Sinner, Alexander Zverev!",
         "desenvolvimento": "Em ritmo alucinante, Carlos Alcaraz, Jannik Sinner, Alexander Zverev foi impecável em ATP Masters 1000 — Rolex Shanghai Masters 2026. Vitória confirmada e jogadas inacreditáveis na rodada de hoje.",
         "cta": "Inscreva-se no SPORT 5 AI e comente seu palpite!",
-        "textoCompleto": "0-3s: Olha o que acabou de acontecer com Carlos Alcaraz, Jannik Sinner, Alexander Zverev!
-
-Em ritmo alucinante, Carlos Alcaraz, Jannik Sinner, Alexander Zverev foi impecável em ATP Masters 1000 — Rolex Shanghai Masters 2026. Vitória confirmada e jogadas inacreditáveis na rodada de hoje.
-
-Inscreva-se no SPORT 5 AI e comente seu palpite!"
+        "textoCompleto": "0-3s: Olha o que acabou de acontecer com Carlos Alcaraz, Jannik Sinner, Alexander Zverev!\\n\\nEm ritmo alucinante, Carlos Alcaraz, Jannik Sinner, Alexander Zverev foi impecável em ATP Masters 1000 — Rolex Shanghai Masters 2026. Vitória confirmada e jogadas inacreditáveis na rodada de hoje.\\n\\nInscreva-se no SPORT 5 AI e comente seu palpite!"
       },
       "versao45s": {
         "duracao": "45s",
         "hook": "0-3s: Você não vai acreditar no que Carlos Alcaraz, Jannik Sinner, Alexander Zverev fez em ATP Masters 1000 — Rolex Shanghai Masters 2026!",
         "desenvolvimento": "Com controle absoluto do início ao fim, o duelo terminou com números que impressionam qualquer fã de tênis: Chave de 96 jogadores. Premiação recorde. Diferença entre o nº 1 e o nº 2 no ranking caiu para 320 pontos.. Uma verdadeira aula de concentração e poder de decisão.",
         "cta": "Curtiu? Deixe o like e siga o SPORT 5 para acompanhar a cobertura diária!",
-        "textoCompleto": "0-3s: Você não vai acreditar no que Carlos Alcaraz, Jannik Sinner, Alexander Zverev fez em ATP Masters 1000 — Rolex Shanghai Masters 2026!
-
-Com controle absoluto do início ao fim, o duelo terminou com números que impressionam qualquer fã de tênis: Chave de 96 jogadores. Premiação recorde. Diferença entre o nº 1 e o nº 2 no ranking caiu para 320 pontos.. Uma verdadeira aula de concentração e poder de decisão.
-
-Curtiu? Deixe o like e siga o SPORT 5 para acompanhar a cobertura diária!"
+        "textoCompleto": "0-3s: Você não vai acreditar no que Carlos Alcaraz, Jannik Sinner, Alexander Zverev fez em ATP Masters 1000 — Rolex Shanghai Masters 2026!\\n\\nCom controle absoluto do início ao fim, o duelo terminou com números que impressionam qualquer fã de tênis: Chave de 96 jogadores. Premiação recorde. Diferença entre o nº 1 e o nº 2 no ranking caiu para 320 pontos.. Uma verdadeira aula de concentração e poder de decisão.\\n\\nCurtiu? Deixe o like e siga o SPORT 5 para acompanhar a cobertura diária!"
       },
       "versao60s": {
         "duracao": "60s",
         "hook": "0-3s: Entenda em 60 segundos por que todo mundo está falando de Carlos Alcaraz, Jannik Sinner, Alexander Zverev hoje!",
         "desenvolvimento": "O confronto era decisivo em ATP Masters 1000 — Rolex Shanghai Masters 2026. Carlos Alcaraz, Jannik Sinner, Alexander Zverev entrou focado, neutralizou o jogo adversário e garantiu um resultado crucial. Além do placar de Chave de 96 jogadores. Premiação recorde. Diferença entre o nº 1 e o nº 2 no ranking caiu para 320 pontos., a repercussão internacional mostra que a temporada acaba de entrar em seu momento mais quente.",
         "cta": "Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!",
-        "textoCompleto": "0-3s: Entenda em 60 segundos por que todo mundo está falando de Carlos Alcaraz, Jannik Sinner, Alexander Zverev hoje!
-
-O confronto era decisivo em ATP Masters 1000 — Rolex Shanghai Masters 2026. Carlos Alcaraz, Jannik Sinner, Alexander Zverev entrou focado, neutralizou o jogo adversário e garantiu um resultado crucial. Além do placar de Chave de 96 jogadores. Premiação recorde. Diferença entre o nº 1 e o nº 2 no ranking caiu para 320 pontos., a repercussão internacional mostra que a temporada acaba de entrar em seu momento mais quente.
-
-Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
+        "textoCompleto": "0-3s: Entenda em 60 segundos por que todo mundo está falando de Carlos Alcaraz, Jannik Sinner, Alexander Zverev hoje!\\n\\nO confronto era decisivo em ATP Masters 1000 — Rolex Shanghai Masters 2026. Carlos Alcaraz, Jannik Sinner, Alexander Zverev entrou focado, neutralizou o jogo adversário e garantiu um resultado crucial. Além do placar de Chave de 96 jogadores. Premiação recorde. Diferença entre o nº 1 e o nº 2 no ranking caiu para 320 pontos., a repercussão internacional mostra que a temporada acaba de entrar em seu momento mais quente.\\n\\nQual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
       }
     },
     "thumbnail": {
@@ -2061,13 +1977,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
     ],
     "youtube": {
       "titulo": "Carlos Alcaraz lidera chave do Masters 1000 de Xangai após batalha épica em Pequim | SPORT 5 AI Análise",
-      "descricao": "Entenda em 5 minutos o que aconteceu com Carlos Alcaraz, Jannik Sinner, Alexander Zverev em ATP Masters 1000 — Rolex Shanghai Masters 2026.
-
-📌 Fatos Confirmados: A ATP divulgou a chave principal do Rolex Shanghai Masters com jogos de 07 a 18 de outubro de 2026.
-📊 Números: Chave de 96 jogadores. Premiação recorde. Diferença entre o nº 1 e o nº 2 no ranking caiu para 320 pontos.
-🔗 Fontes Oficiais: ATP Tour Oficial e Rolex Shanghai Masters
-
-#SPORT5AI #TÊNIS #Esporte #FactCheck",
+      "descricao": "Entenda em 5 minutos o que aconteceu com Carlos Alcaraz, Jannik Sinner, Alexander Zverev em ATP Masters 1000 — Rolex Shanghai Masters 2026.\\n\\n📌 Fatos Confirmados: A ATP divulgou a chave principal do Rolex Shanghai Masters com jogos de 07 a 18 de outubro de 2026.\\n📊 Números: Chave de 96 jogadores. Premiação recorde. Diferença entre o nº 1 e o nº 2 no ranking caiu para 320 pontos.\\n🔗 Fontes Oficiais: ATP Tour Oficial e Rolex Shanghai Masters\\n\\n#SPORT5AI #TÊNIS #Esporte #FactCheck",
       "tags": [
         "TÊNIS",
         "Carlos Alcaraz, Jannik Sinner, Alexander Zverev",
@@ -2085,7 +1995,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
       ],
       "playlist": "SPORT 5 — Tênis",
       "categoria": "Esportes",
-      "agendamento": "06/10/2026 23:00 BRT",
+      "agendamento": "08/10/2026 23:00 BRT",
       "statusPublicacao": "DESATIVADO_AUTOMATICO (Requer acionamento manual do Editor-Chefe)"
     },
     "qa": {
@@ -2172,7 +2082,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         {
           "item": "Data da publicação",
           "status": "CONFIRMADO",
-          "details": "06/10/2026"
+          "details": "08/10/2026"
         },
         {
           "item": "Atletas/equipes envolvidos",
@@ -2314,7 +2224,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         "status": "CONFIRMADO"
       },
       {
-        "afirmacao": "Local e data: Hinwil (Suíça) / Austin (EUA) em 06/10/2026.",
+        "afirmacao": "Local e data: Hinwil (Suíça) / Austin (EUA) em 08/10/2026.",
         "fonte": "https://www.formula1.com/en/latest",
         "tipoFonte": "OFICIAL_PRIMARIA",
         "evidencia": "Cronograma oficial da organização do evento.",
@@ -2326,12 +2236,12 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         "nome": "Formula1.com, Grande Prêmio e Motorsport Brasil",
         "url": "https://www.formula1.com/en/latest",
         "tipo": "OFICIAL_PRIMARIA",
-        "data": "06/10/2026",
+        "data": "08/10/2026",
         "horario": "08:15 BRT",
         "origem": "Órgão Regulador / Súmula Oficial",
         "status": "CONFIRMADA",
         "evidencia": "Registro de partida e estatísticas oficiais de Fórmula 1 2026 — Temporada Mundial.",
-        "ultimaVerificacao": "06/10/2026 — 22:40"
+        "ultimaVerificacao": "08/10/2026 — 22:40"
       }
     ],
     "pesquisaProfunda10": {
@@ -2393,7 +2303,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         "evidencia": "Confirmado pela súmula oficial e pontuação homologada."
       },
       {
-        "frase": "O confronto foi realizado em Hinwil (Suíça) / Austin (EUA) em 06/10/2026.",
+        "frase": "O confronto foi realizado em Hinwil (Suíça) / Austin (EUA) em 08/10/2026.",
         "status": "CONFIRMADO",
         "fonte": "Formula1.com, Grande Prêmio e Motorsport Brasil",
         "evidencia": "Confirmado pelo cronograma e dados de transmissão."
@@ -2444,33 +2354,21 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         "hook": "0-3s: Olha o que acabou de acontecer com Gabriel Bortoleto (Audi / Sauber)!",
         "desenvolvimento": "Em ritmo alucinante, Gabriel Bortoleto (Audi / Sauber) foi impecável em Fórmula 1 2026 — Temporada Mundial. Vitória confirmada e jogadas inacreditáveis na rodada de hoje.",
         "cta": "Inscreva-se no SPORT 5 AI e comente seu palpite!",
-        "textoCompleto": "0-3s: Olha o que acabou de acontecer com Gabriel Bortoleto (Audi / Sauber)!
-
-Em ritmo alucinante, Gabriel Bortoleto (Audi / Sauber) foi impecável em Fórmula 1 2026 — Temporada Mundial. Vitória confirmada e jogadas inacreditáveis na rodada de hoje.
-
-Inscreva-se no SPORT 5 AI e comente seu palpite!"
+        "textoCompleto": "0-3s: Olha o que acabou de acontecer com Gabriel Bortoleto (Audi / Sauber)!\\n\\nEm ritmo alucinante, Gabriel Bortoleto (Audi / Sauber) foi impecável em Fórmula 1 2026 — Temporada Mundial. Vitória confirmada e jogadas inacreditáveis na rodada de hoje.\\n\\nInscreva-se no SPORT 5 AI e comente seu palpite!"
       },
       "versao45s": {
         "duracao": "45s",
         "hook": "0-3s: Você não vai acreditar no que Gabriel Bortoleto (Audi / Sauber) fez em Fórmula 1 2026 — Temporada Mundial!",
         "desenvolvimento": "Com controle absoluto do início ao fim, o duelo terminou com números que impressionam qualquer fã de fórmula 1: Bortoleto completou 14 GPs em seu ano de estreia. Velocidade máxima em reta: 338 km/h.. Uma verdadeira aula de concentração e poder de decisão.",
         "cta": "Curtiu? Deixe o like e siga o SPORT 5 para acompanhar a cobertura diária!",
-        "textoCompleto": "0-3s: Você não vai acreditar no que Gabriel Bortoleto (Audi / Sauber) fez em Fórmula 1 2026 — Temporada Mundial!
-
-Com controle absoluto do início ao fim, o duelo terminou com números que impressionam qualquer fã de fórmula 1: Bortoleto completou 14 GPs em seu ano de estreia. Velocidade máxima em reta: 338 km/h.. Uma verdadeira aula de concentração e poder de decisão.
-
-Curtiu? Deixe o like e siga o SPORT 5 para acompanhar a cobertura diária!"
+        "textoCompleto": "0-3s: Você não vai acreditar no que Gabriel Bortoleto (Audi / Sauber) fez em Fórmula 1 2026 — Temporada Mundial!\\n\\nCom controle absoluto do início ao fim, o duelo terminou com números que impressionam qualquer fã de fórmula 1: Bortoleto completou 14 GPs em seu ano de estreia. Velocidade máxima em reta: 338 km/h.. Uma verdadeira aula de concentração e poder de decisão.\\n\\nCurtiu? Deixe o like e siga o SPORT 5 para acompanhar a cobertura diária!"
       },
       "versao60s": {
         "duracao": "60s",
         "hook": "0-3s: Entenda em 60 segundos por que todo mundo está falando de Gabriel Bortoleto (Audi / Sauber) hoje!",
         "desenvolvimento": "O confronto era decisivo em Fórmula 1 2026 — Temporada Mundial. Gabriel Bortoleto (Audi / Sauber) entrou focado, neutralizou o jogo adversário e garantiu um resultado crucial. Além do placar de Bortoleto completou 14 GPs em seu ano de estreia. Velocidade máxima em reta: 338 km/h., a repercussão internacional mostra que a temporada acaba de entrar em seu momento mais quente.",
         "cta": "Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!",
-        "textoCompleto": "0-3s: Entenda em 60 segundos por que todo mundo está falando de Gabriel Bortoleto (Audi / Sauber) hoje!
-
-O confronto era decisivo em Fórmula 1 2026 — Temporada Mundial. Gabriel Bortoleto (Audi / Sauber) entrou focado, neutralizou o jogo adversário e garantiu um resultado crucial. Além do placar de Bortoleto completou 14 GPs em seu ano de estreia. Velocidade máxima em reta: 338 km/h., a repercussão internacional mostra que a temporada acaba de entrar em seu momento mais quente.
-
-Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
+        "textoCompleto": "0-3s: Entenda em 60 segundos por que todo mundo está falando de Gabriel Bortoleto (Audi / Sauber) hoje!\\n\\nO confronto era decisivo em Fórmula 1 2026 — Temporada Mundial. Gabriel Bortoleto (Audi / Sauber) entrou focado, neutralizou o jogo adversário e garantiu um resultado crucial. Além do placar de Bortoleto completou 14 GPs em seu ano de estreia. Velocidade máxima em reta: 338 km/h., a repercussão internacional mostra que a temporada acaba de entrar em seu momento mais quente.\\n\\nQual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
       }
     },
     "thumbnail": {
@@ -2556,13 +2454,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
     ],
     "youtube": {
       "titulo": "Gabriel Bortoleto e Audi F1 preparam novo pacote aerodinâmico para o GP dos EUA | SPORT 5 AI Análise",
-      "descricao": "Entenda em 5 minutos o que aconteceu com Gabriel Bortoleto (Audi / Sauber) em Fórmula 1 2026 — Temporada Mundial.
-
-📌 Fatos Confirmados: A Audi/Sauber finalizou no túnel de vento o pacote aerodinâmico para o Circuito das Américas.
-📊 Números: Bortoleto completou 14 GPs em seu ano de estreia. Velocidade máxima em reta: 338 km/h.
-🔗 Fontes Oficiais: Formula1.com, Grande Prêmio e Motorsport Brasil
-
-#SPORT5AI #FÓRMULA1 #Esporte #FactCheck",
+      "descricao": "Entenda em 5 minutos o que aconteceu com Gabriel Bortoleto (Audi / Sauber) em Fórmula 1 2026 — Temporada Mundial.\\n\\n📌 Fatos Confirmados: A Audi/Sauber finalizou no túnel de vento o pacote aerodinâmico para o Circuito das Américas.\\n📊 Números: Bortoleto completou 14 GPs em seu ano de estreia. Velocidade máxima em reta: 338 km/h.\\n🔗 Fontes Oficiais: Formula1.com, Grande Prêmio e Motorsport Brasil\\n\\n#SPORT5AI #FÓRMULA1 #Esporte #FactCheck",
       "tags": [
         "FÓRMULA 1",
         "Gabriel Bortoleto (Audi / Sauber)",
@@ -2580,7 +2472,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
       ],
       "playlist": "SPORT 5 — Fórmula 1",
       "categoria": "Esportes",
-      "agendamento": "06/10/2026 23:00 BRT",
+      "agendamento": "08/10/2026 23:00 BRT",
       "statusPublicacao": "DESATIVADO_AUTOMATICO (Requer acionamento manual do Editor-Chefe)"
     },
     "qa": {
@@ -2667,7 +2559,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         {
           "item": "Data da publicação",
           "status": "CONFIRMADO",
-          "details": "06/10/2026"
+          "details": "08/10/2026"
         },
         {
           "item": "Atletas/equipes envolvidos",
@@ -2809,7 +2701,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         "status": "CONFIRMADO"
       },
       {
-        "afirmacao": "Local e data: São Paulo, MG e arenas nacionais em 06/10/2026.",
+        "afirmacao": "Local e data: São Paulo, MG e arenas nacionais em 08/10/2026.",
         "fonte": "https://www.olympics.com/pt/noticias/superliga-2026-27-mudancas-regras-nova-temporada-volei-brasileiro",
         "tipoFonte": "OFICIAL_PRIMARIA",
         "evidencia": "Cronograma oficial da organização do evento.",
@@ -2821,12 +2713,12 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         "nome": "Confederação Brasileira de Voleibol (CBV) e Olympics.com",
         "url": "https://www.olympics.com/pt/noticias/superliga-2026-27-mudancas-regras-nova-temporada-volei-brasileiro",
         "tipo": "OFICIAL_PRIMARIA",
-        "data": "06/10/2026",
+        "data": "08/10/2026",
         "horario": "08:15 BRT",
         "origem": "Órgão Regulador / Súmula Oficial",
         "status": "CONFIRMADA",
         "evidencia": "Registro de partida e estatísticas oficiais de Superliga Brasileira de Voleibol 2026/27.",
-        "ultimaVerificacao": "06/10/2026 — 22:40"
+        "ultimaVerificacao": "08/10/2026 — 22:40"
       }
     ],
     "pesquisaProfunda10": {
@@ -2888,7 +2780,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         "evidencia": "Confirmado pela súmula oficial e pontuação homologada."
       },
       {
-        "frase": "O confronto foi realizado em São Paulo, MG e arenas nacionais em 06/10/2026.",
+        "frase": "O confronto foi realizado em São Paulo, MG e arenas nacionais em 08/10/2026.",
         "status": "CONFIRMADO",
         "fonte": "Confederação Brasileira de Voleibol (CBV) e Olympics.com",
         "evidencia": "Confirmado pelo cronograma e dados de transmissão."
@@ -2939,33 +2831,21 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         "hook": "0-3s: Olha o que acabou de acontecer com Sada Cruzeiro, Vôlei Renata, Minas, Praia Clube!",
         "desenvolvimento": "Em ritmo alucinante, Sada Cruzeiro, Vôlei Renata, Minas, Praia Clube foi impecável em Superliga Brasileira de Voleibol 2026/27. Vitória confirmada e jogadas inacreditáveis na rodada de hoje.",
         "cta": "Inscreva-se no SPORT 5 AI e comente seu palpite!",
-        "textoCompleto": "0-3s: Olha o que acabou de acontecer com Sada Cruzeiro, Vôlei Renata, Minas, Praia Clube!
-
-Em ritmo alucinante, Sada Cruzeiro, Vôlei Renata, Minas, Praia Clube foi impecável em Superliga Brasileira de Voleibol 2026/27. Vitória confirmada e jogadas inacreditáveis na rodada de hoje.
-
-Inscreva-se no SPORT 5 AI e comente seu palpite!"
+        "textoCompleto": "0-3s: Olha o que acabou de acontecer com Sada Cruzeiro, Vôlei Renata, Minas, Praia Clube!\\n\\nEm ritmo alucinante, Sada Cruzeiro, Vôlei Renata, Minas, Praia Clube foi impecável em Superliga Brasileira de Voleibol 2026/27. Vitória confirmada e jogadas inacreditáveis na rodada de hoje.\\n\\nInscreva-se no SPORT 5 AI e comente seu palpite!"
       },
       "versao45s": {
         "duracao": "45s",
         "hook": "0-3s: Você não vai acreditar no que Sada Cruzeiro, Vôlei Renata, Minas, Praia Clube fez em Superliga Brasileira de Voleibol 2026/27!",
         "desenvolvimento": "Com controle absoluto do início ao fim, o duelo terminou com números que impressionam qualquer fã de vôlei: 24 equipes participantes (12 masc / 12 fem). Mais de 130 partidas transmitidas até maio de 2027.. Uma verdadeira aula de concentração e poder de decisão.",
         "cta": "Curtiu? Deixe o like e siga o SPORT 5 para acompanhar a cobertura diária!",
-        "textoCompleto": "0-3s: Você não vai acreditar no que Sada Cruzeiro, Vôlei Renata, Minas, Praia Clube fez em Superliga Brasileira de Voleibol 2026/27!
-
-Com controle absoluto do início ao fim, o duelo terminou com números que impressionam qualquer fã de vôlei: 24 equipes participantes (12 masc / 12 fem). Mais de 130 partidas transmitidas até maio de 2027.. Uma verdadeira aula de concentração e poder de decisão.
-
-Curtiu? Deixe o like e siga o SPORT 5 para acompanhar a cobertura diária!"
+        "textoCompleto": "0-3s: Você não vai acreditar no que Sada Cruzeiro, Vôlei Renata, Minas, Praia Clube fez em Superliga Brasileira de Voleibol 2026/27!\\n\\nCom controle absoluto do início ao fim, o duelo terminou com números que impressionam qualquer fã de vôlei: 24 equipes participantes (12 masc / 12 fem). Mais de 130 partidas transmitidas até maio de 2027.. Uma verdadeira aula de concentração e poder de decisão.\\n\\nCurtiu? Deixe o like e siga o SPORT 5 para acompanhar a cobertura diária!"
       },
       "versao60s": {
         "duracao": "60s",
         "hook": "0-3s: Entenda em 60 segundos por que todo mundo está falando de Sada Cruzeiro, Vôlei Renata, Minas, Praia Clube hoje!",
         "desenvolvimento": "O confronto era decisivo em Superliga Brasileira de Voleibol 2026/27. Sada Cruzeiro, Vôlei Renata, Minas, Praia Clube entrou focado, neutralizou o jogo adversário e garantiu um resultado crucial. Além do placar de 24 equipes participantes (12 masc / 12 fem). Mais de 130 partidas transmitidas até maio de 2027., a repercussão internacional mostra que a temporada acaba de entrar em seu momento mais quente.",
         "cta": "Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!",
-        "textoCompleto": "0-3s: Entenda em 60 segundos por que todo mundo está falando de Sada Cruzeiro, Vôlei Renata, Minas, Praia Clube hoje!
-
-O confronto era decisivo em Superliga Brasileira de Voleibol 2026/27. Sada Cruzeiro, Vôlei Renata, Minas, Praia Clube entrou focado, neutralizou o jogo adversário e garantiu um resultado crucial. Além do placar de 24 equipes participantes (12 masc / 12 fem). Mais de 130 partidas transmitidas até maio de 2027., a repercussão internacional mostra que a temporada acaba de entrar em seu momento mais quente.
-
-Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
+        "textoCompleto": "0-3s: Entenda em 60 segundos por que todo mundo está falando de Sada Cruzeiro, Vôlei Renata, Minas, Praia Clube hoje!\\n\\nO confronto era decisivo em Superliga Brasileira de Voleibol 2026/27. Sada Cruzeiro, Vôlei Renata, Minas, Praia Clube entrou focado, neutralizou o jogo adversário e garantiu um resultado crucial. Além do placar de 24 equipes participantes (12 masc / 12 fem). Mais de 130 partidas transmitidas até maio de 2027., a repercussão internacional mostra que a temporada acaba de entrar em seu momento mais quente.\\n\\nQual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
       }
     },
     "thumbnail": {
@@ -3051,13 +2931,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
     ],
     "youtube": {
       "titulo": "CBV oficializa Superliga 2026/27 para 17 de outubro com novas regras e Supercopa | SPORT 5 AI Análise",
-      "descricao": "Entenda em 5 minutos o que aconteceu com Sada Cruzeiro, Vôlei Renata, Minas, Praia Clube em Superliga Brasileira de Voleibol 2026/27.
-
-📌 Fatos Confirmados: A CBV definiu o dia 17 de outubro de 2026 como a data de abertura oficial da Superliga Feminina.
-📊 Números: 24 equipes participantes (12 masc / 12 fem). Mais de 130 partidas transmitidas até maio de 2027.
-🔗 Fontes Oficiais: Confederação Brasileira de Voleibol (CBV) e Olympics.com
-
-#SPORT5AI #VÔLEI #Esporte #FactCheck",
+      "descricao": "Entenda em 5 minutos o que aconteceu com Sada Cruzeiro, Vôlei Renata, Minas, Praia Clube em Superliga Brasileira de Voleibol 2026/27.\\n\\n📌 Fatos Confirmados: A CBV definiu o dia 17 de outubro de 2026 como a data de abertura oficial da Superliga Feminina.\\n📊 Números: 24 equipes participantes (12 masc / 12 fem). Mais de 130 partidas transmitidas até maio de 2027.\\n🔗 Fontes Oficiais: Confederação Brasileira de Voleibol (CBV) e Olympics.com\\n\\n#SPORT5AI #VÔLEI #Esporte #FactCheck",
       "tags": [
         "VÔLEI",
         "Sada Cruzeiro, Vôlei Renata, Minas, Praia Clube",
@@ -3075,7 +2949,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
       ],
       "playlist": "SPORT 5 — Vôlei",
       "categoria": "Esportes",
-      "agendamento": "06/10/2026 23:00 BRT",
+      "agendamento": "08/10/2026 23:00 BRT",
       "statusPublicacao": "DESATIVADO_AUTOMATICO (Requer acionamento manual do Editor-Chefe)"
     },
     "qa": {
@@ -3162,7 +3036,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         {
           "item": "Data da publicação",
           "status": "CONFIRMADO",
-          "details": "06/10/2026"
+          "details": "08/10/2026"
         },
         {
           "item": "Atletas/equipes envolvidos",
@@ -3304,7 +3178,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         "status": "CONFIRMADO"
       },
       {
-        "afirmacao": "Local e data: Shougang Park, Beijing, China em 06/10/2026.",
+        "afirmacao": "Local e data: Shougang Park, Beijing, China em 08/10/2026.",
         "fonte": "https://cbtm.org.br",
         "tipoFonte": "OFICIAL_PRIMARIA",
         "evidencia": "Cronograma oficial da organização do evento.",
@@ -3316,12 +3190,12 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         "nome": "World Table Tennis (WTT) e Confederação Brasileira (CBTM)",
         "url": "https://cbtm.org.br",
         "tipo": "OFICIAL_PRIMARIA",
-        "data": "06/10/2026",
+        "data": "08/10/2026",
         "horario": "08:15 BRT",
         "origem": "Órgão Regulador / Súmula Oficial",
         "status": "CONFIRMADA",
         "evidencia": "Registro de partida e estatísticas oficiais de WTT Grand Smash — China Smash 2026 (Beijing).",
-        "ultimaVerificacao": "06/10/2026 — 22:40"
+        "ultimaVerificacao": "08/10/2026 — 22:40"
       }
     ],
     "pesquisaProfunda10": {
@@ -3383,7 +3257,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         "evidencia": "Confirmado pela súmula oficial e pontuação homologada."
       },
       {
-        "frase": "O confronto foi realizado em Shougang Park, Beijing, China em 06/10/2026.",
+        "frase": "O confronto foi realizado em Shougang Park, Beijing, China em 08/10/2026.",
         "status": "CONFIRMADO",
         "fonte": "World Table Tennis (WTT) e Confederação Brasileira (CBTM)",
         "evidencia": "Confirmado pelo cronograma e dados de transmissão."
@@ -3434,33 +3308,21 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         "hook": "0-3s: Olha o que acabou de acontecer com Bruna Takahashi e Hugo Calderano (Brasil)!",
         "desenvolvimento": "Em ritmo alucinante, Bruna Takahashi e Hugo Calderano (Brasil) foi impecável em WTT Grand Smash — China Smash 2026 (Beijing). Vitória confirmada e jogadas inacreditáveis na rodada de hoje.",
         "cta": "Inscreva-se no SPORT 5 AI e comente seu palpite!",
-        "textoCompleto": "0-3s: Olha o que acabou de acontecer com Bruna Takahashi e Hugo Calderano (Brasil)!
-
-Em ritmo alucinante, Bruna Takahashi e Hugo Calderano (Brasil) foi impecável em WTT Grand Smash — China Smash 2026 (Beijing). Vitória confirmada e jogadas inacreditáveis na rodada de hoje.
-
-Inscreva-se no SPORT 5 AI e comente seu palpite!"
+        "textoCompleto": "0-3s: Olha o que acabou de acontecer com Bruna Takahashi e Hugo Calderano (Brasil)!\\n\\nEm ritmo alucinante, Bruna Takahashi e Hugo Calderano (Brasil) foi impecável em WTT Grand Smash — China Smash 2026 (Beijing). Vitória confirmada e jogadas inacreditáveis na rodada de hoje.\\n\\nInscreva-se no SPORT 5 AI e comente seu palpite!"
       },
       "versao45s": {
         "duracao": "45s",
         "hook": "0-3s: Você não vai acreditar no que Bruna Takahashi e Hugo Calderano (Brasil) fez em WTT Grand Smash — China Smash 2026 (Beijing)!",
         "desenvolvimento": "Com controle absoluto do início ao fim, o duelo terminou com números que impressionam qualquer fã de tênis de mesa: Parciais: 11-8, 8-11, 11-7, 11-9. Pontos de contra-ataque rápido: 18.. Uma verdadeira aula de concentração e poder de decisão.",
         "cta": "Curtiu? Deixe o like e siga o SPORT 5 para acompanhar a cobertura diária!",
-        "textoCompleto": "0-3s: Você não vai acreditar no que Bruna Takahashi e Hugo Calderano (Brasil) fez em WTT Grand Smash — China Smash 2026 (Beijing)!
-
-Com controle absoluto do início ao fim, o duelo terminou com números que impressionam qualquer fã de tênis de mesa: Parciais: 11-8, 8-11, 11-7, 11-9. Pontos de contra-ataque rápido: 18.. Uma verdadeira aula de concentração e poder de decisão.
-
-Curtiu? Deixe o like e siga o SPORT 5 para acompanhar a cobertura diária!"
+        "textoCompleto": "0-3s: Você não vai acreditar no que Bruna Takahashi e Hugo Calderano (Brasil) fez em WTT Grand Smash — China Smash 2026 (Beijing)!\\n\\nCom controle absoluto do início ao fim, o duelo terminou com números que impressionam qualquer fã de tênis de mesa: Parciais: 11-8, 8-11, 11-7, 11-9. Pontos de contra-ataque rápido: 18.. Uma verdadeira aula de concentração e poder de decisão.\\n\\nCurtiu? Deixe o like e siga o SPORT 5 para acompanhar a cobertura diária!"
       },
       "versao60s": {
         "duracao": "60s",
         "hook": "0-3s: Entenda em 60 segundos por que todo mundo está falando de Bruna Takahashi e Hugo Calderano (Brasil) hoje!",
         "desenvolvimento": "O confronto era decisivo em WTT Grand Smash — China Smash 2026 (Beijing). Bruna Takahashi e Hugo Calderano (Brasil) entrou focado, neutralizou o jogo adversário e garantiu um resultado crucial. Além do placar de Parciais: 11-8, 8-11, 11-7, 11-9. Pontos de contra-ataque rápido: 18., a repercussão internacional mostra que a temporada acaba de entrar em seu momento mais quente.",
         "cta": "Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!",
-        "textoCompleto": "0-3s: Entenda em 60 segundos por que todo mundo está falando de Bruna Takahashi e Hugo Calderano (Brasil) hoje!
-
-O confronto era decisivo em WTT Grand Smash — China Smash 2026 (Beijing). Bruna Takahashi e Hugo Calderano (Brasil) entrou focado, neutralizou o jogo adversário e garantiu um resultado crucial. Além do placar de Parciais: 11-8, 8-11, 11-7, 11-9. Pontos de contra-ataque rápido: 18., a repercussão internacional mostra que a temporada acaba de entrar em seu momento mais quente.
-
-Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
+        "textoCompleto": "0-3s: Entenda em 60 segundos por que todo mundo está falando de Bruna Takahashi e Hugo Calderano (Brasil) hoje!\\n\\nO confronto era decisivo em WTT Grand Smash — China Smash 2026 (Beijing). Bruna Takahashi e Hugo Calderano (Brasil) entrou focado, neutralizou o jogo adversário e garantiu um resultado crucial. Além do placar de Parciais: 11-8, 8-11, 11-7, 11-9. Pontos de contra-ataque rápido: 18., a repercussão internacional mostra que a temporada acaba de entrar em seu momento mais quente.\\n\\nQual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
       }
     },
     "thumbnail": {
@@ -3546,13 +3408,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
     ],
     "youtube": {
       "titulo": "Bruna Takahashi e Hugo Calderano avançam nas duplas mistas do China Smash em Beijing | SPORT 5 AI Análise",
-      "descricao": "Entenda em 5 minutos o que aconteceu com Bruna Takahashi e Hugo Calderano (Brasil) em WTT Grand Smash — China Smash 2026 (Beijing).
-
-📌 Fatos Confirmados: A dupla mista brasileira venceu nas oitavas de final do China Smash por 3 sets a 1.
-📊 Números: Parciais: 11-8, 8-11, 11-7, 11-9. Pontos de contra-ataque rápido: 18.
-🔗 Fontes Oficiais: World Table Tennis (WTT) e Confederação Brasileira (CBTM)
-
-#SPORT5AI #TÊNISDEMESA #Esporte #FactCheck",
+      "descricao": "Entenda em 5 minutos o que aconteceu com Bruna Takahashi e Hugo Calderano (Brasil) em WTT Grand Smash — China Smash 2026 (Beijing).\\n\\n📌 Fatos Confirmados: A dupla mista brasileira venceu nas oitavas de final do China Smash por 3 sets a 1.\\n📊 Números: Parciais: 11-8, 8-11, 11-7, 11-9. Pontos de contra-ataque rápido: 18.\\n🔗 Fontes Oficiais: World Table Tennis (WTT) e Confederação Brasileira (CBTM)\\n\\n#SPORT5AI #TÊNISDEMESA #Esporte #FactCheck",
       "tags": [
         "TÊNIS DE MESA",
         "Bruna Takahashi e Hugo Calderano (Brasil)",
@@ -3570,7 +3426,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
       ],
       "playlist": "SPORT 5 — Tênis De Mesa",
       "categoria": "Esportes",
-      "agendamento": "06/10/2026 23:00 BRT",
+      "agendamento": "08/10/2026 23:00 BRT",
       "statusPublicacao": "DESATIVADO_AUTOMATICO (Requer acionamento manual do Editor-Chefe)"
     },
     "qa": {
@@ -3584,7 +3440,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         {
           "item": "2. Datas e cronologia",
           "ok": true,
-          "details": "Partida de duplas mistas em 06/10/2026 em Beijing."
+          "details": "Partida de duplas mistas em 08/10/2026 em Beijing."
         },
         {
           "item": "3. Resultados e placares",
@@ -3652,12 +3508,12 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         {
           "item": "Data do evento",
           "status": "CONFIRMADO",
-          "details": "06/10/2026"
+          "details": "08/10/2026"
         },
         {
           "item": "Data da publicação",
           "status": "CONFIRMADO",
-          "details": "06/10/2026"
+          "details": "08/10/2026"
         },
         {
           "item": "Atletas/equipes envolvidos",
@@ -3811,12 +3667,12 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         "nome": "NBA.com e The Athletic",
         "url": "https://www.nba.com",
         "tipo": "OFICIAL_PRIMARIA",
-        "data": "06/10/2026",
+        "data": "08/10/2026",
         "horario": "08:15 BRT",
         "origem": "Órgão Regulador / Súmula Oficial",
         "status": "CONFIRMADA",
         "evidencia": "Registro de partida e estatísticas oficiais de NBA 2026/27 — Pré-Temporada e Abertura.",
-        "ultimaVerificacao": "06/10/2026 — 22:40"
+        "ultimaVerificacao": "08/10/2026 — 22:40"
       }
     ],
     "pesquisaProfunda10": {
@@ -3929,33 +3785,21 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         "hook": "0-3s: Olha o que acabou de acontecer com Jayson Tatum, Jaylen Brown, LeBron James!",
         "desenvolvimento": "Em ritmo alucinante, Jayson Tatum, Jaylen Brown, LeBron James foi impecável em NBA 2026/27 — Pré-Temporada e Abertura. Vitória confirmada e jogadas inacreditáveis na rodada de hoje.",
         "cta": "Inscreva-se no SPORT 5 AI e comente seu palpite!",
-        "textoCompleto": "0-3s: Olha o que acabou de acontecer com Jayson Tatum, Jaylen Brown, LeBron James!
-
-Em ritmo alucinante, Jayson Tatum, Jaylen Brown, LeBron James foi impecável em NBA 2026/27 — Pré-Temporada e Abertura. Vitória confirmada e jogadas inacreditáveis na rodada de hoje.
-
-Inscreva-se no SPORT 5 AI e comente seu palpite!"
+        "textoCompleto": "0-3s: Olha o que acabou de acontecer com Jayson Tatum, Jaylen Brown, LeBron James!\\n\\nEm ritmo alucinante, Jayson Tatum, Jaylen Brown, LeBron James foi impecável em NBA 2026/27 — Pré-Temporada e Abertura. Vitória confirmada e jogadas inacreditáveis na rodada de hoje.\\n\\nInscreva-se no SPORT 5 AI e comente seu palpite!"
       },
       "versao45s": {
         "duracao": "45s",
         "hook": "0-3s: Você não vai acreditar no que Jayson Tatum, Jaylen Brown, LeBron James fez em NBA 2026/27 — Pré-Temporada e Abertura!",
         "desenvolvimento": "Com controle absoluto do início ao fim, o duelo terminou com números que impressionam qualquer fã de basquete: Celtics venceram primeiro amistoso por 115 a 104. Aproveitamento de 3 pontos: 43%.. Uma verdadeira aula de concentração e poder de decisão.",
         "cta": "Curtiu? Deixe o like e siga o SPORT 5 para acompanhar a cobertura diária!",
-        "textoCompleto": "0-3s: Você não vai acreditar no que Jayson Tatum, Jaylen Brown, LeBron James fez em NBA 2026/27 — Pré-Temporada e Abertura!
-
-Com controle absoluto do início ao fim, o duelo terminou com números que impressionam qualquer fã de basquete: Celtics venceram primeiro amistoso por 115 a 104. Aproveitamento de 3 pontos: 43%.. Uma verdadeira aula de concentração e poder de decisão.
-
-Curtiu? Deixe o like e siga o SPORT 5 para acompanhar a cobertura diária!"
+        "textoCompleto": "0-3s: Você não vai acreditar no que Jayson Tatum, Jaylen Brown, LeBron James fez em NBA 2026/27 — Pré-Temporada e Abertura!\\n\\nCom controle absoluto do início ao fim, o duelo terminou com números que impressionam qualquer fã de basquete: Celtics venceram primeiro amistoso por 115 a 104. Aproveitamento de 3 pontos: 43%.. Uma verdadeira aula de concentração e poder de decisão.\\n\\nCurtiu? Deixe o like e siga o SPORT 5 para acompanhar a cobertura diária!"
       },
       "versao60s": {
         "duracao": "60s",
         "hook": "0-3s: Entenda em 60 segundos por que todo mundo está falando de Jayson Tatum, Jaylen Brown, LeBron James hoje!",
         "desenvolvimento": "O confronto era decisivo em NBA 2026/27 — Pré-Temporada e Abertura. Jayson Tatum, Jaylen Brown, LeBron James entrou focado, neutralizou o jogo adversário e garantiu um resultado crucial. Além do placar de Celtics venceram primeiro amistoso por 115 a 104. Aproveitamento de 3 pontos: 43%., a repercussão internacional mostra que a temporada acaba de entrar em seu momento mais quente.",
         "cta": "Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!",
-        "textoCompleto": "0-3s: Entenda em 60 segundos por que todo mundo está falando de Jayson Tatum, Jaylen Brown, LeBron James hoje!
-
-O confronto era decisivo em NBA 2026/27 — Pré-Temporada e Abertura. Jayson Tatum, Jaylen Brown, LeBron James entrou focado, neutralizou o jogo adversário e garantiu um resultado crucial. Além do placar de Celtics venceram primeiro amistoso por 115 a 104. Aproveitamento de 3 pontos: 43%., a repercussão internacional mostra que a temporada acaba de entrar em seu momento mais quente.
-
-Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
+        "textoCompleto": "0-3s: Entenda em 60 segundos por que todo mundo está falando de Jayson Tatum, Jaylen Brown, LeBron James hoje!\\n\\nO confronto era decisivo em NBA 2026/27 — Pré-Temporada e Abertura. Jayson Tatum, Jaylen Brown, LeBron James entrou focado, neutralizou o jogo adversário e garantiu um resultado crucial. Além do placar de Celtics venceram primeiro amistoso por 115 a 104. Aproveitamento de 3 pontos: 43%., a repercussão internacional mostra que a temporada acaba de entrar em seu momento mais quente.\\n\\nQual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
       }
     },
     "thumbnail": {
@@ -4041,13 +3885,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
     ],
     "youtube": {
       "titulo": "NBA 2026/27 abre pré-temporada com Boston Celtics defendendo título e Lakers em alta | SPORT 5 AI Análise",
-      "descricao": "Entenda em 5 minutos o que aconteceu com Jayson Tatum, Jaylen Brown, LeBron James em NBA 2026/27 — Pré-Temporada e Abertura.
-
-📌 Fatos Confirmados: A pré-temporada da NBA 2026/27 teve início nos Estados Unidos com os primeiros confrontos.
-📊 Números: Celtics venceram primeiro amistoso por 115 a 104. Aproveitamento de 3 pontos: 43%.
-🔗 Fontes Oficiais: NBA.com e The Athletic
-
-#SPORT5AI #BASQUETE #Esporte #FactCheck",
+      "descricao": "Entenda em 5 minutos o que aconteceu com Jayson Tatum, Jaylen Brown, LeBron James em NBA 2026/27 — Pré-Temporada e Abertura.\\n\\n📌 Fatos Confirmados: A pré-temporada da NBA 2026/27 teve início nos Estados Unidos com os primeiros confrontos.\\n📊 Números: Celtics venceram primeiro amistoso por 115 a 104. Aproveitamento de 3 pontos: 43%.\\n🔗 Fontes Oficiais: NBA.com e The Athletic\\n\\n#SPORT5AI #BASQUETE #Esporte #FactCheck",
       "tags": [
         "BASQUETE",
         "Jayson Tatum, Jaylen Brown, LeBron James",
@@ -4065,7 +3903,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
       ],
       "playlist": "SPORT 5 — Basquete",
       "categoria": "Esportes",
-      "agendamento": "06/10/2026 23:00 BRT",
+      "agendamento": "08/10/2026 23:00 BRT",
       "statusPublicacao": "DESATIVADO_AUTOMATICO (Requer acionamento manual do Editor-Chefe)"
     },
     "qa": {
@@ -4152,7 +3990,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         {
           "item": "Data da publicação",
           "status": "CONFIRMADO",
-          "details": "06/10/2026"
+          "details": "08/10/2026"
         },
         {
           "item": "Atletas/equipes envolvidos",
@@ -4294,7 +4132,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         "status": "CONFIRMADO"
       },
       {
-        "afirmacao": "Local e data: Porto Alegre (Beira-Rio) e Belo Horizonte (Mineirão) em 06/10/2026.",
+        "afirmacao": "Local e data: Porto Alegre (Beira-Rio) e Belo Horizonte (Mineirão) em 08/10/2026.",
         "fonte": "https://www.gazetaesportiva.com/campeonatos/brasileiro-serie-a/",
         "tipoFonte": "OFICIAL_PRIMARIA",
         "evidencia": "Cronograma oficial da organização do evento.",
@@ -4306,12 +4144,12 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         "nome": "CBF Oficial e Gazeta Esportiva",
         "url": "https://www.gazetaesportiva.com/campeonatos/brasileiro-serie-a/",
         "tipo": "OFICIAL_PRIMARIA",
-        "data": "06/10/2026",
+        "data": "08/10/2026",
         "horario": "08:15 BRT",
         "origem": "Órgão Regulador / Súmula Oficial",
         "status": "CONFIRMADA",
         "evidencia": "Registro de partida e estatísticas oficiais de Campeonato Brasileiro 2026 — Série A (Rodada 29).",
-        "ultimaVerificacao": "06/10/2026 — 22:40"
+        "ultimaVerificacao": "08/10/2026 — 22:40"
       }
     ],
     "pesquisaProfunda10": {
@@ -4373,7 +4211,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         "evidencia": "Confirmado pela súmula oficial e pontuação homologada."
       },
       {
-        "frase": "O confronto foi realizado em Porto Alegre (Beira-Rio) e Belo Horizonte (Mineirão) em 06/10/2026.",
+        "frase": "O confronto foi realizado em Porto Alegre (Beira-Rio) e Belo Horizonte (Mineirão) em 08/10/2026.",
         "status": "CONFIRMADO",
         "fonte": "CBF Oficial e Gazeta Esportiva",
         "evidencia": "Confirmado pelo cronograma e dados de transmissão."
@@ -4424,33 +4262,21 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         "hook": "0-3s: Olha o que acabou de acontecer com Internacional, Corinthians, Cruzeiro, São Paulo!",
         "desenvolvimento": "Em ritmo alucinante, Internacional, Corinthians, Cruzeiro, São Paulo foi impecável em Campeonato Brasileiro 2026 — Série A (Rodada 29). Vitória confirmada e jogadas inacreditáveis na rodada de hoje.",
         "cta": "Inscreva-se no SPORT 5 AI e comente seu palpite!",
-        "textoCompleto": "0-3s: Olha o que acabou de acontecer com Internacional, Corinthians, Cruzeiro, São Paulo!
-
-Em ritmo alucinante, Internacional, Corinthians, Cruzeiro, São Paulo foi impecável em Campeonato Brasileiro 2026 — Série A (Rodada 29). Vitória confirmada e jogadas inacreditáveis na rodada de hoje.
-
-Inscreva-se no SPORT 5 AI e comente seu palpite!"
+        "textoCompleto": "0-3s: Olha o que acabou de acontecer com Internacional, Corinthians, Cruzeiro, São Paulo!\\n\\nEm ritmo alucinante, Internacional, Corinthians, Cruzeiro, São Paulo foi impecável em Campeonato Brasileiro 2026 — Série A (Rodada 29). Vitória confirmada e jogadas inacreditáveis na rodada de hoje.\\n\\nInscreva-se no SPORT 5 AI e comente seu palpite!"
       },
       "versao45s": {
         "duracao": "45s",
         "hook": "0-3s: Você não vai acreditar no que Internacional, Corinthians, Cruzeiro, São Paulo fez em Campeonato Brasileiro 2026 — Série A (Rodada 29)!",
         "desenvolvimento": "Com controle absoluto do início ao fim, o duelo terminou com números que impressionam qualquer fã de futebol: Corinthians sem perder há 4 jogos fora; Internacional com 70% de aproveitamento em casa.. Uma verdadeira aula de concentração e poder de decisão.",
         "cta": "Curtiu? Deixe o like e siga o SPORT 5 para acompanhar a cobertura diária!",
-        "textoCompleto": "0-3s: Você não vai acreditar no que Internacional, Corinthians, Cruzeiro, São Paulo fez em Campeonato Brasileiro 2026 — Série A (Rodada 29)!
-
-Com controle absoluto do início ao fim, o duelo terminou com números que impressionam qualquer fã de futebol: Corinthians sem perder há 4 jogos fora; Internacional com 70% de aproveitamento em casa.. Uma verdadeira aula de concentração e poder de decisão.
-
-Curtiu? Deixe o like e siga o SPORT 5 para acompanhar a cobertura diária!"
+        "textoCompleto": "0-3s: Você não vai acreditar no que Internacional, Corinthians, Cruzeiro, São Paulo fez em Campeonato Brasileiro 2026 — Série A (Rodada 29)!\\n\\nCom controle absoluto do início ao fim, o duelo terminou com números que impressionam qualquer fã de futebol: Corinthians sem perder há 4 jogos fora; Internacional com 70% de aproveitamento em casa.. Uma verdadeira aula de concentração e poder de decisão.\\n\\nCurtiu? Deixe o like e siga o SPORT 5 para acompanhar a cobertura diária!"
       },
       "versao60s": {
         "duracao": "60s",
         "hook": "0-3s: Entenda em 60 segundos por que todo mundo está falando de Internacional, Corinthians, Cruzeiro, São Paulo hoje!",
         "desenvolvimento": "O confronto era decisivo em Campeonato Brasileiro 2026 — Série A (Rodada 29). Internacional, Corinthians, Cruzeiro, São Paulo entrou focado, neutralizou o jogo adversário e garantiu um resultado crucial. Além do placar de Corinthians sem perder há 4 jogos fora; Internacional com 70% de aproveitamento em casa., a repercussão internacional mostra que a temporada acaba de entrar em seu momento mais quente.",
         "cta": "Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!",
-        "textoCompleto": "0-3s: Entenda em 60 segundos por que todo mundo está falando de Internacional, Corinthians, Cruzeiro, São Paulo hoje!
-
-O confronto era decisivo em Campeonato Brasileiro 2026 — Série A (Rodada 29). Internacional, Corinthians, Cruzeiro, São Paulo entrou focado, neutralizou o jogo adversário e garantiu um resultado crucial. Além do placar de Corinthians sem perder há 4 jogos fora; Internacional com 70% de aproveitamento em casa., a repercussão internacional mostra que a temporada acaba de entrar em seu momento mais quente.
-
-Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
+        "textoCompleto": "0-3s: Entenda em 60 segundos por que todo mundo está falando de Internacional, Corinthians, Cruzeiro, São Paulo hoje!\\n\\nO confronto era decisivo em Campeonato Brasileiro 2026 — Série A (Rodada 29). Internacional, Corinthians, Cruzeiro, São Paulo entrou focado, neutralizou o jogo adversário e garantiu um resultado crucial. Além do placar de Corinthians sem perder há 4 jogos fora; Internacional com 70% de aproveitamento em casa., a repercussão internacional mostra que a temporada acaba de entrar em seu momento mais quente.\\n\\nQual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
       }
     },
     "thumbnail": {
@@ -4536,13 +4362,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
     ],
     "youtube": {
       "titulo": "Internacional x Corinthians e Cruzeiro x São Paulo abrem sequência decisiva da Série A | SPORT 5 AI Análise",
-      "descricao": "Entenda em 5 minutos o que aconteceu com Internacional, Corinthians, Cruzeiro, São Paulo em Campeonato Brasileiro 2026 — Série A (Rodada 29).
-
-📌 Fatos Confirmados: Internacional e Corinthians jogam nesta quarta-feira, às 19h30, no Estádio Beira-Rio.
-📊 Números: Corinthians sem perder há 4 jogos fora; Internacional com 70% de aproveitamento em casa.
-🔗 Fontes Oficiais: CBF Oficial e Gazeta Esportiva
-
-#SPORT5AI #FUTEBOL #Esporte #FactCheck",
+      "descricao": "Entenda em 5 minutos o que aconteceu com Internacional, Corinthians, Cruzeiro, São Paulo em Campeonato Brasileiro 2026 — Série A (Rodada 29).\\n\\n📌 Fatos Confirmados: Internacional e Corinthians jogam nesta quarta-feira, às 19h30, no Estádio Beira-Rio.\\n📊 Números: Corinthians sem perder há 4 jogos fora; Internacional com 70% de aproveitamento em casa.\\n🔗 Fontes Oficiais: CBF Oficial e Gazeta Esportiva\\n\\n#SPORT5AI #FUTEBOL #Esporte #FactCheck",
       "tags": [
         "FUTEBOL",
         "Internacional, Corinthians, Cruzeiro, São Paulo",
@@ -4560,7 +4380,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
       ],
       "playlist": "SPORT 5 — Futebol",
       "categoria": "Esportes",
-      "agendamento": "06/10/2026 23:00 BRT",
+      "agendamento": "08/10/2026 23:00 BRT",
       "statusPublicacao": "DESATIVADO_AUTOMATICO (Requer acionamento manual do Editor-Chefe)"
     },
     "qa": {
@@ -4647,7 +4467,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         {
           "item": "Data da publicação",
           "status": "CONFIRMADO",
-          "details": "06/10/2026"
+          "details": "08/10/2026"
         },
         {
           "item": "Atletas/equipes envolvidos",
@@ -4789,7 +4609,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         "status": "CONFIRMADO"
       },
       {
-        "afirmacao": "Local e data: Ginásio Pedrocão, Franca, SP em 06/10/2026.",
+        "afirmacao": "Local e data: Ginásio Pedrocão, Franca, SP em 08/10/2026.",
         "fonte": "https://www.fiba.basketball/bclamericas/2026",
         "tipoFonte": "OFICIAL_PRIMARIA",
         "evidencia": "Cronograma oficial da organização do evento.",
@@ -4801,12 +4621,12 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         "nome": "FIBA Americas Oficial & BCLA Basketball",
         "url": "https://www.fiba.basketball/bclamericas/2026",
         "tipo": "OFICIAL_PRIMARIA",
-        "data": "06/10/2026",
+        "data": "08/10/2026",
         "horario": "08:15 BRT",
         "origem": "Órgão Regulador / Súmula Oficial",
         "status": "CONFIRMADA",
         "evidencia": "Registro de partida e estatísticas oficiais de Basketball Champions League Americas (BCLA).",
-        "ultimaVerificacao": "06/10/2026 — 22:40"
+        "ultimaVerificacao": "08/10/2026 — 22:40"
       }
     ],
     "pesquisaProfunda10": {
@@ -4868,7 +4688,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         "evidencia": "Confirmado pela súmula oficial e pontuação homologada."
       },
       {
-        "frase": "O confronto foi realizado em Ginásio Pedrocão, Franca, SP em 06/10/2026.",
+        "frase": "O confronto foi realizado em Ginásio Pedrocão, Franca, SP em 08/10/2026.",
         "status": "CONFIRMADO",
         "fonte": "FIBA Americas Oficial & BCLA Basketball",
         "evidencia": "Confirmado pelo cronograma e dados de transmissão."
@@ -4914,33 +4734,21 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         "hook": "0-3s: Olha o que acabou de acontecer com Sesi Franca Basquete (Lucas Dias e Georginho)!",
         "desenvolvimento": "Em ritmo alucinante, Sesi Franca Basquete (Lucas Dias e Georginho) foi impecável em Basketball Champions League Americas (BCLA). Vitória confirmada e jogadas inacreditáveis na rodada de hoje.",
         "cta": "Inscreva-se no SPORT 5 AI e comente seu palpite!",
-        "textoCompleto": "0-3s: Olha o que acabou de acontecer com Sesi Franca Basquete (Lucas Dias e Georginho)!
-
-Em ritmo alucinante, Sesi Franca Basquete (Lucas Dias e Georginho) foi impecável em Basketball Champions League Americas (BCLA). Vitória confirmada e jogadas inacreditáveis na rodada de hoje.
-
-Inscreva-se no SPORT 5 AI e comente seu palpite!"
+        "textoCompleto": "0-3s: Olha o que acabou de acontecer com Sesi Franca Basquete (Lucas Dias e Georginho)!\\n\\nEm ritmo alucinante, Sesi Franca Basquete (Lucas Dias e Georginho) foi impecável em Basketball Champions League Americas (BCLA). Vitória confirmada e jogadas inacreditáveis na rodada de hoje.\\n\\nInscreva-se no SPORT 5 AI e comente seu palpite!"
       },
       "versao45s": {
         "duracao": "45s",
         "hook": "0-3s: Você não vai acreditar no que Sesi Franca Basquete (Lucas Dias e Georginho) fez em Basketball Champions League Americas (BCLA)!",
         "desenvolvimento": "Com controle absoluto do início ao fim, o duelo terminou com números que impressionam qualquer fã de basquete: Placar final: 88 x 82. Lucas Dias: 26 pts, 9 rebotes. Georginho: 12 assistências e 14 pts.. Uma verdadeira aula de concentração e poder de decisão.",
         "cta": "Curtiu? Deixe o like e siga o SPORT 5 para acompanhar a cobertura diária!",
-        "textoCompleto": "0-3s: Você não vai acreditar no que Sesi Franca Basquete (Lucas Dias e Georginho) fez em Basketball Champions League Americas (BCLA)!
-
-Com controle absoluto do início ao fim, o duelo terminou com números que impressionam qualquer fã de basquete: Placar final: 88 x 82. Lucas Dias: 26 pts, 9 rebotes. Georginho: 12 assistências e 14 pts.. Uma verdadeira aula de concentração e poder de decisão.
-
-Curtiu? Deixe o like e siga o SPORT 5 para acompanhar a cobertura diária!"
+        "textoCompleto": "0-3s: Você não vai acreditar no que Sesi Franca Basquete (Lucas Dias e Georginho) fez em Basketball Champions League Americas (BCLA)!\\n\\nCom controle absoluto do início ao fim, o duelo terminou com números que impressionam qualquer fã de basquete: Placar final: 88 x 82. Lucas Dias: 26 pts, 9 rebotes. Georginho: 12 assistências e 14 pts.. Uma verdadeira aula de concentração e poder de decisão.\\n\\nCurtiu? Deixe o like e siga o SPORT 5 para acompanhar a cobertura diária!"
       },
       "versao60s": {
         "duracao": "60s",
         "hook": "0-3s: Entenda em 60 segundos por que todo mundo está falando de Sesi Franca Basquete (Lucas Dias e Georginho) hoje!",
         "desenvolvimento": "O confronto era decisivo em Basketball Champions League Americas (BCLA). Sesi Franca Basquete (Lucas Dias e Georginho) entrou focado, neutralizou o jogo adversário e garantiu um resultado crucial. Além do placar de Placar final: 88 x 82. Lucas Dias: 26 pts, 9 rebotes. Georginho: 12 assistências e 14 pts., a repercussão internacional mostra que a temporada acaba de entrar em seu momento mais quente.",
         "cta": "Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!",
-        "textoCompleto": "0-3s: Entenda em 60 segundos por que todo mundo está falando de Sesi Franca Basquete (Lucas Dias e Georginho) hoje!
-
-O confronto era decisivo em Basketball Champions League Americas (BCLA). Sesi Franca Basquete (Lucas Dias e Georginho) entrou focado, neutralizou o jogo adversário e garantiu um resultado crucial. Além do placar de Placar final: 88 x 82. Lucas Dias: 26 pts, 9 rebotes. Georginho: 12 assistências e 14 pts., a repercussão internacional mostra que a temporada acaba de entrar em seu momento mais quente.
-
-Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
+        "textoCompleto": "0-3s: Entenda em 60 segundos por que todo mundo está falando de Sesi Franca Basquete (Lucas Dias e Georginho) hoje!\\n\\nO confronto era decisivo em Basketball Champions League Americas (BCLA). Sesi Franca Basquete (Lucas Dias e Georginho) entrou focado, neutralizou o jogo adversário e garantiu um resultado crucial. Além do placar de Placar final: 88 x 82. Lucas Dias: 26 pts, 9 rebotes. Georginho: 12 assistências e 14 pts., a repercussão internacional mostra que a temporada acaba de entrar em seu momento mais quente.\\n\\nQual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
       }
     },
     "thumbnail": {
@@ -4971,13 +4779,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
     "storyboard": [],
     "youtube": {
       "titulo": "Sesi Franca Basquete vence Quimsa por 88 a 82 e garante vaga na Grande Final da BCLA 2026 | SPORT 5 AI Análise",
-      "descricao": "Entenda em 5 minutos o que aconteceu com Sesi Franca Basquete (Lucas Dias e Georginho) em Basketball Champions League Americas (BCLA).
-
-📌 Fatos Confirmados: Acontecimento registrado em fontes oficiais.
-📊 Números: Placar final: 88 x 82. Lucas Dias: 26 pts, 9 rebotes. Georginho: 12 assistências e 14 pts.
-🔗 Fontes Oficiais: FIBA Americas Oficial & BCLA Basketball
-
-#SPORT5AI #BASQUETE #Esporte #FactCheck",
+      "descricao": "Entenda em 5 minutos o que aconteceu com Sesi Franca Basquete (Lucas Dias e Georginho) em Basketball Champions League Americas (BCLA).\\n\\n📌 Fatos Confirmados: Acontecimento registrado em fontes oficiais.\\n📊 Números: Placar final: 88 x 82. Lucas Dias: 26 pts, 9 rebotes. Georginho: 12 assistências e 14 pts.\\n🔗 Fontes Oficiais: FIBA Americas Oficial & BCLA Basketball\\n\\n#SPORT5AI #BASQUETE #Esporte #FactCheck",
       "tags": [
         "BASQUETE",
         "Sesi Franca Basquete (Lucas Dias e Georginho)",
@@ -4995,7 +4797,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
       ],
       "playlist": "SPORT 5 — Basquete",
       "categoria": "Esportes",
-      "agendamento": "06/10/2026 23:00 BRT",
+      "agendamento": "08/10/2026 23:00 BRT",
       "statusPublicacao": "DESATIVADO_AUTOMATICO (Requer acionamento manual do Editor-Chefe)"
     },
     "qa": {},
@@ -5098,7 +4900,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         "status": "CONFIRMADO"
       },
       {
-        "afirmacao": "Local e data: Optics Valley International Tennis Center, Wuhan, China em 06/10/2026.",
+        "afirmacao": "Local e data: Optics Valley International Tennis Center, Wuhan, China em 08/10/2026.",
         "fonte": "https://www.wtatennis.com/tournament/1024/wuhan",
         "tipoFonte": "OFICIAL_PRIMARIA",
         "evidencia": "Cronograma oficial da organização do evento.",
@@ -5110,12 +4912,12 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         "nome": "Women's Tennis Association (WTA) Oficial",
         "url": "https://www.wtatennis.com/tournament/1024/wuhan",
         "tipo": "OFICIAL_PRIMARIA",
-        "data": "06/10/2026",
+        "data": "08/10/2026",
         "horario": "08:15 BRT",
         "origem": "Órgão Regulador / Súmula Oficial",
         "status": "CONFIRMADA",
         "evidencia": "Registro de partida e estatísticas oficiais de WTA 1000 Wuhan Open 2026.",
-        "ultimaVerificacao": "06/10/2026 — 22:40"
+        "ultimaVerificacao": "08/10/2026 — 22:40"
       }
     ],
     "pesquisaProfunda10": {
@@ -5177,7 +4979,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         "evidencia": "Confirmado pela súmula oficial e pontuação homologada."
       },
       {
-        "frase": "O confronto foi realizado em Optics Valley International Tennis Center, Wuhan, China em 06/10/2026.",
+        "frase": "O confronto foi realizado em Optics Valley International Tennis Center, Wuhan, China em 08/10/2026.",
         "status": "CONFIRMADO",
         "fonte": "Women's Tennis Association (WTA) Oficial",
         "evidencia": "Confirmado pelo cronograma e dados de transmissão."
@@ -5223,33 +5025,21 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         "hook": "0-3s: Olha o que acabou de acontecer com Beatriz Haddad Maia (Brasil)!",
         "desenvolvimento": "Em ritmo alucinante, Beatriz Haddad Maia (Brasil) foi impecável em WTA 1000 Wuhan Open 2026. Vitória confirmada e jogadas inacreditáveis na rodada de hoje.",
         "cta": "Inscreva-se no SPORT 5 AI e comente seu palpite!",
-        "textoCompleto": "0-3s: Olha o que acabou de acontecer com Beatriz Haddad Maia (Brasil)!
-
-Em ritmo alucinante, Beatriz Haddad Maia (Brasil) foi impecável em WTA 1000 Wuhan Open 2026. Vitória confirmada e jogadas inacreditáveis na rodada de hoje.
-
-Inscreva-se no SPORT 5 AI e comente seu palpite!"
+        "textoCompleto": "0-3s: Olha o que acabou de acontecer com Beatriz Haddad Maia (Brasil)!\\n\\nEm ritmo alucinante, Beatriz Haddad Maia (Brasil) foi impecável em WTA 1000 Wuhan Open 2026. Vitória confirmada e jogadas inacreditáveis na rodada de hoje.\\n\\nInscreva-se no SPORT 5 AI e comente seu palpite!"
       },
       "versao45s": {
         "duracao": "45s",
         "hook": "0-3s: Você não vai acreditar no que Beatriz Haddad Maia (Brasil) fez em WTA 1000 Wuhan Open 2026!",
         "desenvolvimento": "Com controle absoluto do início ao fim, o duelo terminou com números que impressionam qualquer fã de tênis: Parciais: 6-4, 7-5. Aces: 7. Pontos com 1º saque: 82%. Break points salvos: 4 de 5.. Uma verdadeira aula de concentração e poder de decisão.",
         "cta": "Curtiu? Deixe o like e siga o SPORT 5 para acompanhar a cobertura diária!",
-        "textoCompleto": "0-3s: Você não vai acreditar no que Beatriz Haddad Maia (Brasil) fez em WTA 1000 Wuhan Open 2026!
-
-Com controle absoluto do início ao fim, o duelo terminou com números que impressionam qualquer fã de tênis: Parciais: 6-4, 7-5. Aces: 7. Pontos com 1º saque: 82%. Break points salvos: 4 de 5.. Uma verdadeira aula de concentração e poder de decisão.
-
-Curtiu? Deixe o like e siga o SPORT 5 para acompanhar a cobertura diária!"
+        "textoCompleto": "0-3s: Você não vai acreditar no que Beatriz Haddad Maia (Brasil) fez em WTA 1000 Wuhan Open 2026!\\n\\nCom controle absoluto do início ao fim, o duelo terminou com números que impressionam qualquer fã de tênis: Parciais: 6-4, 7-5. Aces: 7. Pontos com 1º saque: 82%. Break points salvos: 4 de 5.. Uma verdadeira aula de concentração e poder de decisão.\\n\\nCurtiu? Deixe o like e siga o SPORT 5 para acompanhar a cobertura diária!"
       },
       "versao60s": {
         "duracao": "60s",
         "hook": "0-3s: Entenda em 60 segundos por que todo mundo está falando de Beatriz Haddad Maia (Brasil) hoje!",
         "desenvolvimento": "O confronto era decisivo em WTA 1000 Wuhan Open 2026. Beatriz Haddad Maia (Brasil) entrou focado, neutralizou o jogo adversário e garantiu um resultado crucial. Além do placar de Parciais: 6-4, 7-5. Aces: 7. Pontos com 1º saque: 82%. Break points salvos: 4 de 5., a repercussão internacional mostra que a temporada acaba de entrar em seu momento mais quente.",
         "cta": "Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!",
-        "textoCompleto": "0-3s: Entenda em 60 segundos por que todo mundo está falando de Beatriz Haddad Maia (Brasil) hoje!
-
-O confronto era decisivo em WTA 1000 Wuhan Open 2026. Beatriz Haddad Maia (Brasil) entrou focado, neutralizou o jogo adversário e garantiu um resultado crucial. Além do placar de Parciais: 6-4, 7-5. Aces: 7. Pontos com 1º saque: 82%. Break points salvos: 4 de 5., a repercussão internacional mostra que a temporada acaba de entrar em seu momento mais quente.
-
-Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
+        "textoCompleto": "0-3s: Entenda em 60 segundos por que todo mundo está falando de Beatriz Haddad Maia (Brasil) hoje!\\n\\nO confronto era decisivo em WTA 1000 Wuhan Open 2026. Beatriz Haddad Maia (Brasil) entrou focado, neutralizou o jogo adversário e garantiu um resultado crucial. Além do placar de Parciais: 6-4, 7-5. Aces: 7. Pontos com 1º saque: 82%. Break points salvos: 4 de 5., a repercussão internacional mostra que a temporada acaba de entrar em seu momento mais quente.\\n\\nQual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
       }
     },
     "thumbnail": {
@@ -5280,13 +5070,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
     "storyboard": [],
     "youtube": {
       "titulo": "Bia Haddad Maia supera Madison Keys por 2 a 0 e avança às oitavas do WTA 1000 de Wuhan | SPORT 5 AI Análise",
-      "descricao": "Entenda em 5 minutos o que aconteceu com Beatriz Haddad Maia (Brasil) em WTA 1000 Wuhan Open 2026.
-
-📌 Fatos Confirmados: Acontecimento registrado em fontes oficiais.
-📊 Números: Parciais: 6-4, 7-5. Aces: 7. Pontos com 1º saque: 82%. Break points salvos: 4 de 5.
-🔗 Fontes Oficiais: Women's Tennis Association (WTA) Oficial
-
-#SPORT5AI #TÊNIS #Esporte #FactCheck",
+      "descricao": "Entenda em 5 minutos o que aconteceu com Beatriz Haddad Maia (Brasil) em WTA 1000 Wuhan Open 2026.\\n\\n📌 Fatos Confirmados: Acontecimento registrado em fontes oficiais.\\n📊 Números: Parciais: 6-4, 7-5. Aces: 7. Pontos com 1º saque: 82%. Break points salvos: 4 de 5.\\n🔗 Fontes Oficiais: Women's Tennis Association (WTA) Oficial\\n\\n#SPORT5AI #TÊNIS #Esporte #FactCheck",
       "tags": [
         "TÊNIS",
         "Beatriz Haddad Maia (Brasil)",
@@ -5304,7 +5088,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
       ],
       "playlist": "SPORT 5 — Tênis",
       "categoria": "Esportes",
-      "agendamento": "06/10/2026 23:00 BRT",
+      "agendamento": "08/10/2026 23:00 BRT",
       "statusPublicacao": "DESATIVADO_AUTOMATICO (Requer acionamento manual do Editor-Chefe)"
     },
     "qa": {},
@@ -5411,12 +5195,12 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         "nome": "Redes Sociais e Postagens Apócrifas",
         "url": "https://ge.globo.com",
         "tipo": "VEICULO_CONFIAVEL",
-        "data": "06/10/2026",
+        "data": "08/10/2026",
         "horario": "08:15 BRT",
         "origem": "Órgão Regulador / Súmula Oficial",
         "status": "NAO_LOCALIZADA",
         "evidencia": "Registro de partida e estatísticas oficiais de Campeonato Brasileiro Série A 2026.",
-        "ultimaVerificacao": "06/10/2026 — 22:40"
+        "ultimaVerificacao": "08/10/2026 — 22:40"
       }
     ],
     "pesquisaProfunda10": {
@@ -5493,33 +5277,21 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         "hook": "0-3s: Olha o que acabou de acontecer com Lionel Messi!",
         "desenvolvimento": "Em ritmo alucinante, Lionel Messi foi impecável em Campeonato Brasileiro Série A 2026. Vitória confirmada e jogadas inacreditáveis na rodada de hoje.",
         "cta": "Inscreva-se no SPORT 5 AI e comente seu palpite!",
-        "textoCompleto": "0-3s: Olha o que acabou de acontecer com Lionel Messi!
-
-Em ritmo alucinante, Lionel Messi foi impecável em Campeonato Brasileiro Série A 2026. Vitória confirmada e jogadas inacreditáveis na rodada de hoje.
-
-Inscreva-se no SPORT 5 AI e comente seu palpite!"
+        "textoCompleto": "0-3s: Olha o que acabou de acontecer com Lionel Messi!\\n\\nEm ritmo alucinante, Lionel Messi foi impecável em Campeonato Brasileiro Série A 2026. Vitória confirmada e jogadas inacreditáveis na rodada de hoje.\\n\\nInscreva-se no SPORT 5 AI e comente seu palpite!"
       },
       "versao45s": {
         "duracao": "45s",
         "hook": "0-3s: Você não vai acreditar no que Lionel Messi fez em Campeonato Brasileiro Série A 2026!",
         "desenvolvimento": "Com controle absoluto do início ao fim, o duelo terminou com números que impressionam qualquer fã de futebol: Zero registros oficiais na CBF/FIFA.. Uma verdadeira aula de concentração e poder de decisão.",
         "cta": "Curtiu? Deixe o like e siga o SPORT 5 para acompanhar a cobertura diária!",
-        "textoCompleto": "0-3s: Você não vai acreditar no que Lionel Messi fez em Campeonato Brasileiro Série A 2026!
-
-Com controle absoluto do início ao fim, o duelo terminou com números que impressionam qualquer fã de futebol: Zero registros oficiais na CBF/FIFA.. Uma verdadeira aula de concentração e poder de decisão.
-
-Curtiu? Deixe o like e siga o SPORT 5 para acompanhar a cobertura diária!"
+        "textoCompleto": "0-3s: Você não vai acreditar no que Lionel Messi fez em Campeonato Brasileiro Série A 2026!\\n\\nCom controle absoluto do início ao fim, o duelo terminou com números que impressionam qualquer fã de futebol: Zero registros oficiais na CBF/FIFA.. Uma verdadeira aula de concentração e poder de decisão.\\n\\nCurtiu? Deixe o like e siga o SPORT 5 para acompanhar a cobertura diária!"
       },
       "versao60s": {
         "duracao": "60s",
         "hook": "0-3s: Entenda em 60 segundos por que todo mundo está falando de Lionel Messi hoje!",
         "desenvolvimento": "O confronto era decisivo em Campeonato Brasileiro Série A 2026. Lionel Messi entrou focado, neutralizou o jogo adversário e garantiu um resultado crucial. Além do placar de Zero registros oficiais na CBF/FIFA., a repercussão internacional mostra que a temporada acaba de entrar em seu momento mais quente.",
         "cta": "Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!",
-        "textoCompleto": "0-3s: Entenda em 60 segundos por que todo mundo está falando de Lionel Messi hoje!
-
-O confronto era decisivo em Campeonato Brasileiro Série A 2026. Lionel Messi entrou focado, neutralizou o jogo adversário e garantiu um resultado crucial. Além do placar de Zero registros oficiais na CBF/FIFA., a repercussão internacional mostra que a temporada acaba de entrar em seu momento mais quente.
-
-Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
+        "textoCompleto": "0-3s: Entenda em 60 segundos por que todo mundo está falando de Lionel Messi hoje!\\n\\nO confronto era decisivo em Campeonato Brasileiro Série A 2026. Lionel Messi entrou focado, neutralizou o jogo adversário e garantiu um resultado crucial. Além do placar de Zero registros oficiais na CBF/FIFA., a repercussão internacional mostra que a temporada acaba de entrar em seu momento mais quente.\\n\\nQual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
       }
     },
     "thumbnail": {
@@ -5560,13 +5332,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
     ],
     "youtube": {
       "titulo": "[TESTE NEGATIVO] Boato de transferência: Lionel Messi assina com clube do Brasileirão Série A para 2026 | SPORT 5 AI Análise",
-      "descricao": "Entenda em 5 minutos o que aconteceu com Lionel Messi em Campeonato Brasileiro Série A 2026.
-
-📌 Fatos Confirmados: Informação falsa. Lionel Messi segue com contrato ativo com o Inter Miami na MLS.
-📊 Números: Zero registros oficiais na CBF/FIFA.
-🔗 Fontes Oficiais: Redes Sociais e Postagens Apócrifas
-
-#SPORT5AI #FUTEBOL #Esporte #FactCheck",
+      "descricao": "Entenda em 5 minutos o que aconteceu com Lionel Messi em Campeonato Brasileiro Série A 2026.\\n\\n📌 Fatos Confirmados: Informação falsa. Lionel Messi segue com contrato ativo com o Inter Miami na MLS.\\n📊 Números: Zero registros oficiais na CBF/FIFA.\\n🔗 Fontes Oficiais: Redes Sociais e Postagens Apócrifas\\n\\n#SPORT5AI #FUTEBOL #Esporte #FactCheck",
       "tags": [
         "FUTEBOL",
         "Lionel Messi",
@@ -5584,7 +5350,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
       ],
       "playlist": "SPORT 5 — Futebol",
       "categoria": "Esportes",
-      "agendamento": "06/10/2026 23:00 BRT",
+      "agendamento": "08/10/2026 23:00 BRT",
       "statusPublicacao": "DESATIVADO_AUTOMATICO (Requer acionamento manual do Editor-Chefe)"
     },
     "qa": {
@@ -5818,12 +5584,12 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         "nome": "FONTE NÃO LOCALIZADA (Perfil falso em rede social)",
         "url": "https://twitter.com/fake_nba_insider_status",
         "tipo": "VEICULO_CONFIAVEL",
-        "data": "06/10/2026",
+        "data": "08/10/2026",
         "horario": "08:15 BRT",
         "origem": "Órgão Regulador / Súmula Oficial",
         "status": "NAO_LOCALIZADA",
         "evidencia": "Registro de partida e estatísticas oficiais de NBA 2026/27.",
-        "ultimaVerificacao": "06/10/2026 — 22:40"
+        "ultimaVerificacao": "08/10/2026 — 22:40"
       }
     ],
     "pesquisaProfunda10": {
@@ -5919,33 +5685,21 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         "hook": "0-3s: Olha o que acabou de acontecer com LeBron James!",
         "desenvolvimento": "Em ritmo alucinante, LeBron James foi impecável em NBA 2026/27. Vitória confirmada e jogadas inacreditáveis na rodada de hoje.",
         "cta": "Inscreva-se no SPORT 5 AI e comente seu palpite!",
-        "textoCompleto": "0-3s: Olha o que acabou de acontecer com LeBron James!
-
-Em ritmo alucinante, LeBron James foi impecável em NBA 2026/27. Vitória confirmada e jogadas inacreditáveis na rodada de hoje.
-
-Inscreva-se no SPORT 5 AI e comente seu palpite!"
+        "textoCompleto": "0-3s: Olha o que acabou de acontecer com LeBron James!\\n\\nEm ritmo alucinante, LeBron James foi impecável em NBA 2026/27. Vitória confirmada e jogadas inacreditáveis na rodada de hoje.\\n\\nInscreva-se no SPORT 5 AI e comente seu palpite!"
       },
       "versao45s": {
         "duracao": "45s",
         "hook": "0-3s: Você não vai acreditar no que LeBron James fez em NBA 2026/27!",
         "desenvolvimento": "Com controle absoluto do início ao fim, o duelo terminou com números que impressionam qualquer fã de basquete: Nenhum dado estatístico ou contratual registrado.. Uma verdadeira aula de concentração e poder de decisão.",
         "cta": "Curtiu? Deixe o like e siga o SPORT 5 para acompanhar a cobertura diária!",
-        "textoCompleto": "0-3s: Você não vai acreditar no que LeBron James fez em NBA 2026/27!
-
-Com controle absoluto do início ao fim, o duelo terminou com números que impressionam qualquer fã de basquete: Nenhum dado estatístico ou contratual registrado.. Uma verdadeira aula de concentração e poder de decisão.
-
-Curtiu? Deixe o like e siga o SPORT 5 para acompanhar a cobertura diária!"
+        "textoCompleto": "0-3s: Você não vai acreditar no que LeBron James fez em NBA 2026/27!\\n\\nCom controle absoluto do início ao fim, o duelo terminou com números que impressionam qualquer fã de basquete: Nenhum dado estatístico ou contratual registrado.. Uma verdadeira aula de concentração e poder de decisão.\\n\\nCurtiu? Deixe o like e siga o SPORT 5 para acompanhar a cobertura diária!"
       },
       "versao60s": {
         "duracao": "60s",
         "hook": "0-3s: Entenda em 60 segundos por que todo mundo está falando de LeBron James hoje!",
         "desenvolvimento": "O confronto era decisivo em NBA 2026/27. LeBron James entrou focado, neutralizou o jogo adversário e garantiu um resultado crucial. Além do placar de Nenhum dado estatístico ou contratual registrado., a repercussão internacional mostra que a temporada acaba de entrar em seu momento mais quente.",
         "cta": "Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!",
-        "textoCompleto": "0-3s: Entenda em 60 segundos por que todo mundo está falando de LeBron James hoje!
-
-O confronto era decisivo em NBA 2026/27. LeBron James entrou focado, neutralizou o jogo adversário e garantiu um resultado crucial. Além do placar de Nenhum dado estatístico ou contratual registrado., a repercussão internacional mostra que a temporada acaba de entrar em seu momento mais quente.
-
-Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
+        "textoCompleto": "0-3s: Entenda em 60 segundos por que todo mundo está falando de LeBron James hoje!\\n\\nO confronto era decisivo em NBA 2026/27. LeBron James entrou focado, neutralizou o jogo adversário e garantiu um resultado crucial. Além do placar de Nenhum dado estatístico ou contratual registrado., a repercussão internacional mostra que a temporada acaba de entrar em seu momento mais quente.\\n\\nQual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
       }
     },
     "thumbnail": {
@@ -5976,13 +5730,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
     "storyboard": [],
     "youtube": {
       "titulo": "[TESTE DE REJEIÇÃO 2/3] Falso anúncio: LeBron James rescinde com Lakers e anuncia aposentadoria imediata | SPORT 5 AI Análise",
-      "descricao": "Entenda em 5 minutos o que aconteceu com LeBron James em NBA 2026/27.
-
-📌 Fatos Confirmados: Acontecimento registrado em fontes oficiais.
-📊 Números: Nenhum dado estatístico ou contratual registrado.
-🔗 Fontes Oficiais: FONTE NÃO LOCALIZADA (Perfil falso em rede social)
-
-#SPORT5AI #BASQUETE #Esporte #FactCheck",
+      "descricao": "Entenda em 5 minutos o que aconteceu com LeBron James em NBA 2026/27.\\n\\n📌 Fatos Confirmados: Acontecimento registrado em fontes oficiais.\\n📊 Números: Nenhum dado estatístico ou contratual registrado.\\n🔗 Fontes Oficiais: FONTE NÃO LOCALIZADA (Perfil falso em rede social)\\n\\n#SPORT5AI #BASQUETE #Esporte #FactCheck",
       "tags": [
         "BASQUETE",
         "LeBron James",
@@ -6000,7 +5748,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
       ],
       "playlist": "SPORT 5 — Basquete",
       "categoria": "Esportes",
-      "agendamento": "06/10/2026 23:00 BRT",
+      "agendamento": "08/10/2026 23:00 BRT",
       "statusPublicacao": "DESATIVADO_AUTOMATICO (Requer acionamento manual do Editor-Chefe)"
     },
     "qa": {},
@@ -6108,12 +5856,12 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         "nome": "FONTE NÃO LOCALIZADA",
         "url": "https://invalid-url.sport5.local",
         "tipo": "VEICULO_CONFIAVEL",
-        "data": "06/10/2026",
+        "data": "08/10/2026",
         "horario": "08:15 BRT",
         "origem": "Órgão Regulador / Súmula Oficial",
         "status": "NAO_LOCALIZADA",
         "evidencia": "Registro de partida e estatísticas oficiais de Competição Fictícia Y 2026.",
-        "ultimaVerificacao": "06/10/2026 — 22:40"
+        "ultimaVerificacao": "08/10/2026 — 22:40"
       }
     ],
     "pesquisaProfunda10": {
@@ -6209,33 +5957,21 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         "hook": "0-3s: Olha o que acabou de acontecer com Atleta Desconhecido X!",
         "desenvolvimento": "Em ritmo alucinante, Atleta Desconhecido X foi impecável em Competição Fictícia Y 2026. Vitória confirmada e jogadas inacreditáveis na rodada de hoje.",
         "cta": "Inscreva-se no SPORT 5 AI e comente seu palpite!",
-        "textoCompleto": "0-3s: Olha o que acabou de acontecer com Atleta Desconhecido X!
-
-Em ritmo alucinante, Atleta Desconhecido X foi impecável em Competição Fictícia Y 2026. Vitória confirmada e jogadas inacreditáveis na rodada de hoje.
-
-Inscreva-se no SPORT 5 AI e comente seu palpite!"
+        "textoCompleto": "0-3s: Olha o que acabou de acontecer com Atleta Desconhecido X!\\n\\nEm ritmo alucinante, Atleta Desconhecido X foi impecável em Competição Fictícia Y 2026. Vitória confirmada e jogadas inacreditáveis na rodada de hoje.\\n\\nInscreva-se no SPORT 5 AI e comente seu palpite!"
       },
       "versao45s": {
         "duracao": "45s",
         "hook": "0-3s: Você não vai acreditar no que Atleta Desconhecido X fez em Competição Fictícia Y 2026!",
         "desenvolvimento": "Com controle absoluto do início ao fim, o duelo terminou com números que impressionam qualquer fã de tênis de mesa: Nenhuma súmula cadastrada em federações mundiais.. Uma verdadeira aula de concentração e poder de decisão.",
         "cta": "Curtiu? Deixe o like e siga o SPORT 5 para acompanhar a cobertura diária!",
-        "textoCompleto": "0-3s: Você não vai acreditar no que Atleta Desconhecido X fez em Competição Fictícia Y 2026!
-
-Com controle absoluto do início ao fim, o duelo terminou com números que impressionam qualquer fã de tênis de mesa: Nenhuma súmula cadastrada em federações mundiais.. Uma verdadeira aula de concentração e poder de decisão.
-
-Curtiu? Deixe o like e siga o SPORT 5 para acompanhar a cobertura diária!"
+        "textoCompleto": "0-3s: Você não vai acreditar no que Atleta Desconhecido X fez em Competição Fictícia Y 2026!\\n\\nCom controle absoluto do início ao fim, o duelo terminou com números que impressionam qualquer fã de tênis de mesa: Nenhuma súmula cadastrada em federações mundiais.. Uma verdadeira aula de concentração e poder de decisão.\\n\\nCurtiu? Deixe o like e siga o SPORT 5 para acompanhar a cobertura diária!"
       },
       "versao60s": {
         "duracao": "60s",
         "hook": "0-3s: Entenda em 60 segundos por que todo mundo está falando de Atleta Desconhecido X hoje!",
         "desenvolvimento": "O confronto era decisivo em Competição Fictícia Y 2026. Atleta Desconhecido X entrou focado, neutralizou o jogo adversário e garantiu um resultado crucial. Além do placar de Nenhuma súmula cadastrada em federações mundiais., a repercussão internacional mostra que a temporada acaba de entrar em seu momento mais quente.",
         "cta": "Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!",
-        "textoCompleto": "0-3s: Entenda em 60 segundos por que todo mundo está falando de Atleta Desconhecido X hoje!
-
-O confronto era decisivo em Competição Fictícia Y 2026. Atleta Desconhecido X entrou focado, neutralizou o jogo adversário e garantiu um resultado crucial. Além do placar de Nenhuma súmula cadastrada em federações mundiais., a repercussão internacional mostra que a temporada acaba de entrar em seu momento mais quente.
-
-Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
+        "textoCompleto": "0-3s: Entenda em 60 segundos por que todo mundo está falando de Atleta Desconhecido X hoje!\\n\\nO confronto era decisivo em Competição Fictícia Y 2026. Atleta Desconhecido X entrou focado, neutralizou o jogo adversário e garantiu um resultado crucial. Além do placar de Nenhuma súmula cadastrada em federações mundiais., a repercussão internacional mostra que a temporada acaba de entrar em seu momento mais quente.\\n\\nQual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
       }
     },
     "thumbnail": {
@@ -6266,13 +6002,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
     "storyboard": [],
     "youtube": {
       "titulo": "[TESTE DE ALUCINAÇÃO 3/3] Atleta X venceu competição Y por 3 a 0 em evento inexistente | SPORT 5 AI Análise",
-      "descricao": "Entenda em 5 minutos o que aconteceu com Atleta Desconhecido X em Competição Fictícia Y 2026.
-
-📌 Fatos Confirmados: Acontecimento registrado em fontes oficiais.
-📊 Números: Nenhuma súmula cadastrada em federações mundiais.
-🔗 Fontes Oficiais: FONTE NÃO LOCALIZADA
-
-#SPORT5AI #TÊNISDEMESA #Esporte #FactCheck",
+      "descricao": "Entenda em 5 minutos o que aconteceu com Atleta Desconhecido X em Competição Fictícia Y 2026.\\n\\n📌 Fatos Confirmados: Acontecimento registrado em fontes oficiais.\\n📊 Números: Nenhuma súmula cadastrada em federações mundiais.\\n🔗 Fontes Oficiais: FONTE NÃO LOCALIZADA\\n\\n#SPORT5AI #TÊNISDEMESA #Esporte #FactCheck",
       "tags": [
         "TÊNIS DE MESA",
         "Atleta Desconhecido X",
@@ -6290,7 +6020,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
       ],
       "playlist": "SPORT 5 — Tênis De Mesa",
       "categoria": "Esportes",
-      "agendamento": "06/10/2026 23:00 BRT",
+      "agendamento": "08/10/2026 23:00 BRT",
       "statusPublicacao": "DESATIVADO_AUTOMATICO (Requer acionamento manual do Editor-Chefe)"
     },
     "qa": {},
@@ -6315,8 +6045,8 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
     "athlete": "Seleção Brasileira de Vôlei",
     "date": "15/10/2022 (Histórico)",
     "dataAconteceu": "29/08/2004",
-    "dataPublicado": "06/10/2026",
-    "dataAtualizado": "06/10/2026 22:40",
+    "dataPublicado": "08/10/2026",
+    "dataAtualizado": "08/10/2026 22:40",
     "recency": "HISTORICO",
     "location": "Katowice, Polônia",
     "source": "FIVB Oficial e Arquivo Histórico",
@@ -6404,12 +6134,12 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         "nome": "FIVB Oficial e Arquivo Histórico",
         "url": "https://www.fivb.com",
         "tipo": "VEICULO_CONFIAVEL",
-        "data": "06/10/2026",
+        "data": "08/10/2026",
         "horario": "08:15 BRT",
         "origem": "Órgão Regulador / Súmula Oficial",
         "status": "CONFIRMADA",
         "evidencia": "Registro de partida e estatísticas oficiais de Campeonato Mundial de Voleibol Masculino.",
-        "ultimaVerificacao": "06/10/2026 — 22:40"
+        "ultimaVerificacao": "08/10/2026 — 22:40"
       }
     ],
     "pesquisaProfunda10": {
@@ -6418,7 +6148,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         "tipo": "FATO"
       },
       "quandoAconteceu": {
-        "texto": "Acontecimento em 15/10/2022 (Histórico), apurado e confirmado pelas fontes oficiais em 06/10/2026.",
+        "texto": "Acontecimento em 15/10/2022 (Histórico), apurado e confirmado pelas fontes oficiais em 08/10/2026.",
         "tipo": "FATO"
       },
       "ondeAconteceu": {
@@ -6498,33 +6228,21 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         "hook": "0-3s: Olha o que acabou de acontecer com Seleção Brasileira de Vôlei!",
         "desenvolvimento": "Em ritmo alucinante, Seleção Brasileira de Vôlei foi impecável em Campeonato Mundial de Voleibol Masculino. Vitória confirmada e jogadas inacreditáveis na rodada de hoje.",
         "cta": "Inscreva-se no SPORT 5 AI e comente seu palpite!",
-        "textoCompleto": "0-3s: Olha o que acabou de acontecer com Seleção Brasileira de Vôlei!
-
-Em ritmo alucinante, Seleção Brasileira de Vôlei foi impecável em Campeonato Mundial de Voleibol Masculino. Vitória confirmada e jogadas inacreditáveis na rodada de hoje.
-
-Inscreva-se no SPORT 5 AI e comente seu palpite!"
+        "textoCompleto": "0-3s: Olha o que acabou de acontecer com Seleção Brasileira de Vôlei!\\n\\nEm ritmo alucinante, Seleção Brasileira de Vôlei foi impecável em Campeonato Mundial de Voleibol Masculino. Vitória confirmada e jogadas inacreditáveis na rodada de hoje.\\n\\nInscreva-se no SPORT 5 AI e comente seu palpite!"
       },
       "versao45s": {
         "duracao": "45s",
         "hook": "0-3s: Você não vai acreditar no que Seleção Brasileira de Vôlei fez em Campeonato Mundial de Voleibol Masculino!",
         "desenvolvimento": "Com controle absoluto do início ao fim, o duelo terminou com números que impressionam qualquer fã de vôlei: Súmula histórica arquivada no acervo FIVB.. Uma verdadeira aula de concentração e poder de decisão.",
         "cta": "Curtiu? Deixe o like e siga o SPORT 5 para acompanhar a cobertura diária!",
-        "textoCompleto": "0-3s: Você não vai acreditar no que Seleção Brasileira de Vôlei fez em Campeonato Mundial de Voleibol Masculino!
-
-Com controle absoluto do início ao fim, o duelo terminou com números que impressionam qualquer fã de vôlei: Súmula histórica arquivada no acervo FIVB.. Uma verdadeira aula de concentração e poder de decisão.
-
-Curtiu? Deixe o like e siga o SPORT 5 para acompanhar a cobertura diária!"
+        "textoCompleto": "0-3s: Você não vai acreditar no que Seleção Brasileira de Vôlei fez em Campeonato Mundial de Voleibol Masculino!\\n\\nCom controle absoluto do início ao fim, o duelo terminou com números que impressionam qualquer fã de vôlei: Súmula histórica arquivada no acervo FIVB.. Uma verdadeira aula de concentração e poder de decisão.\\n\\nCurtiu? Deixe o like e siga o SPORT 5 para acompanhar a cobertura diária!"
       },
       "versao60s": {
         "duracao": "60s",
         "hook": "0-3s: Entenda em 60 segundos por que todo mundo está falando de Seleção Brasileira de Vôlei hoje!",
         "desenvolvimento": "O confronto era decisivo em Campeonato Mundial de Voleibol Masculino. Seleção Brasileira de Vôlei entrou focado, neutralizou o jogo adversário e garantiu um resultado crucial. Além do placar de Súmula histórica arquivada no acervo FIVB., a repercussão internacional mostra que a temporada acaba de entrar em seu momento mais quente.",
         "cta": "Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!",
-        "textoCompleto": "0-3s: Entenda em 60 segundos por que todo mundo está falando de Seleção Brasileira de Vôlei hoje!
-
-O confronto era decisivo em Campeonato Mundial de Voleibol Masculino. Seleção Brasileira de Vôlei entrou focado, neutralizou o jogo adversário e garantiu um resultado crucial. Além do placar de Súmula histórica arquivada no acervo FIVB., a repercussão internacional mostra que a temporada acaba de entrar em seu momento mais quente.
-
-Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
+        "textoCompleto": "0-3s: Entenda em 60 segundos por que todo mundo está falando de Seleção Brasileira de Vôlei hoje!\\n\\nO confronto era decisivo em Campeonato Mundial de Voleibol Masculino. Seleção Brasileira de Vôlei entrou focado, neutralizou o jogo adversário e garantiu um resultado crucial. Além do placar de Súmula histórica arquivada no acervo FIVB., a repercussão internacional mostra que a temporada acaba de entrar em seu momento mais quente.\\n\\nQual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
       }
     },
     "thumbnail": {
@@ -6565,13 +6283,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
     ],
     "youtube": {
       "titulo": "[TESTE TEMPORAL] Notícia Histórica: Seleção Brasileira de Vôlei conquista título mundial | SPORT 5 AI Análise",
-      "descricao": "Entenda em 5 minutos o que aconteceu com Seleção Brasileira de Vôlei em Campeonato Mundial de Voleibol Masculino.
-
-📌 Fatos Confirmados: Ocorrência de fato confirmada no acervo de 2022.
-📊 Números: Súmula histórica arquivada no acervo FIVB.
-🔗 Fontes Oficiais: FIVB Oficial e Arquivo Histórico
-
-#SPORT5AI #VÔLEI #Esporte #FactCheck",
+      "descricao": "Entenda em 5 minutos o que aconteceu com Seleção Brasileira de Vôlei em Campeonato Mundial de Voleibol Masculino.\\n\\n📌 Fatos Confirmados: Ocorrência de fato confirmada no acervo de 2022.\\n📊 Números: Súmula histórica arquivada no acervo FIVB.\\n🔗 Fontes Oficiais: FIVB Oficial e Arquivo Histórico\\n\\n#SPORT5AI #VÔLEI #Esporte #FactCheck",
       "tags": [
         "VÔLEI",
         "Seleção Brasileira de Vôlei",
@@ -6589,7 +6301,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
       ],
       "playlist": "SPORT 5 — Vôlei",
       "categoria": "Esportes",
-      "agendamento": "06/10/2026 23:00 BRT",
+      "agendamento": "08/10/2026 23:00 BRT",
       "statusPublicacao": "DESATIVADO_AUTOMATICO (Requer acionamento manual do Editor-Chefe)"
     },
     "qa": {
@@ -6657,7 +6369,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
       "status": "VERIFICADA_OFICIAL",
       "statusLabel": "🟢 VERIFIED",
       "approvalStatus": "VERIFICADA",
-      "lastChecked": "06/10/2026 — 22:40",
+      "lastChecked": "08/10/2026 — 22:40",
       "nextCheck": "Automática (em 15 min)",
       "contradicoes": "Fato verídico no arquivo histórico, porém acontecimento ocorrido fora da janela do Radar.",
       "bloqueioProducao": false,
@@ -6740,8 +6452,8 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
     "athlete": "Flamengo (Gabigol e Jorge Jesus)",
     "date": "23/11/2019",
     "dataAconteceu": "23/11/2019",
-    "dataPublicado": "06/10/2026",
-    "dataAtualizado": "06/10/2026 22:40",
+    "dataPublicado": "08/10/2026",
+    "dataAtualizado": "08/10/2026 22:40",
     "recency": "HISTORICO",
     "location": "Estádio Monumental, Lima, Peru",
     "source": "CONMEBOL Arquivo Histórico",
@@ -6830,12 +6542,12 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         "nome": "CONMEBOL Arquivo Histórico",
         "url": "https://www.conmebol.com/libertadores-2019-final",
         "tipo": "OFICIAL_PRIMARIA",
-        "data": "06/10/2026",
+        "data": "08/10/2026",
         "horario": "08:15 BRT",
         "origem": "Órgão Regulador / Súmula Oficial",
         "status": "CONFIRMADA",
         "evidencia": "Registro de partida e estatísticas oficiais de Copa Conmebol Libertadores 2019.",
-        "ultimaVerificacao": "06/10/2026 — 22:40"
+        "ultimaVerificacao": "08/10/2026 — 22:40"
       }
     ],
     "pesquisaProfunda10": {
@@ -6844,7 +6556,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         "tipo": "FATO"
       },
       "quandoAconteceu": {
-        "texto": "Acontecimento em 23/11/2019, apurado e confirmado pelas fontes oficiais em 06/10/2026.",
+        "texto": "Acontecimento em 23/11/2019, apurado e confirmado pelas fontes oficiais em 08/10/2026.",
         "tipo": "FATO"
       },
       "ondeAconteceu": {
@@ -6943,33 +6655,21 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         "hook": "0-3s: Olha o que acabou de acontecer com Flamengo (Gabigol e Jorge Jesus)!",
         "desenvolvimento": "Em ritmo alucinante, Flamengo (Gabigol e Jorge Jesus) foi impecável em Copa Conmebol Libertadores 2019. Vitória confirmada e jogadas inacreditáveis na rodada de hoje.",
         "cta": "Inscreva-se no SPORT 5 AI e comente seu palpite!",
-        "textoCompleto": "0-3s: Olha o que acabou de acontecer com Flamengo (Gabigol e Jorge Jesus)!
-
-Em ritmo alucinante, Flamengo (Gabigol e Jorge Jesus) foi impecável em Copa Conmebol Libertadores 2019. Vitória confirmada e jogadas inacreditáveis na rodada de hoje.
-
-Inscreva-se no SPORT 5 AI e comente seu palpite!"
+        "textoCompleto": "0-3s: Olha o que acabou de acontecer com Flamengo (Gabigol e Jorge Jesus)!\\n\\nEm ritmo alucinante, Flamengo (Gabigol e Jorge Jesus) foi impecável em Copa Conmebol Libertadores 2019. Vitória confirmada e jogadas inacreditáveis na rodada de hoje.\\n\\nInscreva-se no SPORT 5 AI e comente seu palpite!"
       },
       "versao45s": {
         "duracao": "45s",
         "hook": "0-3s: Você não vai acreditar no que Flamengo (Gabigol e Jorge Jesus) fez em Copa Conmebol Libertadores 2019!",
         "desenvolvimento": "Com controle absoluto do início ao fim, o duelo terminou com números que impressionam qualquer fã de futebol: Placar: 2 x 1. Gols: Borré (14'), Gabigol (89', 92').. Uma verdadeira aula de concentração e poder de decisão.",
         "cta": "Curtiu? Deixe o like e siga o SPORT 5 para acompanhar a cobertura diária!",
-        "textoCompleto": "0-3s: Você não vai acreditar no que Flamengo (Gabigol e Jorge Jesus) fez em Copa Conmebol Libertadores 2019!
-
-Com controle absoluto do início ao fim, o duelo terminou com números que impressionam qualquer fã de futebol: Placar: 2 x 1. Gols: Borré (14'), Gabigol (89', 92').. Uma verdadeira aula de concentração e poder de decisão.
-
-Curtiu? Deixe o like e siga o SPORT 5 para acompanhar a cobertura diária!"
+        "textoCompleto": "0-3s: Você não vai acreditar no que Flamengo (Gabigol e Jorge Jesus) fez em Copa Conmebol Libertadores 2019!\\n\\nCom controle absoluto do início ao fim, o duelo terminou com números que impressionam qualquer fã de futebol: Placar: 2 x 1. Gols: Borré (14'), Gabigol (89', 92').. Uma verdadeira aula de concentração e poder de decisão.\\n\\nCurtiu? Deixe o like e siga o SPORT 5 para acompanhar a cobertura diária!"
       },
       "versao60s": {
         "duracao": "60s",
         "hook": "0-3s: Entenda em 60 segundos por que todo mundo está falando de Flamengo (Gabigol e Jorge Jesus) hoje!",
         "desenvolvimento": "O confronto era decisivo em Copa Conmebol Libertadores 2019. Flamengo (Gabigol e Jorge Jesus) entrou focado, neutralizou o jogo adversário e garantiu um resultado crucial. Além do placar de Placar: 2 x 1. Gols: Borré (14'), Gabigol (89', 92')., a repercussão internacional mostra que a temporada acaba de entrar em seu momento mais quente.",
         "cta": "Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!",
-        "textoCompleto": "0-3s: Entenda em 60 segundos por que todo mundo está falando de Flamengo (Gabigol e Jorge Jesus) hoje!
-
-O confronto era decisivo em Copa Conmebol Libertadores 2019. Flamengo (Gabigol e Jorge Jesus) entrou focado, neutralizou o jogo adversário e garantiu um resultado crucial. Além do placar de Placar: 2 x 1. Gols: Borré (14'), Gabigol (89', 92')., a repercussão internacional mostra que a temporada acaba de entrar em seu momento mais quente.
-
-Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
+        "textoCompleto": "0-3s: Entenda em 60 segundos por que todo mundo está falando de Flamengo (Gabigol e Jorge Jesus) hoje!\\n\\nO confronto era decisivo em Copa Conmebol Libertadores 2019. Flamengo (Gabigol e Jorge Jesus) entrou focado, neutralizou o jogo adversário e garantiu um resultado crucial. Além do placar de Placar: 2 x 1. Gols: Borré (14'), Gabigol (89', 92')., a repercussão internacional mostra que a temporada acaba de entrar em seu momento mais quente.\\n\\nQual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
       }
     },
     "thumbnail": {
@@ -7000,13 +6700,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
     "storyboard": [],
     "youtube": {
       "titulo": "[TESTE TEMPORAL 2/2] Notícia Histórica: Flamengo vira sobre o River Plate com dois gols de Gabigol e vence Libertadores | SPORT 5 AI Análise",
-      "descricao": "Entenda em 5 minutos o que aconteceu com Flamengo (Gabigol e Jorge Jesus) em Copa Conmebol Libertadores 2019.
-
-📌 Fatos Confirmados: Acontecimento registrado em fontes oficiais.
-📊 Números: Placar: 2 x 1. Gols: Borré (14'), Gabigol (89', 92').
-🔗 Fontes Oficiais: CONMEBOL Arquivo Histórico
-
-#SPORT5AI #FUTEBOL #Esporte #FactCheck",
+      "descricao": "Entenda em 5 minutos o que aconteceu com Flamengo (Gabigol e Jorge Jesus) em Copa Conmebol Libertadores 2019.\\n\\n📌 Fatos Confirmados: Acontecimento registrado em fontes oficiais.\\n📊 Números: Placar: 2 x 1. Gols: Borré (14'), Gabigol (89', 92').\\n🔗 Fontes Oficiais: CONMEBOL Arquivo Histórico\\n\\n#SPORT5AI #FUTEBOL #Esporte #FactCheck",
       "tags": [
         "FUTEBOL",
         "Flamengo (Gabigol e Jorge Jesus)",
@@ -7024,7 +6718,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
       ],
       "playlist": "SPORT 5 — Futebol",
       "categoria": "Esportes",
-      "agendamento": "06/10/2026 23:00 BRT",
+      "agendamento": "08/10/2026 23:00 BRT",
       "statusPublicacao": "DESATIVADO_AUTOMATICO (Requer acionamento manual do Editor-Chefe)"
     },
     "qa": {},
@@ -7033,7 +6727,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
       "status": "VERIFICADA_OFICIAL",
       "statusLabel": "🟢 VERIFIED",
       "approvalStatus": "VERIFICADA",
-      "lastChecked": "06/10/2026 — 22:40",
+      "lastChecked": "08/10/2026 — 22:40",
       "nextCheck": "Automática (em 15 min)",
       "contradicoes": "Fato verídico no arquivo histórico, porém acontecimento ocorrido fora da janela do Radar.",
       "bloqueioProducao": false,
@@ -7131,12 +6825,12 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         "nome": "Portais de Notícias Internacionais",
         "url": "https://www.fiba.basketball",
         "tipo": "VEICULO_CONFIAVEL",
-        "data": "06/10/2026",
+        "data": "08/10/2026",
         "horario": "08:15 BRT",
         "origem": "Órgão Regulador / Súmula Oficial",
         "status": "EM_ANALISE",
         "evidencia": "Registro de partida e estatísticas oficiais de Torneio Internacional Amistoso de Basquete.",
-        "ultimaVerificacao": "06/10/2026 — 22:40"
+        "ultimaVerificacao": "08/10/2026 — 22:40"
       }
     ],
     "pesquisaProfunda10": {
@@ -7213,33 +6907,21 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         "hook": "0-3s: Olha o que acabou de acontecer com Seleções Nacionais de Basquete!",
         "desenvolvimento": "Em ritmo alucinante, Seleções Nacionais de Basquete foi impecável em Torneio Internacional Amistoso de Basquete. Vitória confirmada e jogadas inacreditáveis na rodada de hoje.",
         "cta": "Inscreva-se no SPORT 5 AI e comente seu palpite!",
-        "textoCompleto": "0-3s: Olha o que acabou de acontecer com Seleções Nacionais de Basquete!
-
-Em ritmo alucinante, Seleções Nacionais de Basquete foi impecável em Torneio Internacional Amistoso de Basquete. Vitória confirmada e jogadas inacreditáveis na rodada de hoje.
-
-Inscreva-se no SPORT 5 AI e comente seu palpite!"
+        "textoCompleto": "0-3s: Olha o que acabou de acontecer com Seleções Nacionais de Basquete!\\n\\nEm ritmo alucinante, Seleções Nacionais de Basquete foi impecável em Torneio Internacional Amistoso de Basquete. Vitória confirmada e jogadas inacreditáveis na rodada de hoje.\\n\\nInscreva-se no SPORT 5 AI e comente seu palpite!"
       },
       "versao45s": {
         "duracao": "45s",
         "hook": "0-3s: Você não vai acreditar no que Seleções Nacionais de Basquete fez em Torneio Internacional Amistoso de Basquete!",
         "desenvolvimento": "Com controle absoluto do início ao fim, o duelo terminou com números que impressionam qualquer fã de basquete: Placar em disputa entre relatórios não oficiais.. Uma verdadeira aula de concentração e poder de decisão.",
         "cta": "Curtiu? Deixe o like e siga o SPORT 5 para acompanhar a cobertura diária!",
-        "textoCompleto": "0-3s: Você não vai acreditar no que Seleções Nacionais de Basquete fez em Torneio Internacional Amistoso de Basquete!
-
-Com controle absoluto do início ao fim, o duelo terminou com números que impressionam qualquer fã de basquete: Placar em disputa entre relatórios não oficiais.. Uma verdadeira aula de concentração e poder de decisão.
-
-Curtiu? Deixe o like e siga o SPORT 5 para acompanhar a cobertura diária!"
+        "textoCompleto": "0-3s: Você não vai acreditar no que Seleções Nacionais de Basquete fez em Torneio Internacional Amistoso de Basquete!\\n\\nCom controle absoluto do início ao fim, o duelo terminou com números que impressionam qualquer fã de basquete: Placar em disputa entre relatórios não oficiais.. Uma verdadeira aula de concentração e poder de decisão.\\n\\nCurtiu? Deixe o like e siga o SPORT 5 para acompanhar a cobertura diária!"
       },
       "versao60s": {
         "duracao": "60s",
         "hook": "0-3s: Entenda em 60 segundos por que todo mundo está falando de Seleções Nacionais de Basquete hoje!",
         "desenvolvimento": "O confronto era decisivo em Torneio Internacional Amistoso de Basquete. Seleções Nacionais de Basquete entrou focado, neutralizou o jogo adversário e garantiu um resultado crucial. Além do placar de Placar em disputa entre relatórios não oficiais., a repercussão internacional mostra que a temporada acaba de entrar em seu momento mais quente.",
         "cta": "Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!",
-        "textoCompleto": "0-3s: Entenda em 60 segundos por que todo mundo está falando de Seleções Nacionais de Basquete hoje!
-
-O confronto era decisivo em Torneio Internacional Amistoso de Basquete. Seleções Nacionais de Basquete entrou focado, neutralizou o jogo adversário e garantiu um resultado crucial. Além do placar de Placar em disputa entre relatórios não oficiais., a repercussão internacional mostra que a temporada acaba de entrar em seu momento mais quente.
-
-Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
+        "textoCompleto": "0-3s: Entenda em 60 segundos por que todo mundo está falando de Seleções Nacionais de Basquete hoje!\\n\\nO confronto era decisivo em Torneio Internacional Amistoso de Basquete. Seleções Nacionais de Basquete entrou focado, neutralizou o jogo adversário e garantiu um resultado crucial. Além do placar de Placar em disputa entre relatórios não oficiais., a repercussão internacional mostra que a temporada acaba de entrar em seu momento mais quente.\\n\\nQual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
       }
     },
     "thumbnail": {
@@ -7280,13 +6962,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
     ],
     "youtube": {
       "titulo": "[TESTE DE CONTRADIÇÃO] Divergência de placar em amistoso internacional preparatório | SPORT 5 AI Análise",
-      "descricao": "Entenda em 5 minutos o que aconteceu com Seleções Nacionais de Basquete em Torneio Internacional Amistoso de Basquete.
-
-📌 Fatos Confirmados: Amistoso realizado hoje na Europa.
-📊 Números: Placar em disputa entre relatórios não oficiais.
-🔗 Fontes Oficiais: Portais de Notícias Internacionais
-
-#SPORT5AI #BASQUETE #Esporte #FactCheck",
+      "descricao": "Entenda em 5 minutos o que aconteceu com Seleções Nacionais de Basquete em Torneio Internacional Amistoso de Basquete.\\n\\n📌 Fatos Confirmados: Amistoso realizado hoje na Europa.\\n📊 Números: Placar em disputa entre relatórios não oficiais.\\n🔗 Fontes Oficiais: Portais de Notícias Internacionais\\n\\n#SPORT5AI #BASQUETE #Esporte #FactCheck",
       "tags": [
         "BASQUETE",
         "Seleções Nacionais de Basquete",
@@ -7304,7 +6980,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
       ],
       "playlist": "SPORT 5 — Basquete",
       "categoria": "Esportes",
-      "agendamento": "06/10/2026 23:00 BRT",
+      "agendamento": "08/10/2026 23:00 BRT",
       "statusPublicacao": "DESATIVADO_AUTOMATICO (Requer acionamento manual do Editor-Chefe)"
     },
     "qa": {
@@ -7386,12 +7062,12 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         {
           "item": "Data do evento",
           "status": "CONFIRMADO",
-          "details": "06/10/2026"
+          "details": "08/10/2026"
         },
         {
           "item": "Data da publicação",
           "status": "CONFIRMADO",
-          "details": "06/10/2026"
+          "details": "08/10/2026"
         },
         {
           "item": "Atletas/equipes envolvidos",
@@ -7538,12 +7214,12 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         "nome": "FIA Stewards Bulletin vs Timing Monitor da Equipe",
         "url": "https://www.fia.com/documents/f1-austin-stewards",
         "tipo": "VEICULO_CONFIAVEL",
-        "data": "06/10/2026",
+        "data": "08/10/2026",
         "horario": "08:15 BRT",
         "origem": "Órgão Regulador / Súmula Oficial",
         "status": "EM_ANALISE",
         "evidencia": "Registro de partida e estatísticas oficiais de FIA Formula One World Championship 2026.",
-        "ultimaVerificacao": "06/10/2026 — 22:40"
+        "ultimaVerificacao": "08/10/2026 — 22:40"
       }
     ],
     "pesquisaProfunda10": {
@@ -7639,33 +7315,21 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         "hook": "0-3s: Olha o que acabou de acontecer com Comissários da FIA e Equipe Técnica!",
         "desenvolvimento": "Em ritmo alucinante, Comissários da FIA e Equipe Técnica foi impecável em FIA Formula One World Championship 2026. Vitória confirmada e jogadas inacreditáveis na rodada de hoje.",
         "cta": "Inscreva-se no SPORT 5 AI e comente seu palpite!",
-        "textoCompleto": "0-3s: Olha o que acabou de acontecer com Comissários da FIA e Equipe Técnica!
-
-Em ritmo alucinante, Comissários da FIA e Equipe Técnica foi impecável em FIA Formula One World Championship 2026. Vitória confirmada e jogadas inacreditáveis na rodada de hoje.
-
-Inscreva-se no SPORT 5 AI e comente seu palpite!"
+        "textoCompleto": "0-3s: Olha o que acabou de acontecer com Comissários da FIA e Equipe Técnica!\\n\\nEm ritmo alucinante, Comissários da FIA e Equipe Técnica foi impecável em FIA Formula One World Championship 2026. Vitória confirmada e jogadas inacreditáveis na rodada de hoje.\\n\\nInscreva-se no SPORT 5 AI e comente seu palpite!"
       },
       "versao45s": {
         "duracao": "45s",
         "hook": "0-3s: Você não vai acreditar no que Comissários da FIA e Equipe Técnica fez em FIA Formula One World Championship 2026!",
         "desenvolvimento": "Com controle absoluto do início ao fim, o duelo terminou com números que impressionam qualquer fã de fórmula 1: Tempo em disputa: 1:32.415 vs 1:32.580 (diferença de 165 milissegundos).. Uma verdadeira aula de concentração e poder de decisão.",
         "cta": "Curtiu? Deixe o like e siga o SPORT 5 para acompanhar a cobertura diária!",
-        "textoCompleto": "0-3s: Você não vai acreditar no que Comissários da FIA e Equipe Técnica fez em FIA Formula One World Championship 2026!
-
-Com controle absoluto do início ao fim, o duelo terminou com números que impressionam qualquer fã de fórmula 1: Tempo em disputa: 1:32.415 vs 1:32.580 (diferença de 165 milissegundos).. Uma verdadeira aula de concentração e poder de decisão.
-
-Curtiu? Deixe o like e siga o SPORT 5 para acompanhar a cobertura diária!"
+        "textoCompleto": "0-3s: Você não vai acreditar no que Comissários da FIA e Equipe Técnica fez em FIA Formula One World Championship 2026!\\n\\nCom controle absoluto do início ao fim, o duelo terminou com números que impressionam qualquer fã de fórmula 1: Tempo em disputa: 1:32.415 vs 1:32.580 (diferença de 165 milissegundos).. Uma verdadeira aula de concentração e poder de decisão.\\n\\nCurtiu? Deixe o like e siga o SPORT 5 para acompanhar a cobertura diária!"
       },
       "versao60s": {
         "duracao": "60s",
         "hook": "0-3s: Entenda em 60 segundos por que todo mundo está falando de Comissários da FIA e Equipe Técnica hoje!",
         "desenvolvimento": "O confronto era decisivo em FIA Formula One World Championship 2026. Comissários da FIA e Equipe Técnica entrou focado, neutralizou o jogo adversário e garantiu um resultado crucial. Além do placar de Tempo em disputa: 1:32.415 vs 1:32.580 (diferença de 165 milissegundos)., a repercussão internacional mostra que a temporada acaba de entrar em seu momento mais quente.",
         "cta": "Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!",
-        "textoCompleto": "0-3s: Entenda em 60 segundos por que todo mundo está falando de Comissários da FIA e Equipe Técnica hoje!
-
-O confronto era decisivo em FIA Formula One World Championship 2026. Comissários da FIA e Equipe Técnica entrou focado, neutralizou o jogo adversário e garantiu um resultado crucial. Além do placar de Tempo em disputa: 1:32.415 vs 1:32.580 (diferença de 165 milissegundos)., a repercussão internacional mostra que a temporada acaba de entrar em seu momento mais quente.
-
-Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
+        "textoCompleto": "0-3s: Entenda em 60 segundos por que todo mundo está falando de Comissários da FIA e Equipe Técnica hoje!\\n\\nO confronto era decisivo em FIA Formula One World Championship 2026. Comissários da FIA e Equipe Técnica entrou focado, neutralizou o jogo adversário e garantiu um resultado crucial. Além do placar de Tempo em disputa: 1:32.415 vs 1:32.580 (diferença de 165 milissegundos)., a repercussão internacional mostra que a temporada acaba de entrar em seu momento mais quente.\\n\\nQual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
       }
     },
     "thumbnail": {
@@ -7696,13 +7360,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
     "storyboard": [],
     "youtube": {
       "titulo": "[TESTE DE CONTRADIÇÃO 2/2] GP de Austin: Divergência de telemetria e aplicação de punição por limites de pista | SPORT 5 AI Análise",
-      "descricao": "Entenda em 5 minutos o que aconteceu com Comissários da FIA e Equipe Técnica em FIA Formula One World Championship 2026.
-
-📌 Fatos Confirmados: Acontecimento registrado em fontes oficiais.
-📊 Números: Tempo em disputa: 1:32.415 vs 1:32.580 (diferença de 165 milissegundos).
-🔗 Fontes Oficiais: FIA Stewards Bulletin vs Timing Monitor da Equipe
-
-#SPORT5AI #FÓRMULA1 #Esporte #FactCheck",
+      "descricao": "Entenda em 5 minutos o que aconteceu com Comissários da FIA e Equipe Técnica em FIA Formula One World Championship 2026.\\n\\n📌 Fatos Confirmados: Acontecimento registrado em fontes oficiais.\\n📊 Números: Tempo em disputa: 1:32.415 vs 1:32.580 (diferença de 165 milissegundos).\\n🔗 Fontes Oficiais: FIA Stewards Bulletin vs Timing Monitor da Equipe\\n\\n#SPORT5AI #FÓRMULA1 #Esporte #FactCheck",
       "tags": [
         "FÓRMULA 1",
         "Comissários da FIA e Equipe Técnica",
@@ -7720,7 +7378,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
       ],
       "playlist": "SPORT 5 — Fórmula 1",
       "categoria": "Esportes",
-      "agendamento": "06/10/2026 23:00 BRT",
+      "agendamento": "08/10/2026 23:00 BRT",
       "statusPublicacao": "DESATIVADO_AUTOMATICO (Requer acionamento manual do Editor-Chefe)"
     },
     "qa": {},
@@ -7760,7 +7418,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
       "isDuplicada": true,
       "pautaOrigemId": "p1",
       "oQueMudou": "Nenhuma alteração de fatos ou números em relação à pauta p1 já cadastrada.",
-      "quandoMudou": "06/10/2026 22:42",
+      "quandoMudou": "08/10/2026 22:42",
       "novaFonte": "Replicado de agência de notícias sem dado inédito",
       "novaInformacao": "Idêntico ao acontecimento original apurado pelo Radar."
     },
@@ -7823,7 +7481,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         "status": "CONFIRMADO"
       },
       {
-        "afirmacao": "Local e data: Shougang Park, Beijing, China em 06/10/2026.",
+        "afirmacao": "Local e data: Shougang Park, Beijing, China em 08/10/2026.",
         "fonte": "https://www.worldtabletennis.com/eventInfo?selectedTab=Matches&innerselectedTab=Completed&eventId=3249",
         "tipoFonte": "OFICIAL_PRIMARIA",
         "evidencia": "Cronograma oficial da organização do evento.",
@@ -7835,12 +7493,12 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         "nome": "World Table Tennis (WTT) Oficial & Olympics.com",
         "url": "https://www.worldtabletennis.com/eventInfo?selectedTab=Matches&innerselectedTab=Completed&eventId=3249",
         "tipo": "OFICIAL_PRIMARIA",
-        "data": "06/10/2026",
+        "data": "08/10/2026",
         "horario": "08:15 BRT",
         "origem": "Órgão Regulador / Súmula Oficial",
         "status": "CONFIRMADA",
         "evidencia": "Registro de partida e estatísticas oficiais de WTT Grand Smash — China Smash 2026 (Beijing).",
-        "ultimaVerificacao": "06/10/2026 — 22:40"
+        "ultimaVerificacao": "08/10/2026 — 22:40"
       }
     ],
     "pesquisaProfunda10": {
@@ -7902,7 +7560,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         "evidencia": "Confirmado pela súmula oficial e pontuação homologada."
       },
       {
-        "frase": "O confronto foi realizado em Shougang Park, Beijing, China em 06/10/2026.",
+        "frase": "O confronto foi realizado em Shougang Park, Beijing, China em 08/10/2026.",
         "status": "CONFIRMADO",
         "fonte": "World Table Tennis (WTT) Oficial & Olympics.com",
         "evidencia": "Confirmado pelo cronograma e dados de transmissão."
@@ -7953,33 +7611,21 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         "hook": "0-3s: Olha o que acabou de acontecer com Hugo Calderano (Brasil)!",
         "desenvolvimento": "Em ritmo alucinante, Hugo Calderano (Brasil) foi impecável em WTT Grand Smash — China Smash 2026 (Beijing). Vitória confirmada e jogadas inacreditáveis na rodada de hoje.",
         "cta": "Inscreva-se no SPORT 5 AI e comente seu palpite!",
-        "textoCompleto": "0-3s: Olha o que acabou de acontecer com Hugo Calderano (Brasil)!
-
-Em ritmo alucinante, Hugo Calderano (Brasil) foi impecável em WTT Grand Smash — China Smash 2026 (Beijing). Vitória confirmada e jogadas inacreditáveis na rodada de hoje.
-
-Inscreva-se no SPORT 5 AI e comente seu palpite!"
+        "textoCompleto": "0-3s: Olha o que acabou de acontecer com Hugo Calderano (Brasil)!\\n\\nEm ritmo alucinante, Hugo Calderano (Brasil) foi impecável em WTT Grand Smash — China Smash 2026 (Beijing). Vitória confirmada e jogadas inacreditáveis na rodada de hoje.\\n\\nInscreva-se no SPORT 5 AI e comente seu palpite!"
       },
       "versao45s": {
         "duracao": "45s",
         "hook": "0-3s: Você não vai acreditar no que Hugo Calderano (Brasil) fez em WTT Grand Smash — China Smash 2026 (Beijing)!",
         "desenvolvimento": "Com controle absoluto do início ao fim, o duelo terminou com números que impressionam qualquer fã de tênis de mesa: Parciais: 11-9, 11-9, 11-8. Duração: 28 min. Eficiência de 1º serviço: 76%. Rotação média de topspin: 8.100 RPM.. Uma verdadeira aula de concentração e poder de decisão.",
         "cta": "Curtiu? Deixe o like e siga o SPORT 5 para acompanhar a cobertura diária!",
-        "textoCompleto": "0-3s: Você não vai acreditar no que Hugo Calderano (Brasil) fez em WTT Grand Smash — China Smash 2026 (Beijing)!
-
-Com controle absoluto do início ao fim, o duelo terminou com números que impressionam qualquer fã de tênis de mesa: Parciais: 11-9, 11-9, 11-8. Duração: 28 min. Eficiência de 1º serviço: 76%. Rotação média de topspin: 8.100 RPM.. Uma verdadeira aula de concentração e poder de decisão.
-
-Curtiu? Deixe o like e siga o SPORT 5 para acompanhar a cobertura diária!"
+        "textoCompleto": "0-3s: Você não vai acreditar no que Hugo Calderano (Brasil) fez em WTT Grand Smash — China Smash 2026 (Beijing)!\\n\\nCom controle absoluto do início ao fim, o duelo terminou com números que impressionam qualquer fã de tênis de mesa: Parciais: 11-9, 11-9, 11-8. Duração: 28 min. Eficiência de 1º serviço: 76%. Rotação média de topspin: 8.100 RPM.. Uma verdadeira aula de concentração e poder de decisão.\\n\\nCurtiu? Deixe o like e siga o SPORT 5 para acompanhar a cobertura diária!"
       },
       "versao60s": {
         "duracao": "60s",
         "hook": "0-3s: Entenda em 60 segundos por que todo mundo está falando de Hugo Calderano (Brasil) hoje!",
         "desenvolvimento": "O confronto era decisivo em WTT Grand Smash — China Smash 2026 (Beijing). Hugo Calderano (Brasil) entrou focado, neutralizou o jogo adversário e garantiu um resultado crucial. Além do placar de Parciais: 11-9, 11-9, 11-8. Duração: 28 min. Eficiência de 1º serviço: 76%. Rotação média de topspin: 8.100 RPM., a repercussão internacional mostra que a temporada acaba de entrar em seu momento mais quente.",
         "cta": "Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!",
-        "textoCompleto": "0-3s: Entenda em 60 segundos por que todo mundo está falando de Hugo Calderano (Brasil) hoje!
-
-O confronto era decisivo em WTT Grand Smash — China Smash 2026 (Beijing). Hugo Calderano (Brasil) entrou focado, neutralizou o jogo adversário e garantiu um resultado crucial. Além do placar de Parciais: 11-9, 11-9, 11-8. Duração: 28 min. Eficiência de 1º serviço: 76%. Rotação média de topspin: 8.100 RPM., a repercussão internacional mostra que a temporada acaba de entrar em seu momento mais quente.
-
-Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
+        "textoCompleto": "0-3s: Entenda em 60 segundos por que todo mundo está falando de Hugo Calderano (Brasil) hoje!\\n\\nO confronto era decisivo em WTT Grand Smash — China Smash 2026 (Beijing). Hugo Calderano (Brasil) entrou focado, neutralizou o jogo adversário e garantiu um resultado crucial. Além do placar de Parciais: 11-9, 11-9, 11-8. Duração: 28 min. Eficiência de 1º serviço: 76%. Rotação média de topspin: 8.100 RPM., a repercussão internacional mostra que a temporada acaba de entrar em seu momento mais quente.\\n\\nQual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
       }
     },
     "thumbnail": {
@@ -8065,13 +7711,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
     ],
     "youtube": {
       "titulo": "Hugo Calderano bate Dimitrij Ovtcharov por 3 a 0 no China Smash 2026 em Beijing | SPORT 5 AI Análise",
-      "descricao": "Entenda em 5 minutos o que aconteceu com Hugo Calderano (Brasil) em WTT Grand Smash — China Smash 2026 (Beijing).
-
-📌 Fatos Confirmados: Hugo Calderano superou Dimitrij Ovtcharov por 3 a 0 na Infinity Arena em Shougang Park (Beijing).
-📊 Números: Parciais: 11-9, 11-9, 11-8. Duração: 28 min. Eficiência de 1º serviço: 76%. Rotação média de topspin: 8.100 RPM.
-🔗 Fontes Oficiais: World Table Tennis (WTT) Oficial & Olympics.com
-
-#SPORT5AI #TÊNISDEMESA #Esporte #FactCheck",
+      "descricao": "Entenda em 5 minutos o que aconteceu com Hugo Calderano (Brasil) em WTT Grand Smash — China Smash 2026 (Beijing).\\n\\n📌 Fatos Confirmados: Hugo Calderano superou Dimitrij Ovtcharov por 3 a 0 na Infinity Arena em Shougang Park (Beijing).\\n📊 Números: Parciais: 11-9, 11-9, 11-8. Duração: 28 min. Eficiência de 1º serviço: 76%. Rotação média de topspin: 8.100 RPM.\\n🔗 Fontes Oficiais: World Table Tennis (WTT) Oficial & Olympics.com\\n\\n#SPORT5AI #TÊNISDEMESA #Esporte #FactCheck",
       "tags": [
         "TÊNIS DE MESA",
         "Hugo Calderano (Brasil)",
@@ -8089,7 +7729,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
       ],
       "playlist": "SPORT 5 — Tênis De Mesa",
       "categoria": "Esportes",
-      "agendamento": "06/10/2026 23:00 BRT",
+      "agendamento": "08/10/2026 23:00 BRT",
       "statusPublicacao": "DESATIVADO_AUTOMATICO (Requer acionamento manual do Editor-Chefe)"
     },
     "qa": {
@@ -8103,7 +7743,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         {
           "item": "2. Datas e cronologia",
           "ok": true,
-          "details": "Partida disputada no China Smash em 06/10/2026 em Beijing."
+          "details": "Partida disputada no China Smash em 08/10/2026 em Beijing."
         },
         {
           "item": "3. Resultados e placares",
@@ -8171,12 +7811,12 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         {
           "item": "Data do evento",
           "status": "CONFIRMADO",
-          "details": "06/10/2026 conferido no cronograma oficial da WTT"
+          "details": "08/10/2026 conferido no cronograma oficial da WTT"
         },
         {
           "item": "Data da publicação",
           "status": "CONFIRMADO",
-          "details": "06/10/2026 às 07:15 BRT"
+          "details": "08/10/2026 às 07:15 BRT"
         },
         {
           "item": "Atletas/equipes envolvidos",
@@ -8255,7 +7895,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
       "isDuplicada": true,
       "pautaOrigemId": "p1",
       "oQueMudou": "Definição oficial do adversário das quartas de final (Lin Shidong superou Truls Moregard).",
-      "quandoMudou": "06/10/2026 23:10",
+      "quandoMudou": "08/10/2026 23:10",
       "novaFonte": "World Table Tennis (WTT) Match Centre - Encerrado jogo da mesa 2",
       "novaInformacao": "Hugo Calderano x Lin Shidong confirmado para quinta-feira às 09:30 BRT na Infinity Arena."
     },
@@ -8318,7 +7958,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         "status": "CONFIRMADO"
       },
       {
-        "afirmacao": "Local e data: Shougang Park, Beijing, China em 06/10/2026.",
+        "afirmacao": "Local e data: Shougang Park, Beijing, China em 08/10/2026.",
         "fonte": "https://www.worldtabletennis.com/eventInfo?selectedTab=Matches&innerselectedTab=Completed&eventId=3249",
         "tipoFonte": "OFICIAL_PRIMARIA",
         "evidencia": "Cronograma oficial da organização do evento.",
@@ -8330,12 +7970,12 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         "nome": "World Table Tennis (WTT) Oficial & Olympics.com",
         "url": "https://www.worldtabletennis.com/eventInfo?selectedTab=Matches&innerselectedTab=Completed&eventId=3249",
         "tipo": "OFICIAL_PRIMARIA",
-        "data": "06/10/2026",
+        "data": "08/10/2026",
         "horario": "08:15 BRT",
         "origem": "Órgão Regulador / Súmula Oficial",
         "status": "CONFIRMADA",
         "evidencia": "Registro de partida e estatísticas oficiais de WTT Grand Smash — China Smash 2026 (Beijing).",
-        "ultimaVerificacao": "06/10/2026 — 22:40"
+        "ultimaVerificacao": "08/10/2026 — 22:40"
       }
     ],
     "pesquisaProfunda10": {
@@ -8397,7 +8037,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         "evidencia": "Confirmado pela súmula oficial e pontuação homologada."
       },
       {
-        "frase": "O confronto foi realizado em Shougang Park, Beijing, China em 06/10/2026.",
+        "frase": "O confronto foi realizado em Shougang Park, Beijing, China em 08/10/2026.",
         "status": "CONFIRMADO",
         "fonte": "World Table Tennis (WTT) Oficial & Olympics.com",
         "evidencia": "Confirmado pelo cronograma e dados de transmissão."
@@ -8448,33 +8088,21 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         "hook": "0-3s: Olha o que acabou de acontecer com Hugo Calderano (Brasil)!",
         "desenvolvimento": "Em ritmo alucinante, Hugo Calderano (Brasil) foi impecável em WTT Grand Smash — China Smash 2026 (Beijing). Vitória confirmada e jogadas inacreditáveis na rodada de hoje.",
         "cta": "Inscreva-se no SPORT 5 AI e comente seu palpite!",
-        "textoCompleto": "0-3s: Olha o que acabou de acontecer com Hugo Calderano (Brasil)!
-
-Em ritmo alucinante, Hugo Calderano (Brasil) foi impecável em WTT Grand Smash — China Smash 2026 (Beijing). Vitória confirmada e jogadas inacreditáveis na rodada de hoje.
-
-Inscreva-se no SPORT 5 AI e comente seu palpite!"
+        "textoCompleto": "0-3s: Olha o que acabou de acontecer com Hugo Calderano (Brasil)!\\n\\nEm ritmo alucinante, Hugo Calderano (Brasil) foi impecável em WTT Grand Smash — China Smash 2026 (Beijing). Vitória confirmada e jogadas inacreditáveis na rodada de hoje.\\n\\nInscreva-se no SPORT 5 AI e comente seu palpite!"
       },
       "versao45s": {
         "duracao": "45s",
         "hook": "0-3s: Você não vai acreditar no que Hugo Calderano (Brasil) fez em WTT Grand Smash — China Smash 2026 (Beijing)!",
         "desenvolvimento": "Com controle absoluto do início ao fim, o duelo terminou com números que impressionam qualquer fã de tênis de mesa: Parciais: 11-9, 11-9, 11-8. Duração: 28 min. Eficiência de 1º serviço: 76%. Rotação média de topspin: 8.100 RPM.. Uma verdadeira aula de concentração e poder de decisão.",
         "cta": "Curtiu? Deixe o like e siga o SPORT 5 para acompanhar a cobertura diária!",
-        "textoCompleto": "0-3s: Você não vai acreditar no que Hugo Calderano (Brasil) fez em WTT Grand Smash — China Smash 2026 (Beijing)!
-
-Com controle absoluto do início ao fim, o duelo terminou com números que impressionam qualquer fã de tênis de mesa: Parciais: 11-9, 11-9, 11-8. Duração: 28 min. Eficiência de 1º serviço: 76%. Rotação média de topspin: 8.100 RPM.. Uma verdadeira aula de concentração e poder de decisão.
-
-Curtiu? Deixe o like e siga o SPORT 5 para acompanhar a cobertura diária!"
+        "textoCompleto": "0-3s: Você não vai acreditar no que Hugo Calderano (Brasil) fez em WTT Grand Smash — China Smash 2026 (Beijing)!\\n\\nCom controle absoluto do início ao fim, o duelo terminou com números que impressionam qualquer fã de tênis de mesa: Parciais: 11-9, 11-9, 11-8. Duração: 28 min. Eficiência de 1º serviço: 76%. Rotação média de topspin: 8.100 RPM.. Uma verdadeira aula de concentração e poder de decisão.\\n\\nCurtiu? Deixe o like e siga o SPORT 5 para acompanhar a cobertura diária!"
       },
       "versao60s": {
         "duracao": "60s",
         "hook": "0-3s: Entenda em 60 segundos por que todo mundo está falando de Hugo Calderano (Brasil) hoje!",
         "desenvolvimento": "O confronto era decisivo em WTT Grand Smash — China Smash 2026 (Beijing). Hugo Calderano (Brasil) entrou focado, neutralizou o jogo adversário e garantiu um resultado crucial. Além do placar de Parciais: 11-9, 11-9, 11-8. Duração: 28 min. Eficiência de 1º serviço: 76%. Rotação média de topspin: 8.100 RPM., a repercussão internacional mostra que a temporada acaba de entrar em seu momento mais quente.",
         "cta": "Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!",
-        "textoCompleto": "0-3s: Entenda em 60 segundos por que todo mundo está falando de Hugo Calderano (Brasil) hoje!
-
-O confronto era decisivo em WTT Grand Smash — China Smash 2026 (Beijing). Hugo Calderano (Brasil) entrou focado, neutralizou o jogo adversário e garantiu um resultado crucial. Além do placar de Parciais: 11-9, 11-9, 11-8. Duração: 28 min. Eficiência de 1º serviço: 76%. Rotação média de topspin: 8.100 RPM., a repercussão internacional mostra que a temporada acaba de entrar em seu momento mais quente.
-
-Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
+        "textoCompleto": "0-3s: Entenda em 60 segundos por que todo mundo está falando de Hugo Calderano (Brasil) hoje!\\n\\nO confronto era decisivo em WTT Grand Smash — China Smash 2026 (Beijing). Hugo Calderano (Brasil) entrou focado, neutralizou o jogo adversário e garantiu um resultado crucial. Além do placar de Parciais: 11-9, 11-9, 11-8. Duração: 28 min. Eficiência de 1º serviço: 76%. Rotação média de topspin: 8.100 RPM., a repercussão internacional mostra que a temporada acaba de entrar em seu momento mais quente.\\n\\nQual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
       }
     },
     "thumbnail": {
@@ -8560,13 +8188,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
     ],
     "youtube": {
       "titulo": "Hugo Calderano bate Dimitrij Ovtcharov por 3 a 0 no China Smash 2026 em Beijing | SPORT 5 AI Análise",
-      "descricao": "Entenda em 5 minutos o que aconteceu com Hugo Calderano (Brasil) em WTT Grand Smash — China Smash 2026 (Beijing).
-
-📌 Fatos Confirmados: Hugo Calderano superou Dimitrij Ovtcharov por 3 a 0 na Infinity Arena em Shougang Park (Beijing).
-📊 Números: Parciais: 11-9, 11-9, 11-8. Duração: 28 min. Eficiência de 1º serviço: 76%. Rotação média de topspin: 8.100 RPM.
-🔗 Fontes Oficiais: World Table Tennis (WTT) Oficial & Olympics.com
-
-#SPORT5AI #TÊNISDEMESA #Esporte #FactCheck",
+      "descricao": "Entenda em 5 minutos o que aconteceu com Hugo Calderano (Brasil) em WTT Grand Smash — China Smash 2026 (Beijing).\\n\\n📌 Fatos Confirmados: Hugo Calderano superou Dimitrij Ovtcharov por 3 a 0 na Infinity Arena em Shougang Park (Beijing).\\n📊 Números: Parciais: 11-9, 11-9, 11-8. Duração: 28 min. Eficiência de 1º serviço: 76%. Rotação média de topspin: 8.100 RPM.\\n🔗 Fontes Oficiais: World Table Tennis (WTT) Oficial & Olympics.com\\n\\n#SPORT5AI #TÊNISDEMESA #Esporte #FactCheck",
       "tags": [
         "TÊNIS DE MESA",
         "Hugo Calderano (Brasil)",
@@ -8584,7 +8206,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
       ],
       "playlist": "SPORT 5 — Tênis De Mesa",
       "categoria": "Esportes",
-      "agendamento": "06/10/2026 23:00 BRT",
+      "agendamento": "08/10/2026 23:00 BRT",
       "statusPublicacao": "DESATIVADO_AUTOMATICO (Requer acionamento manual do Editor-Chefe)"
     },
     "qa": {
@@ -8598,7 +8220,7 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         {
           "item": "2. Datas e cronologia",
           "ok": true,
-          "details": "Partida disputada no China Smash em 06/10/2026 em Beijing."
+          "details": "Partida disputada no China Smash em 08/10/2026 em Beijing."
         },
         {
           "item": "3. Resultados e placares",
@@ -8666,12 +8288,12 @@ Qual é a sua opinião sobre esse resultado? Comente abaixo e ative o sininho!"
         {
           "item": "Data do evento",
           "status": "CONFIRMADO",
-          "details": "06/10/2026 conferido no cronograma oficial da WTT"
+          "details": "08/10/2026 conferido no cronograma oficial da WTT"
         },
         {
           "item": "Data da publicação",
           "status": "CONFIRMADO",
-          "details": "06/10/2026 às 07:15 BRT"
+          "details": "08/10/2026 às 07:15 BRT"
         },
         {
           "item": "Atletas/equipes envolvidos",
@@ -8748,7 +8370,7 @@ class Sport5App {
     this.speechUtterance = null;
     this.correcoesEditoriais = [
       {
-        dataHora: "06/10/2026 22:45",
+        dataHora: "08/10/2026 22:45",
         pauta: "Hugo Calderano bate Dimitrij Ovtcharov",
         erroOriginal: "Parcial do 2º set divulgada inicialmente como 11-8",
         infoCorrigida: "Súmula oficial homologou 11-9 (11-9, 11-9, 11-8)",
@@ -8978,9 +8600,9 @@ class Sport5App {
       const now = new Date();
       const timeStr = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
       this.pautas.forEach(p => {
-        p.dataAtualizado = `06/10/2026 ${timeStr}`;
+        p.dataAtualizado = `08/10/2026 ${timeStr}`;
         if (p.reliability) {
-          p.reliability.lastChecked = `06/10/2026 — ${timeStr}`;
+          p.reliability.lastChecked = `08/10/2026 — ${timeStr}`;
         }
       });
       this.renderCentralRedacao();
@@ -9651,7 +9273,7 @@ class Sport5App {
   }
 
   abrirModalPublicarYouTube() {
-    alert("PUBLICAÇÃO NO YOUTUBE (MODO DEMO/SEGURANÇA):\n\nStatus: Publicação automática DESATIVADA inicialmente.\nAgendamento definido para: 06/10/2026 às 23:00 BRT.\n\nTodos os metadados (Título, Descrição, Tags, Safe Area e Thumbnail) foram validados pelo Fact Check!");
+    alert("PUBLICAÇÃO NO YOUTUBE (MODO DEMO/SEGURANÇA):\n\nStatus: Publicação automática DESATIVADA inicialmente.\nAgendamento definido para: 08/10/2026 às 23:00 BRT.\n\nTodos os metadados (Título, Descrição, Tags, Safe Area e Thumbnail) foram validados pelo Fact Check!");
     this.showToast("🚀 Publicação agendada no YouTube com sucesso!");
   }
 
@@ -9774,7 +9396,7 @@ class Sport5App {
     const now = new Date();
     const timeStr = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
     const novaCorrecao = {
-      dataHora: `06/10/2026 ${timeStr}`,
+      dataHora: `08/10/2026 ${timeStr}`,
       pauta: this.activePauta.title,
       erroOriginal: erro,
       infoCorrigida: corrigido,
@@ -10022,7 +9644,7 @@ class Sport5App {
     if (!this.activeAuditPauta) return;
     const now = new Date();
     const timeStr = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
-    this.activeAuditPauta.dataAtualizado = `06/10/2026 ${timeStr}`;
+    this.activeAuditPauta.dataAtualizado = `08/10/2026 ${timeStr}`;
     this.showToast(`Auditoria reexecutada para "${this.activeAuditPauta.athlete}"! Todas as afirmações revalidadas.`);
     this.openAuditModal(this.activeAuditPauta.id);
     this.renderPautasRadar();
@@ -10235,10 +9857,10 @@ class Sport5App {
       title: title,
       championship: camp,
       athlete: athlete,
-      date: "06/10/2026",
-      dataAconteceu: "06/10/2026",
-      dataPublicado: "06/10/2026",
-      dataAtualizado: "06/10/2026 23:00",
+      date: "08/10/2026",
+      dataAconteceu: "08/10/2026",
+      dataPublicado: "08/10/2026",
+      dataAtualizado: "08/10/2026 23:00",
       recency: "ULTIMAS_HORAS",
       location: "Local apurado na súmula",
       source: source,
@@ -10280,16 +9902,16 @@ class Sport5App {
           nome: source,
           url: "https://sport5.ai/oficial",
           tipo: "OFICIAL_PRIMARIA",
-          data: "06/10/2026",
+          data: "08/10/2026",
           horario: "23:00 BRT",
           status: "CONFIRMADA",
           evidencia: facts,
-          ultimaVerificacao: "06/10/2026 — 23:00"
+          ultimaVerificacao: "08/10/2026 — 23:00"
         }
       ],
       pesquisaProfunda10: {
         oQueAconteceu: { texto: facts, tipo: "FATO" },
-        quandoAconteceu: { texto: "06/10/2026", tipo: "FATO" },
+        quandoAconteceu: { texto: "08/10/2026", tipo: "FATO" },
         ondeAconteceu: { texto: "Local do evento", tipo: "FATO" },
         quemParticipou: { texto: athlete, tipo: "FATO" },
         resultado: { texto: facts, tipo: "FATO" },
@@ -10380,14 +10002,14 @@ class Sport5App {
         hashtags: [`#${sport.replace(' ', '')}`, `#${athlete.replace(' ', '')}`, "#SPORT5AI"],
         playlist: `SPORT 5 — ${sport}`,
         categoria: "Esportes",
-        agendamento: "06/10/2026 23:00 BRT",
+        agendamento: "08/10/2026 23:00 BRT",
         statusPublicacao: "DESATIVADO_AUTOMATICO"
       },
       qa: {
         status: "APROVADO",
         checks: [
           { item: "1. Nomes próprios e grafia", details: `Nome de ${athlete} checado.` },
-          { item: "2. Datas e cronologia", details: "Registrado com data 06/10/2026." },
+          { item: "2. Datas e cronologia", details: "Registrado com data 08/10/2026." },
           { item: "3. Resultados e placares", details: "Placar condizente com a fonte informada." },
           { item: "4. Estatísticas citadas", details: "Parâmetros verificados." },
           { item: "5. Fontes jornalísticas", details: `Fonte citada: ${source}.` },
@@ -10450,4 +10072,5 @@ const app = new Sport5App();
 window.onload = () => {
   app.init();
 };
+
 

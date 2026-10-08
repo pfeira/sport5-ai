@@ -125,7 +125,7 @@
     <div class="active-pauta-bar" id="activePautaBar">
       <div class="active-pauta-info">
         <h4>Pauta Ativa em Produção na Redação</h4>
-        <p id="activePautaTitle">Hugo Calderano bate Dimitrij Ovtcharov por 3 a 0 no China Smash 2026 em Beijing e avança no WTT Grand Smash</p>
+        <p id="activePautaTitle">Carlos Alcaraz atropela em Xangai por 2 a 0 e garante vaga nas oitavas do Masters 1000</p>
       </div>
       <div style="display: flex; gap: 0.6rem; align-items: center; flex-wrap: wrap;">
         <span class="badge badge-tenisdemesa" id="activePautaSport">Tênis de Mesa</span>
@@ -236,27 +236,27 @@
         <div class="breaking-header">
           <span class="breaking-tag">🚨 BREAKING NEWS SPORT 5</span>
           <span style="font-size: 0.8rem; color: var(--accent-red); font-weight: 800;">ALTA PRIORIDADE JORNALÍSTICA</span>
-          <span style="font-size: 0.72rem; color: var(--text-muted); margin-left: auto;">Aconteceu: 06/10/2026 • 07:15 BRT | Publicado: 06/10/2026 | Atualizado: há 15 min</span>
+          <span style="font-size: 0.72rem; color: var(--text-muted); margin-left: auto;">Aconteceu: 08/10/2026 • 07:15 BRT | Publicado: 08/10/2026 | Atualizado: há 15 min</span>
         </div>
         <div style="font-size: 0.95rem; font-weight: 800; color: #fff; margin-bottom: 0.35rem;" id="breakingNewsTitle">
-          Hugo Calderano bate Dimitrij Ovtcharov por 3 a 0 no China Smash 2026 em Beijing e avança no WTT Grand Smash
+          Carlos Alcaraz atropela em Xangai por 2 a 0 e garante vaga nas oitavas do Masters 1000
         </div>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.65rem; font-size: 0.78rem;">
           <div style="background:rgba(0,0,0,0.3); padding:0.5rem; border-radius:4px;">
             <strong style="color:var(--accent-blue);">O QUE ACONTECEU:</strong>
-            <div id="breakingOQueAconteceu">Vitória em sets diretos (11-9, 11-9, 11-8) na Infinity Arena em Shougang Park.</div>
+            <div id="breakingOQueAconteceu">Vitória dominante por duplo 6-2 em apenas 1h14 na Quadra Central da Qizhong Arena.</div>
           </div>
           <div style="background:rgba(0,0,0,0.3); padding:0.5rem; border-radius:4px;">
             <strong style="color:var(--accent-green);">FONTE OFICIAL:</strong>
-            <div id="breakingFonte">World Table Tennis (WTT) Match Centre & Olympics.com Brasil</div>
+            <div id="breakingFonte">ATP Tour Match Centre Oficial & Rolex Shanghai Masters</div>
           </div>
           <div style="background:rgba(0,0,0,0.3); padding:0.5rem; border-radius:4px;">
             <strong style="color:var(--accent-green);">CONFIRMADO:</strong>
-            <div id="breakingConfirmado">Classificação garantida para as oitavas de final de simples masculino.</div>
+            <div id="breakingConfirmado">Classificação garantida para as oitavas de final sem ceder nenhum break point.</div>
           </div>
           <div style="background:rgba(0,0,0,0.3); padding:0.5rem; border-radius:4px;">
             <strong style="color:var(--accent-yellow);">AINDA NÃO CONFIRMADO:</strong>
-            <div id="breakingPendente">Horário exato e mesa da partida das oitavas de final contra vencedor de Harimoto x Moregard.</div>
+            <div id="breakingPendente">Definição de adversário e horário oficial da partida de oitavas na sexta-feira.</div>
           </div>
         </div>
       </div>
@@ -345,30 +345,6 @@
         </div>
       </div>
 
-        <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
-          <button class="btn btn-sm btn-danger" onclick="app.sincronizarFeedsAoVivo()">
-            <span>🔴</span> Sincronizar Feeds ao Vivo
-          </button>
-          
-          <select class="search-input" id="radarStatusFilter" style="max-width: 240px; font-size: 0.78rem;" onchange="app.filterByStatus()">
-            <option value="TODOS">Todos os Status de Verificação</option>
-            <option value="VERIFICADAS">Somente Verificadas (Oficial & Confiável)</option>
-            <option value="PARCIAIS">Parcialmente Verificadas</option>
-            <option value="VERIFICANDO">Em Verificação (Divergências)</option>
-            <option value="REJEITADAS">Rejeitadas (Testes Negativos / Boatos)</option>
-          </select>
-
-          <select class="search-input" id="radarSourceFilter" style="max-width: 220px; font-size: 0.78rem;" onchange="app.filterBySource()">
-            <option value="TODAS">Todas as Fontes</option>
-            <option value="OFICIAIS">Somente Federações Oficiais</option>
-            <option value="WTT">World Table Tennis (WTT / ITTF)</option>
-            <option value="CBF">CBF Oficial / Brasileirão</option>
-            <option value="FIA">FIA / Formula 1 Oficial</option>
-            <option value="ATP">ATP Tour / Shanghai Masters</option>
-            <option value="CBV">CBV / Superliga Oficial</option>
-            <option value="NBA">NBA.com Oficial</option>
-          </select>
-        </div>
 
         <div style="font-size: 0.78rem; color: var(--accent-green); display: flex; align-items: center; gap: 0.35rem;">
           <span>🛡️</span> <strong>Auditoria Ativa:</strong> <span>Fatos sem comprovação são automaticamente bloqueados para produção.</span>
@@ -843,7 +819,7 @@
             </thead>
             <tbody id="correcoesTbody">
               <tr>
-                <td>06/10/2026 22:45</td>
+                <td>08/10/2026 22:45</td>
                 <td><strong>Hugo Calderano bate Dimitrij Ovtcharov</strong></td>
                 <td>Parcial do 2º set divulgada inicialmente como 11-8</td>
                 <td>Súmula oficial homologou 11-9 (11-9, 11-9, 11-8)</td>
@@ -1122,7 +1098,7 @@
       <!-- TIMESTAMPS & ACTIONS -->
       <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem; border-top:1px solid var(--border-color); padding-top:1rem;">
         <div style="font-size:0.75rem; color:var(--text-muted);">
-          <div>Última verificação: <strong style="color:#fff;" id="auditModalLastCheck">06/10/2026 — 08:07</strong></div>
+          <div>Última verificação: <strong style="color:#fff;" id="auditModalLastCheck">08/10/2026 — 08:07</strong></div>
           <div>Próxima verificação: <strong style="color:var(--accent-blue);">Automática (em 15 min)</strong></div>
         </div>
 
