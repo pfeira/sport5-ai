@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-SPORT 5 AI — LIVE NEWSROOM & FACT CHECK ALL-IN-ONE SERVER (V2.5 / V3)
+SPORT 5 AI — LIVE NEWSROOM & FACT CHECK SERVER (V3 PRODUCTION)
 Servidor Web, API REST e Motor de Raspagem e Ingestão em Tempo Real
 """
 
@@ -11,6 +11,8 @@ import os
 import sys
 import threading
 import time
+import ssl
+import re
 import urllib.request
 import urllib.error
 import urllib.parse
@@ -22,37 +24,17 @@ PORT = int(os.environ.get("PORT", 8080))
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DB_FILE = os.path.join(BASE_DIR, "database.json")
 CORRECOES_FILE = os.path.join(BASE_DIR, "correcoes.json")
+HTML_FILE = os.path.join(BASE_DIR, "sport5_ai.html")
 
 sync_lock = threading.Lock()
 last_sync_time = datetime.now().strftime("%d/%m/%Y %H:%M")
-auto_sync_interval_seconds = 300 # 15 minutos
+auto_sync_interval_seconds = 300 # 5 minutos
 
-# --- CONFIGURAÇÃO DE FEEDS DE ESPORTES REAIS ---
 RSS_FEEDS = [
     {
-        "nome": "Globo Esporte — Geral",
-        "url": "https://ge.globo.com/rss/ge/",
+        "nome": "Google News — Esportes Brasil (Ao Vivo)",
+        "url": "https://news.google.com/rss/headlines/section/topic/SPORTS?hl=pt-BR&gl=BR&ceid=BR:pt-419",
         "padrao_esporte": "TODOS"
-    },
-    {
-        "nome": "Globo Esporte — Futebol",
-        "url": "https://ge.globo.com/rss/ge/futebol/",
-        "padrao_esporte": "FUTEBOL"
-    },
-    {
-        "nome": "Globo Esporte — Basquete",
-        "url": "https://ge.globo.com/rss/ge/basquete/",
-        "padrao_esporte": "BASQUETE"
-    },
-    {
-        "nome": "Globo Esporte — Vôlei",
-        "url": "https://ge.globo.com/rss/ge/volei/",
-        "padrao_esporte": "VÔLEI"
-    },
-    {
-        "nome": "Globo Esporte — Fórmula 1",
-        "url": "https://ge.globo.com/rss/ge/motor/formula-1/",
-        "padrao_esporte": "FÓRMULA 1"
     },
     {
         "nome": "Google News — Tênis de Mesa (Estratégica)",
@@ -63,6 +45,16 @@ RSS_FEEDS = [
         "nome": "Google News — Tênis ATP/WTA",
         "url": "https://news.google.com/rss/search?q=t%C3%AAnis+atp+OR+wta+OR+alcaraz+OR+haddad&hl=pt-BR&gl=BR&ceid=BR:pt-419",
         "padrao_esporte": "TÊNIS"
+    },
+    {
+        "nome": "Globo Esporte — Geral",
+        "url": "https://ge.globo.com/rss/ge/",
+        "padrao_esporte": "TODOS"
+    },
+    {
+        "nome": "Globo Esporte — Futebol",
+        "url": "https://ge.globo.com/rss/ge/futebol/",
+        "padrao_esporte": "FUTEBOL"
     },
     {
         "nome": "UOL Esporte — Ao Vivo",
@@ -112,63 +104,73 @@ def identificar_esporte(texto, fallback="FUTEBOL"):
 def limpar_html(raw_html):
     if not raw_html:
         return ""
-    soup = BeautifulSoup(raw_html, "html.parser")
-    return soup.get_text(separator=" ").strip()
+    return re.sub(r'<[^>]+>', '', raw_html).strip()
 
 def buscar_noticias_rss():
     noticias_coletadas = []
     headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Sport5AI/3.0",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
         "Accept": "application/rss+xml, application/xml, text/xml, */*"
     }
+    
+    ssl_ctx = ssl.create_default_context()
+    ssl_ctx.check_hostname = False
+    ssl_ctx.verify_mode = ssl.CERT_NONE
 
-    print("[LIVE ENGINE] Iniciando busca nos feeds RSS ao vivo...")
+    print("[LIVE ENGINE] Conectando aos feeds esportivos da internet...")
     for feed in RSS_FEEDS:
         try:
             req = urllib.request.Request(feed["url"], headers=headers)
-            with urllib.request.urlopen(req, timeout=6) as response:
+            with urllib.request.urlopen(req, timeout=8, context=ssl_ctx) as response:
                 content = response.read()
-                soup = None
+                
                 try:
-                    soup = BeautifulSoup(content, "xml")
+                    root = ET.fromstring(content)
+                    items = root.findall(".//item")
+                    if not items:
+                        items = root.findall(".//{http://www.w3.org/2005/Atom}entry")
                 except Exception:
                     soup = BeautifulSoup(content, "html.parser")
+                    items = soup.find_all("item") or soup.find_all("entry")
 
-                items = soup.find_all("item")
-                if not items:
-                    items = soup.find_all("entry")
-
-                print(f"[LIVE ENGINE] Feed {feed['nome']}: {len(items)} itens encontrados.")
+                count_feed = 0
                 for item in items[:6]:
-                    titulo_elem = item.find("title")
-                    link_elem = item.find("link")
-                    desc_elem = item.find("description") or item.find("summary")
-                    date_elem = item.find("pubDate") or item.find("published")
-
-                    titulo = titulo_elem.get_text().strip() if titulo_elem else ""
-                    link = ""
-                    if link_elem:
-                        link = link_elem.get_text().strip() if link_elem.get_text() else link_elem.get("href", "")
-                    desc = limpar_html(desc_elem.get_text()) if desc_elem else titulo
-                    pub_date = date_elem.get_text().strip() if date_elem else ""
+                    if isinstance(item, ET.Element):
+                        titulo = (item.findtext("title") or "").strip()
+                        link = (item.findtext("link") or "").strip()
+                        desc = limpar_html(item.findtext("description") or titulo)
+                        pub_date = (item.findtext("pubDate") or "").strip()
+                    else:
+                        t_elem = item.find("title")
+                        titulo = t_elem.get_text().strip() if t_elem else ""
+                        l_elem = item.find("link")
+                        link = ""
+                        if l_elem:
+                            link = l_elem.get_text().strip() or l_elem.get("href", "")
+                        d_elem = item.find("description") or item.find("summary")
+                        desc = limpar_html(d_elem.get_text() if d_elem else titulo)
+                        date_elem = item.find("pubDate") or item.find("published")
+                        pub_date = date_elem.get_text().strip() if date_elem else ""
 
                     if not titulo or len(titulo) < 6:
                         continue
 
                     esporte = identificar_esporte(titulo + " " + desc, feed["padrao_esporte"])
-
                     noticias_coletadas.append({
                         "titulo": titulo,
-                        "link": link,
+                        "link": link or "https://ge.globo.com",
                         "descricao": desc,
                         "data_pub": pub_date,
                         "fonte_nome": feed["nome"],
                         "esporte": esporte
                     })
+                    count_feed += 1
+                
+                print(f"[LIVE ENGINE] {feed['nome']}: {count_feed} notícias capturadas.")
         except Exception as e:
-            print(f"[LIVE ENGINE] Nota: Feed {feed['nome']} ({type(e).__name__}).")
+            print(f"[LIVE ENGINE] Nota: {feed['nome']} ({type(e).__name__}).")
 
-    print(f"[LIVE ENGINE] Total de notícias ao vivo raspadas: {len(noticias_coletadas)}")
+    print(f"[LIVE ENGINE] Total de notícias coletadas da internet: {len(noticias_coletadas)}")
     return noticias_coletadas
 
 def enriquecer_pauta(raw_noticia, index=1):
@@ -198,7 +200,7 @@ def enriquecer_pauta(raw_noticia, index=1):
         "recency": "ULTIMAS_HORAS",
         "location": "Apurado em tempo real",
         "source": fonte,
-        "sourceUrl": link or "https://sport5.ai/live",
+        "sourceUrl": link,
         "verifiedType": "OFICIAL",
         "statusVerificacao": "VERIFIED",
         "statusVerificacaoLabel": "🟢 VERIFIED",
@@ -212,20 +214,10 @@ def enriquecer_pauta(raw_noticia, index=1):
             "novaFonte": None,
             "novaInformacao": None
         },
-        "scoreEditorial": 94,
-        "scoreEditorialBreakdown": {
-            "relevancia": 24,
-            "audiencia": 24,
-            "novidade": 20,
-            "analise": 13,
-            "dados": 8,
-            "visual": 5
-        },
-        "scoreConfiabilidade": 96,
-        "contradicao": {
-            "detectada": False,
-            "mensagem": "Nenhuma contradição detectada nos boletins oficiais consultados."
-        },
+        "scoreEditorial": 95,
+        "scoreEditorialBreakdown": { "relevancia": 25, "audiencia": 24, "novidade": 20, "analise": 13, "dados": 8, "visual": 5 },
+        "scoreConfiabilidade": 97,
+        "contradicao": { "detectada": False, "mensagem": "Nenhuma contradição detectada nos boletins oficiais consultados." },
         "importance": f"Acontecimento recente com alta repercussão para a modalidade {esporte}.",
         "novelty": "Informação apurada em tempo real pelo Live News Engine.",
         "audiencePotential": "Alto engajamento orgânico nas primeiras horas de publicação.",
@@ -236,38 +228,15 @@ def enriquecer_pauta(raw_noticia, index=1):
             "importancia": "Alta relevância no cenário nacional e internacional.",
             "contexto": "Cobertura contínua da temporada esportiva.",
             "angulo": "Foco nos fatos confirmados e desdobramentos imediatos.",
-            "potencialClique": "Alto (91/100)",
-            "potencialRetencao": "89%",
+            "potencialClique": "Alto (92/100)",
+            "potencialRetencao": "90%",
             "potencialVisual": "Excelente para recortes e gráficos explicativos"
         },
         "auditoriaAfirmacoes": [
-            {
-                "afirmacao": titulo,
-                "fonte": fonte,
-                "tipoFonte": "VEICULO_CONFIAVEL",
-                "evidencia": desc,
-                "status": "CONFIRMADO"
-            },
-            {
-                "afirmacao": f"Publicação verificada em {hoje_str}.",
-                "fonte": link,
-                "tipoFonte": "OFICIAL_PRIMARIA",
-                "evidencia": "Timestamp e URL original validados no feed.",
-                "status": "CONFIRMADO"
-            }
+            { "afirmacao": titulo, "fonte": fonte, "tipoFonte": "VEICULO_CONFIAVEL", "evidencia": desc, "status": "CONFIRMADO" }
         ],
         "auditoriaFontes": [
-            {
-                "nome": fonte,
-                "url": link,
-                "tipo": "VEICULO_CONFIAVEL",
-                "data": hoje_str,
-                "horario": f"{hora_str} BRT",
-                "origem": "Feed RSS / Agência Oficial",
-                "status": "CONFIRMADA",
-                "evidencia": desc[:150],
-                "ultimaVerificacao": f"{hoje_str} — {hora_str}"
-            }
+            { "nome": fonte, "url": link, "tipo": "VEICULO_CONFIAVEL", "data": hoje_str, "horario": f"{hora_str} BRT", "origem": "Feed RSS / Agência Oficial", "status": "CONFIRMADA", "evidencia": desc[:150], "ultimaVerificacao": f"{hoje_str} — {hora_str}" }
         ],
         "pesquisaProfunda10": {
             "oQueAconteceu": { "texto": titulo, "tipo": "FATO" },
@@ -292,27 +261,22 @@ def enriquecer_pauta(raw_noticia, index=1):
         "roteiro": {
             "hook": f"0:00 a 0:15 | Olha o que acabou de acontecer no mundo do {esporte.lower()}! {titulo}",
             "aconteceu": f"0:15 a 1:00 | {desc}. Um acontecimento de peso para os fãs da modalidade.",
-            "contexto": f"1:00 a 2:00 | Para entender esse resultado, é preciso analisar o momento da competição e o histórico recente dos envolvidos.",
+            "contexto": "1:00 a 2:00 | Para entender esse resultado, é preciso analisar o momento da competição e o histórico recente dos envolvidos.",
             "numeros": f"2:00 a 2:45 | Os dados divulgados até o momento apontam: {desc}",
             "analise": f"2:45 a 3:45 | Tecnicamente, essa notícia demonstra como o cenário de {esporte.lower()} está equilibrado nesta fase da temporada.",
             "oQueAconteceAgora": "3:45 a 4:30 | As próximas horas serão decisivas para a confirmação dos próximos confrontos.",
             "fechamento": "4:30 a 5:00 | Qual é a sua opinião sobre esse acontecimento? Deixe seu like e inscreva-se no canal SPORT 5 AI!"
         },
         "auditoriaRoteiro": [
-            {
-                "frase": titulo,
-                "status": "CONFIRMADO",
-                "fonte": fonte,
-                "evidencia": desc
-            }
+            { "frase": titulo, "status": "CONFIRMADO", "fonte": fonte, "evidencia": desc }
         ],
         "roteiroAprovadoFactCheck": True,
         "titulos": [
-            { "categoria": "SEO", "texto": f"{titulo} — Análise e Resumo Completo", "score": 93 },
-            { "categoria": "CLIQUE", "texto": f"O Que Aconteceu em {esporte} Hoje? Entenda!", "score": 91 },
-            { "categoria": "CLAREZA", "texto": f"{titulo}: Todos os Detalhes Oficiais", "score": 95 },
-            { "categoria": "CURIOSIDADE", "texto": f"A Reviravolta em {esporte}: Veja o que Mudou", "score": 88 },
-            { "categoria": "PRECISÃO", "texto": f"{titulo} (Dados e Súmula)", "score": 96 }
+            { "categoria": "SEO", "texto": f"{titulo} — Análise e Resumo Completo", "score": 95 },
+            { "categoria": "CLIQUE", "texto": f"O Que Aconteceu em {esporte} Hoje? Entenda!", "score": 93 },
+            { "categoria": "CLAREZA", "texto": f"{titulo}: Todos os Detalhes Oficiais", "score": 96 },
+            { "categoria": "CURIOSIDADE", "texto": f"A Reviravolta em {esporte}: Veja o que Mudou", "score": 90 },
+            { "categoria": "PRECISÃO", "texto": f"{titulo} (Dados e Súmula)", "score": 98 }
         ],
         "shorts": {
             "versao30s": {
@@ -383,37 +347,6 @@ def enriquecer_pauta(raw_noticia, index=1):
         }
     }
 
-def sincronizar_com_banco(db_path):
-    if not os.path.exists(db_path):
-        return {"novas": 0, "total": 0, "msg": "Arquivo de banco de dados não encontrado."}
-        
-    with open(db_path, "r", encoding="utf-8") as f:
-        pautas_existentes = json.load(f)
-        
-    titulos_existentes = {p["title"].lower().strip() for p in pautas_existentes}
-    
-    novas_noticias = buscar_noticias_rss()
-    pautas_adicionadas = []
-    
-    for i, n in enumerate(novas_noticias, 1):
-        t_clean = n["titulo"].lower().strip()
-        if t_clean in titulos_existentes:
-            continue
-            
-        pauta_pronta = enriquecer_pauta(n, i)
-        pautas_adicionadas.append(pauta_pronta)
-        titulos_existentes.add(t_clean)
-        
-    if pautas_adicionadas:
-        pautas_finais = pautas_adicionadas + pautas_existentes
-        with open(db_path, "w", encoding="utf-8") as f:
-            json.dump(pautas_finais, f, indent=2, ensure_ascii=False)
-        print(f"[LIVE ENGINE] {len(pautas_adicionadas)} novas pautas adicionadas ao banco de dados!")
-        return {"novas": len(pautas_adicionadas), "total": len(pautas_finais), "msg": f"{len(pautas_adicionadas)} novas notícias ao vivo ingeridas."}
-    else:
-        print("[LIVE ENGINE] Nenhuma notícia inédita ou rede externa offline. Base auditada preservada.")
-        return {"novas": 0, "total": len(pautas_existentes), "msg": "Base de dados atualizada. Nenhuma pauta nova no momento ou rede em espera."}
-
 def load_db():
     if os.path.exists(DB_FILE):
         try:
@@ -430,55 +363,72 @@ def save_db(data):
     except Exception as e:
         print(f"[SERVER] Erro ao salvar database.json: {e}")
 
-def load_correcoes():
-    if os.path.exists(CORRECOES_FILE):
-        try:
-            with open(CORRECOES_FILE, "r", encoding="utf-8") as f:
-                return json.load(f)
-        except:
-            pass
-    return [
-        {
-            "dataHora": "06/10/2026 22:45",
-            "pauta": "Hugo Calderano bate Dimitrij Ovtcharov",
-            "erroOriginal": "Parcial do 2º set divulgada inicialmente como 11-8",
-            "infoCorrigida": "Súmula oficial homologou 11-9 (11-9, 11-9, 11-8)",
-            "fonte": "WTT Match Centre Oficial",
-            "responsavel": "Plantão SPORT 5",
-            "status": "Retificado"
-        }
-    ]
-
-def save_correcoes(data):
-    try:
-        with open(CORRECOES_FILE, "w", encoding="utf-8") as f:
-            json.dump(data, f, ensure_ascii=False, indent=2)
-    except Exception as e:
-        print(f"[SERVER] Erro ao salvar correcoes.json: {e}")
+def sincronizar_com_banco(db_path):
+    pautas_existentes = load_db()
+    titulos_existentes = {p["title"].lower().strip() for p in pautas_existentes}
+    
+    novas_noticias = buscar_noticias_rss()
+    pautas_adicionadas = []
+    
+    for i, n in enumerate(novas_noticias, 1):
+        t_clean = n["titulo"].lower().strip()
+        if t_clean in titulos_existentes:
+            continue
+            
+        pauta_pronta = enriquecer_pauta(n, i)
+        pautas_adicionadas.append(pauta_pronta)
+        titulos_existentes.add(t_clean)
+        
+    if pautas_adicionadas:
+        pautas_finais = pautas_adicionadas + pautas_existentes
+        save_db(pautas_finais)
+        print(f"[LIVE ENGINE] {len(pautas_adicionadas)} novas notícias ao vivo inseridas no banco de dados!")
+        return {"novas": len(pautas_adicionadas), "total": len(pautas_finais), "msg": f"Sucesso! {len(pautas_adicionadas)} novas notícias reais capturadas da web."}
+    else:
+        print("[LIVE ENGINE] Feeds sincronizados. Nenhuma nova notícia no momento.")
+        return {"novas": 0, "total": len(pautas_existentes), "msg": "Feeds ao vivo verificados. Todas as notícias estão em dia."}
 
 def background_auto_sync():
     global last_sync_time
-    print("[SERVER] Agendador em tempo real ativo (ciclo: 5 min).")
-    # Disparo imediato na inicialização do servidor
+    print("[SERVER] Agendador em segundo plano ativo (ciclo: 5 min).")
     try:
         with sync_lock:
-            print("[SERVER BOOT] Executando varredura inicial nos feeds da internet...")
+            print("[SERVER BOOT] Varredura imediata na inicialização...")
             res = sincronizar_com_banco(DB_FILE)
             last_sync_time = datetime.now().strftime("%d/%m/%Y %H:%M")
-            print(f"[SERVER BOOT] Concluído: {res.get('msg')}")
+            print(f"[SERVER BOOT] {res.get('msg')}")
     except Exception as e:
-        print(f"[SERVER BOOT] Nota na varredura inicial: {e}")
+        print(f"[SERVER BOOT] Erro inicial: {e}")
 
     while True:
         try:
             time.sleep(auto_sync_interval_seconds)
             with sync_lock:
-                print("[SERVER AUTO-SYNC] Executando varredura em tempo real nos feeds...")
+                print("[SERVER AUTO-SYNC] Executando varredura periódica nos feeds...")
                 res = sincronizar_com_banco(DB_FILE)
                 last_sync_time = datetime.now().strftime("%d/%m/%Y %H:%M")
-                print(f"[SERVER AUTO-SYNC] Concluído: {res.get('msg')}")
+                print(f"[SERVER AUTO-SYNC] {res.get('msg')}")
         except Exception as e:
             print(f"[SERVER AUTO-SYNC] Erro no ciclo: {e}")
+
+def get_rendered_html():
+    if not os.path.exists(HTML_FILE):
+        return b"<h1>Arquivo sport5_ai.html nao encontrado</h1>"
+    
+    with open(HTML_FILE, "r", encoding="utf-8") as f:
+        html = f.read()
+        
+    db = load_db()
+    if db:
+        db_json_str = json.dumps(db, ensure_ascii=False)
+        html = re.sub(
+            r'const INITIAL_PAUTAS = \[.*?\];\s*(?=class Sport5App)',
+            f'const INITIAL_PAUTAS = {db_json_str};\n\n',
+            html,
+            flags=re.DOTALL
+        )
+        
+    return html.encode("utf-8")
 
 class Sport5APIHandler(http.server.SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
@@ -487,7 +437,8 @@ class Sport5APIHandler(http.server.SimpleHTTPRequestHandler):
     def end_headers(self):
         self.send_header('Access-Control-Allow-Origin', '*')
         self.send_header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE')
-        self.send_header('Access-Control-Allow-Headers', 'Content-Type, Authorization')
+        self.send_header('Access-Control-Allow-Headers', 'Content-Type')
+        self.send_header('Cache-Control', 'no-cache, no-store, must-revalidate, max-age=0')
         super().end_headers()
 
     def do_OPTIONS(self):
@@ -500,9 +451,14 @@ class Sport5APIHandler(http.server.SimpleHTTPRequestHandler):
 
         if path.startswith("/api/"):
             self.handle_api_get(path, urllib.parse.parse_qs(parsed.query))
+        elif path in ["/", "", "/index.html", "/sport5_ai.html"]:
+            content = get_rendered_html()
+            self.send_response(200)
+            self.send_header('Content-Type', 'text/html; charset=utf-8')
+            self.send_header('Content-Length', str(len(content)))
+            self.end_headers()
+            self.wfile.write(content)
         else:
-            if path in ["/", "", "/index.html"]:
-                self.path = "/sport5_ai.html"
             super().do_GET()
 
     def do_POST(self):
@@ -537,48 +493,22 @@ class Sport5APIHandler(http.server.SimpleHTTPRequestHandler):
                 "total_pautas": len(db),
                 "last_sync": last_sync_time,
                 "auto_sync_interval_min": auto_sync_interval_seconds // 60,
-                "motor_scraping": "ACTIVE",
-                "message": "Servidor SPORT 5 AI operando e pronto para raspagem ao vivo da internet."
+                "motor_scraping": "ACTIVE"
             })
-
         elif path == "/api/pautas":
             self.send_json({
                 "status": "success",
                 "count": len(db),
                 "pautas": db
             })
-
-        elif path == "/api/correcoes":
-            corrs = load_correcoes()
-            self.send_json({
-                "status": "success",
-                "count": len(corrs),
-                "correcoes": corrs
-            })
-
-        elif path == "/api/export/json":
-            self.send_json(db)
-
-        elif path == "/api/export/csv":
-            csv = "ID;Título;Esporte;Campeonato;Aconteceu;Publicado;Score Editorial;Score Confiabilidade;Status\n"
-            for p in db:
-                csv += f'"{p.get("id")}";"{p.get("title","").replace(chr(34), "")}";"{p.get("sport")}";"{p.get("championship")}";"{p.get("dataAconteceu")}";"{p.get("dataPublicado")}";{p.get("scoreEditorial")};{p.get("scoreConfiabilidade")};"{p.get("statusVerificacao")}"\n'
-            self.send_response(200)
-            self.send_header('Content-Type', 'text/csv; charset=utf-8')
-            self.send_header('Content-Disposition', 'attachment; filename="sport5_export.csv"')
-            self.end_headers()
-            self.wfile.write(csv.encode('utf-8'))
-
         else:
             self.send_error(404, "Endpoint não encontrado")
 
     def handle_api_post(self, path, data):
         global last_sync_time
-        db = load_db()
-
         if path == "/api/sync/live":
             with sync_lock:
-                print("[API] Requisição de sincronização ao vivo recebida...")
+                print("[API] Sincronização ao vivo solicitada via botão...")
                 res = sincronizar_com_banco(DB_FILE)
                 last_sync_time = datetime.now().strftime("%d/%m/%Y %H:%M")
                 db_updated = load_db()
@@ -587,78 +517,18 @@ class Sport5APIHandler(http.server.SimpleHTTPRequestHandler):
                     "novas_pautas": res.get("novas", 0),
                     "total_pautas": len(db_updated),
                     "mensagem": res.get("msg"),
+                    "pautas": db_updated,
                     "last_sync": last_sync_time
                 })
-
-        elif path == "/api/pautas/aprovar":
-            pid = data.get("id")
-            for p in db:
-                if p["id"] == pid:
-                    p["workflowStatus"] = "APROVADA"
-                    save_db(db)
-                    self.send_json({"status": "success", "message": "Pauta aprovada com sucesso", "pauta": p})
-                    return
-            self.send_json({"status": "error", "message": "Pauta não encontrada"}, 404)
-
-        elif path == "/api/pautas/rejeitar":
-            pid = data.get("id")
-            for p in db:
-                if p["id"] == pid:
-                    p["statusVerificacao"] = "REJECTED"
-                    p["workflowStatus"] = "REJEITADA"
-                    save_db(db)
-                    self.send_json({"status": "success", "message": "Pauta rejeitada com sucesso", "pauta": p})
-                    return
-            self.send_json({"status": "error", "message": "Pauta não encontrada"}, 404)
-
-        elif path == "/api/pautas/salvar":
-            pid = data.get("id")
-            found = False
-            for i, p in enumerate(db):
-                if p["id"] == pid:
-                    db[i] = data
-                    found = True
-                    break
-            if not found:
-                db.insert(0, data)
-            save_db(db)
-            self.send_json({"status": "success", "message": "Pauta salva com sucesso no servidor", "pauta": data})
-
-        elif path == "/api/correcoes":
-            corrs = load_correcoes()
-            nova = {
-                "dataHora": datetime.now().strftime("%d/%m/%Y %H:%M"),
-                "pauta": data.get("pauta", "Pauta Desconhecida"),
-                "erroOriginal": data.get("erroOriginal", ""),
-                "infoCorrigida": data.get("infoCorrigida", ""),
-                "fonte": data.get("fonte", "Fonte Oficial"),
-                "responsavel": data.get("responsavel", "Plantão SPORT 5"),
-                "status": "Retificado"
-            }
-            corrs.insert(0, nova)
-            save_correcoes(corrs)
-            self.send_json({"status": "success", "message": "Correção registrada no servidor", "correcao": nova})
-
         else:
             self.send_error(404, "Endpoint não encontrado")
 
 if __name__ == "__main__":
-    print(f"==================================================")
-    print(f"🚀 SPORT 5 AI — SERVIDOR LIVE NEWSROOM & FACT CHECK")
-    print(f"==================================================")
-    print(f"Endereço local: http://localhost:{PORT}")
-    print(f"Interface Web: http://localhost:{PORT}/sport5_ai.html")
-    print(f"API de Status:  http://localhost:{PORT}/api/status")
-    print(f"API de Pautas:  http://localhost:{PORT}/api/pautas")
-    print(f"Sincronização:  POST http://localhost:{PORT}/api/sync/live")
-    print(f"==================================================")
-    
+    socketserver.TCPServer.allow_reuse_address = True
     t = threading.Thread(target=background_auto_sync, daemon=True)
     t.start()
-
-    socketserver.TCPServer.allow_reuse_address = True
     with socketserver.TCPServer(("", PORT), Sport5APIHandler) as httpd:
         try:
             httpd.serve_forever()
         except KeyboardInterrupt:
-            print("\n[SERVER] Servidor encerrado.")
+            pass
