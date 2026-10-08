@@ -7690,6 +7690,7 @@ class Sport5App {
     this.renderCorrecoesTable();
     this.updateDashboardMetrics();
     this.verificarStatusBackend();
+    this.iniciarAutoRefresh();
   }
 
   // --- FILTERS & CONTROLS ---
@@ -7832,18 +7833,30 @@ class Sport5App {
     if (m) m.classList.remove('active');
   }
 
-  async carregarPautasDoServidor() {
+
+  iniciarAutoRefresh() {
+    if (this.autoRefreshInterval) clearInterval(this.autoRefreshInterval);
+    // Polling a cada 30 segundos para atualizar pautas em tempo real
+    this.autoRefreshInterval = setInterval(async () => {
+      if (this.isOnline) {
+        await this.carregarPautasDoServidor(true);
+      }
+    }, 30000);
+  }
+
+  async carregarPautasDoServidor(silencioso = false) {
     try {
       const res = await fetch(`${this.backendUrl}/api/pautas`);
       if (res.ok) {
         const data = await res.json();
         if (data.pautas && data.pautas.length > 0) {
+          const oldCount = this.pautas.length;
           this.pautas = data.pautas;
           this.renderCentralRedacao();
           this.renderTop10List();
           this.renderPautasRadar();
           this.renderHistoricoTable();
-          // Manter pauta ativa
+          
           const stillExists = this.pautas.find(p => p.id === this.activePauta.id);
           if (stillExists) {
             this.activePauta = stillExists;
@@ -7851,6 +7864,10 @@ class Sport5App {
             this.activePauta = this.pautas[0];
           }
           this.loadPautaData(this.activePauta);
+
+          if (silencioso && data.pautas.length > oldCount) {
+            this.showToast();
+          }
         }
       }
     } catch (e) {
@@ -9311,11 +9328,18 @@ class Sport5App {
     this.showToast("Nova pauta cadastrada e auditada com sucesso no Radar!");
   }
 
-  gerarPautaAction() {
-    this.showToast("⚡ Gerando nova pauta com Inteligência Editorial...");
-    setTimeout(() => {
-      this.openNewPautaModal();
-    }, 400);
+  async gerarPautaAction() {
+    this.showToast("⚡ Rastreando feeds ao vivo e gerando nova pauta em tempo real...");
+    
+    // Dispara varredura imediata na internet
+    await this.sincronizarFeedsAoVivo();
+
+    // Seleciona a pauta mais recente/urgente do radar
+    if (this.pautas && this.pautas.length > 0) {
+      const topPauta = this.pautas.find(p => p.statusVerificacao === 'VERIFIED') || this.pautas[0];
+      this.selecionarPauta(topPauta.id);
+      this.showToast();
+    }
   }
 
   gerarVideoCompletoAction() {

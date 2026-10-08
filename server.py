@@ -25,7 +25,7 @@ CORRECOES_FILE = os.path.join(BASE_DIR, "correcoes.json")
 
 sync_lock = threading.Lock()
 last_sync_time = datetime.now().strftime("%d/%m/%Y %H:%M")
-auto_sync_interval_seconds = 900 # 15 minutos
+auto_sync_interval_seconds = 300 # 15 minutos
 
 # --- CONFIGURAÇÃO DE FEEDS DE ESPORTES REAIS ---
 RSS_FEEDS = [
@@ -118,37 +118,45 @@ def limpar_html(raw_html):
 def buscar_noticias_rss():
     noticias_coletadas = []
     headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Sport5AI/3.0"
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Sport5AI/3.0",
+        "Accept": "application/rss+xml, application/xml, text/xml, */*"
     }
 
     print("[LIVE ENGINE] Iniciando busca nos feeds RSS ao vivo...")
     for feed in RSS_FEEDS:
         try:
             req = urllib.request.Request(feed["url"], headers=headers)
-            with urllib.request.urlopen(req, timeout=5) as response:
+            with urllib.request.urlopen(req, timeout=6) as response:
                 content = response.read()
-                root = ET.fromstring(content)
-                
-                channel = root.find("channel")
-                items = channel.findall("item") if channel is not None else root.findall("item")
-                
+                soup = None
+                try:
+                    soup = BeautifulSoup(content, "xml")
+                except Exception:
+                    soup = BeautifulSoup(content, "html.parser")
+
+                items = soup.find_all("item")
+                if not items:
+                    items = soup.find_all("entry")
+
                 print(f"[LIVE ENGINE] Feed {feed['nome']}: {len(items)} itens encontrados.")
-                for item in items[:5]:
+                for item in items[:6]:
                     titulo_elem = item.find("title")
                     link_elem = item.find("link")
-                    desc_elem = item.find("description")
-                    date_elem = item.find("pubDate")
-                    
-                    titulo = titulo_elem.text.strip() if titulo_elem is not None and titulo_elem.text else ""
-                    link = link_elem.text.strip() if link_elem is not None and link_elem.text else ""
-                    desc = limpar_html(desc_elem.text if desc_elem is not None and desc_elem.text else "")
-                    pub_date = date_elem.text.strip() if date_elem is not None and date_elem.text else ""
-                    
-                    if not titulo:
+                    desc_elem = item.find("description") or item.find("summary")
+                    date_elem = item.find("pubDate") or item.find("published")
+
+                    titulo = titulo_elem.get_text().strip() if titulo_elem else ""
+                    link = ""
+                    if link_elem:
+                        link = link_elem.get_text().strip() if link_elem.get_text() else link_elem.get("href", "")
+                    desc = limpar_html(desc_elem.get_text()) if desc_elem else titulo
+                    pub_date = date_elem.get_text().strip() if date_elem else ""
+
+                    if not titulo or len(titulo) < 6:
                         continue
-                        
+
                     esporte = identificar_esporte(titulo + " " + desc, feed["padrao_esporte"])
-                    
+
                     noticias_coletadas.append({
                         "titulo": titulo,
                         "link": link,
@@ -158,7 +166,7 @@ def buscar_noticias_rss():
                         "esporte": esporte
                     })
         except Exception as e:
-            print(f"[LIVE ENGINE] Nota: Feed {feed['nome']} aguardando internet ({type(e).__name__}).")
+            print(f"[LIVE ENGINE] Nota: Feed {feed['nome']} ({type(e).__name__}).")
 
     print(f"[LIVE ENGINE] Total de notícias ao vivo raspadas: {len(noticias_coletadas)}")
     return noticias_coletadas
@@ -450,12 +458,22 @@ def save_correcoes(data):
 
 def background_auto_sync():
     global last_sync_time
-    print("[SERVER] Agendador em segundo plano ativo (ciclo: 15 min).")
+    print("[SERVER] Agendador em tempo real ativo (ciclo: 5 min).")
+    # Disparo imediato na inicialização do servidor
+    try:
+        with sync_lock:
+            print("[SERVER BOOT] Executando varredura inicial nos feeds da internet...")
+            res = sincronizar_com_banco(DB_FILE)
+            last_sync_time = datetime.now().strftime("%d/%m/%Y %H:%M")
+            print(f"[SERVER BOOT] Concluído: {res.get('msg')}")
+    except Exception as e:
+        print(f"[SERVER BOOT] Nota na varredura inicial: {e}")
+
     while True:
         try:
             time.sleep(auto_sync_interval_seconds)
             with sync_lock:
-                print("[SERVER AUTO-SYNC] Executando varredura periódica nos feeds...")
+                print("[SERVER AUTO-SYNC] Executando varredura em tempo real nos feeds...")
                 res = sincronizar_com_banco(DB_FILE)
                 last_sync_time = datetime.now().strftime("%d/%m/%Y %H:%M")
                 print(f"[SERVER AUTO-SYNC] Concluído: {res.get('msg')}")
