@@ -1,0 +1,1439 @@
+  <!-- TOP HEADER -->
+  <header>
+    <div class="header-container">
+      <div class="brand">
+        <div class="brand-logo">S5</div>
+        <div class="brand-title">
+          <h1>SPORT 5 AI <span class="v2-badge">V2.5 — LIVE NEWSROOM + FACT CHECK + EDITORIAL INTELLIGENCE</span></h1>
+          <p>“Central de Inteligência Editorial Esportiva • Entenda o que aconteceu no esporte. Em até 5 minutos.”</p>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <button class="btn btn-primary" onclick="app.gerarPautaAction()">
+          <span>⚡</span> GERAR PAUTA
+        </button>
+        <button class="btn btn-outline" onclick="app.gerarVideoCompletoAction()">
+          <span>🎬</span> GERAR VÍDEO
+        </button>
+        <button class="btn btn-outline" onclick="app.gerarShortAction()">
+          <span>📱</span> GERAR SHORT
+        </button>
+        <button class="btn btn-outline" onclick="app.switchWorkflow('historico')">
+          <span>📋</span> HISTÓRICO
+        </button>
+        <button class="btn btn-sm btn-outline" onclick="app.openRoadmapModal()" style="border-color:var(--accent-purple); color:var(--accent-purple);" title="Ver Roadmap V1 a V8">
+          <span>🗺️</span> Roadmap V1→V8
+        </button>
+        <button class="btn btn-sm btn-outline" onclick="app.openNewPautaModal()" title="Cadastrar Pauta Personalizada">
+          <span>➕</span> Nova Pauta
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- EDITORIAL GOLDEN RULE BANNER -->
+  <div class="golden-rule-banner">
+    <div class="golden-rule-text">
+      <span class="golden-rule-badge">REGRA DE OURO</span>
+      <span>“SE NÃO PODE SER COMPROVADO, NÃO PODE SER PUBLICADO COMO FATO.”</span>
+    </div>
+    <div style="display:flex; align-items:center; gap:0.75rem; font-size:0.72rem;">
+      <span>🟢 Verificada Oficial</span>
+      <span>🟡 Parcial</span>
+      <span>🟠 Em Verificação</span>
+      <span>🔴 Rejeitada</span>
+      <span style="color:var(--primary); font-weight:700;">• Score Confiabilidade 0-100</span>
+    </div>
+  </div>
+
+  <!-- CONTROLES: EDITORIAS -->
+  <div class="editorias-bar">
+    <div class="editorias-container">
+      <div class="editorias-list" id="editoriasList">
+        <button class="tab-editoria active" data-sport="TODOS" onclick="app.filterSport('TODOS')">
+          <span>🌐</span> TODAS AS EDITORIAS
+        </button>
+        <button class="tab-editoria" data-sport="FUTEBOL" onclick="app.filterSport('FUTEBOL')">
+          <span>⚽</span> FUTEBOL
+        </button>
+        <button class="tab-editoria" data-sport="BASQUETE" onclick="app.filterSport('BASQUETE')">
+          <span>🏀</span> BASQUETE
+        </button>
+        <button class="tab-editoria" data-sport="VÔLEI" onclick="app.filterSport('VÔLEI')">
+          <span>🏐</span> VÔLEI
+        </button>
+        <button class="tab-editoria" data-sport="FÓRMULA 1" onclick="app.filterSport('FÓRMULA 1')">
+          <span>🏎️</span> FÓRMULA 1
+        </button>
+        <button class="tab-editoria" data-sport="TÊNIS" onclick="app.filterSport('TÊNIS')">
+          <span>🎾</span> TÊNIS
+        </button>
+        <button class="tab-editoria" data-sport="TÊNIS DE MESA" onclick="app.filterSport('TÊNIS DE MESA')">
+          <span>🏓</span> TÊNIS DE MESA <span class="badge-estrategica">ESTRATÉGICA</span>
+        </button>
+      </div>
+
+      <div id="backendConnectionIndicator" style="font-size: 0.78rem; display: flex; align-items: center; gap: 0.45rem; cursor: pointer; padding: 4px 8px; border-radius: 4px; background: rgba(0,0,0,0.25); border: 1px solid rgba(255,255,255,0.08);" onclick="app.abrirModalConexao()" title="Clique para detalhes de conexão online e motor de scraping">
+        <span class="radar-pulse-dot" id="connPulseDot"></span>
+        <span id="connStatusText" style="color:#6ee7b7; font-weight:800;">🟢 ONLINE: Backend Conectado</span>
+        <span style="color:var(--text-muted);" id="connSubText">• Auto-Sync 15m</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- WORKFLOW STEPS TABS -->
+  <div class="workflow-tabs">
+    <div class="workflow-container">
+      <button class="wf-btn active" data-view="radar" onclick="app.switchWorkflow('radar')">
+        <span>📡</span> 1. Radar & Auditoria (Top 10)
+      </button>
+      <button class="wf-btn" data-view="pesquisa" onclick="app.switchWorkflow('pesquisa')">
+        <span>🔍</span> 2. Pesquisa Aprofundada
+      </button>
+      <button class="wf-btn" data-view="roteiro" onclick="app.switchWorkflow('roteiro')">
+        <span>📝</span> 3. Roteiro (5 Min)
+      </button>
+      <button class="wf-btn" data-view="titulos" onclick="app.switchWorkflow('titulos')">
+        <span>🎯</span> 4. Títulos & YouTube
+      </button>
+      <button class="wf-btn" data-view="shorts" onclick="app.switchWorkflow('shorts')">
+        <span>📱</span> 5. Shorts (3x)
+      </button>
+      <button class="wf-btn" data-view="thumbnail" onclick="app.switchWorkflow('thumbnail')">
+        <span>🖼️</span> 6. Thumbnail Studio
+      </button>
+      <button class="wf-btn" data-view="storyboard" onclick="app.switchWorkflow('storyboard')">
+        <span>🎞️</span> 7. Storyboard
+      </button>
+      <button class="wf-btn" data-view="qa" onclick="app.switchWorkflow('qa')">
+        <span>🛡️</span> 8. Auditoria QA
+      </button>
+      <button class="wf-btn" data-view="historico" onclick="app.switchWorkflow('historico')">
+        <span>📂</span> 9. Histórico
+      </button>
+      <button class="wf-btn" data-view="dashboard" onclick="app.switchWorkflow('dashboard')">
+        <span>📊</span> 10. Dashboard & Analytics
+      </button>
+    </div>
+  </div>
+
+  <!-- MAIN WRAPPER -->
+  <main>
+
+    <!-- ACTIVE PAUTA INDICATOR BAR -->
+    <div class="active-pauta-bar" id="activePautaBar">
+      <div class="active-pauta-info">
+        <h4>Pauta Ativa em Produção na Redação</h4>
+        <p id="activePautaTitle">Hugo Calderano bate Dimitrij Ovtcharov por 3 a 0 no China Smash 2026 em Beijing e avança no WTT Grand Smash</p>
+      </div>
+      <div style="display: flex; gap: 0.6rem; align-items: center; flex-wrap: wrap;">
+        <span class="badge badge-tenisdemesa" id="activePautaSport">Tênis de Mesa</span>
+        <span class="badge" style="background:var(--primary); color:#000; font-weight:800;" id="activePautaEditorialBadge">Editorial: 98/100</span>
+        <span class="badge" style="background:var(--accent-green); color:#000; font-weight:900;" id="activePautaReliabilityBadge">Confiabilidade: 96/100</span>
+        <button class="btn btn-sm btn-info" onclick="app.openAuditModalForActive()">
+          <span>🔍</span> Ver Auditoria
+        </button>
+        <button class="btn btn-sm btn-outline" onclick="app.exportFullProject()">
+          <span>💾</span> Exportar Dossiê
+        </button>
+      </div>
+    </div>
+
+    <!-- VIEW 1: RADAR & FACT CHECK ENGINE (V2.1) -->
+    <section class="view-section active" id="view-radar">
+
+    <!-- CENTRAL DA REDAÇÃO / NOVA HOME (V2.5) -->
+    <div class="central-redacao-panel">
+      <div class="central-redacao-top">
+        <div class="central-redacao-title">
+          <span style="font-size: 1.4rem;">🏢</span>
+          <div>
+            <h2>CENTRAL DA REDAÇÃO SPORT 5 — LIVE NEWSROOM</h2>
+            <div style="font-size: 0.75rem; color: var(--text-muted);">
+              Monitoramento em tempo real • Fact Check 2.5 • Inteligência Editorial • Aprovação Humana Obrigatória
+            </div>
+          </div>
+        </div>
+
+        <!-- INDICADORES DE STATUS -->
+        <div class="indicators-row">
+          <span class="indicator-pill ind-urgente" onclick="app.filterByStatusPill('URGENTE')">
+            🔴 URGENTE: <strong id="indUrgenteCount">2</strong>
+          </span>
+          <span class="indicator-pill ind-potencial" onclick="app.filterByStatusPill('ALTO_POTENCIAL')">
+            🔥 ALTO POTENCIAL: <strong id="indPotencialCount">6</strong>
+          </span>
+          <span class="indicator-pill ind-verificada" onclick="app.filterByStatusPill('VERIFICADA')">
+            🟢 VERIFICADA: <strong id="indVerificadaCount">14</strong>
+          </span>
+          <span class="indicator-pill ind-verificando" onclick="app.filterByStatusPill('EM_VERIFICACAO')">
+            🟡 EM VERIFICAÇÃO: <strong id="indVerificandoCount">2</strong>
+          </span>
+          <span class="indicator-pill ind-aprovada" onclick="app.filterByStatusPill('APROVADA')">
+            🔵 APROVADA: <strong id="indAprovadaCount">5</strong>
+          </span>
+          <span class="indicator-pill ind-publicada" onclick="app.filterByStatusPill('PUBLICADA')">
+            ⚫ PUBLICADA: <strong id="indPublicadaCount">3</strong>
+          </span>
+        </div>
+      </div>
+
+      <!-- OPERATIONAL COUNTERS (6 ESTADOS) -->
+      <div class="ops-counters-grid">
+        <div class="ops-card">
+          <div class="ops-card-label">📌 Pautas Novas</div>
+          <div class="ops-card-val" id="statPautasNovas">19</div>
+        </div>
+        <div class="ops-card">
+          <div class="ops-card-label">🟢 Verificadas</div>
+          <div class="ops-card-val" style="color:var(--accent-green);" id="statPautasVerificadas">14</div>
+        </div>
+        <div class="ops-card">
+          <div class="ops-card-label">⏳ Aguardando Decisão</div>
+          <div class="ops-card-val" style="color:var(--primary);" id="statPautasAguardando">7</div>
+        </div>
+        <div class="ops-card">
+          <div class="ops-card-label">🔴 Rejeitadas (Fake)</div>
+          <div class="ops-card-val" style="color:var(--accent-red);" id="statPautasRejeitadas">3</div>
+        </div>
+        <div class="ops-card">
+          <div class="ops-card-label">🎬 Vídeos em Produção</div>
+          <div class="ops-card-val" style="color:var(--accent-blue);" id="statVideosProducao">2</div>
+        </div>
+        <div class="ops-card">
+          <div class="ops-card-label">🚀 Vídeos Publicados</div>
+          <div class="ops-card-val" style="color:#a855f7;" id="statVideosPublicados">3</div>
+        </div>
+      </div>
+
+      <!-- PAINEL EDITOR-CHEFE QUICK DECISION BAR -->
+      <div class="editor-chefe-banner">
+        <div class="editor-chefe-info">
+          <span class="editor-chefe-badge">MODO EDITOR-CHEFE</span>
+          <span style="font-size: 0.85rem; color: #fff;">
+            Você tem <strong id="editorChefePendingCount" style="color:var(--primary);">7 pautas</strong> aguardando decisão editorial para produção.
+          </span>
+        </div>
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+          <button class="btn btn-sm btn-success" onclick="app.aprovarPauta(app.activePauta.id)">
+            <span>✅</span> Aprovar Ativa
+          </button>
+          <button class="btn btn-sm btn-danger" onclick="app.rejeitarPauta(app.activePauta.id)">
+            <span>❌</span> Rejeitar Ativa
+          </button>
+          <button class="btn btn-sm btn-outline" onclick="app.abrirModalEdicao(app.activePauta.id)">
+            <span>✏️</span> Editar
+          </button>
+          <button class="btn btn-sm btn-info" onclick="app.openAuditModalForActive()">
+            <span>🔍</span> Auditar Afirmações
+          </button>
+        </div>
+      </div>
+
+      <!-- MODO BREAKING NEWS CARD -->
+      <div class="breaking-banner" id="breakingNewsCard">
+        <div class="breaking-header">
+          <span class="breaking-tag">🚨 BREAKING NEWS SPORT 5</span>
+          <span style="font-size: 0.8rem; color: var(--accent-red); font-weight: 800;">ALTA PRIORIDADE JORNALÍSTICA</span>
+          <span style="font-size: 0.72rem; color: var(--text-muted); margin-left: auto;">Aconteceu: 06/10/2026 • 07:15 BRT | Publicado: 06/10/2026 | Atualizado: há 15 min</span>
+        </div>
+        <div style="font-size: 0.95rem; font-weight: 800; color: #fff; margin-bottom: 0.35rem;" id="breakingNewsTitle">
+          Hugo Calderano bate Dimitrij Ovtcharov por 3 a 0 no China Smash 2026 em Beijing e avança no WTT Grand Smash
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.65rem; font-size: 0.78rem;">
+          <div style="background:rgba(0,0,0,0.3); padding:0.5rem; border-radius:4px;">
+            <strong style="color:var(--accent-blue);">O QUE ACONTECEU:</strong>
+            <div id="breakingOQueAconteceu">Vitória em sets diretos (11-9, 11-9, 11-8) na Infinity Arena em Shougang Park.</div>
+          </div>
+          <div style="background:rgba(0,0,0,0.3); padding:0.5rem; border-radius:4px;">
+            <strong style="color:var(--accent-green);">FONTE OFICIAL:</strong>
+            <div id="breakingFonte">World Table Tennis (WTT) Match Centre & Olympics.com Brasil</div>
+          </div>
+          <div style="background:rgba(0,0,0,0.3); padding:0.5rem; border-radius:4px;">
+            <strong style="color:var(--accent-green);">CONFIRMADO:</strong>
+            <div id="breakingConfirmado">Classificação garantida para as oitavas de final de simples masculino.</div>
+          </div>
+          <div style="background:rgba(0,0,0,0.3); padding:0.5rem; border-radius:4px;">
+            <strong style="color:var(--accent-yellow);">AINDA NÃO CONFIRMADO:</strong>
+            <div id="breakingPendente">Horário exato e mesa da partida das oitavas de final contra vencedor de Harimoto x Moregard.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <div class="radar-v2-header">
+        <div class="radar-v2-title">
+          <div class="radar-live-indicator">
+            <span class="radar-pulse-dot"></span>
+            <span>V2.1 FACT CHECK ENGINE • CAMADA DE AUDITORIA & VERACIDADE</span>
+          </div>
+          <h2 style="font-size: 1.25rem; font-weight: 800; color: #fff;">RADAR SPORT 5 — Monitoramento com Checagem Factual Rigorosa</h2>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 2px;">
+            Cada pauta é submetida ao fluxo de checagem: identificação de fatos, validação de fontes oficiais, cruzamento temporal, detecção de contradições e cálculo do <strong>Score de Confiabilidade (0 a 100)</strong>, separado do Score Editorial.
+          </p>
+        </div>
+        <div class="radar-stats-quick">
+          <div class="quick-stat">
+            <span class="quick-stat-num" id="radarTotalCount">11</span>
+            <span class="quick-stat-label">Pautas no Radar</span>
+          </div>
+          <div class="quick-stat">
+            <span class="quick-stat-num" style="color:var(--accent-green);" id="radarVerifiedCount">9</span>
+            <span class="quick-stat-label">Verificadas</span>
+          </div>
+          <div class="quick-stat">
+            <span class="quick-stat-num" style="color:var(--accent-red);" id="radarRejectedCount">1</span>
+            <span class="quick-stat-label">Rejeitadas (Fake)</span>
+          </div>
+          <div class="quick-stat">
+            <span class="quick-stat-num" style="color:var(--primary);" id="radarTopScore">99</span>
+            <span class="quick-stat-label">Maior Score</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- RADAR FILTER & STATUS BAR -->
+      <div class="radar-filter-bar">
+        <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
+          <button class="btn btn-sm btn-danger" onclick="app.sincronizarFeedsAoVivo()">
+            <span>🔴</span> Sincronizar Feeds ao Vivo
+          </button>
+
+          <!-- RECENCY FILTER -->
+          <select id="radarRecencyFilter" class="filter-select" onchange="app.filterByRecency()" style="background: #1e293b; border-color: rgba(255,255,255,0.15); font-size:0.78rem;">
+            <option value="TODAS">⏱️ Qualquer Recência</option>
+            <option value="ULTIMAS_HORAS">⚡ Últimas Horas</option>
+            <option value="ULTIMAS_24H" selected>⏳ Últimas 24 Horas</option>
+            <option value="ULTIMAS_48H">📅 Últimas 48 Horas</option>
+            <option value="HISTORICO">🏛️ Histórico / Arquivo</option>
+          </select>
+
+          <!-- STATUS FILTER -->
+          <select id="radarStatusFilter" class="filter-select" onchange="app.filterByStatus()" style="background: #1e293b; border-color: rgba(255,255,255,0.15); font-size:0.78rem;">
+            <option value="TODOS">🛡️ Todos os Status</option>
+            <option value="VERIFICADAS">🟢 VERIFIED (Confirmadas)</option>
+            <option value="PARCIAIS">🟡 PARTIAL (Parciais)</option>
+            <option value="VERIFICANDO">🟠 IN VERIFICATION (Em Checagem)</option>
+            <option value="REJEITADAS">🔴 REJECTED (Rejeitadas/Falsas)</option>
+          </select>
+
+          <!-- DUPLICITY FILTER -->
+          <select id="radarDuplicityFilter" class="filter-select" onchange="app.filterByDuplicity()" style="background: #1e293b; border-color: rgba(255,255,255,0.15); font-size:0.78rem;">
+            <option value="TODAS">📑 Todas as Pautas</option>
+            <option value="ORIGINAIS">📄 Apenas Originais</option>
+            <option value="DUPLICATAS">👥 Duplicatas & Atualizadas</option>
+          </select>
+
+          <!-- SOURCE FILTER -->
+          <select id="radarSourceFilter" class="filter-select" onchange="app.filterBySource()" style="background: #1e293b; border-color: rgba(255,255,255,0.15); font-size:0.78rem;">
+            <option value="TODAS">🏛️ Todas as Fontes</option>
+            <option value="OFICIAIS">⭐ Fontes Oficiais Primárias</option>
+            <option value="WTT">World Table Tennis (WTT)</option>
+            <option value="CBF">CBF Oficial</option>
+            <option value="ATP">ATP / WTA Oficial</option>
+            <option value="FIA">FIA / F1 Oficial</option>
+            <option value="CBV">CBV / FIVB Oficial</option>
+            <option value="NBA">NBA Oficial</option>
+          </select>
+        </div>
+
+        <div style="font-size:0.75rem; color:var(--text-muted); display:flex; align-items:center; gap:0.5rem;">
+          <span>Ordenar por:</span>
+          <button class="btn btn-xs btn-outline" onclick="app.setSortOrder('EDITORIAL')">Score Editorial</button>
+          <button class="btn btn-xs btn-outline" onclick="app.setSortOrder('CONFIANCA')">Confiabilidade</button>
+        </div>
+      </div>
+
+        <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
+          <button class="btn btn-sm btn-danger" onclick="app.sincronizarFeedsAoVivo()">
+            <span>🔴</span> Sincronizar Feeds ao Vivo
+          </button>
+          
+          <select class="search-input" id="radarStatusFilter" style="max-width: 240px; font-size: 0.78rem;" onchange="app.filterByStatus()">
+            <option value="TODOS">Todos os Status de Verificação</option>
+            <option value="VERIFICADAS">Somente Verificadas (Oficial & Confiável)</option>
+            <option value="PARCIAIS">Parcialmente Verificadas</option>
+            <option value="VERIFICANDO">Em Verificação (Divergências)</option>
+            <option value="REJEITADAS">Rejeitadas (Testes Negativos / Boatos)</option>
+          </select>
+
+          <select class="search-input" id="radarSourceFilter" style="max-width: 220px; font-size: 0.78rem;" onchange="app.filterBySource()">
+            <option value="TODAS">Todas as Fontes</option>
+            <option value="OFICIAIS">Somente Federações Oficiais</option>
+            <option value="WTT">World Table Tennis (WTT / ITTF)</option>
+            <option value="CBF">CBF Oficial / Brasileirão</option>
+            <option value="FIA">FIA / Formula 1 Oficial</option>
+            <option value="ATP">ATP Tour / Shanghai Masters</option>
+            <option value="CBV">CBV / Superliga Oficial</option>
+            <option value="NBA">NBA.com Oficial</option>
+          </select>
+        </div>
+
+        <div style="font-size: 0.78rem; color: var(--accent-green); display: flex; align-items: center; gap: 0.35rem;">
+          <span>🛡️</span> <strong>Auditoria Ativa:</strong> <span>Fatos sem comprovação são automaticamente bloqueados para produção.</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h2><span>🏆</span> PAUTAS RASTREADAS & AUDITADAS PELO FACT CHECK ENGINE</h2>
+          <div style="display:flex; gap:0.5rem;">
+            <button class="btn btn-sm btn-outline" onclick="app.recalcularScores()">
+              <span>🔄</span> Recalcular Auditoria
+            </button>
+          </div>
+        </div>
+
+        <div class="pautas-list" id="pautasContainer">
+          <!-- Populated dynamically via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- VIEW 2: PESQUISA APROFUNDADA -->
+    <section class="view-section" id="view-pesquisa">
+      <div class="card">
+        <div class="card-header">
+          <h2><span>🔍</span> ETAPA 2: PESQUISA JORNALÍSTICA APROFUNDADA — 10 DIMENSÕES FACTUAIS</h2>
+          <div style="display:flex; gap:0.5rem; align-items:center;">
+            <span class="badge badge-score" id="pesquisaPautaScore">Editorial: 98/100</span>
+            <span class="badge" style="background:var(--accent-green); color:#000; font-weight:800;" id="pesquisaPautaReliability">Confiabilidade: 96/100</span>
+            <button class="btn btn-sm btn-outline" onclick="app.exportFullProject()">
+              <span>💾</span> Exportar Dossiê SPORT 5
+            </button>
+          </div>
+        </div>
+
+        <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.25rem;">
+          Conforme as diretrizes editoriais do SPORT 5 AI, todas as informações são categorizadas estritamente entre fatos comprovados, itens pendentes de confirmação e análises táticas. <strong>Nunca apresentamos inferências como fatos consumados.</strong>
+        </p>
+
+        <!-- 3 BOXES CLÁSSICOS -->
+        <div class="pesquisa-grid">
+          <div class="box-confirmados">
+            <h3><span>✅</span> Fatos Confirmados</h3>
+            <ul class="research-list" id="listConfirmados"></ul>
+          </div>
+
+          <div class="box-aconfirmar">
+            <h3><span>⚠️</span> Informações a Confirmar</h3>
+            <ul class="research-list" id="listAConfirmar"></ul>
+          </div>
+
+          <div class="box-analises">
+            <h3><span>🧠</span> Análises / Inferências</h3>
+            <ul class="research-list" id="listAnalises"></ul>
+          </div>
+        </div>
+
+        <!-- 10 DIMENSÕES DA PESQUISA PROFUNDA (SPORT 5 V2.5) -->
+        <div style="margin-top: 1.75rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+            <h3 style="font-size: 0.95rem; font-weight: 900; color: #fff; display: flex; align-items: center; gap: 0.5rem;">
+              <span>🔬</span> AS 10 DIMENSÕES DA PESQUISA PROFUNDA (FATO • ANÁLISE • INFERÊNCIA)
+            </h3>
+            <span style="font-size: 0.72rem; color: var(--text-muted);">Classificação ontológica rigorosa de cada item</span>
+          </div>
+
+          <div class="dimensoes-grid" id="pesquisa10DimensoesContainer"></div>
+        </div>
+
+        <!-- DETALHES DE CONTEXTO & DADOS OFICIAIS -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin-top: 1.25rem;">
+          <div style="background: var(--bg-card); padding: 1rem; border-radius: 6px; border: 1px solid var(--border-color);">
+            <h4 style="font-size: 0.8rem; color: var(--accent-blue); text-transform: uppercase; margin-bottom: 0.4rem;">📊 Estatísticas & Ranking</h4>
+            <div id="pesquisaStats" style="font-size: 0.85rem; color: #cbd5e1;"></div>
+          </div>
+          <div style="background: var(--bg-card); padding: 1rem; border-radius: 6px; border: 1px solid var(--border-color);">
+            <h4 style="font-size: 0.8rem; color: var(--primary); text-transform: uppercase; margin-bottom: 0.4rem;">📅 Próximos Acontecimentos</h4>
+            <div id="pesquisaProximos" style="font-size: 0.85rem; color: #cbd5e1;"></div>
+          </div>
+          <div style="background: var(--bg-card); padding: 1rem; border-radius: 6px; border: 1px solid var(--border-color);">
+            <h4 style="font-size: 0.8rem; color: var(--accent-green); text-transform: uppercase; margin-bottom: 0.4rem;">🏛️ Fontes & Documentos Oficiais</h4>
+            <div id="pesquisaFontes" style="font-size: 0.85rem; color: #cbd5e1;"></div>
+          </div>
+        </div>
+
+        <div style="margin-top: 1.5rem; display: flex; justify-content: flex-end; gap: 0.75rem;">
+          <button class="btn btn-outline" onclick="app.switchWorkflow('radar')">← Voltar ao Radar</button>
+          <button class="btn btn-primary" id="btnAvancarRoteiro" onclick="app.tentarAvancarParaRoteiro()">Avançar para Roteiro (5 Min) →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIEW 3: ROTEIRO 5 MINUTOS -->
+    <section class="view-section" id="view-roteiro">
+      <div class="card">
+        <div class="card-header">
+          <h2><span>📝</span> ROTEIRO COMPLETO — SPORT 5 (DURAÇÃO: 4 A 5 MINUTOS)</h2>
+          <div style="display:flex; gap:0.5rem; align-items:center;">
+            <span style="font-size:0.8rem; color:var(--text-muted);" id="roteiroWordCount">~720 palavras | ~4m30s</span>
+            <button class="btn btn-sm btn-outline" onclick="app.copyRoteiroText()">
+              <span>📋</span> Copiar Roteiro
+            </button>
+            <button class="btn btn-sm btn-info" onclick="app.auditarRoteiroAtual()">
+              <span>🛡️</span> Fact Check do Roteiro
+            </button>
+          </div>
+        </div>
+
+        <!-- AUDIO SIMULATION / TELEPROMPTER -->
+        <div class="player-box">
+          <div style="display: flex; align-items: center; gap: 0.75rem;">
+            <span style="font-size: 1.5rem;">🎙️</span>
+            <div>
+              <div style="font-size: 0.85rem; font-weight: 700; color: #fff;">Simulador de Leitura Dinâmica (Voz Brasileira)</div>
+              <div style="font-size: 0.72rem; color: var(--text-muted);">Teste a cadência e o timing do texto com o sintetizador de voz do navegador.</div>
+            </div>
+          </div>
+          <div style="display: flex; gap: 0.5rem;">
+            <button class="btn btn-sm btn-primary" id="btnAudioPlay" onclick="app.togglePlayRoteiroAudio()">
+              <span>▶️</span> Ouvir Roteiro
+            </button>
+            <button class="btn btn-sm btn-outline" onclick="app.stopRoteiroAudio()">
+              <span>⏹️</span> Parar
+            </button>
+          </div>
+        </div>
+
+        <!-- TIMELINE DO ROTEIRO -->
+        <div class="roteiro-timeline" id="roteiroTimelineContainer"></div>
+
+        <!-- FACT CHECK DO PRÓPRIO ROTEIRO (NOVA FUNÇÃO OBRIGATÓRIA V2.5) -->
+        <div class="roteiro-audit-card" id="roteiroFactCheckCard">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 0.5rem;">
+            <div>
+              <h3 style="font-size: 0.95rem; font-weight: 900; color: #fff; display: flex; align-items: center; gap: 0.5rem;">
+                <span>🛡️</span> FACT CHECK DO PRÓPRIO ROTEIRO — AUDITORIA DE AFIRMAÇÕES
+              </h3>
+              <div style="font-size: 0.75rem; color: var(--text-muted);">
+                Auditoria frase a frase: nenhuma afirmação sem suporte pode avançar para a produção de vídeo.
+              </div>
+            </div>
+            <div id="roteiroAuditGlobalBadge"></div>
+          </div>
+
+          <div id="roteiroAuditBlockWarning" style="display: none; background: rgba(239, 68, 68, 0.2); border: 1px solid var(--accent-red); color: #fca5a5; padding: 0.75rem 1rem; border-radius: 6px; font-size: 0.8rem; font-weight: 800; margin-bottom: 0.85rem;">
+            ⛔ PUBLICAÇÃO E VÍDEO BLOQUEADOS: Existem afirmações factuais não comprovadas no texto do roteiro. Corrija o texto antes de liberar para o Storyboard.
+          </div>
+
+          <div id="roteiroClaimsContainer" style="display: flex; flex-direction: column; gap: 0.4rem;"></div>
+        </div>
+
+        <div style="margin-top: 1.5rem; display: flex; justify-content: space-between;">
+          <button class="btn btn-outline" onclick="app.switchWorkflow('pesquisa')">← Pesquisa</button>
+          <button class="btn btn-primary" onclick="app.switchWorkflow('titulos')">Ver Títulos & YouTube →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIEW 4: TÍTULOS & YOUTUBE -->
+    <section class="view-section" id="view-titulos">
+      <div class="card">
+        <div class="card-header">
+          <h2><span>🎯</span> 5 OPÇÕES DE TÍTULO PARA O VÍDEO PRINCIPAL</h2>
+          <span style="font-size:0.75rem; color:var(--text-muted);">Critérios: Curiosidade, SEO, Clareza, Anti-Clickbait</span>
+        </div>
+
+        <div class="titles-list" id="titulosContainer"></div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h2><span>📄</span> DESCRIÇÃO OTIMIZADA PARA O YOUTUBE</h2>
+          <button class="btn btn-sm btn-outline" onclick="app.copyYoutubeDescription()">
+            <span>📋</span> Copiar Descrição
+          </button>
+        </div>
+
+        <textarea id="youtubeDescriptionBox" style="width: 100%; height: 260px; background: rgba(0,0,0,0.3); border: 1px solid var(--border-color); border-radius: 6px; color: #e2e8f0; font-family: monospace; font-size: 0.85rem; padding: 1rem; line-height: 1.5;" readonly></textarea>
+      </div>
+
+      <div style="display:flex; justify-content:space-between; margin-top:1rem;">
+        <button class="btn btn-outline" onclick="app.switchWorkflow('roteiro')">← Voltar ao Roteiro</button>
+        <button class="btn btn-primary" onclick="app.switchWorkflow('shorts')">Avançar para Shorts (3x) →</button>
+      </div>
+    </section>
+
+    <!-- VIEW 5: SHORTS -->
+    <section class="view-section" id="view-shorts">
+      <div class="card">
+        <div class="card-header">
+          <h2><span>📱</span> ROTEIROS DE SHORTS / REELS / TIKTOK — 3 VERSÕES REESCRITAS</h2>
+          <span style="font-size:0.75rem; color:var(--text-muted);">Cada versão foi reescrita especificamente para a sua duração. Não é apenas corte!</span>
+        </div>
+
+        <!-- SUB-TABS: 30s, 45s, 60s -->
+        <div class="subtabs-bar">
+          <button class="subtab-btn active" id="btnShortsTab30" onclick="app.switchShortsTab('30s')">
+            <span>⏱️</span> 30 Segundos (Ultra Dinâmico)
+          </button>
+          <button class="subtab-btn" id="btnShortsTab45" onclick="app.switchShortsTab('45s')">
+            <span>⏱️</span> 45 Segundos (Foco em Dados)
+          </button>
+          <button class="subtab-btn" id="btnShortsTab60" onclick="app.switchShortsTab('60s')">
+            <span>⏱️</span> 60 Segundos (História Completa)
+          </button>
+        </div>
+
+        <div id="shortsDynamicContent"></div>
+      </div>
+
+      <div style="display:flex; justify-content:space-between; margin-top:1rem;">
+        <button class="btn btn-outline" onclick="app.switchWorkflow('titulos')">← Títulos & Descrição</button>
+        <button class="btn btn-primary" onclick="app.switchWorkflow('thumbnail')">Conceito de Thumbnail →</button>
+      </div>
+    </section>
+
+    <!-- VIEW 6: THUMBNAIL STUDIO -->
+    <section class="view-section" id="view-thumbnail">
+      <div class="card">
+        <div class="card-header">
+          <h2><span>🖼️</span> THUMBNAIL STUDIO — PROPORÇÃO 16:9 (VERSÕES A / B / C & SAFE AREA)</h2>
+          <div style="display: flex; gap: 0.5rem; align-items: center;">
+            <button class="safe-area-toggle-btn" id="btnToggleSafeArea" onclick="app.toggleThumbnailSafeArea()">
+              <span>📐</span> Alternar Safe Area (80% Seguro)
+            </button>
+            <span class="badge badge-score">Layout YouTube Otimizado</span>
+          </div>
+        </div>
+
+        <!-- SUB-TABS: VERSÕES A, B, C -->
+        <div class="subtabs-bar">
+          <button class="subtab-btn active" id="btnThumbTabA" onclick="app.switchThumbVersion('versaoA')">
+            <span>🎨</span> Versão A (Contraste Editorial)
+          </button>
+          <button class="subtab-btn" id="btnThumbTabB" onclick="app.switchThumbVersion('versaoB')">
+            <span>🔥</span> Versão B (Impacto Dramático)
+          </button>
+          <button class="subtab-btn" id="btnThumbTabC" onclick="app.switchThumbVersion('versaoC')">
+            <span>📊</span> Versão C (Gráfica com Dados)
+          </button>
+        </div>
+
+        <div class="thumbnail-studio">
+          <div>
+            <div class="thumb-preview-wrapper" id="thumbPreviewWrapper" style="position: relative;">
+              <div class="thumb-canvas">
+                <div class="thumb-overlay"></div>
+                <div class="thumb-content-layer">
+                  <div class="thumb-badge-top" id="thumbSportBadge">TÊNIS DE MESA</div>
+                  <div class="thumb-headline" id="thumbMainText">ACONTECEU!</div>
+                  <div class="thumb-subheadline" id="thumbSubText">CALDERANO</div>
+                </div>
+              </div>
+              <!-- SAFE AREA OVERLAY -->
+              <div class="safe-area-overlay" id="thumbSafeAreaOverlay" style="display: none;">
+                <span class="safe-area-tag">SAFE AREA 80% (ZONA LIVRE DE TIMERS MOBILE)</span>
+              </div>
+            </div>
+
+            <div style="margin-top: 0.75rem; font-size: 0.75rem; color: var(--text-muted); text-align: center;">
+              Prévia ilustrativa em proporção 16:9 • Margem de segurança de 10% em cada borda para dispositivos móveis.
+            </div>
+          </div>
+
+          <div class="thumb-specs">
+            <h3 style="font-size: 0.95rem; font-weight: 800; color: #fff; margin-bottom: 0.75rem;">Especificações Técnicas da Thumbnail</h3>
+
+            <div class="thumb-spec-item">
+              <span class="thumb-spec-label">Título Recomendado</span>
+              <div class="thumb-spec-val" id="thumbSpecTitulo">HUGO CALDERANO: A VITÓRIA DECISIVA!</div>
+            </div>
+
+            <div class="thumb-spec-item">
+              <span class="thumb-spec-label">Texto Curto na Imagem</span>
+              <div class="thumb-spec-val" id="thumbSpecTextoCurto">HISTÓRICO!</div>
+            </div>
+
+            <div class="thumb-spec-item">
+              <span class="thumb-spec-label">Imagem Sugerida</span>
+              <div class="thumb-spec-val" id="thumbSpecImagem">Foto em alta de Hugo Calderano vibrando com iluminação de recorte e fundo esportivo de alto contraste.</div>
+            </div>
+
+            <div class="thumb-spec-item">
+              <span class="thumb-spec-label">Composição Visual</span>
+              <div class="thumb-spec-val" id="thumbSpecComposicao">Regra dos terços com sujeito no terço direito e tipografia em caixa alta no terço esquerdo.</div>
+            </div>
+
+            <div class="thumb-spec-item">
+              <span class="thumb-spec-label">Safe Area do YouTube</span>
+              <div class="thumb-spec-val" id="thumbSpecSafeArea">Área segura de 80% centralizada; margens livres de 10% para evitar sobreposição de timers mobile.</div>
+            </div>
+
+            <div class="thumb-spec-item">
+              <span class="thumb-spec-label">Paleta de Cores Recomendada</span>
+              <div class="thumb-spec-val" id="thumbSpecCores">Amarelo #FFD700, Branco #FFF, Preto #0B0E14</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex; justify-content:space-between; margin-top:1rem;">
+        <button class="btn btn-outline" onclick="app.switchWorkflow('shorts')">← Shorts (3x)</button>
+        <button class="btn btn-primary" onclick="app.switchWorkflow('storyboard')">Ver Storyboard & Vídeo →</button>
+      </div>
+    </section>
+
+    <!-- VIEW 7: STORYBOARD -->
+    <section class="view-section" id="view-storyboard">
+      <div class="card">
+        <div class="card-header">
+          <h2><span>🎞️</span> STORYBOARD DETALHADO POR CENAS (VÍDEO 5 MINUTOS)</h2>
+          <span style="font-size:0.75rem; color:var(--text-muted);">Divisão técnica de cortes, narração, letterings e gráficos</span>
+        </div>
+
+        <div style="overflow-x: auto;">
+          <table class="storyboard-table">
+            <thead>
+              <tr>
+                <th style="width: 100px;">Cena / Duração</th>
+                <th style="width: 30%;">Texto Narrado</th>
+                <th style="width: 25%;">Imagem / Vídeo Recomendado</th>
+                <th style="width: 20%;">Texto na Tela / Lower Third</th>
+                <th>Gráfico & Transição</th>
+              </tr>
+            </thead>
+            <tbody id="storyboardTableBody"></tbody>
+          </table>
+        </div>
+
+        <div style="background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 6px; padding: 0.85rem; margin-top: 1.25rem; font-size: 0.82rem;">
+          <strong style="color: var(--accent-red);">🛡️ Política de Direitos Autorais:</strong> Não utilizar transmissões de broadcast de TV protegidas. Caso uma imagem ou clipe não tenha licença pública ou de agência formal, a etiqueta <code>VERIFICAR DIREITOS ANTES DA PUBLICAÇÃO</code> é aplicada obrigatoriamente.
+        </div>
+      </div>
+
+      <div style="display:flex; justify-content:space-between; margin-top:1rem;">
+        <button class="btn btn-outline" onclick="app.switchWorkflow('thumbnail')">← Thumbnail</button>
+        <button class="btn btn-primary" onclick="app.switchWorkflow('qa')">Executar Auditoria QA →</button>
+      </div>
+    </section>
+
+    <!-- VIEW 8: CONTROLE DE QUALIDADE (QA) -->
+    <section class="view-section" id="view-qa">
+      <div class="card">
+        <div class="card-header">
+          <h2><span>🛡️</span> CONTROLE DE QUALIDADE AUTOMÁTICO (AUDITORIA EDITORIAL)</h2>
+          <button class="btn btn-sm btn-primary" onclick="app.executarAuditoriaQA()">
+            <span>⚡</span> Reexecutar Auditoria
+          </button>
+        </div>
+
+        <div class="qa-dashboard">
+          <div class="qa-status-card">
+            <span style="font-size: 0.78rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700;">Status do Pacote Editorial</span>
+            <div class="qa-stamp qa-approved" id="qaStatusStamp">STATUS: APROVADO</div>
+            <div style="font-size: 0.82rem; color: #cbd5e1;" id="qaStatusDesc">
+              11/11 verificações passaram com conformidade plena. Nenhuma violação factual ou de direitos detectada.
+            </div>
+            <div style="width: 100%; border-top: 1px solid var(--border-color); padding-top: 0.75rem; font-size: 0.75rem; color: var(--text-muted);">
+              Assinado por: <strong>SPORT 5 QA System</strong><br>
+              Regra: Erros factuais impedem aprovação.
+            </div>
+            <button class="btn btn-success" style="width: 100%; margin-top: 0.5rem;" onclick="app.salvarNoHistorico('APROVADO')">
+              <span>💾</span> Salvar Aprovado no Histórico
+            </button>
+          </div>
+
+          <div>
+            <table class="qa-items-table">
+              <thead>
+                <tr>
+                  <th style="width: 40px;">#</th>
+                  <th style="width: 170px;">Item de Auditoria</th>
+                  <th>Resultado da Verificação</th>
+                  <th style="width: 110px;">Conformidade</th>
+                </tr>
+              </thead>
+              <tbody id="qaTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex; justify-content:space-between; margin-top:1rem;">
+        <button class="btn btn-outline" onclick="app.switchWorkflow('storyboard')">← Storyboard</button>
+        <button class="btn btn-primary" onclick="app.switchWorkflow('historico')">Acessar Histórico Geral →</button>
+      </div>
+    </section>
+
+    <!-- VIEW 9: HISTÓRICO -->
+    <section class="view-section" id="view-historico">
+      <div class="card">
+        <div class="card-header">
+          <h2><span>📂</span> HISTÓRICO DE PRODUÇÃO & AUDITORIA DE VERACIDADE</h2>
+          <div style="display:flex; gap:0.5rem;">
+            <button class="btn btn-sm btn-outline" onclick="app.exportHistoricoJSON()">
+              <span>📥</span> Exportar JSON
+            </button>
+            <button class="btn btn-sm btn-outline" onclick="app.exportHistoricoCSV()">
+              <span>📊</span> Exportar CSV
+            </button>
+          </div>
+        </div>
+
+        <div class="history-filters">
+          <input type="text" class="search-input" id="historySearch" placeholder="Buscar pauta, título, atleta ou fonte..." oninput="app.renderHistoricoTable()">
+          <select class="search-input" id="historySportFilter" style="max-width: 180px;" onchange="app.renderHistoricoTable()">
+            <option value="TODOS">Todos os Esportes</option>
+            <option value="FUTEBOL">Futebol</option>
+            <option value="BASQUETE">Basquete</option>
+            <option value="VÔLEI">Vôlei</option>
+            <option value="FÓRMULA 1">Fórmula 1</option>
+            <option value="TÊNIS">Tênis</option>
+            <option value="TÊNIS DE MESA">Tênis de Mesa</option>
+          </select>
+          <select class="search-input" id="historyStatusFilter" style="max-width: 180px;" onchange="app.renderHistoricoTable()">
+            <option value="TODOS">Todos os Status</option>
+            <option value="VERIFICADA">VERIFICADA</option>
+            <option value="APROVADO">APROVADO</option>
+            <option value="PUBLICADO">PUBLICADO</option>
+            <option value="EM PRODUÇÃO">EM PRODUÇÃO</option>
+            <option value="REVISÃO">REVISÃO</option>
+            <option value="REJEITADA">REJEITADA</option>
+          </select>
+        </div>
+
+        <div style="overflow-x: auto;">
+          <table class="history-table">
+            <thead>
+              <tr>
+                <th>Data</th>
+                <th>Esporte</th>
+                <th>Pauta</th>
+                <th>Editorial</th>
+                <th>Confiabilidade</th>
+                <th>Status Fact Check</th>
+                <th>Fontes</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody id="historyTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- PAINEL DE CORREÇÕES EDITORIAIS (TRANSPARÊNCIA JORNALÍSTICA) -->
+      <div class="card" style="margin-top: 1.5rem; border-left: 4px solid var(--accent-yellow);">
+        <div class="card-header">
+          <div>
+            <h2 style="font-size: 1.05rem; font-weight: 900; color: #fff;">📝 REGISTRO DE CORREÇÕES & ERRATAS EDITORIAIS</h2>
+            <div style="font-size: 0.75rem; color: var(--text-muted);">
+              Nenhum dado é apagado silenciosamente. Toda alteração de fato retificado fica salva para auditoria pública.
+            </div>
+          </div>
+          <button class="btn btn-sm btn-warning" onclick="app.abrirModalCorrecao()">
+            <span>➕</span> Registrar Correção
+          </button>
+        </div>
+
+        <div style="overflow-x: auto;">
+          <table class="history-table" style="font-size: 0.8rem;">
+            <thead>
+              <tr>
+                <th>Data / Hora</th>
+                <th>Pauta</th>
+                <th>Erro Original</th>
+                <th>Informação Corrigida</th>
+                <th>Fonte da Correção</th>
+                <th>Responsável</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="correcoesTbody">
+              <tr>
+                <td>06/10/2026 22:45</td>
+                <td><strong>Hugo Calderano bate Dimitrij Ovtcharov</strong></td>
+                <td>Parcial do 2º set divulgada inicialmente como 11-8</td>
+                <td>Súmula oficial homologou 11-9 (11-9, 11-9, 11-8)</td>
+                <td>WTT Match Centre Oficial</td>
+                <td>Plantão SPORT 5</td>
+                <td><span class="badge" style="background:rgba(16,185,129,0.2); color:#6ee7b7; border:1px solid #10b981;">🟢 Retificado</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- VIEW 10: DASHBOARD & ANALYTICS -->
+    <section class="view-section" id="view-dashboard">
+      <!-- FACT CHECK ENGINE METRICS (NEW) -->
+      <div style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(56, 189, 248, 0.08) 100%); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 8px; padding: 1rem 1.25rem; margin-bottom: 1.25rem;">
+        <h3 style="font-size: 0.95rem; font-weight: 800; color: #fff; margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.4rem;">
+          <span>🛡️</span> INDICADORES DO FACT CHECK ENGINE (AUDITORIA EM TEMPO REAL)
+        </h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 0.75rem;">
+          <div style="background: rgba(0,0,0,0.3); padding: 0.75rem; border-radius: 6px; text-align: center;">
+            <div style="font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase;">Pautas Analisadas</div>
+            <div style="font-size: 1.4rem; font-weight: 900; color: #fff;" id="factMetricAnalisadas">14</div>
+          </div>
+          <div style="background: rgba(0,0,0,0.3); padding: 0.75rem; border-radius: 6px; text-align: center;">
+            <div style="font-size: 0.7rem; color: var(--accent-green); text-transform: uppercase;">Pautas Verificadas</div>
+            <div style="font-size: 1.4rem; font-weight: 900; color: var(--accent-green);" id="factMetricVerificadas">10</div>
+          </div>
+          <div style="background: rgba(0,0,0,0.3); padding: 0.75rem; border-radius: 6px; text-align: center;">
+            <div style="font-size: 0.7rem; color: var(--accent-yellow); text-transform: uppercase;">Parciais</div>
+            <div style="font-size: 1.4rem; font-weight: 900; color: var(--accent-yellow);" id="factMetricParciais">2</div>
+          </div>
+          <div style="background: rgba(0,0,0,0.3); padding: 0.75rem; border-radius: 6px; text-align: center;">
+            <div style="font-size: 0.7rem; color: var(--accent-orange); text-transform: uppercase;">Em Verificação</div>
+            <div style="font-size: 1.4rem; font-weight: 900; color: var(--accent-orange);" id="factMetricVerificando">1</div>
+          </div>
+          <div style="background: rgba(0,0,0,0.3); padding: 0.75rem; border-radius: 6px; text-align: center;">
+            <div style="font-size: 0.7rem; color: var(--accent-red); text-transform: uppercase;">Rejeitadas (Fake)</div>
+            <div style="font-size: 1.4rem; font-weight: 900; color: var(--accent-red);" id="factMetricRejeitadas">1</div>
+          </div>
+          <div style="background: rgba(0,0,0,0.3); padding: 0.75rem; border-radius: 6px; text-align: center;">
+            <div style="font-size: 0.7rem; color: var(--accent-green); text-transform: uppercase;">Taxa Confiabilidade</div>
+            <div style="font-size: 1.4rem; font-weight: 900; color: var(--accent-green);" id="factMetricTaxaConfiabilidade">85.7%</div>
+          </div>
+          <div style="background: rgba(0,0,0,0.3); padding: 0.75rem; border-radius: 6px; text-align: center;">
+            <div style="font-size: 0.7rem; color: var(--accent-red); text-transform: uppercase;">Taxa Rejeição</div>
+            <div style="font-size: 1.4rem; font-weight: 900; color: var(--accent-red);" id="factMetricTaxaRejeicao">7.1%</div>
+          </div>
+          <div style="background: rgba(0,0,0,0.3); padding: 0.75rem; border-radius: 6px; text-align: center;">
+            <div style="font-size: 0.7rem; color: var(--accent-blue); text-transform: uppercase;">Fontes Consultadas</div>
+            <div style="font-size: 1.4rem; font-weight: 900; color: var(--accent-blue);" id="factMetricFontesConsultadas">28</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- METRIC CARDS -->
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <span class="metric-card-label">Pautas Produzidas</span>
+          <span class="metric-card-val" id="dashMetricPautas">12</span>
+        </div>
+        <div class="metric-card">
+          <span class="metric-card-label">Vídeos Produzidos</span>
+          <span class="metric-card-val" id="dashMetricVideos">9</span>
+        </div>
+        <div class="metric-card">
+          <span class="metric-card-label">Shorts Produzidos</span>
+          <span class="metric-card-val" id="dashMetricShorts">27</span>
+        </div>
+        <div class="metric-card">
+          <span class="metric-card-label">Vídeos Publicados</span>
+          <span class="metric-card-val" id="dashMetricPublicados">6</span>
+        </div>
+        <div class="metric-card">
+          <span class="metric-card-label">Média Pontuação</span>
+          <span class="metric-card-val" id="dashMetricMediaScore" style="color: var(--primary);">92.4</span>
+        </div>
+        <div class="metric-card">
+          <span class="metric-card-label">Conteúdos Pendentes</span>
+          <span class="metric-card-val" id="dashMetricPendentes" style="color: var(--accent-blue);">3</span>
+        </div>
+      </div>
+
+      <div class="dashboard-splits">
+        <div class="card">
+          <div class="card-header">
+            <h2><span>📊</span> DISTRIBUIÇÃO POR EDITORIA</h2>
+          </div>
+          <div id="dashSportDistribution" style="display: flex; flex-direction: column; gap: 0.75rem;"></div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h2><span>🔥</span> TOP PAUTAS DE MAIOR AUDIÊNCIA & SCORE</h2>
+          </div>
+          <div id="dashTopScoringPautas" style="display: flex; flex-direction: column; gap: 0.65rem;"></div>
+        </div>
+      </div>
+
+      <div class="card" style="border-left: 4px solid var(--accent-purple);">
+        <div class="card-header">
+          <h2><span>🚀</span> ARQUITETURA DE INTEGRAÇÃO V2.1 — FACT CHECK & ANALYTICS</h2>
+          <span class="badge" style="background:#4c1d95; color:#e9d5ff;">PREPARADO PARA EXPANSÃO</span>
+        </div>
+        <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom: 1rem;">
+          A estrutura de dados do SPORT 5 AI V2.1 possui validação prévia de veracidade antes de acionar a <strong>YouTube Data API v3</strong>, garantindo que nenhum conteúdo desmentido ou factual errôneo seja renderizado.
+        </p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 0.75rem;">
+          <div style="background: rgba(0,0,0,0.3); padding: 0.75rem; border-radius: 6px; text-align: center;">
+            <div style="font-size: 0.7rem; color: var(--text-muted);">Visualizações (Views)</div>
+            <div style="font-size: 1.25rem; font-weight: 800; color: #fff;">184.2K</div>
+            <span style="font-size: 0.65rem; color: var(--accent-green);">+14% vs meta</span>
+          </div>
+          <div style="background: rgba(0,0,0,0.3); padding: 0.75rem; border-radius: 6px; text-align: center;">
+            <div style="font-size: 0.7rem; color: var(--text-muted);">Taxa de Cliques (CTR)</div>
+            <div style="font-size: 1.25rem; font-weight: 800; color: #fff;">11.8%</div>
+            <span style="font-size: 0.65rem; color: var(--accent-green);">Benchmark Alto</span>
+          </div>
+          <div style="background: rgba(0,0,0,0.3); padding: 0.75rem; border-radius: 6px; text-align: center;">
+            <div style="font-size: 0.7rem; color: var(--text-muted);">Retenção Média</div>
+            <div style="font-size: 1.25rem; font-weight: 800; color: #fff;">3m 42s</div>
+            <span style="font-size: 0.65rem; color: var(--accent-blue);">76.5% do vídeo</span>
+          </div>
+          <div style="background: rgba(0,0,0,0.3); padding: 0.75rem; border-radius: 6px; text-align: center;">
+            <div style="font-size: 0.7rem; color: var(--text-muted);">Novos Inscritos</div>
+            <div style="font-size: 1.25rem; font-weight: 800; color: #fff;">+4.850</div>
+            <span style="font-size: 0.65rem; color: var(--accent-green);">Alta conversão</span>
+          </div>
+          <div style="background: rgba(0,0,0,0.3); padding: 0.75rem; border-radius: 6px; text-align: center;">
+            <div style="font-size: 0.7rem; color: var(--text-muted);">Likes & Shares</div>
+            <div style="font-size: 1.25rem; font-weight: 800; color: #fff;">14.2K / 3.1K</div>
+            <span style="font-size: 0.65rem; color: var(--accent-purple);">Engajamento 9.4%</span>
+          </div>
+        </div>
+
+        <div style="margin-top: 1rem; padding: 0.75rem; background: rgba(0,0,0,0.2); border-radius: 6px; font-family: monospace; font-size: 0.75rem; color: #94a3b8;">
+          // Pipeline V2.1 ativo com trava de segurança de Fact Check:<br>
+          SPORT5_PIPELINE: { FactCheckEngine: "ENFORCING", AntiFakeNewsGate: "ACTIVE", YouTubeAPI: "READY", DriveSync: "ENABLED", GoogleSheets: "CONFIGURED", ElevenLabsTTS: "STAGED", RemotionVideoEngine: "READY" }
+        </div>
+      </div>
+    
+      <!-- APRENDIZADO EDITORIAL DA IA (RETROALIMENTAÇÃO INTELIGENTE) -->
+      <div class="card" style="border-left: 4px solid var(--accent-green); margin-top: 1.25rem;">
+        <div class="card-header">
+          <div>
+            <h2 style="font-size: 1.05rem; font-weight: 900; color: #fff;">🧠 APRENDIZADO EDITORIAL SPORT 5 AI</h2>
+            <div style="font-size: 0.75rem; color: var(--text-muted);">
+              A IA analisa o histórico de audiência e retenção para recomendar prioridades futuras — <strong>sem jamais reduzir o rigor do Fact Check</strong>.
+            </div>
+          </div>
+          <span class="badge" style="background:rgba(16,185,129,0.2); color:#6ee7b7; border:1px solid #10b981;">MOTOR ATIVO</span>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 0.75rem;">
+          <div class="ops-card" style="text-align: left;">
+            <div style="font-size: 0.75rem; color: var(--primary); font-weight: 800;">⚽ Padrão Futebol & Retenção</div>
+            <div style="font-size: 0.8rem; color: #cbd5e1; margin-top: 4px;">
+              Vídeos com foco tático e estreias de técnicos no Brasileirão geram <strong>+22% de retenção</strong> nos minutos 2 a 4. Aumentar pontuação de análise para 15/15.
+            </div>
+          </div>
+
+          <div class="ops-card" style="text-align: left;">
+            <div style="font-size: 0.75rem; color: var(--accent-blue); font-weight: 800;">🏓 Padrão Tênis de Mesa Estratégico</div>
+            <div style="font-size: 0.8rem; color: #cbd5e1; margin-top: 4px;">
+              Calderano e Takahashi em Grand Smash atraem <strong>CTR médio de 14.2%</strong>. Priorizar pautas das oitavas com tags multilíngues para público internacional.
+            </div>
+          </div>
+
+          <div class="ops-card" style="text-align: left;">
+            <div style="font-size: 0.75rem; color: var(--accent-purple); font-weight: 800;">🏎️ Padrão Fórmula 1</div>
+            <div style="font-size: 0.8rem; color: #cbd5e1; margin-top: 4px;">
+              Audi F1 e Gabriel Bortoleto apresentam alto engajamento em Shorts. Shorts de 45 segundos com foco em tempos de telemetria têm <strong>89% de retenção</strong>.
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- MODAL: AUDITORIA DE VERACIDADE (INDIVIDUAL DA PAUTA) -->
+  <div class="modal-overlay" id="auditModal">
+    <div class="modal-content" style="max-width: 850px;">
+      <div class="modal-header">
+        <div>
+          <span style="font-size:0.75rem; font-weight:800; color:var(--accent-blue); text-transform:uppercase;">FACT CHECK ENGINE • AUDITORIA INDIVIDUAL</span>
+          <h3 style="font-size: 1.15rem; font-weight: 800; color: #fff;" id="auditModalTitle">Auditoria de Veracidade</h3>
+        </div>
+        <button class="modal-close" onclick="app.closeAuditModal()">&times;</button>
+      </div>
+
+      <!-- STATUS & DUAL SCORE BANNER -->
+      <div class="audit-score-summary">
+        <div class="audit-score-card">
+          <span class="audit-score-title">Status da Verificação</span>
+          <div style="margin-top:2px;" id="auditModalStatusBadge"></div>
+          <div style="font-size:0.75rem; color:var(--text-muted); margin-top:4px;" id="auditModalApprovalState"></div>
+        </div>
+
+        <div style="display:flex; gap:1.5rem; justify-content:flex-end;">
+          <div class="audit-score-card" style="text-align:right;">
+            <span class="audit-score-title">Score Editorial</span>
+            <div class="audit-score-num" style="color:var(--primary);" id="auditModalScoreEditorial">98/100</div>
+            <span style="font-size:0.68rem; color:var(--text-muted);">Relevância & Audiência</span>
+          </div>
+          <div class="audit-score-card" style="text-align:right;">
+            <span class="audit-score-title">Score Confiabilidade</span>
+            <div class="audit-score-num" style="color:var(--accent-green);" id="auditModalScoreConfiabilidade">96/100</div>
+            <span style="font-size:0.68rem; color:var(--text-muted);" id="auditModalScoreLabel">🟢 Alta Confiabilidade</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONTRADICTION ALERT (IF APPLICABLE) -->
+      <div id="auditModalContradictionAlert" style="display:none; margin-bottom:1rem; padding:0.75rem 1rem; border-radius:6px; background:rgba(239,68,68,0.15); border:1px solid var(--accent-red); color:#fca5a5; font-size:0.82rem; font-weight:700;"></div>
+
+      <!-- BREAKDOWN CHIPS (100 PTS) -->
+      <h4 style="font-size:0.8rem; color:var(--text-muted); text-transform:uppercase; margin-bottom:0.5rem; font-weight:800;">Critérios de Pontuação de Confiabilidade (0 a 100)</h4>
+      <div class="audit-breakdown-chips" id="auditModalBreakdownChips"></div>
+
+      <!-- 13 ITENS CHECKLIST TABLE -->
+      
+      <!-- AUDITORIA POR AFIRMAÇÃO FACTUAL (FACT CHECK 2.5 - ITEM 8) -->
+      <h4 style="font-size:0.8rem; color:var(--text-muted); text-transform:uppercase; margin-bottom:0.5rem; font-weight:800; margin-top:1rem;">
+        Auditoria por Afirmação Factual Individual (Item a Item)
+      </h4>
+      <div style="overflow-x: auto; margin-bottom: 1rem;">
+        <table class="audit-checklist-table">
+          <thead>
+            <tr>
+              <th style="width: 35%;">Afirmação Extraída</th>
+              <th style="width: 25%;">Fonte Primária / Órgão</th>
+              <th style="width: 25%;">Evidência Documental</th>
+              <th style="width: 15%;">Status</th>
+            </tr>
+          </thead>
+          <tbody id="auditModalStatementsBody"></tbody>
+        </table>
+      </div>
+
+      <h4 style="font-size:0.8rem; color:var(--text-muted); text-transform:uppercase; margin-bottom:0.5rem; font-weight:800;">Checklist de Veracidade Factual</h4>
+      <div style="overflow-x: auto;">
+        <table class="audit-checklist-table">
+          <thead>
+            <tr>
+              <th style="width: 25%;">Item Auditado</th>
+              <th style="width: 22%;">Status</th>
+              <th>Evidência / Detalhes Verificados</th>
+            </tr>
+          </thead>
+          <tbody id="auditModalChecklistBody"></tbody>
+        </table>
+      </div>
+
+      <!-- FONTES CONSULTADAS TABLE (CLICÁVEIS) -->
+      <h4 style="font-size:0.8rem; color:var(--text-muted); text-transform:uppercase; margin-bottom:0.5rem; font-weight:800; margin-top:1rem;">Fontes Consultadas & Links Clicáveis</h4>
+      <div style="overflow-x: auto; margin-bottom: 1.25rem;">
+        <table class="sources-table">
+          <thead>
+            <tr>
+              <th>Fonte</th>
+              <th>Tipo de Fonte</th>
+              <th>Data</th>
+              <th>URL Oficial</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="auditModalSourcesBody"></tbody>
+        </table>
+      </div>
+
+      <!-- TIMESTAMPS & ACTIONS -->
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem; border-top:1px solid var(--border-color); padding-top:1rem;">
+        <div style="font-size:0.75rem; color:var(--text-muted);">
+          <div>Última verificação: <strong style="color:#fff;" id="auditModalLastCheck">06/10/2026 — 08:07</strong></div>
+          <div>Próxima verificação: <strong style="color:var(--accent-blue);">Automática (em 15 min)</strong></div>
+        </div>
+
+        <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+          <button class="btn btn-sm btn-outline" onclick="app.reverificarPautaAtual()">
+            <span>🔄</span> Verificar Novamente
+          </button>
+          <button class="btn btn-sm btn-outline" onclick="app.exportarDossieAuditoria()">
+            <span>📥</span> Exportar Dossiê
+          </button>
+          <button class="btn btn-sm btn-success" id="btnAprovarPautaModal" onclick="app.aprovarPautaAtual()">
+            <span>✅</span> Aprovar Pauta
+          </button>
+          <button class="btn btn-sm btn-outline" onclick="app.closeAuditModal()">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  
+  <!-- MODAL: CONEXÃO ONLINE & MOTOR DE SCRAPING AO VIVO -->
+  <div class="modal-overlay" id="modalConexao">
+    <div class="modal-content" style="max-width: 680px;">
+      <div class="modal-header">
+        <div style="display:flex; align-items:center; gap:0.5rem;">
+          <span style="font-size: 1.4rem;">🌐</span>
+          <div>
+            <h3 style="font-size: 1.15rem; font-weight: 800; color: #fff;">CONEXÃO ONLINE & MOTOR DE SCRAPING AO VIVO</h3>
+            <div style="font-size:0.75rem; color:var(--text-muted);">Status da Comunicação com o Servidor Python & Raspagem da Web</div>
+          </div>
+        </div>
+        <button class="modal-close" onclick="app.fecharModalConexao()">&times;</button>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:1rem;">
+        <!-- STATUS ATUAL -->
+        <div style="background: rgba(0,0,0,0.35); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 1rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem;">
+          <div>
+            <div style="font-size:0.75rem; color:var(--text-muted); text-transform:uppercase; font-weight:700;">Status do Servidor Local/Nuvem:</div>
+            <div id="modalStatusDesc" style="font-size: 1.05rem; font-weight: 800; color: var(--accent-green); margin-top: 2px;">
+              🟢 Servidor Ativo & Conectado
+            </div>
+            <div id="modalStatusDetail" style="font-size: 0.75rem; color: #cbd5e1; margin-top: 2px;">
+              Varredura automática em segundo plano ativa a cada 15 minutos.
+            </div>
+          </div>
+          <button class="btn btn-sm btn-outline" onclick="app.testarConexaoBackend()">
+            <span>🔄</span> Testar Conexão
+          </button>
+        </div>
+
+        <!-- FEEDS RASTREADOS AO VIVO -->
+        <div style="background: rgba(0,0,0,0.25); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; padding: 0.85rem;">
+          <div style="font-size: 0.8rem; font-weight: 800; color: #fff; margin-bottom: 0.4rem;">
+            📡 Feeds RSS e Fontes Oficiais Rastreadas na Internet:
+          </div>
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap:0.4rem; font-size:0.75rem; color:#cbd5e1;">
+            <div>• <strong>Globo Esporte (GE):</strong> Futebol, Basquete, Vôlei, F1</div>
+            <div>• <strong>UOL Esporte:</strong> Tempo Real e Coberturas ao Vivo</div>
+            <div>• <strong>Google News Sports:</strong> Tênis de Mesa (CBTM / WTT)</div>
+            <div>• <strong>Google News Sports:</strong> Tênis (ATP Tour / WTA)</div>
+            <div>• <strong>Federações Oficiais:</strong> CBF, FIA, FIVB, ITTF</div>
+            <div>• <strong>Varredura Automatizada:</strong> A cada 15 min em background</div>
+          </div>
+        </div>
+
+        <!-- AÇÕES -->
+        <div style="display: flex; gap: 0.5rem; justify-content: flex-end; align-items: center;">
+          <button class="btn btn-sm btn-danger" onclick="app.sincronizarFeedsAoVivo(); app.fecharModalConexao();">
+            <span>🔴</span> Forçar Raspagem Agora
+          </button>
+          <button class="btn btn-sm btn-outline" onclick="app.fecharModalConexao()">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: REGISTRAR CORREÇÃO EDITORIAL -->
+  <div class="modal-overlay" id="correcaoModal">
+    <div class="modal-content" style="max-width: 650px;">
+      <div class="modal-header">
+        <h3 style="font-size: 1.15rem; font-weight: 800; color: #fff;">📝 REGISTRAR CORREÇÃO EDITORIAL</h3>
+        <button class="modal-close" onclick="app.fecharModalCorrecao()">&times;</button>
+      </div>
+      <p style="font-size:0.8rem; color:var(--text-muted); margin-bottom:1rem;">
+        Mecanismo de transparência: nenhuma informação errônea é apagada silenciosamente. Toda alteração requer registro histórico formal.
+      </p>
+
+      <div style="display:flex; flex-direction:column; gap:0.85rem;">
+        <div>
+          <label style="font-size:0.75rem; color:var(--text-muted); font-weight:700; display:block; margin-bottom:4px;">Pauta Referente:</label>
+          <input type="text" id="correcaoPautaTitulo" class="form-input" style="width:100%;" readonly>
+        </div>
+        <div>
+          <label style="font-size:0.75rem; color:var(--text-muted); font-weight:700; display:block; margin-bottom:4px;">Erro Original Identificado:</label>
+          <textarea id="correcaoErroOriginal" class="form-input" rows="2" style="width:100%;" placeholder="Ex: Placar inicialmente divulgado como 125 pontos..."></textarea>
+        </div>
+        <div>
+          <label style="font-size:0.75rem; color:var(--text-muted); font-weight:700; display:block; margin-bottom:4px;">Informação Corrigida Oficial:</label>
+          <textarea id="correcaoTextoCorrigido" class="form-input" rows="2" style="width:100%;" placeholder="Ex: Súmula oficial homologada confirma 126 pontos..."></textarea>
+        </div>
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:0.75rem;">
+          <div>
+            <label style="font-size:0.75rem; color:var(--text-muted); font-weight:700; display:block; margin-bottom:4px;">Fonte da Correção:</label>
+            <input type="text" id="correcaoFonte" class="form-input" style="width:100%;" placeholder="Ex: Boletim Oficial da Federação">
+          </div>
+          <div>
+            <label style="font-size:0.75rem; color:var(--text-muted); font-weight:700; display:block; margin-bottom:4px;">Jornalista Responsável:</label>
+            <input type="text" id="correcaoResponsavel" class="form-input" style="width:100%;" value="Editor-Chefe / Plantão SPORT 5">
+          </div>
+        </div>
+        <div style="display:flex; justify-content:flex-end; gap:0.5rem; margin-top:0.75rem;">
+          <button class="btn btn-sm btn-outline" onclick="app.fecharModalCorrecao()">Cancelar</button>
+          <button class="btn btn-sm btn-success" onclick="app.salvarCorrecaoEditorial()">
+            <span>💾</span> Salvar Correção no Histórico
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: EDIÇÃO DE PAUTA PELO EDITOR-CHEFE -->
+  <div class="modal-overlay" id="editPautaModal">
+    <div class="modal-content" style="max-width: 650px;">
+      <div class="modal-header">
+        <h3 style="font-size: 1.15rem; font-weight: 800; color: #fff;">✏️ EDITAR PAUTA — CONTROLE DO EDITOR-CHEFE</h3>
+        <button class="modal-close" onclick="app.fecharModalEdicao()">&times;</button>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:0.85rem;">
+        <div>
+          <label style="font-size:0.75rem; color:var(--text-muted); font-weight:700; display:block; margin-bottom:4px;">Título da Pauta:</label>
+          <input type="text" id="editModalTitulo" class="form-input" style="width:100%;">
+        </div>
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:0.75rem;">
+          <div>
+            <label style="font-size:0.75rem; color:var(--text-muted); font-weight:700; display:block; margin-bottom:4px;">Atleta / Equipe:</label>
+            <input type="text" id="editModalAtleta" class="form-input" style="width:100%;">
+          </div>
+          <div>
+            <label style="font-size:0.75rem; color:var(--text-muted); font-weight:700; display:block; margin-bottom:4px;">Competição:</label>
+            <input type="text" id="editModalCompeticao" class="form-input" style="width:100%;">
+          </div>
+        </div>
+        <div>
+          <label style="font-size:0.75rem; color:var(--text-muted); font-weight:700; display:block; margin-bottom:4px;">Ângulo Editorial Recomendado:</label>
+          <textarea id="editModalAngulo" class="form-input" rows="2" style="width:100%;"></textarea>
+        </div>
+        <div style="display:flex; justify-content:flex-end; gap:0.5rem; margin-top:0.75rem;">
+          <button class="btn btn-sm btn-outline" onclick="app.fecharModalEdicao()">Cancelar</button>
+          <button class="btn btn-sm btn-primary" onclick="app.salvarEdicaoPauta()">
+            <span>💾</span> Salvar Alterações
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: ROADMAP DE EVOLUÇÃO SPORT 5 (V1 A V8) -->
+  <div class="modal-overlay" id="roadmapModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 style="font-size: 1.15rem; font-weight: 800; color: #fff;">🗺️ ROADMAP OFICIAL SPORT 5 AI (V1 → V8)</h3>
+        <button class="modal-close" onclick="app.closeRoadmapModal()">&times;</button>
+      </div>
+      <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:1rem;">
+        Sequência de evolução da redação esportiva automatizada conforme o plano de engenharia editorial:
+      </p>
+
+      <div class="roadmap-step completed">
+        <div style="font-size: 1.1rem;">✅</div>
+        <div>
+          <div style="font-weight: 800; color: var(--accent-blue);">V1 — Arquitetura Editorial Base & Protótipo</div>
+          <div style="font-size: 0.78rem; color: #cbd5e1;">Definição das 6 editorias (com Tênis de Mesa estratégico), regras de roteiro 5 min, shorts, storyboard e QA 11 pontos.</div>
+        </div>
+      </div>
+
+      <div class="roadmap-step completed">
+        <div style="font-size: 1.1rem;">✅</div>
+        <div>
+          <div style="font-weight: 800; color: var(--accent-blue);">V2 — LIVE NEWS ENGINE (Radar Real)</div>
+          <div style="font-size: 0.78rem; color: #cbd5e1;">Conexão com acontecimentos reais de outubro de 2026, federações e veículos credenciados.</div>
+        </div>
+      </div>
+
+      <div class="roadmap-step active">
+        <div style="font-size: 1.1rem;">🟢</div>
+        <div>
+          <div style="font-weight: 800; color: var(--accent-green);">V2.1 — FACT CHECK ENGINE (Auditoria & Veracidade) [VERSÃO ATUAL]</div>
+          <div style="font-size: 0.78rem; color: #cbd5e1;">Camada profissional de verificação de fontes, Score de Confiabilidade (0-100), bloqueio anti-fake news e auditoria individual.</div>
+        </div>
+      </div>
+
+      <div class="roadmap-step">
+        <div style="font-size: 1.1rem; color: var(--text-muted);">⏳</div>
+        <div>
+          <div style="font-weight: 700; color: #fff;">V3 — Pesquisa Profunda Real</div>
+          <div style="font-size: 0.78rem; color: var(--text-muted);">Scraping e averiguação cruzada de múltiplos artigos, súmulas e dados estatísticos avançados em tempo real.</div>
+        </div>
+      </div>
+
+      <div class="roadmap-step">
+        <div style="font-size: 1.1rem; color: var(--text-muted);">⏳</div>
+        <div>
+          <div style="font-weight: 700; color: #fff;">V4 — Roteiro + Síntese de Voz (TTS)</div>
+          <div style="font-size: 0.78rem; color: var(--text-muted);">Geração de narração humana em português brasileiro com entonação esportiva via ElevenLabs / OpenAI Audio.</div>
+        </div>
+      </div>
+
+      <div class="roadmap-step">
+        <div style="font-size: 1.1rem; color: var(--text-muted);">⏳</div>
+        <div>
+          <div style="font-weight: 700; color: #fff;">V5 — Geração Automática de Vídeo</div>
+          <div style="font-size: 0.78rem; color: var(--text-muted);">Montagem de clipes, lower thirds, gráficos animados e sincronização de cortes com o áudio via Remotion/FFmpeg.</div>
+        </div>
+      </div>
+
+      <div class="roadmap-step">
+        <div style="font-size: 1.1rem; color: var(--text-muted);">⏳</div>
+        <div>
+          <div style="font-weight: 700; color: #fff;">V6 — Publicação YouTube</div>
+          <div style="font-size: 0.78rem; color: var(--text-muted);">Upload automatizado com metadados, thumbnail, tags, capítulos e monetização via YouTube Data API v3.</div>
+        </div>
+      </div>
+
+      <div class="roadmap-step">
+        <div style="font-size: 1.1rem; color: var(--text-muted);">⏳</div>
+        <div>
+          <div style="font-weight: 700; color: #fff;">V7 — Shorts / Reels / TikTok</div>
+          <div style="font-size: 0.78rem; color: var(--text-muted);">Corte vertical 9:16 automático com legendas dinâmicas animadas para distribuição em redes sociais.</div>
+        </div>
+      </div>
+
+      <div class="roadmap-step">
+        <div style="font-size: 1.1rem; color: var(--text-muted);">⏳</div>
+        <div>
+          <div style="font-weight: 700; color: #fff;">V8 — Redação 24h Praticamente Autônoma</div>
+          <div style="font-size: 0.78rem; color: var(--text-muted);">Operação contínua de monitoramento, decisão, redação, renderização e postagem com supervisão humana apenas por exceção.</div>
+        </div>
+      </div>
+
+      <div style="display:flex; justify-content:flex-end; margin-top:1rem;">
+        <button class="btn btn-primary" onclick="app.closeRoadmapModal()">Entendido</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: NOVA PAUTA PERSONALIZADA -->
+  <div class="modal-overlay" id="newPautaModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 style="font-size: 1.15rem; font-weight: 800;">Adicionar Nova Pauta Esportiva ao Radar</h3>
+        <button class="modal-close" onclick="app.closeNewPautaModal()">&times;</button>
+      </div>
+      <form onsubmit="app.submitNewPauta(event)">
+        <div style="display:flex; flex-direction:column; gap:0.85rem; font-size:0.85rem;">
+          <div>
+            <label style="display:block; margin-bottom:0.25rem; font-weight:700;">Título do Acontecimento:</label>
+            <input type="text" id="modalInputTitle" required class="search-input" style="width:100%;" placeholder="Ex: Brasil conquista ouro na Copa do Mundo de Vôlei">
+          </div>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.75rem;">
+            <div>
+              <label style="display:block; margin-bottom:0.25rem; font-weight:700;">Editoria:</label>
+              <select id="modalInputSport" class="search-input" style="width:100%;">
+                <option value="FUTEBOL">Futebol</option>
+                <option value="BASQUETE">Basquete</option>
+                <option value="VÔLEI">Vôlei</option>
+                <option value="FÓRMULA 1">Fórmula 1</option>
+                <option value="TÊNIS">Tênis</option>
+                <option value="TÊNIS DE MESA">Tênis de Mesa (Estratégica)</option>
+              </select>
+            </div>
+            <div>
+              <label style="display:block; margin-bottom:0.25rem; font-weight:700;">Campeonato / Torneio:</label>
+              <input type="text" id="modalInputCamp" class="search-input" style="width:100%;" placeholder="Ex: WTT Finals, Champions League...">
+            </div>
+          </div>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.75rem;">
+            <div>
+              <label style="display:block; margin-bottom:0.25rem; font-weight:700;">Atleta ou Equipe Principal:</label>
+              <input type="text" id="modalInputAthlete" class="search-input" style="width:100%;" placeholder="Ex: Hugo Calderano, Seleção Brasileira...">
+            </div>
+            <div>
+              <label style="display:block; margin-bottom:0.25rem; font-weight:700;">Fonte Confiável & Link Real:</label>
+              <input type="text" id="modalInputSource" class="search-input" style="width:100%;" placeholder="Ex: Globo Esporte, ITTF Official">
+            </div>
+          </div>
+          <div>
+            <label style="display:block; margin-bottom:0.25rem; font-weight:700;">Fatos & Estatísticas Principais:</label>
+            <textarea id="modalInputFacts" class="search-input" style="width:100%; height:80px;" placeholder="Resumo factual com números, placares e contexto..."></textarea>
+          </div>
+          <div style="display:flex; justify-content:flex-end; gap:0.5rem; margin-top:0.5rem;">
+            <button type="button" class="btn btn-outline" onclick="app.closeNewPautaModal()">Cancelar</button>
+            <button type="submit" class="btn btn-primary">Processar no Radar</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="toast" id="toastNotification">Notificação</div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div style="max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+      <div>
+        <strong>SPORT 5 AI V2.1 — FACT CHECK ENGINE</strong> — Redação Esportiva Digital de Alta Precisão.
+      </div>
+      <div>
+        Regra Editorial: <em>“Se não pode ser comprovado, não pode ser publicado como fato.”</em>
+      </div>
+    </div>
+  </footer>
