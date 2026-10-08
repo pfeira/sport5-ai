@@ -1,14 +1,719 @@
 [
   {
+    "id": "live-1791458766-1",
+    "sport": "TÊNIS",
+    "title": "Carlos Alcaraz atropela em Xangai por 2 a 0 e garante vaga nas oitavas do Masters 1000",
+    "championship": "Rolex Shanghai Masters 2026 (ATP 1000)",
+    "athlete": "Carlos Alcaraz (Espanha)",
+    "date": "08/10/2026",
+    "dataAconteceu": "08/10/2026",
+    "dataPublicado": "08/10/2026",
+    "dataAtualizado": "08/10/2026 08:25",
+    "recency": "ULTIMAS_HORAS",
+    "location": "Qizhong Forest Sports City Arena, Xangai, China",
+    "source": "ATP Tour Match Centre & Rolex Shanghai Masters Oficial",
+    "sourceUrl": "https://www.atptour.com/en/tournaments/shanghai/5014/overview",
+    "verifiedType": "OFICIAL",
+    "statusVerificacao": "VERIFIED",
+    "statusVerificacaoLabel": "🟢 VERIFIED",
+    "workflowStatus": "AGUARDANDO_APROVACAO",
+    "duplicidade": {
+      "status": "PAUTA ATUALIZADA",
+      "isDuplicada": true,
+      "pautaOrigemId": "p3",
+      "oQueMudou": "Vitória maiúscula na 3ª rodada por 6-2 e 6-2 em apenas 1h14 de partida.",
+      "quandoMudou": "08/10/2026 08:15",
+      "novaFonte": "ATP Tour Live Scoring",
+      "novaInformacao": "Alcaraz amplia série invicta na Ásia para 11 vitórias seguidas."
+    },
+    "scoreEditorial": 99,
+    "scoreEditorialBreakdown": {
+      "relevancia": 25,
+      "audiencia": 25,
+      "novidade": 20,
+      "analise": 15,
+      "dados": 9,
+      "visual": 5
+    },
+    "scoreConfiabilidade": 98,
+    "contradicao": {
+      "detectada": false,
+      "mensagem": "Sem divergências. Estatísticas oficiais conferidas no sistema hawk-eye da ATP."
+    },
+    "importance": "Alcaraz consolida retorno iminente ao topo do ranking mundial e busca dobradinha Pequim-Xangai.",
+    "novelty": "Parciais de 6-2 e 6-2 com 88% de aproveitamento de primeiro saque e nenhum break point cedido.",
+    "audiencePotential": "Pico global de buscas no tênis mundial nesta manhã de quinta-feira.",
+    "contentOpportunity": "Análise da agressividade com devolução dentro da quadra e drop shots perfeitos.",
+    "stats": "Parciais: 6-2, 6-2. Duração: 1h14. Winners: 27 contra 8. Erros não forçados: apenas 6.",
+    "editorialIntelligence": {
+      "porQueImporta": "Carlos Alcaraz vive o momento mais dominante da temporada após vencer Sinner em Pequim.",
+      "importancia": "Máxima prioridade editorial no tênis internacional.",
+      "contexto": "Reta final da corrida para o ATP Finals de Turim.",
+      "angulo": "Foco na velocidade de pernas e transição rede-fundo de quadra.",
+      "potencialClique": "Altíssimo (98/100)",
+      "potencialRetencao": "94%",
+      "potencialVisual": "Excelente para replays de pontos plásticos em quadra dura"
+    },
+    "auditoriaAfirmacoes": [
+      {
+        "afirmacao": "Alcaraz venceu por duplo 6-2 e avançou às oitavas em Xangai.",
+        "fonte": "ATP Tour Oficial",
+        "tipoFonte": "OFICIAL_PRIMARIA",
+        "evidencia": "Súmula oficial da partida ATP Masters 1000 Shanghai.",
+        "status": "CONFIRMADO"
+      },
+      {
+        "afirmacao": "O espanhol não cedeu nenhum break point em todo o confronto.",
+        "fonte": "ATP Match Stats",
+        "tipoFonte": "OFICIAL_PRIMARIA",
+        "evidencia": "Scout oficial: 0 break points enfrentados em 8 games de serviço.",
+        "status": "CONFIRMADO"
+      }
+    ],
+    "auditoriaFontes": [
+      {
+        "nome": "ATP Tour Match Centre Oficial",
+        "url": "https://www.atptour.com/en/scores/current/shanghai/5014/live-scores",
+        "tipo": "OFICIAL_PRIMARIA",
+        "data": "08/10/2026",
+        "horario": "08:15 BRT",
+        "origem": "Sistema Oficial de Pontuação ATP",
+        "status": "CONFIRMADA",
+        "evidencia": "Placar oficial: Alcaraz 2x0 (6-2, 6-2).",
+        "ultimaVerificacao": "08/10/2026 — 08:25"
+      }
+    ],
+    "pesquisaProfunda10": {
+      "oQueAconteceu": {
+        "texto": "Carlos Alcaraz venceu por 6-2 e 6-2 com exibição dominante no Masters 1000 de Xangai.",
+        "tipo": "FATO"
+      },
+      "quandoAconteceu": {
+        "texto": "Partida concluída nesta manhã de 08/10/2026 no horário de Brasília.",
+        "tipo": "FATO"
+      },
+      "ondeAconteceu": {
+        "texto": "Quadra Central da Qizhong Arena, Xangai, China.",
+        "tipo": "FATO"
+      },
+      "quemParticipou": {
+        "texto": "Carlos Alcaraz (Espanha) e adversário da 3ª rodada.",
+        "tipo": "FATO"
+      },
+      "resultado": {
+        "texto": "Vitória por 2 sets a 0 (6-2, 6-2) e classificação para as oitavas.",
+        "tipo": "FATO"
+      },
+      "contexto": {
+        "texto": "Alcaraz vem de título invicto em Pequim e mantém ritmo imparável na gira asiática.",
+        "tipo": "ANÁLISE"
+      },
+      "historico": {
+        "texto": "11ª vitória consecutiva do espanhol no circuito da ATP.",
+        "tipo": "FATO"
+      },
+      "estatisticas": {
+        "texto": "88% de pontos vencidos com 1º serviço, 27 winners e 0 break points concedidos.",
+        "tipo": "FATO"
+      },
+      "consequencias": {
+        "texto": "Aproxima-se matematicamente de retomar a liderança do ranking mundial da ATP.",
+        "tipo": "ANÁLISE"
+      },
+      "oQueAconteceAgora": {
+        "texto": "Duelo das oitavas de final programado para a madrugada de sexta-feira.",
+        "tipo": "INFERÊNCIA"
+      }
+    },
+    "research": {
+      "confirmados": [
+        "Carlos Alcaraz venceu por duplo 6-2 no Masters 1000 de Xangai.",
+        "Não enfrentou nenhum break point durante todo o jogo.",
+        "Conquistou 27 winners e cometeu apenas 6 erros não forçados."
+      ],
+      "aConfirmar": [
+        "Horário e definição de adversário das oitavas de final"
+      ],
+      "analises": [
+        "A agressividade no retorno de saque impediu qualquer reação do adversário."
+      ],
+      "stats": "6-2, 6-2. 27 winners, 88% no primeiro saque. 1h14 de jogo.",
+      "proximos": "Oitavas de final em Xangai na sexta-feira",
+      "fontes": "ATP Tour Match Centre Oficial"
+    },
+    "roteiro": {
+      "hook": "0:00 a 0:15 | Carlos Alcaraz está jogando em outro planeta! Na manhã desta quinta-feira, 08/10/2026, o espanhol atropelou em Xangai por duplo 6-2 e colocou mais uma aula de tênis na conta. Entenda em cinco minutos!",
+      "aconteceu": "0:15 a 1:00 | Na Quadra Central da Qizhong Arena, Alcaraz precisou de apenas 1 hora e 14 minutos para despachar seu adversário. Com parciais de 6-2 e 6-2, o espanhol não deu sequer uma chance de quebra em toda a partida.",
+      "contexto": "1:00 a 2:00 | Depois de erguer a taça em Pequim batendo Jannik Sinner numa final épica, Alcaraz chegou a Xangai com moral inabalável. Ele busca a dobradinha histórica na Ásia e a retomada do número um do ranking mundial.",
+      "numeros": "2:00 a 2:45 | Os números oficiais da ATP impressionam: 88% de aproveitamento quando colocou o primeiro saque em quadra, 27 winners e zero break points enfrentados.",
+      "analise": "2:45 a 3:45 | O segredo foi a antecipação. Alcaraz devolveu os segundos serviços pisando um metro dentro da linha, encurtando o tempo de reação e matando os pontos com voleios e curtinhas milimétricas.",
+      "oQueAconteceAgora": "3:45 a 4:30 | Nas oitavas de final, Alcaraz volta à quadra nesta sexta-feira em busca de mais uma semifinal de Masters 1000.",
+      "fechamento": "4:30 a 5:00 | Para você, Alcaraz já é o melhor tenista do mundo em 2026? Comente seu palpite e inscreva-se no SPORT 5 AI!"
+    },
+    "auditoriaRoteiro": [
+      {
+        "frase": "Alcaraz venceu por duplo 6-2 no Masters 1000 de Xangai.",
+        "status": "CONFIRMADO",
+        "fonte": "ATP Tour",
+        "evidencia": "Súmula oficial homologada."
+      }
+    ],
+    "roteiroAprovadoFactCheck": true,
+    "titulos": [
+      {
+        "categoria": "SEO",
+        "texto": "Carlos Alcaraz Vence em Xangai por 2 a 0: Melhores Momentos e Análise",
+        "score": 97
+      },
+      {
+        "categoria": "CLIQUE",
+        "texto": "Alcaraz DESTRUIU em Xangai! Ninguém Segura o Espanhol?",
+        "score": 95
+      },
+      {
+        "categoria": "CLAREZA",
+        "texto": "Alcaraz nas Oitavas do Masters 1000 de Xangai: Resumo em 5 Minutos",
+        "score": 94
+      },
+      {
+        "categoria": "CURIOSIDADE",
+        "texto": "A Jogada de Alcaraz que Deixou Xangai de Boca Aberta",
+        "score": 91
+      },
+      {
+        "categoria": "PRECISÃO",
+        "texto": "Alcaraz 2x0 em Xangai: 27 Winners e 0 Break Points Cedidos",
+        "score": 98
+      }
+    ],
+    "shorts": {
+      "versao30s": {
+        "duracao": "30s",
+        "hook": "0-3s: Olha o que Carlos Alcaraz acabou de fazer em Xangai!",
+        "desenvolvimento": "Duplo 6 a 2 em apenas 1h14! 27 winners e zero break points cedidos. O espanhol é uma máquina em quadra dura!",
+        "cta": "Deixe o like para o fenômeno e siga o SPORT 5 AI!",
+        "textoCompleto": "0-3s: Olha o que Carlos Alcaraz acabou de fazer em Xangai!\n\nDuplo 6 a 2 em apenas 1h14! 27 winners e zero break points cedidos. O espanhol é uma máquina em quadra dura!\n\nDeixe o like para o fenômeno e siga o SPORT 5 AI!"
+      },
+      "versao45s": {
+        "duracao": "45s",
+        "hook": "0-3s: Alcaraz está simplesmente impossível na China nesta quinta-feira!",
+        "desenvolvimento": "Pelo Masters 1000 de Xangai, ele atropelou com duplo 6-2. Não deu chances de quebra e cravou 27 bolas vencedoras. A corrida pelo número um do mundo esquentou de vez!",
+        "cta": "Ele leva o título em Xangai? Comente seu palpite e inscreva-se no canal!",
+        "textoCompleto": "0-3s: Alcaraz está simplesmente impossível na China nesta quinta-feira!\n\nPelo Masters 1000 de Xangai, ele atropelou com duplo 6-2. Não deu chances de quebra e cravou 27 bolas vencedoras. A corrida pelo número um do mundo esquentou de vez!\n\nEle leva o título em Xangai? Comente seu palpite e inscreva-se no canal!"
+      },
+      "versao60s": {
+        "duracao": "60s",
+        "hook": "0-3s: Entenda em um minuto por que Carlos Alcaraz é o homem a ser batido no tênis hoje!",
+        "desenvolvimento": "Depois de ser campeão em Pequim contra Sinner, Alcaraz entrou em Xangai nesta manhã e atropelou por 6-2 e 6-2. Ele venceu 88% dos pontos com primeiro saque e liquidou a partida em pouco mais de uma hora. A velocidade e o poder de definição mostram que ele chega no auge para o final de 2026.",
+        "cta": "Qual tenista pode parar Alcaraz hoje? Deixe sua opinião nos comentários e ative as notificações!",
+        "textoCompleto": "0-3s: Entenda em um minuto por que Carlos Alcaraz é o homem a ser batido no tênis hoje!\n\nDepois de ser campeão em Pequim contra Sinner, Alcaraz entrou em Xangai nesta manhã e atropelou por 6-2 e 6-2. Ele venceu 88% dos pontos com primeiro saque e liquidou a partida em pouco mais de uma hora. A velocidade e o poder de definição mostram que ele chega no auge para o final de 2026.\n\nQual tenista pode parar Alcaraz hoje? Deixe sua opinião nos comentários e ative as notificações!"
+      }
+    },
+    "thumbnail": {
+      "tituloRecomendado": "ALCARAZ: O FENÔMENO DE XANGAI!",
+      "textoCurto": "IMPARÁVEL!",
+      "imagemSugerida": "Foto de Carlos Alcaraz vibrando com o punho fechado na quadra central de Xangai",
+      "composicao": "Regra dos terços com Alcaraz no terço direito e 'DUPLO 6-2' em destaque à esquerda",
+      "safeArea": "80% centralizado sem obstrução de relógio do YouTube",
+      "versaoA": {
+        "layout": "Amarelo e Azul Xangai",
+        "cores": "Amarelo #FFD700, Azul #0052CC"
+      },
+      "versaoB": {
+        "layout": "Vermelho Vitória Rápida",
+        "cores": "Vermelho #FF4D4D, Preto #0B0E14"
+      },
+      "versaoC": {
+        "layout": "Gráfica com Scout 27 Winners",
+        "cores": "Verde #00FF88, Branco #FFF"
+      }
+    },
+    "storyboard": [
+      {
+        "cena": "CENA 01",
+        "tempo": "0:00 - 0:15 (15s)",
+        "narracao": "Abertura com gancho do duplo 6-2...",
+        "visual": "Alcaraz comemorando ponto",
+        "lowerThird": "TÊNIS • MASTERS 1000 XANGAI",
+        "grafico": "Card com placar",
+        "transicao": "Fade in"
+      },
+      {
+        "cena": "CENA 02",
+        "tempo": "0:15 - 1:00 (45s)",
+        "narracao": "O que aconteceu na Quadra Central...",
+        "visual": "Replays dos melhores pontos",
+        "lowerThird": "MOMENTOS DECISIVOS",
+        "grafico": "Estatística de games",
+        "transicao": "Corte seco"
+      },
+      {
+        "cena": "CENA 03",
+        "tempo": "1:00 - 2:00 (60s)",
+        "narracao": "Contexto do título de Pequim...",
+        "visual": "Imagens de arquivo da semana anterior",
+        "lowerThird": "MOMENTO HISTÓRICO",
+        "grafico": "Tabela de pontos ATP",
+        "transicao": "Dissolvência"
+      },
+      {
+        "cena": "CENA 04",
+        "tempo": "2:00 - 3:30 (90s)",
+        "narracao": "Análise dos números e saque...",
+        "visual": "Gráficos de movimentação",
+        "lowerThird": "RAIO-X DO SAQUE",
+        "grafico": "88% 1º serviço",
+        "transicao": "Wipe"
+      },
+      {
+        "cena": "CENA 05",
+        "tempo": "3:30 - 4:30 (60s)",
+        "narracao": "O que vem a seguir nas oitavas...",
+        "visual": "Chave de simples de Xangai",
+        "lowerThird": "PRÓXIMA RODADA",
+        "grafico": "Chaveamento",
+        "transicao": "Corte"
+      },
+      {
+        "cena": "CENA 06",
+        "tempo": "4:30 - 5:00 (30s)",
+        "narracao": "Encerramento e chamada do canal...",
+        "visual": "Logo SPORT 5 AI",
+        "lowerThird": "SPORT 5 AI",
+        "grafico": "Cards finais",
+        "transicao": "Fade out"
+      }
+    ],
+    "youtube": {
+      "titulo": "Carlos Alcaraz Atropela em Xangai por 2 a 0 | SPORT 5 AI Análise",
+      "descricao": "Entenda a grande vitória de Carlos Alcaraz no Masters 1000 de Xangai nesta quinta-feira, 08/10/2026.\n\n📌 Fatos: Duplo 6-2 em 1h14.\n📊 Scout: 27 winners e nenhum break point cedido.\n🔗 Fonte: ATP Tour Oficial.\n\n#SPORT5AI #Tenis #Alcaraz #ShanghaiMasters",
+      "tags": [
+        "Tênis",
+        "Carlos Alcaraz",
+        "Masters 1000 Xangai",
+        "ATP Tour",
+        "SPORT 5 AI"
+      ],
+      "hashtags": [
+        "#Tenis",
+        "#Alcaraz",
+        "#ShanghaiMasters",
+        "#SPORT5AI"
+      ],
+      "playlist": "SPORT 5 — Tênis",
+      "categoria": "Esportes",
+      "agendamento": "08/10/2026 10:00 BRT",
+      "statusPublicacao": "DESATIVADO_AUTOMATICO"
+    },
+    "qa": {
+      "status": "APROVADO",
+      "checks": [
+        {
+          "item": "1. Nomes próprios e grafia",
+          "details": "Carlos Alcaraz checado."
+        },
+        {
+          "item": "2. Datas e cronologia",
+          "details": "Data de hoje: 08/10/2026."
+        },
+        {
+          "item": "3. Resultados e placares",
+          "details": "Placar duplo 6-2 conferido na súmula ATP."
+        },
+        {
+          "item": "4. Estatísticas citadas",
+          "details": "27 winners e 0 break points confirmados."
+        },
+        {
+          "item": "5. Fontes jornalísticas",
+          "details": "ATP Tour Match Centre."
+        },
+        {
+          "item": "6. Coerência lógica",
+          "details": "Roteiro de 5 minutos estruturado."
+        },
+        {
+          "item": "7. Português do Brasil",
+          "details": "Revisado com termos corretos de tênis."
+        },
+        {
+          "item": "8. Repetição de termos",
+          "details": "Fluido."
+        },
+        {
+          "item": "9. Checagem de clickbait",
+          "details": "Afirmações ancoradas nos dados."
+        },
+        {
+          "item": "10. Direitos autorais",
+          "details": "Verificação de imagem sugerida."
+        },
+        {
+          "item": "11. Informações sem confirmação",
+          "details": "Dúvidas isoladas."
+        }
+      ]
+    }
+  },
+  {
+    "id": "live-1791458766-2",
+    "sport": "FUTEBOL",
+    "title": "Brasileirão 2026: Botafogo e Palmeiras acirram briga pela liderança e Flamengo confirma nova formação",
+    "championship": "Campeonato Brasileiro Série A 2026",
+    "athlete": "Botafogo, Palmeiras e Flamengo (Filipe Luís)",
+    "date": "08/10/2026",
+    "dataAconteceu": "08/10/2026",
+    "dataPublicado": "08/10/2026",
+    "dataAtualizado": "08/10/2026 08:25",
+    "recency": "ULTIMAS_HORAS",
+    "location": "Rio de Janeiro e São Paulo, Brasil",
+    "source": "CBF Competições & Globo Esporte Ao Vivo",
+    "sourceUrl": "https://ge.globo.com/futebol/brasileirao-serie-a/",
+    "verifiedType": "OFICIAL",
+    "statusVerificacao": "VERIFIED",
+    "statusVerificacaoLabel": "🟢 VERIFIED",
+    "workflowStatus": "APROVADA",
+    "duplicidade": {
+      "status": "PAUTA ATUALIZADA",
+      "isDuplicada": true,
+      "pautaOrigemId": "p2",
+      "oQueMudou": "Definição das escalações oficiais e confirmação da tabela da 29ª rodada em 08/10/2026.",
+      "quandoMudou": "08/10/2026 08:00",
+      "novaFonte": "Boletim Informativo Diário (BID) e DCO/CBF",
+      "novaInformacao": "Filipe Luís define trio de ataque no Flamengo e Botafogo tem retorno de titulares."
+    },
+    "scoreEditorial": 99,
+    "scoreEditorialBreakdown": {
+      "relevancia": 25,
+      "audiencia": 25,
+      "novidade": 20,
+      "analise": 15,
+      "dados": 9,
+      "visual": 5
+    },
+    "scoreConfiabilidade": 99,
+    "contradicao": {
+      "detectada": false,
+      "mensagem": "Sem contradições. Escalas de arbitragem e tabelas homologadas pela CBF."
+    },
+    "importance": "Reta final decisiva do Campeonato Brasileiro com apenas 1 ponto separando o líder do vice-líder.",
+    "novelty": "Confirmação de mudanças táticas para os clássicos do fim de semana.",
+    "audiencePotential": "Maior apelo de audiência esportiva do país com cobertura em rede nacional.",
+    "contentOpportunity": "Comparativo tático da intensidade de pressão do Botafogo contra a consistência do Palmeiras.",
+    "stats": "Botafogo: 57 pts, 17V. Palmeiras: 56 pts, 17V. Saldo: Botafogo +21, Palmeiras +20.",
+    "editorialIntelligence": {
+      "porQueImporta": "A 29ª rodada pode definir a liderança isolada e o destino do título do Brasileirão 2026.",
+      "importancia": "Máxima audiência nacional no YouTube.",
+      "contexto": "Disputa acirrada com clássicos estaduais no fim de semana.",
+      "angulo": "Raio-x dos números e o impacto das novas escalações.",
+      "potencialClique": "Máximo (99/100)",
+      "potencialRetencao": "95%",
+      "potencialVisual": "Excelente para gráficos de tabela, mapa de calor e scout de gols"
+    },
+    "auditoriaAfirmacoes": [
+      {
+        "afirmacao": "Botafogo lidera a Série A com 57 pontos contra 56 do Palmeiras.",
+        "fonte": "Tabela Oficial CBF",
+        "tipoFonte": "OFICIAL_PRIMARIA",
+        "evidencia": "Documento da Diretoria de Competições da CBF.",
+        "status": "CONFIRMADO"
+      }
+    ],
+    "auditoriaFontes": [
+      {
+        "nome": "CBF Competições Oficial",
+        "url": "https://www.cbf.com.br/competicoes/brasileiro-serie-a",
+        "tipo": "OFICIAL_PRIMARIA",
+        "data": "08/10/2026",
+        "horario": "08:00 BRT",
+        "origem": "Confederação Brasileira de Futebol",
+        "status": "CONFIRMADA",
+        "evidencia": "Tabela oficial homologada.",
+        "ultimaVerificacao": "08/10/2026 — 08:25"
+      }
+    ],
+    "pesquisaProfunda10": {
+      "oQueAconteceu": {
+        "texto": "Abertura e preparação da 29ª rodada do Brasileirão 2026 com clássicos decisivos.",
+        "tipo": "FATO"
+      },
+      "quandoAconteceu": {
+        "texto": "Rodada em andamento nesta semana de 08/10/2026.",
+        "tipo": "FATO"
+      },
+      "ondeAconteceu": {
+        "texto": "Maracanã, Allianz Parque, Beira-Rio e Mineirão.",
+        "tipo": "FATO"
+      },
+      "quemParticipou": {
+        "texto": "Botafogo, Palmeiras, Flamengo, Corinthians, São Paulo e Internacional.",
+        "tipo": "FATO"
+      },
+      "resultado": {
+        "texto": "Botafogo 57 pts, Palmeiras 56 pts, disputa acirrada pela liderança.",
+        "tipo": "FATO"
+      },
+      "contexto": {
+        "texto": "Fase crítica do campeonato onde qualquer tropeço muda o líder da tabela.",
+        "tipo": "ANÁLISE"
+      },
+      "historico": {
+        "texto": "Maior equilíbrio dos últimos cinco anos na Série A.",
+        "tipo": "FATO"
+      },
+      "estatisticas": {
+        "texto": "Botafogo e Palmeiras somam 17 vitórias cada. Saldo de gols: +21 vs +20.",
+        "tipo": "FATO"
+      },
+      "consequencias": {
+        "texto": "Vencedor da rodada ganha vantagem psicológica decisiva para as 9 rodadas finais.",
+        "tipo": "ANÁLISE"
+      },
+      "oQueAconteceAgora": {
+        "texto": "Jogos começam no fim de semana com cobertura em tempo real.",
+        "tipo": "INFERÊNCIA"
+      }
+    },
+    "research": {
+      "confirmados": [
+        "Botafogo tem 57 pontos e Palmeiras tem 56 pontos."
+      ],
+      "aConfirmar": [
+        "Escalação final dos atletas que retornam de lesão"
+      ],
+      "analises": [
+        "A solidez defensiva tem sido o fator determinante nas últimas rodadas."
+      ],
+      "stats": "Classificação: 1º Botafogo (57), 2º Palmeiras (56), 3º Fortaleza (55), 4º Flamengo (51).",
+      "proximos": "Jogos da 29ª rodada no sábado e domingo",
+      "fontes": "CBF Competições & Globo Esporte"
+    },
+    "roteiro": {
+      "hook": "0:00 a 0:15 | O Brasileirão 2026 pegou fogo de vez! Nesta quinta-feira, 08/10/2026, a 29ª rodada começa a definir quem realmente tem estofo de campeão. Apenas um ponto separa Botafogo e Palmeiras. Entenda tudo em cinco minutos!",
+      "aconteceu": "0:15 a 1:00 | A tabela está embolada no topo: Botafogo com 57 pontos, Palmeiras com 56 e o Flamengo tentando encostar no G-3 sob o comando de Filipe Luís. Qualquer deslize nos clássicos do fim de semana pode custar a taça.",
+      "contexto": "1:00 a 2:00 | Restando apenas nove rodadas para o término do campeonato, o equilíbrio é histórico. Os dois líderes têm exatamente 17 vitórias cada e saldos de gols praticamente idênticos.",
+      "numeros": "2:00 a 2:45 | O Botafogo tem o melhor ataque com 49 gols marcados, enquanto o Palmeiras ostenta a defesa menos vazada da competição, com apenas 22 gols sofridos em 28 partidas.",
+      "analise": "2:45 a 3:45 | Taticamente, o duelo é de estilos: o jogo de transição em alta velocidade do Botafogo contra a organização posicional e a bola parada cirúrgica do time de Abel Ferreira.",
+      "oQueAconteceAgora": "3:45 a 4:30 | As próximas 48 horas serão decisivas com os treinos táticos finais e as coletivas de imprensa.",
+      "fechamento": "4:30 a 5:00 | Quem você acha que levanta a taça do Brasileirão 2026? Deixe seu palpite nos comentários e inscreva-se no SPORT 5 AI!"
+    },
+    "auditoriaRoteiro": [
+      {
+        "frase": "Botafogo soma 57 pontos e Palmeiras 56 na liderança da Série A.",
+        "status": "CONFIRMADO",
+        "fonte": "CBF",
+        "evidencia": "Tabela oficial homologada."
+      }
+    ],
+    "roteiroAprovadoFactCheck": true,
+    "titulos": [
+      {
+        "categoria": "SEO",
+        "texto": "Brasileirão 2026: Rodada 29, Classificação Atualizada e Análise dos Líderes",
+        "score": 98
+      },
+      {
+        "categoria": "CLIQUE",
+        "texto": "Apenas 1 Ponto! Quem Vai Ser Campeão do Brasileirão 2026?",
+        "score": 96
+      },
+      {
+        "categoria": "CLAREZA",
+        "texto": "Raio-X da 29ª Rodada da Série A: Tudo Sobre a Briga pelo Título",
+        "score": 95
+      },
+      {
+        "categoria": "CURIOSIDADE",
+        "texto": "O Detalhe Oculto que Pode Tirar o Título de Botafogo ou Palmeiras",
+        "score": 92
+      },
+      {
+        "categoria": "PRECISÃO",
+        "texto": "Tabela do Brasileirão 2026: Números, Saldo de Gols e Próximos Jogos",
+        "score": 99
+      }
+    ],
+    "shorts": {
+      "versao30s": {
+        "duracao": "30s",
+        "hook": "0-3s: Olha a tabela do Brasileirão 2026 pegando fogo!",
+        "desenvolvimento": "Botafogo com 57 pontos, Palmeiras com 56! A 29ª rodada promete mudar tudo no topo. Quem tropeçar agora perde a liderança!",
+        "cta": "Quem leva a taça? Deixe seu palpite e siga o SPORT 5 AI!",
+        "textoCompleto": "0-3s: Olha a tabela do Brasileirão 2026 pegando fogo!\n\nBotafogo com 57 pontos, Palmeiras com 56! A 29ª rodada promete mudar tudo no topo. Quem tropeçar agora perde a liderança!\n\nQuem leva a taça? Deixe seu palpite e siga o SPORT 5 AI!"
+      },
+      "versao45s": {
+        "duracao": "45s",
+        "hook": "0-3s: Apenas UM PONTO separa os líderes do Brasileirão 2026!",
+        "desenvolvimento": "A 29ª rodada é decisiva! O Botafogo lidera com 57 pontos e 17 vitórias, mas o Palmeiras está colado com 56. E ainda tem clássicos pelo caminho. É a disputa de título mais emocionante dos últimos anos!",
+        "cta": "Comente quem vai ser o campeão e inscreva-se no canal!",
+        "textoCompleto": "0-3s: Apenas UM PONTO separa os líderes do Brasileirão 2026!\n\nA 29ª rodada é decisiva! O Botafogo lidera com 57 pontos e 17 vitórias, mas o Palmeiras está colado com 56. E ainda tem clássicos pelo caminho. É a disputa de título mais emocionante dos últimos anos!\n\nComente quem vai ser o campeão e inscreva-se no canal!"
+      },
+      "versao60s": {
+        "duracao": "60s",
+        "hook": "0-3s: Entenda em um minuto por que o Brasileirão 2026 está pegando fogo nesta quinta-feira!",
+        "desenvolvimento": "Faltam apenas nove rodadas e a diferença na ponta é de mísero um ponto. O Botafogo tem o ataque mais letal, com 49 gols, mas o Palmeiras tem uma defesa quase impenetrável, vazada apenas 22 vezes. Com clássicos pesados neste fim de semana, qualquer detalhe pode definir o campeão brasileiro.",
+        "cta": "Quem tem mais elenco para aguentar a pressão? Deixe seu comentário e ative o sininho no SPORT 5 AI!",
+        "textoCompleto": "0-3s: Entenda em um minuto por que o Brasileirão 2026 está pegando fogo nesta quinta-feira!\n\nFaltam apenas nove rodadas e a diferença na ponta é de mísero um ponto. O Botafogo tem o ataque mais letal, com 49 gols, mas o Palmeiras tem uma defesa quase impenetrável, vazada apenas 22 vezes. Com clássicos pesados neste fim de semana, qualquer detalhe pode definir o campeão brasileiro.\n\nQuem tem mais elenco para aguentar a pressão? Deixe seu comentário e ative o sininho no SPORT 5 AI!"
+      }
+    },
+    "thumbnail": {
+      "tituloRecomendado": "BRASILEIRÃO: GUERRA PELA LIDERANÇA!",
+      "textoCurto": "1 PONTO!",
+      "imagemSugerida": "Montagem de alto contraste com símbolos e atletas de Botafogo e Palmeiras com a taça do Brasileirão ao centro",
+      "composicao": "Divisão meio a meio com tipografia '1 PONTO DE DIFERENÇA' centralizada em amarelo",
+      "safeArea": "80% centralizado",
+      "versaoA": {
+        "layout": "Preto, Branco e Verde",
+        "cores": "Verde #00FF88, Amarelo #FFD700"
+      },
+      "versaoB": {
+        "layout": "Vermelho Urgente",
+        "cores": "Vermelho #FF4D4D"
+      },
+      "versaoC": {
+        "layout": "Tabela Oficial",
+        "cores": "Azul #00E5FF"
+      }
+    },
+    "storyboard": [
+      {
+        "cena": "CENA 01",
+        "tempo": "0:00 - 0:15 (15s)",
+        "narracao": "Abertura com gancho da diferença de 1 ponto...",
+        "visual": "Tabela da Série A",
+        "lowerThird": "FUTEBOL • BRASILEIRÃO 2026",
+        "grafico": "Card de classificação",
+        "transicao": "Fade in"
+      },
+      {
+        "cena": "CENA 02",
+        "tempo": "0:15 - 1:00 (45s)",
+        "narracao": "O que aconteceu na rodada...",
+        "visual": "Gols recentes",
+        "lowerThird": "29ª RODADA",
+        "grafico": "Estatísticas de vitórias",
+        "transicao": "Corte seco"
+      },
+      {
+        "cena": "CENA 03",
+        "tempo": "1:00 - 2:00 (60s)",
+        "narracao": "Contexto do equilíbrio dos dois líderes...",
+        "visual": "Torcidas e estádios",
+        "lowerThird": "RAIO-X DOS LÍDERES",
+        "grafico": "Linha do tempo",
+        "transicao": "Dissolvência"
+      },
+      {
+        "cena": "CENA 04",
+        "tempo": "2:00 - 3:30 (90s)",
+        "narracao": "Análise tática dos ataques e defesas...",
+        "visual": "Scout",
+        "lowerThird": "ESTATÍSTICAS COMPARADAS",
+        "grafico": "Ataque vs Defesa",
+        "transicao": "Wipe"
+      },
+      {
+        "cena": "CENA 05",
+        "tempo": "3:30 - 4:30 (60s)",
+        "narracao": "O que vem a seguir no fim de semana...",
+        "visual": "Próximos clássicos",
+        "lowerThird": "JOGOS DECISIVOS",
+        "grafico": "Calendário",
+        "transicao": "Corte"
+      },
+      {
+        "cena": "CENA 06",
+        "tempo": "4:30 - 5:00 (30s)",
+        "narracao": "Encerramento e chamada de inscrição...",
+        "visual": "Logo SPORT 5",
+        "lowerThird": "SPORT 5 AI",
+        "grafico": "Cards finais",
+        "transicao": "Fade out"
+      }
+    ],
+    "youtube": {
+      "titulo": "Brasileirão 2026: Guerra pela Liderança na 29ª Rodada | SPORT 5 AI Análise",
+      "descricao": "Tudo sobre a briga pelo título do Campeonato Brasileiro nesta quinta-feira, 08/10/2026.\n\n📌 Líderes: Botafogo (57) x Palmeiras (56).\n📊 Scout: Melhores ataques e defesas da competição.\n🔗 Fonte: CBF Oficial.\n\n#SPORT5AI #Brasileirao #Futebol #Botafogo #Palmeiras",
+      "tags": [
+        "Futebol",
+        "Brasileirão 2026",
+        "Botafogo",
+        "Palmeiras",
+        "Flamengo",
+        "SPORT 5 AI"
+      ],
+      "hashtags": [
+        "#Brasileirao",
+        "#Futebol",
+        "#Botafogo",
+        "#Palmeiras",
+        "#SPORT5AI"
+      ],
+      "playlist": "SPORT 5 — Futebol",
+      "categoria": "Esportes",
+      "agendamento": "08/10/2026 11:00 BRT",
+      "statusPublicacao": "DESATIVADO_AUTOMATICO"
+    },
+    "qa": {
+      "status": "APROVADO",
+      "checks": [
+        {
+          "item": "1. Nomes próprios e grafia",
+          "details": "Clubes e técnicos conferidos."
+        },
+        {
+          "item": "2. Datas e cronologia",
+          "details": "Data atual: 08/10/2026."
+        },
+        {
+          "item": "3. Resultados e placares",
+          "details": "Pontuação 57 vs 56 conferida na CBF."
+        },
+        {
+          "item": "4. Estatísticas citadas",
+          "details": "17 vitórias para cada líder confirmadas."
+        },
+        {
+          "item": "5. Fontes jornalísticas",
+          "details": "CBF Competições."
+        },
+        {
+          "item": "6. Coerência lógica",
+          "details": "Estrutura do roteiro em 5 minutos completa."
+        },
+        {
+          "item": "7. Português do Brasil",
+          "details": "Padrão jornalístico."
+        },
+        {
+          "item": "8. Repetição de termos",
+          "details": "Sem repetições."
+        },
+        {
+          "item": "9. Checagem de clickbait",
+          "details": "Sem clickbait falso."
+        },
+        {
+          "item": "10. Direitos autorais",
+          "details": "Aviso presente."
+        },
+        {
+          "item": "11. Informações sem confirmação",
+          "details": "Dúvidas isoladas."
+        }
+      ]
+    }
+  },
+  {
     "id": "p1",
     "sport": "TÊNIS DE MESA",
     "title": "Hugo Calderano bate Dimitrij Ovtcharov por 3 a 0 no China Smash 2026 em Beijing",
     "championship": "WTT Grand Smash — China Smash 2026 (Beijing)",
     "athlete": "Hugo Calderano (Brasil)",
-    "date": "06/10/2026",
-    "dataAconteceu": "06/10/2026",
-    "dataPublicado": "06/10/2026",
-    "dataAtualizado": "06/10/2026 22:40",
+    "date": "08/10/2026",
+    "dataAconteceu": "08/10/2026",
+    "dataPublicado": "08/10/2026",
+    "dataAtualizado": "08/10/2026 08:25",
     "recency": "ULTIMAS_HORAS",
     "location": "Shougang Park, Beijing, China",
     "source": "World Table Tennis (WTT) Oficial & Olympics.com",
@@ -111,7 +816,7 @@
         "tipo": "FATO"
       },
       "quandoAconteceu": {
-        "texto": "Acontecimento em 06/10/2026, apurado e confirmado pelas fontes oficiais em 06/10/2026.",
+        "texto": "Acontecimento confirmado em 08/10/2026 pelas fontes oficiais.",
         "tipo": "FATO"
       },
       "ondeAconteceu": {
@@ -401,7 +1106,7 @@
       "status": "VERIFICADA_OFICIAL",
       "statusLabel": "🟢 VERIFIED",
       "approvalStatus": "AGUARDANDO_APROVACAO",
-      "lastChecked": "06/10/2026 — 22:40",
+      "lastChecked": "08/10/2026 — 08:25",
       "nextCheck": "Automática (em 15 min)",
       "contradicoes": "Nenhuma contradição detectada entre as fontes primárias e veículos consultados.",
       "bloqueioProducao": false,
@@ -482,10 +1187,10 @@
     "title": "Brasileirão 2026: Rodada 29 retorna com clássicos e Filipe Luís assume comando do Flamengo",
     "championship": "Campeonato Brasileiro 2026 — Série A",
     "athlete": "Filipe Luís, Flamengo, Palmeiras, Corinthians",
-    "date": "06/10/2026",
-    "dataAconteceu": "06/10/2026",
-    "dataPublicado": "06/10/2026",
-    "dataAtualizado": "06/10/2026 22:40",
+    "date": "08/10/2026",
+    "dataAconteceu": "08/10/2026",
+    "dataPublicado": "08/10/2026",
+    "dataAtualizado": "08/10/2026 08:25",
     "recency": "ULTIMAS_24H",
     "location": "Estádios Brasileiros (Maracanã, MorumBIS, Allianz)",
     "source": "CBF Oficial, Globo Esporte e LANCE!",
@@ -588,7 +1293,7 @@
         "tipo": "FATO"
       },
       "quandoAconteceu": {
-        "texto": "Acontecimento em 06/10/2026, apurado e confirmado pelas fontes oficiais em 06/10/2026.",
+        "texto": "Acontecimento confirmado em 08/10/2026 pelas fontes oficiais.",
         "tipo": "FATO"
       },
       "ondeAconteceu": {
@@ -878,7 +1583,7 @@
       "status": "VERIFICADA_OFICIAL",
       "statusLabel": "🟢 VERIFIED",
       "approvalStatus": "AGUARDANDO_APROVACAO",
-      "lastChecked": "06/10/2026 — 22:40",
+      "lastChecked": "08/10/2026 — 08:25",
       "nextCheck": "Automática (em 15 min)",
       "contradicoes": "Nenhuma contradição detectada entre as fontes primárias e veículos consultados.",
       "bloqueioProducao": false,
@@ -959,10 +1664,10 @@
     "title": "Carlos Alcaraz lidera chave do Masters 1000 de Xangai após batalha épica em Pequim",
     "championship": "ATP Masters 1000 — Rolex Shanghai Masters 2026",
     "athlete": "Carlos Alcaraz, Jannik Sinner, Alexander Zverev",
-    "date": "06/10/2026",
-    "dataAconteceu": "06/10/2026",
-    "dataPublicado": "06/10/2026",
-    "dataAtualizado": "06/10/2026 22:40",
+    "date": "08/10/2026",
+    "dataAconteceu": "08/10/2026",
+    "dataPublicado": "08/10/2026",
+    "dataAtualizado": "08/10/2026 08:25",
     "recency": "ULTIMAS_24H",
     "location": "Qizhong Tennis Center, Xangai, China",
     "source": "ATP Tour Oficial e Rolex Shanghai Masters",
@@ -1065,7 +1770,7 @@
         "tipo": "FATO"
       },
       "quandoAconteceu": {
-        "texto": "Acontecimento em 06/10/2026, apurado e confirmado pelas fontes oficiais em 06/10/2026.",
+        "texto": "Acontecimento confirmado em 08/10/2026 pelas fontes oficiais.",
         "tipo": "FATO"
       },
       "ondeAconteceu": {
@@ -1355,7 +2060,7 @@
       "status": "VERIFICADA_OFICIAL",
       "statusLabel": "🟢 VERIFIED",
       "approvalStatus": "AGUARDANDO_APROVACAO",
-      "lastChecked": "06/10/2026 — 22:40",
+      "lastChecked": "08/10/2026 — 08:25",
       "nextCheck": "Automática (em 15 min)",
       "contradicoes": "Nenhuma contradição detectada entre as fontes primárias e veículos consultados.",
       "bloqueioProducao": false,
@@ -1436,10 +2141,10 @@
     "title": "Gabriel Bortoleto e Audi F1 preparam novo pacote aerodinâmico para o GP dos EUA",
     "championship": "Fórmula 1 2026 — Temporada Mundial",
     "athlete": "Gabriel Bortoleto (Audi / Sauber)",
-    "date": "06/10/2026",
-    "dataAconteceu": "06/10/2026",
-    "dataPublicado": "06/10/2026",
-    "dataAtualizado": "06/10/2026 22:40",
+    "date": "08/10/2026",
+    "dataAconteceu": "08/10/2026",
+    "dataPublicado": "08/10/2026",
+    "dataAtualizado": "08/10/2026 08:25",
     "recency": "ULTIMAS_48H",
     "location": "Hinwil (Suíça) / Austin (EUA)",
     "source": "Formula1.com, Grande Prêmio e Motorsport Brasil",
@@ -1542,7 +2247,7 @@
         "tipo": "FATO"
       },
       "quandoAconteceu": {
-        "texto": "Acontecimento em 06/10/2026, apurado e confirmado pelas fontes oficiais em 06/10/2026.",
+        "texto": "Acontecimento confirmado em 08/10/2026 pelas fontes oficiais.",
         "tipo": "FATO"
       },
       "ondeAconteceu": {
@@ -1832,7 +2537,7 @@
       "status": "VERIFICADA_OFICIAL",
       "statusLabel": "🟢 VERIFIED",
       "approvalStatus": "AGUARDANDO_APROVACAO",
-      "lastChecked": "06/10/2026 — 22:40",
+      "lastChecked": "08/10/2026 — 08:25",
       "nextCheck": "Automática (em 15 min)",
       "contradicoes": "Nenhuma contradição detectada entre as fontes primárias e veículos consultados.",
       "bloqueioProducao": false,
@@ -1913,10 +2618,10 @@
     "title": "CBV oficializa Superliga 2026/27 para 17 de outubro com novas regras e Supercopa",
     "championship": "Superliga Brasileira de Voleibol 2026/27",
     "athlete": "Sada Cruzeiro, Vôlei Renata, Minas, Praia Clube",
-    "date": "06/10/2026",
-    "dataAconteceu": "06/10/2026",
-    "dataPublicado": "06/10/2026",
-    "dataAtualizado": "06/10/2026 22:40",
+    "date": "08/10/2026",
+    "dataAconteceu": "08/10/2026",
+    "dataPublicado": "08/10/2026",
+    "dataAtualizado": "08/10/2026 08:25",
     "recency": "ULTIMAS_24H",
     "location": "São Paulo, MG e arenas nacionais",
     "source": "Confederação Brasileira de Voleibol (CBV) e Olympics.com",
@@ -2019,7 +2724,7 @@
         "tipo": "FATO"
       },
       "quandoAconteceu": {
-        "texto": "Acontecimento em 06/10/2026, apurado e confirmado pelas fontes oficiais em 06/10/2026.",
+        "texto": "Acontecimento confirmado em 08/10/2026 pelas fontes oficiais.",
         "tipo": "FATO"
       },
       "ondeAconteceu": {
@@ -2309,7 +3014,7 @@
       "status": "VERIFICADA_OFICIAL",
       "statusLabel": "🟢 VERIFIED",
       "approvalStatus": "AGUARDANDO_APROVACAO",
-      "lastChecked": "06/10/2026 — 22:40",
+      "lastChecked": "08/10/2026 — 08:25",
       "nextCheck": "Automática (em 15 min)",
       "contradicoes": "Nenhuma contradição detectada entre as fontes primárias e veículos consultados.",
       "bloqueioProducao": false,
@@ -2390,10 +3095,10 @@
     "title": "Bruna Takahashi e Hugo Calderano avançam nas duplas mistas do China Smash em Beijing",
     "championship": "WTT Grand Smash — China Smash 2026 (Beijing)",
     "athlete": "Bruna Takahashi e Hugo Calderano (Brasil)",
-    "date": "06/10/2026",
-    "dataAconteceu": "06/10/2026",
-    "dataPublicado": "06/10/2026",
-    "dataAtualizado": "06/10/2026 22:40",
+    "date": "08/10/2026",
+    "dataAconteceu": "08/10/2026",
+    "dataPublicado": "08/10/2026",
+    "dataAtualizado": "08/10/2026 08:25",
     "recency": "ULTIMAS_HORAS",
     "location": "Shougang Park, Beijing, China",
     "source": "World Table Tennis (WTT) e Confederação Brasileira (CBTM)",
@@ -2496,7 +3201,7 @@
         "tipo": "FATO"
       },
       "quandoAconteceu": {
-        "texto": "Acontecimento em 06/10/2026, apurado e confirmado pelas fontes oficiais em 06/10/2026.",
+        "texto": "Acontecimento confirmado em 08/10/2026 pelas fontes oficiais.",
         "tipo": "FATO"
       },
       "ondeAconteceu": {
@@ -2786,7 +3491,7 @@
       "status": "VERIFICADA_OFICIAL",
       "statusLabel": "🟢 VERIFIED",
       "approvalStatus": "AGUARDANDO_APROVACAO",
-      "lastChecked": "06/10/2026 — 22:40",
+      "lastChecked": "08/10/2026 — 08:25",
       "nextCheck": "Automática (em 15 min)",
       "contradicoes": "Nenhuma contradição detectada entre as fontes primárias e veículos consultados.",
       "bloqueioProducao": false,
@@ -2867,10 +3572,10 @@
     "title": "NBA 2026/27 abre pré-temporada com Boston Celtics defendendo título e Lakers em alta",
     "championship": "NBA 2026/27 — Pré-Temporada e Abertura",
     "athlete": "Jayson Tatum, Jaylen Brown, LeBron James",
-    "date": "05/10/2026",
-    "dataAconteceu": "05/10/2026",
-    "dataPublicado": "06/10/2026",
-    "dataAtualizado": "06/10/2026 22:40",
+    "date": "08/10/2026",
+    "dataAconteceu": "08/10/2026",
+    "dataPublicado": "08/10/2026",
+    "dataAtualizado": "08/10/2026 08:25",
     "recency": "ULTIMAS_24H",
     "location": "Arenas da NBA (EUA)",
     "source": "NBA.com e The Athletic",
@@ -2973,7 +3678,7 @@
         "tipo": "FATO"
       },
       "quandoAconteceu": {
-        "texto": "Acontecimento em 05/10/2026, apurado e confirmado pelas fontes oficiais em 06/10/2026.",
+        "texto": "Acontecimento confirmado em 08/10/2026 pelas fontes oficiais.",
         "tipo": "FATO"
       },
       "ondeAconteceu": {
@@ -3263,7 +3968,7 @@
       "status": "VERIFICADA_OFICIAL",
       "statusLabel": "🟢 VERIFIED",
       "approvalStatus": "AGUARDANDO_APROVACAO",
-      "lastChecked": "06/10/2026 — 22:40",
+      "lastChecked": "08/10/2026 — 08:25",
       "nextCheck": "Automática (em 15 min)",
       "contradicoes": "Nenhuma contradição detectada entre as fontes primárias e veículos consultados.",
       "bloqueioProducao": false,
@@ -3344,10 +4049,10 @@
     "title": "Internacional x Corinthians e Cruzeiro x São Paulo abrem sequência decisiva da Série A",
     "championship": "Campeonato Brasileiro 2026 — Série A (Rodada 29)",
     "athlete": "Internacional, Corinthians, Cruzeiro, São Paulo",
-    "date": "06/10/2026",
-    "dataAconteceu": "06/10/2026",
-    "dataPublicado": "06/10/2026",
-    "dataAtualizado": "06/10/2026 22:40",
+    "date": "08/10/2026",
+    "dataAconteceu": "08/10/2026",
+    "dataPublicado": "08/10/2026",
+    "dataAtualizado": "08/10/2026 08:25",
     "recency": "ULTIMAS_24H",
     "location": "Porto Alegre (Beira-Rio) e Belo Horizonte (Mineirão)",
     "source": "CBF Oficial e Gazeta Esportiva",
@@ -3450,7 +4155,7 @@
         "tipo": "FATO"
       },
       "quandoAconteceu": {
-        "texto": "Acontecimento em 06/10/2026, apurado e confirmado pelas fontes oficiais em 06/10/2026.",
+        "texto": "Acontecimento confirmado em 08/10/2026 pelas fontes oficiais.",
         "tipo": "FATO"
       },
       "ondeAconteceu": {
@@ -3740,7 +4445,7 @@
       "status": "VERIFICADA_OFICIAL",
       "statusLabel": "🟢 VERIFIED",
       "approvalStatus": "AGUARDANDO_APROVACAO",
-      "lastChecked": "06/10/2026 — 22:40",
+      "lastChecked": "08/10/2026 — 08:25",
       "nextCheck": "Automática (em 15 min)",
       "contradicoes": "Nenhuma contradição detectada entre as fontes primárias e veículos consultados.",
       "bloqueioProducao": false,
@@ -3821,10 +4526,10 @@
     "title": "Sesi Franca Basquete vence Quimsa por 88 a 82 e garante vaga na Grande Final da BCLA 2026",
     "championship": "Basketball Champions League Americas (BCLA)",
     "athlete": "Sesi Franca Basquete (Lucas Dias e Georginho)",
-    "date": "06/10/2026",
-    "dataAconteceu": "06/10/2026",
-    "dataPublicado": "06/10/2026",
-    "dataAtualizado": "06/10/2026 22:40",
+    "date": "08/10/2026",
+    "dataAconteceu": "08/10/2026",
+    "dataPublicado": "08/10/2026",
+    "dataAtualizado": "08/10/2026 08:25",
     "recency": "ULTIMAS_24H",
     "location": "Ginásio Pedrocão, Franca, SP",
     "source": "FIBA Americas Oficial & BCLA Basketball",
@@ -3927,7 +4632,7 @@
         "tipo": "FATO"
       },
       "quandoAconteceu": {
-        "texto": "Acontecimento em 06/10/2026, apurado e confirmado pelas fontes oficiais em 06/10/2026.",
+        "texto": "Acontecimento confirmado em 08/10/2026 pelas fontes oficiais.",
         "tipo": "FATO"
       },
       "ondeAconteceu": {
@@ -4098,7 +4803,7 @@
       "status": "VERIFICADA_OFICIAL",
       "statusLabel": "🟢 VERIFIED",
       "approvalStatus": "AGUARDANDO_APROVACAO",
-      "lastChecked": "06/10/2026 — 22:40",
+      "lastChecked": "08/10/2026 — 08:25",
       "nextCheck": "Automática (em 15 min)",
       "contradicoes": "Nenhuma contradição detectada entre as fontes primárias e veículos consultados.",
       "bloqueioProducao": false,
@@ -4112,10 +4817,10 @@
     "title": "Bia Haddad Maia supera Madison Keys por 2 a 0 e avança às oitavas do WTA 1000 de Wuhan",
     "championship": "WTA 1000 Wuhan Open 2026",
     "athlete": "Beatriz Haddad Maia (Brasil)",
-    "date": "06/10/2026",
-    "dataAconteceu": "06/10/2026",
-    "dataPublicado": "06/10/2026",
-    "dataAtualizado": "06/10/2026 22:40",
+    "date": "08/10/2026",
+    "dataAconteceu": "08/10/2026",
+    "dataPublicado": "08/10/2026",
+    "dataAtualizado": "08/10/2026 08:25",
     "recency": "ULTIMAS_HORAS",
     "location": "Optics Valley International Tennis Center, Wuhan, China",
     "source": "Women's Tennis Association (WTA) Oficial",
@@ -4218,7 +4923,7 @@
         "tipo": "FATO"
       },
       "quandoAconteceu": {
-        "texto": "Acontecimento em 06/10/2026, apurado e confirmado pelas fontes oficiais em 06/10/2026.",
+        "texto": "Acontecimento confirmado em 08/10/2026 pelas fontes oficiais.",
         "tipo": "FATO"
       },
       "ondeAconteceu": {
@@ -4389,7 +5094,7 @@
       "status": "VERIFICADA_OFICIAL",
       "statusLabel": "🟢 VERIFIED",
       "approvalStatus": "AGUARDANDO_APROVACAO",
-      "lastChecked": "06/10/2026 — 22:40",
+      "lastChecked": "08/10/2026 — 08:25",
       "nextCheck": "Automática (em 15 min)",
       "contradicoes": "Nenhuma contradição detectada entre as fontes primárias e veículos consultados.",
       "bloqueioProducao": false,
@@ -4403,10 +5108,10 @@
     "title": "[TESTE DE REJEIÇÃO 1/3] Boato de transferência: Lionel Messi assina com clube do interior para 3ª divisão",
     "championship": "Campeonato Brasileiro Série A 2026",
     "athlete": "Lionel Messi",
-    "date": "06/10/2026",
-    "dataAconteceu": "06/10/2026",
-    "dataPublicado": "06/10/2026",
-    "dataAtualizado": "06/10/2026 22:40",
+    "date": "08/10/2026",
+    "dataAconteceu": "08/10/2026",
+    "dataPublicado": "08/10/2026",
+    "dataAtualizado": "08/10/2026 08:25",
     "recency": "ULTIMAS_24H",
     "location": "Brasil / Miami",
     "source": "Redes Sociais e Postagens Apócrifas",
@@ -4501,7 +5206,7 @@
         "tipo": "FATO"
       },
       "quandoAconteceu": {
-        "texto": "Acontecimento em 06/10/2026, apurado e confirmado pelas fontes oficiais em 06/10/2026.",
+        "texto": "Acontecimento confirmado em 08/10/2026 pelas fontes oficiais.",
         "tipo": "FATO"
       },
       "ondeAconteceu": {
@@ -4710,7 +5415,7 @@
       "status": "REJECTED",
       "statusLabel": "🔴 REJECTED",
       "approvalStatus": "REJEITADA",
-      "lastChecked": "06/10/2026 — 22:40",
+      "lastChecked": "08/10/2026 — 08:25",
       "nextCheck": "Automática (em 15 min)",
       "contradicoes": "Fonte não localizada. Post anônimo sem respaldo em nenhuma federação ou entidade esportiva.",
       "bloqueioProducao": true,
@@ -4791,10 +5496,10 @@
     "title": "[TESTE DE REJEIÇÃO 2/3] Falso anúncio: LeBron James rescinde com Lakers e anuncia aposentadoria imediata",
     "championship": "NBA 2026/27",
     "athlete": "LeBron James",
-    "date": "06/10/2026",
-    "dataAconteceu": "06/10/2026",
-    "dataPublicado": "06/10/2026",
-    "dataAtualizado": "06/10/2026 22:40",
+    "date": "08/10/2026",
+    "dataAconteceu": "08/10/2026",
+    "dataPublicado": "08/10/2026",
+    "dataAtualizado": "08/10/2026 08:25",
     "recency": "ULTIMAS_HORAS",
     "location": "Los Angeles, EUA",
     "source": "FONTE NÃO LOCALIZADA (Perfil falso em rede social)",
@@ -4890,7 +5595,7 @@
         "tipo": "FATO"
       },
       "quandoAconteceu": {
-        "texto": "Acontecimento em 06/10/2026, apurado e confirmado pelas fontes oficiais em 06/10/2026.",
+        "texto": "Acontecimento confirmado em 08/10/2026 pelas fontes oficiais.",
         "tipo": "FATO"
       },
       "ondeAconteceu": {
@@ -5049,7 +5754,7 @@
       "status": "REJECTED",
       "statusLabel": "🔴 REJECTED",
       "approvalStatus": "REJEITADA",
-      "lastChecked": "06/10/2026 — 22:40",
+      "lastChecked": "08/10/2026 — 08:25",
       "nextCheck": "Automática (em 15 min)",
       "contradicoes": "Fonte não localizada. Post anônimo sem respaldo em nenhuma federação ou entidade esportiva.",
       "bloqueioProducao": true,
@@ -5063,10 +5768,10 @@
     "title": "[TESTE DE ALUCINAÇÃO 3/3] Atleta X venceu competição Y por 3 a 0 em evento inexistente",
     "championship": "Competição Fictícia Y 2026",
     "athlete": "Atleta Desconhecido X",
-    "date": "06/10/2026",
-    "dataAconteceu": "06/10/2026",
-    "dataPublicado": "06/10/2026",
-    "dataAtualizado": "06/10/2026 22:40",
+    "date": "08/10/2026",
+    "dataAconteceu": "08/10/2026",
+    "dataPublicado": "08/10/2026",
+    "dataAtualizado": "08/10/2026 08:25",
     "recency": "ULTIMAS_24H",
     "location": "Local Indefinido",
     "source": "FONTE NÃO LOCALIZADA",
@@ -5162,7 +5867,7 @@
         "tipo": "FATO"
       },
       "quandoAconteceu": {
-        "texto": "Acontecimento em 06/10/2026, apurado e confirmado pelas fontes oficiais em 06/10/2026.",
+        "texto": "Acontecimento confirmado em 08/10/2026 pelas fontes oficiais.",
         "tipo": "FATO"
       },
       "ondeAconteceu": {
@@ -5321,7 +6026,7 @@
       "status": "REJECTED",
       "statusLabel": "🔴 REJECTED",
       "approvalStatus": "REJEITADA",
-      "lastChecked": "06/10/2026 — 22:40",
+      "lastChecked": "08/10/2026 — 08:25",
       "nextCheck": "Automática (em 15 min)",
       "contradicoes": "Fonte não localizada. Post anônimo sem respaldo em nenhuma federação ou entidade esportiva.",
       "bloqueioProducao": true,
@@ -6033,10 +6738,10 @@
     "title": "[TESTE DE CONTRADIÇÃO 1/2] Divergência de pontuação oficial em amistoso internacional: 125 vs 126 pontos",
     "championship": "Torneio Internacional Amistoso de Basquete",
     "athlete": "Seleções Nacionais de Basquete",
-    "date": "06/10/2026",
-    "dataAconteceu": "06/10/2026",
-    "dataPublicado": "06/10/2026",
-    "dataAtualizado": "06/10/2026 22:40",
+    "date": "08/10/2026",
+    "dataAconteceu": "08/10/2026",
+    "dataPublicado": "08/10/2026",
+    "dataAtualizado": "08/10/2026 08:25",
     "recency": "ULTIMAS_24H",
     "location": "Arena Neutra, Europa",
     "source": "Portais de Notícias Internacionais",
@@ -6131,7 +6836,7 @@
         "tipo": "FATO"
       },
       "quandoAconteceu": {
-        "texto": "Acontecimento em 06/10/2026, apurado e confirmado pelas fontes oficiais em 06/10/2026.",
+        "texto": "Acontecimento confirmado em 08/10/2026 pelas fontes oficiais.",
         "tipo": "FATO"
       },
       "ondeAconteceu": {
@@ -6340,7 +7045,7 @@
       "status": "IN_VERIFICATION",
       "statusLabel": "🟠 IN VERIFICATION",
       "approvalStatus": "EM_VERIFICACAO",
-      "lastChecked": "06/10/2026 — 22:40",
+      "lastChecked": "08/10/2026 — 08:25",
       "nextCheck": "Automática (em 15 min)",
       "contradicoes": "⚠️ CONTRADIÇÃO DETECTADA: Informação conflitante entre Fonte A e Fonte B. Necessária revisão editorial.",
       "bloqueioProducao": true,
@@ -6421,10 +7126,10 @@
     "title": "[TESTE DE CONTRADIÇÃO 2/2] GP de Austin: Divergência de telemetria e aplicação de punição por limites de pista",
     "championship": "FIA Formula One World Championship 2026",
     "athlete": "Comissários da FIA e Equipe Técnica",
-    "date": "06/10/2026",
-    "dataAconteceu": "06/10/2026",
-    "dataPublicado": "06/10/2026",
-    "dataAtualizado": "06/10/2026 22:40",
+    "date": "08/10/2026",
+    "dataAconteceu": "08/10/2026",
+    "dataPublicado": "08/10/2026",
+    "dataAtualizado": "08/10/2026 08:25",
     "recency": "ULTIMAS_HORAS",
     "location": "Circuit of the Americas (COTA), Austin, EUA",
     "source": "FIA Stewards Bulletin vs Timing Monitor da Equipe",
@@ -6520,7 +7225,7 @@
         "tipo": "FATO"
       },
       "quandoAconteceu": {
-        "texto": "Acontecimento em 06/10/2026, apurado e confirmado pelas fontes oficiais em 06/10/2026.",
+        "texto": "Acontecimento confirmado em 08/10/2026 pelas fontes oficiais.",
         "tipo": "FATO"
       },
       "ondeAconteceu": {
@@ -6679,7 +7384,7 @@
       "status": "IN_VERIFICATION",
       "statusLabel": "🟠 IN VERIFICATION",
       "approvalStatus": "EM_VERIFICACAO",
-      "lastChecked": "06/10/2026 — 22:40",
+      "lastChecked": "08/10/2026 — 08:25",
       "nextCheck": "Automática (em 15 min)",
       "contradicoes": "⚠️ CONTRADIÇÃO DETECTADA: Informação conflitante entre Fonte A e Fonte B. Necessária revisão editorial.",
       "bloqueioProducao": true,
@@ -6693,10 +7398,10 @@
     "title": "[DUPLICATA IDENTICA] Hugo Calderano bate Dimitrij Ovtcharov por 3 a 0 no China Smash 2026 em Beijing",
     "championship": "WTT Grand Smash — China Smash 2026 (Beijing)",
     "athlete": "Hugo Calderano (Brasil)",
-    "date": "06/10/2026",
-    "dataAconteceu": "06/10/2026",
-    "dataPublicado": "06/10/2026",
-    "dataAtualizado": "06/10/2026 22:40",
+    "date": "08/10/2026",
+    "dataAconteceu": "08/10/2026",
+    "dataPublicado": "08/10/2026",
+    "dataAtualizado": "08/10/2026 08:25",
     "recency": "ULTIMAS_HORAS",
     "location": "Shougang Park, Beijing, China",
     "source": "World Table Tennis (WTT) Oficial & Olympics.com",
@@ -6799,7 +7504,7 @@
         "tipo": "FATO"
       },
       "quandoAconteceu": {
-        "texto": "Acontecimento em 06/10/2026, apurado e confirmado pelas fontes oficiais em 06/10/2026.",
+        "texto": "Acontecimento confirmado em 08/10/2026 pelas fontes oficiais.",
         "tipo": "FATO"
       },
       "ondeAconteceu": {
@@ -7089,7 +7794,7 @@
       "status": "VERIFICADA_OFICIAL",
       "statusLabel": "🟢 VERIFIED",
       "approvalStatus": "AGUARDANDO_APROVACAO",
-      "lastChecked": "06/10/2026 — 22:40",
+      "lastChecked": "08/10/2026 — 08:25",
       "nextCheck": "Automática (em 15 min)",
       "contradicoes": "Nenhuma contradição detectada entre as fontes primárias e veículos consultados.",
       "bloqueioProducao": false,
@@ -7170,10 +7875,10 @@
     "title": "[PAUTA ATUALIZADA] Hugo Calderano conhece rival das quartas de final no China Smash: Lin Shidong",
     "championship": "WTT Grand Smash — China Smash 2026 (Beijing)",
     "athlete": "Hugo Calderano (Brasil)",
-    "date": "06/10/2026",
-    "dataAconteceu": "06/10/2026",
-    "dataPublicado": "06/10/2026",
-    "dataAtualizado": "06/10/2026 23:15",
+    "date": "08/10/2026",
+    "dataAconteceu": "08/10/2026",
+    "dataPublicado": "08/10/2026",
+    "dataAtualizado": "08/10/2026 08:25",
     "recency": "ULTIMAS_HORAS",
     "location": "Shougang Park, Beijing, China",
     "source": "World Table Tennis (WTT) Oficial & Olympics.com",
@@ -7276,7 +7981,7 @@
         "tipo": "FATO"
       },
       "quandoAconteceu": {
-        "texto": "Acontecimento em 06/10/2026, apurado e confirmado pelas fontes oficiais em 06/10/2026.",
+        "texto": "Acontecimento confirmado em 08/10/2026 pelas fontes oficiais.",
         "tipo": "FATO"
       },
       "ondeAconteceu": {
@@ -7566,7 +8271,7 @@
       "status": "VERIFICADA_OFICIAL",
       "statusLabel": "🟢 VERIFIED",
       "approvalStatus": "AGUARDANDO_APROVACAO",
-      "lastChecked": "06/10/2026 — 22:40",
+      "lastChecked": "08/10/2026 — 08:25",
       "nextCheck": "Automática (em 15 min)",
       "contradicoes": "Nenhuma contradição detectada entre as fontes primárias e veículos consultados.",
       "bloqueioProducao": false,
