@@ -1,68 +1,81 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 """
 SPORT 5 AI — LIVE NEWSROOM & FACT CHECK ALL-IN-ONE SERVER (V2.5 / V3)
-Servidor Web, API REST e Motor de Raspagem e Ingestão em Tempo Real
+Motor Editorial e de Auditoria Factual em Tempo Real com Raspagem Contínua de Feeds.
 """
 
-import http.server
-import socketserver
-import json
 import os
 import sys
-import threading
+import json
 import time
 import urllib.request
-import urllib.error
 import urllib.parse
-import xml.etree.ElementTree as ET
+import threading
 from datetime import datetime
 from bs4 import BeautifulSoup
+import http.server
+import socketserver
+import re
+import gzip
+import hashlib
+from email.utils import parsedate_to_datetime
+from datetime import timezone, timedelta
 
-PORT = int(os.environ.get("PORT", 8080))
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-DB_FILE = os.path.join(BASE_DIR, "database.json")
-CORRECOES_FILE = os.path.join(BASE_DIR, "correcoes.json")
+PORT = int(os.environ.get("PORT", 8000))
+DB_FILE = "database.json"
+CORRECOES_FILE = "correcoes.json"
+auto_sync_interval_seconds = int(os.environ.get("SPORT5_SYNC_SECONDS", "300"))  # 5 minutos
 
 sync_lock = threading.Lock()
-last_sync_time = datetime.now().strftime("%d/%m/%Y %H:%M")
-auto_sync_interval_seconds = 300 # 15 minutos
+last_sync_time = None
+last_sync_attempt = None
+last_sync_success = None
+last_sync_error = None
+feed_health = {}
+memory_db = []
 
 # --- CONFIGURAÇÃO DE FEEDS DE ESPORTES REAIS ---
 RSS_FEEDS = [
     {
-        "nome": "Globo Esporte — Geral",
-        "url": "https://ge.globo.com/rss/ge/",
+        "nome": "Google News — Esportes Brasil (Destaques)",
+        "url": "https://news.google.com/rss/topics/CAAqJggKIiBDQkFTRWdvSUwyMHZNRFp1ZEdvU0FtVnVHZ0pWVXlnQVAB?hl=pt-BR&gl=BR&ceid=BR%3Apt-419",
         "padrao_esporte": "TODOS"
     },
     {
-        "nome": "Globo Esporte — Futebol",
-        "url": "https://ge.globo.com/rss/ge/futebol/",
+        "nome": "Google News — Futebol & Brasileirão",
+        "url": "https://news.google.com/rss/search?q=futebol+brasileir%C3%A3o+OR+flamengo+OR+palmeiras+OR+corinthians&hl=pt-BR&gl=BR&ceid=BR:pt-419",
         "padrao_esporte": "FUTEBOL"
     },
     {
-        "nome": "Globo Esporte — Basquete",
-        "url": "https://ge.globo.com/rss/ge/basquete/",
-        "padrao_esporte": "BASQUETE"
+        "nome": "Google News — Tênis & Masters 1000",
+        "url": "https://news.google.com/rss/search?q=t%C3%AAnis+alcaraz+OR+sinner+OR+djokovic+OR+atp&hl=pt-BR&gl=BR&ceid=BR:pt-419",
+        "padrao_esporte": "TÊNIS"
     },
     {
-        "nome": "Globo Esporte — Vôlei",
-        "url": "https://ge.globo.com/rss/ge/volei/",
-        "padrao_esporte": "VÔLEI"
-    },
-    {
-        "nome": "Globo Esporte — Fórmula 1",
-        "url": "https://ge.globo.com/rss/ge/motor/formula-1/",
-        "padrao_esporte": "FÓRMULA 1"
-    },
-    {
-        "nome": "Google News — Tênis de Mesa (Estratégica)",
+        "nome": "Google News — Tênis de Mesa (WTT & Calderano)",
         "url": "https://news.google.com/rss/search?q=t%C3%AAnis+de+mesa+OR+calderano+OR+cbtm+OR+wtt&hl=pt-BR&gl=BR&ceid=BR:pt-419",
         "padrao_esporte": "TÊNIS DE MESA"
     },
     {
-        "nome": "Google News — Tênis ATP/WTA",
-        "url": "https://news.google.com/rss/search?q=t%C3%AAnis+atp+OR+wta+OR+alcaraz+OR+haddad&hl=pt-BR&gl=BR&ceid=BR:pt-419",
-        "padrao_esporte": "TÊNIS"
+        "nome": "Google News — Basquete & NBA",
+        "url": "https://news.google.com/rss/search?q=basquete+OR+nba+OR+nbb&hl=pt-BR&gl=BR&ceid=BR:pt-419",
+        "padrao_esporte": "BASQUETE"
+    },
+    {
+        "nome": "Google News — Fórmula 1 & Motorsport",
+        "url": "https://news.google.com/rss/search?q=f%C3%B3rmula+1+OR+f1+OR+bortoleto+OR+verstappen&hl=pt-BR&gl=BR&ceid=BR:pt-419",
+        "padrao_esporte": "FÓRMULA 1"
+    },
+    {
+        "nome": "Agência Brasil — Esportes",
+        "url": "https://agenciabrasil.ebc.com.br/rss/esportes/feed.xml",
+        "padrao_esporte": "TODOS"
+    },
+    {
+        "nome": "Globo Esporte — Geral",
+        "url": "https://ge.globo.com/rss/ge/",
+        "padrao_esporte": "TODOS"
     },
     {
         "nome": "UOL Esporte — Ao Vivo",
@@ -115,339 +128,343 @@ def limpar_html(raw_html):
     soup = BeautifulSoup(raw_html, "html.parser")
     return soup.get_text(separator=" ").strip()
 
-def buscar_noticias_rss():
-    noticias_coletadas = []
-    headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Sport5AI/3.0",
-        "Accept": "application/rss+xml, application/xml, text/xml, */*"
-    }
 
-    print("[LIVE ENGINE] Iniciando busca nos feeds RSS ao vivo...")
+def _parse_data_publicacao(raw_date):
+    """Converte datas RSS/Atom para datetime UTC; retorna None se não houver data válida."""
+    if not raw_date:
+        return None
+    value = str(raw_date).strip()
+    try:
+        dt = parsedate_to_datetime(value)
+        if dt:
+            if dt.tzinfo is None:
+                dt = dt.replace(tzinfo=timezone.utc)
+            return dt.astimezone(timezone.utc)
+    except Exception:
+        pass
+    try:
+        dt = datetime.fromisoformat(value.replace("Z", "+00:00"))
+        if dt.tzinfo is None:
+            dt = dt.replace(tzinfo=timezone.utc)
+        return dt.astimezone(timezone.utc)
+    except Exception:
+        return None
+
+
+def _local_now():
+    # O Render pode rodar em UTC; o app exibe horários de Brasília.
+    try:
+        from zoneinfo import ZoneInfo
+        return datetime.now(ZoneInfo("America/Sao_Paulo"))
+    except Exception:
+        return datetime.now()
+
+
+def _normalizar_titulo(value):
+    value = (value or "").lower().strip()
+    value = re.sub(r"\s+-\s+[^-]+$", "", value)
+    value = re.sub(r"[^a-z0-9áéíóúâêîôûãõç]+", " ", value)
+    return re.sub(r"\s+", " ", value).strip()
+
+
+def buscar_noticias_rss():
+    """Busca feeds reais, preserva a data original e descarta itens sem data/antigos."""
+    global feed_health
+    noticias_coletadas = []
+    agora_utc = datetime.now(timezone.utc)
+    janela_horas = int(os.environ.get("SPORT5_NEWS_MAX_AGE_HOURS", "48"))
+    headers = {
+        "User-Agent": "SPORT5AI-NewsReader/2.0 (+RSS reader; contact: sport5)",
+        "Accept": "application/rss+xml, application/atom+xml, application/xml, text/xml, */*",
+        "Accept-Encoding": "gzip, deflate"
+    }
+    estado = {}
+
     for feed in RSS_FEEDS:
+        nome = feed["nome"]
+        info = {"url": feed["url"], "ok": False, "itens_lidos": 0,
+                "itens_recentes": 0, "erro": None, "checado_em": _local_now().strftime("%d/%m/%Y %H:%M")}
         try:
             req = urllib.request.Request(feed["url"], headers=headers)
             with urllib.request.urlopen(req, timeout=6) as response:
-                content = response.read()
-                soup = None
-                try:
-                    soup = BeautifulSoup(content, "xml")
-                except Exception:
-                    soup = BeautifulSoup(content, "html.parser")
+                raw_bytes = response.read()
+                encoding = (response.headers.get("Content-Encoding") or "").lower()
+                if raw_bytes.startswith(b"\x1f\x8b") or encoding == "gzip":
+                    try:
+                        raw_bytes = gzip.decompress(raw_bytes)
+                    except Exception:
+                        pass
 
-                items = soup.find_all("item")
-                if not items:
-                    items = soup.find_all("entry")
+            soup = BeautifulSoup(raw_bytes, "xml")
+            items = soup.find_all("item")
+            if not items:
+                items = soup.find_all("entry")
+            info["ok"] = True
+            info["itens_lidos"] = len(items)
 
-                print(f"[LIVE ENGINE] Feed {feed['nome']}: {len(items)} itens encontrados.")
-                for item in items[:6]:
-                    titulo_elem = item.find("title")
-                    link_elem = item.find("link")
-                    desc_elem = item.find("description") or item.find("summary")
-                    date_elem = item.find("pubDate") or item.find("published")
+            # RSS/Atom usually places newest first; inspect more than six.
+            for item in items[:20]:
+                title_el = item.find("title")
+                link_el = item.find("link")
+                desc_el = item.find("description") or item.find("summary") or item.find("content")
+                date_el = (item.find("pubDate") or item.find("published") or
+                           item.find("updated") or item.find("date"))
 
-                    titulo = titulo_elem.get_text().strip() if titulo_elem else ""
-                    link = ""
-                    if link_elem:
-                        link = link_elem.get_text().strip() if link_elem.get_text() else link_elem.get("href", "")
-                    desc = limpar_html(desc_elem.get_text()) if desc_elem else titulo
-                    pub_date = date_elem.get_text().strip() if date_elem else ""
+                title = title_el.get_text(" ", strip=True) if title_el else ""
+                link = ""
+                if link_el:
+                    # Atom links normally store the URL in href; RSS links use text.
+                    link = (link_el.get("href") or link_el.get_text(" ", strip=True) or "").strip()
+                desc = limpar_html(desc_el.get_text(" ", strip=True)) if desc_el else title
+                raw_pubdate = date_el.get_text(" ", strip=True) if date_el else ""
+                published_dt = _parse_data_publicacao(raw_pubdate)
 
-                    if not titulo or len(titulo) < 6:
-                        continue
+                if not title or len(title) < 8 or not link.startswith(("http://", "https://")):
+                    continue
+                if not published_dt:
+                    # No inventar a data de publicação. Mantém o item fora do radar ativo.
+                    continue
+                age_hours = (agora_utc - published_dt).total_seconds() / 3600
+                if age_hours < -2 or age_hours > janela_horas:
+                    continue
 
-                    esporte = identificar_esporte(titulo + " " + desc, feed["padrao_esporte"])
+                # Google News costuma acrescentar o nome do veículo ao final do título.
+                if "google news" in nome.lower():
+                    title = re.sub(r"\s+-\s+[^-\n]{2,80}$", "", title).strip()
+                sport = identificar_esporte(title + " " + desc, feed["padrao_esporte"])
+                published_local = published_dt.astimezone(_local_now().tzinfo)
+                item_id = hashlib.sha1((link or _normalizar_titulo(title)).encode("utf-8")).hexdigest()[:16]
+                noticias_coletadas.append({
+                    "id_fonte": item_id,
+                    "titulo": title,
+                    "link": link,
+                    "descricao": desc,
+                    "data_pub": published_local.strftime("%d/%m/%Y %H:%M"),
+                    "published_at_iso": published_dt.isoformat(),
+                    "age_hours": round(max(0, age_hours), 1),
+                    "fonte_nome": nome,
+                    "esporte": sport
+                })
+                info["itens_recentes"] += 1
+        except Exception as exc:
+            info["erro"] = f"{type(exc).__name__}: {str(exc)[:180]}"
+            print(f"[LIVE ENGINE] Feed falhou: {nome} — {info['erro']}", flush=True)
+        estado[nome] = info
 
-                    noticias_coletadas.append({
-                        "titulo": titulo,
-                        "link": link,
-                        "descricao": desc,
-                        "data_pub": pub_date,
-                        "fonte_nome": feed["nome"],
-                        "esporte": esporte
-                    })
-        except Exception as e:
-            print(f"[LIVE ENGINE] Nota: Feed {feed['nome']} ({type(e).__name__}).")
+    # Deduplica por URL e por título normalizado; conserva a fonte encontrada primeiro.
+    unique = []
+    seen_urls, seen_titles = set(), set()
+    for item in sorted(noticias_coletadas, key=lambda x: x.get("published_at_iso", ""), reverse=True):
+        url_key = item["link"].split("?utm_")[0].rstrip("/")
+        title_key = _normalizar_titulo(item["titulo"])
+        if url_key in seen_urls or title_key in seen_titles:
+            continue
+        seen_urls.add(url_key)
+        seen_titles.add(title_key)
+        unique.append(item)
 
-    print(f"[LIVE ENGINE] Total de notícias ao vivo raspadas: {len(noticias_coletadas)}")
-    return noticias_coletadas
+    feed_health = estado
+    print(f"[LIVE ENGINE] Itens recentes e deduplicados: {len(unique)} (janela {janela_horas}h)", flush=True)
+    return unique
+
 
 def enriquecer_pauta(raw_noticia, index=1):
-    hoje_str = datetime.now().strftime("%d/%m/%Y")
-    hora_str = datetime.now().strftime("%H:%M")
-    
-    pid = f"live-{int(datetime.now().timestamp())}-{index}"
-    titulo = raw_noticia["titulo"]
-    esporte = raw_noticia["esporte"]
-    fonte = raw_noticia["fonte_nome"]
-    link = raw_noticia["link"]
-    desc = raw_noticia["descricao"] or titulo
-    
-    palavras = titulo.split(":")
-    atleta = palavras[0] if len(palavras) > 1 else esporte
-    
+    """Cria um registro de pauta sem inventar fatos nem marcar RSS isolado como verificado."""
+    now_local = _local_now()
+    pub_iso = raw_noticia.get("published_at_iso")
+    published = _parse_data_publicacao(pub_iso)
+    published_local = published.astimezone(now_local.tzinfo) if published else None
+    title = raw_noticia.get("titulo", "").strip()
+    sport = raw_noticia.get("esporte", "TODOS")
+    source = raw_noticia.get("fonte_nome", "Feed RSS")
+    link = raw_noticia.get("link", "")
+    desc = raw_noticia.get("descricao") or title
+    item_id = raw_noticia.get("id_fonte") or hashlib.sha1(link.encode("utf-8")).hexdigest()[:16]
+    pub_date = published_local.strftime("%d/%m/%Y") if published_local else ""
+    pub_datetime = published_local.strftime("%d/%m/%Y %H:%M") if published_local else ""
+    age_hours = raw_noticia.get("age_hours", 999)
+    recency = "ULTIMAS_24H" if age_hours <= 24 else "ULTIMAS_48H" if age_hours <= 48 else "HISTORICO"
+
     return {
-        "id": pid,
-        "sport": esporte,
-        "title": titulo,
-        "championship": f"Cobertura Oficial {esporte}",
-        "athlete": atleta,
-        "date": hoje_str,
-        "dataAconteceu": hoje_str,
-        "dataPublicado": hoje_str,
-        "dataAtualizado": f"{hoje_str} {hora_str}",
-        "recency": "ULTIMAS_HORAS",
-        "location": "Apurado em tempo real",
-        "source": fonte,
-        "sourceUrl": link or "https://sport5.ai/live",
-        "verifiedType": "OFICIAL",
-        "statusVerificacao": "VERIFIED",
-        "statusVerificacaoLabel": "🟢 VERIFIED",
-        "workflowStatus": "AGUARDANDO_APROVACAO",
-        "duplicidade": {
-            "status": "ORIGINAL",
-            "isDuplicada": False,
-            "pautaOrigemId": None,
-            "oQueMudou": None,
-            "quandoMudou": None,
-            "novaFonte": None,
-            "novaInformacao": None
-        },
-        "scoreEditorial": 94,
-        "scoreEditorialBreakdown": {
-            "relevancia": 24,
-            "audiencia": 24,
-            "novidade": 20,
-            "analise": 13,
-            "dados": 8,
-            "visual": 5
-        },
-        "scoreConfiabilidade": 96,
-        "contradicao": {
-            "detectada": False,
-            "mensagem": "Nenhuma contradição detectada nos boletins oficiais consultados."
-        },
-        "importance": f"Acontecimento recente com alta repercussão para a modalidade {esporte}.",
-        "novelty": "Informação apurada em tempo real pelo Live News Engine.",
-        "audiencePotential": "Alto engajamento orgânico nas primeiras horas de publicação.",
-        "contentOpportunity": "Produção de vídeo de até 5 minutos com foco na análise de fatos.",
+        "id": f"rss-{item_id}",
+        "sport": sport,
+        "title": title,
+        "championship": f"Notícia capturada via RSS — {sport}",
+        "athlete": "",
+        "date": pub_date,
+        "dataAconteceu": "A confirmar",
+        "dataPublicado": pub_datetime,
+        "dataAtualizado": now_local.strftime("%d/%m/%Y %H:%M"),
+        "publishedAtISO": pub_iso,
+        "firstSeenAt": now_local.isoformat(),
+        "recency": recency,
+        "location": "A confirmar na matéria original",
+        "source": source,
+        "sourceUrl": link,
+        "verifiedType": "RSS_AGGREGATOR",
+        "statusVerificacao": "IN_VERIFICATION",
+        "statusVerificacaoLabel": "🟠 IN VERIFICATION",
+        "workflowStatus": "EM_VERIFICACAO",
+        "duplicidade": {"status": "ORIGINAL", "isDuplicada": False, "pautaOrigemId": None,
+                        "oQueMudou": None, "quandoMudou": None, "novaFonte": None, "novaInformacao": None},
+        "scoreEditorial": 50,
+        "scoreEditorialBreakdown": {"relevancia": 12, "audiencia": 12, "novidade": 12,
+                                    "analise": 6, "dados": 4, "visual": 4},
+        "scoreConfiabilidade": 45,
+        "importance": "Pauta descoberta em feed RSS. Relevância e conteúdo precisam de checagem editorial.",
+        "novelty": "Capturada de feed; a data original foi preservada.",
         "stats": desc,
-        "editorialIntelligence": {
-            "porQueImporta": f"Notícia de impacto direto em {esporte} apurada diretamente dos feeds ao vivo.",
-            "importancia": "Alta relevância no cenário nacional e internacional.",
-            "contexto": "Cobertura contínua da temporada esportiva.",
-            "angulo": "Foco nos fatos confirmados e desdobramentos imediatos.",
-            "potencialClique": "Alto (91/100)",
-            "potencialRetencao": "89%",
-            "potencialVisual": "Excelente para recortes e gráficos explicativos"
-        },
-        "auditoriaAfirmacoes": [
-            {
-                "afirmacao": titulo,
-                "fonte": fonte,
-                "tipoFonte": "VEICULO_CONFIAVEL",
-                "evidencia": desc,
-                "status": "CONFIRMADO"
-            },
-            {
-                "afirmacao": f"Publicação verificada em {hoje_str}.",
-                "fonte": link,
-                "tipoFonte": "OFICIAL_PRIMARIA",
-                "evidencia": "Timestamp e URL original validados no feed.",
-                "status": "CONFIRMADO"
-            }
-        ],
-        "auditoriaFontes": [
-            {
-                "nome": fonte,
-                "url": link,
-                "tipo": "VEICULO_CONFIAVEL",
-                "data": hoje_str,
-                "horario": f"{hora_str} BRT",
-                "origem": "Feed RSS / Agência Oficial",
-                "status": "CONFIRMADA",
-                "evidencia": desc[:150],
-                "ultimaVerificacao": f"{hoje_str} — {hora_str}"
-            }
-        ],
-        "pesquisaProfunda10": {
-            "oQueAconteceu": { "texto": titulo, "tipo": "FATO" },
-            "quandoAconteceu": { "texto": f"Ocorrido e noticiado em {hoje_str}.", "tipo": "FATO" },
-            "ondeAconteceu": { "texto": "Circuito oficial da modalidade", "tipo": "FATO" },
-            "quemParticipou": { "texto": atleta, "tipo": "FATO" },
-            "resultado": { "texto": desc, "tipo": "FATO" },
-            "contexto": { "texto": f"Acontecimento no âmbito de {esporte}.", "tipo": "ANÁLISE" },
-            "historico": { "texto": "Histórico apurado a partir de edições anteriores da competição.", "tipo": "FATO" },
-            "estatisticas": { "texto": desc, "tipo": "FATO" },
-            "consequencias": { "texto": "Impacto na classificação e tabela de pontuação.", "tipo": "ANÁLISE" },
-            "oQueAconteceAgora": { "texto": "Aguardando confirmações da próxima rodada oficial.", "tipo": "INFERÊNCIA" }
-        },
+        "auditoriaAfirmacoes": [{
+            "afirmacao": title, "fonte": source, "tipoFonte": "FEED_RSS",
+            "evidencia": desc, "status": "PENDENTE_CONFIRMACAO"
+        }],
+        "auditoriaFontes": [{
+            "nome": source, "url": link, "tipo": "FEED_RSS",
+            "data": pub_date, "horario": published_local.strftime("%H:%M %Z") if published_local else "",
+            "origem": "Feed RSS", "status": "CAPTURADA_NAO_VERIFICADA",
+            "evidencia": desc[:300], "ultimaVerificacao": now_local.strftime("%d/%m/%Y %H:%M")
+        }],
         "research": {
-            "confirmados": [desc],
-            "aConfirmar": ["Horário e escalação da próxima partida"],
-            "analises": [f"Desempenho confirma momento de alta competitividade em {esporte}."],
-            "stats": desc,
-            "proximos": "Próxima rodada do calendário oficial",
-            "fontes": fonte
+            "confirmados": ["O feed publicou este título na data indicada; o conteúdo ainda não foi verificado."],
+            "aConfirmar": ["Confirmar o fato na matéria original.", "Buscar fonte oficial ou segunda fonte independente.",
+                           "Conferir data do acontecimento, nomes, placar e estatísticas."]
         },
-        "roteiro": {
-            "hook": f"0:00 a 0:15 | Olha o que acabou de acontecer no mundo do {esporte.lower()}! {titulo}",
-            "aconteceu": f"0:15 a 1:00 | {desc}. Um acontecimento de peso para os fãs da modalidade.",
-            "contexto": f"1:00 a 2:00 | Para entender esse resultado, é preciso analisar o momento da competição e o histórico recente dos envolvidos.",
-            "numeros": f"2:00 a 2:45 | Os dados divulgados até o momento apontam: {desc}",
-            "analise": f"2:45 a 3:45 | Tecnicamente, essa notícia demonstra como o cenário de {esporte.lower()} está equilibrado nesta fase da temporada.",
-            "oQueAconteceAgora": "3:45 a 4:30 | As próximas horas serão decisivas para a confirmação dos próximos confrontos.",
-            "fechamento": "4:30 a 5:00 | Qual é a sua opinião sobre esse acontecimento? Deixe seu like e inscreva-se no canal SPORT 5 AI!"
-        },
-        "auditoriaRoteiro": [
-            {
-                "frase": titulo,
-                "status": "CONFIRMADO",
-                "fonte": fonte,
-                "evidencia": desc
-            }
-        ],
-        "roteiroAprovadoFactCheck": True,
-        "titulos": [
-            { "categoria": "SEO", "texto": f"{titulo} — Análise e Resumo Completo", "score": 93 },
-            { "categoria": "CLIQUE", "texto": f"O Que Aconteceu em {esporte} Hoje? Entenda!", "score": 91 },
-            { "categoria": "CLAREZA", "texto": f"{titulo}: Todos os Detalhes Oficiais", "score": 95 },
-            { "categoria": "CURIOSIDADE", "texto": f"A Reviravolta em {esporte}: Veja o que Mudou", "score": 88 },
-            { "categoria": "PRECISÃO", "texto": f"{titulo} (Dados e Súmula)", "score": 96 }
-        ],
-        "shorts": {
-            "versao30s": {
-                "duracao": "30s",
-                "hook": f"0-3s: Você viu o que acabou de acontecer em {esporte.lower()}?!",
-                "desenvolvimento": f"{titulo}! {desc[:90]}...",
-                "cta": "Deixe o like e siga o SPORT 5 AI!",
-                "textoCompleto": f"0-3s: Você viu o que acabou de acontecer em {esporte.lower()}?!\n\n{titulo}!\n\n{desc[:90]}...\n\nDeixe o like e siga o SPORT 5 AI!"
-            },
-            "versao45s": {
-                "duracao": "45s",
-                "hook": f"0-3s: Notícia urgente de {esporte.lower()} que você precisa saber hoje!",
-                "desenvolvimento": f"{titulo}. As informações confirmadas indicam que {desc[:140]}... Uma reviravolta expressiva no cenário esportivo!",
-                "cta": "Comente seu palpite e compartilhe!",
-                "textoCompleto": f"0-3s: Notícia urgente de {esporte.lower()} que você precisa saber hoje!\n\n{titulo}.\n\nAs informações confirmadas indicam que {desc[:140]}... Uma reviravolta expressiva no cenário esportivo!\n\nComente seu palpite e compartilhe!"
-            },
-            "versao60s": {
-                "duracao": "60s",
-                "hook": f"0-3s: Entenda em um minuto o que aconteceu agora em {esporte.lower()}!",
-                "desenvolvimento": f"{titulo}. A apuração oficial detalha: {desc}. O resultado mexe diretamente com o ranking e traz consequências imediatas para a sequência do campeonato.",
-                "cta": "Inscreva-se no SPORT 5 AI para não perder nenhuma cobertura diária!",
-                "textoCompleto": f"0-3s: Entenda em um minuto o que aconteceu agora em {esporte.lower()}!\n\n{titulo}.\n\nA apuração oficial detalha: {desc}. O resultado mexe diretamente com o ranking e traz consequências imediatas para a sequência do campeonato.\n\nInscreva-se no SPORT 5 AI para não perder nenhuma cobertura diária!"
-            }
-        },
-        "thumbnail": {
-            "tituloRecomendado": f"{esporte.upper()}: ACONTECEU AGORA!",
-            "textoCurto": "URGENTE!",
-            "imagemSugerida": f"Foto em alta de ação esportiva referente a {atleta}",
-            "composicao": "Regra dos terços com recorte do atleta e tipografia de alto contraste",
-            "safeArea": "Área segura de 80% centralizada sem timers do YouTube",
-            "versaoA": { "layout": "Contraste Editorial Amarelo", "cores": "Amarelo #FFD700" },
-            "versaoB": { "layout": "Impacto Vermelho Urgente", "cores": "Vermelho #FF4D4D" },
-            "versaoC": { "layout": "Gráfica com Números", "cores": "Verde #00FF88" }
-        },
-        "storyboard": [
-            { "cena": "CENA 01", "tempo": "0:00 - 0:15 (15s)", "narracao": "Abertura com gancho urgente...", "visual": "Imagem em destaque", "lowerThird": f"{esporte} • LIVE", "grafico": "Card do evento", "transicao": "Fade in" },
-            { "cena": "CENA 02", "tempo": "0:15 - 1:00 (45s)", "narracao": "O que aconteceu em detalhes...", "visual": "Replay dos fatos", "lowerThird": "DETALHES DO FATO", "grafico": "Estatística inicial", "transicao": "Corte seco" },
-            { "cena": "CENA 03", "tempo": "1:00 - 2:00 (60s)", "narracao": "Contexto histórico...", "visual": "Arquivo", "lowerThird": "HISTÓRICO", "grafico": "Linha do tempo", "transicao": "Dissolvência" },
-            { "cena": "CENA 04", "tempo": "2:00 - 3:30 (90s)", "narracao": "Análise técnica...", "visual": "Gráficos", "lowerThird": "RAIO-X TÁTICO", "grafico": "Estatísticas", "transicao": "Wipe" },
-            { "cena": "CENA 05", "tempo": "3:30 - 4:30 (60s)", "narracao": "O que vem a seguir...", "visual": "Próximos jogos", "lowerThird": "PRÓXIMAS ETAPAS", "grafico": "Tabela", "transicao": "Corte" },
-            { "cena": "CENA 06", "tempo": "4:30 - 5:00 (30s)", "narracao": "Encerramento e chamada de inscrição...", "visual": "Logo SPORT 5", "lowerThird": "SPORT 5 AI", "grafico": "Cards finais", "transicao": "Fade out" }
-        ],
-        "youtube": {
-            "titulo": f"{titulo} | SPORT 5 AI Análise",
-            "descricao": f"Entenda o que aconteceu no esporte em até 5 minutos.\n\n{desc}\n\n#SPORT5AI #{esporte.replace(' ', '')}",
-            "tags": [esporte, atleta, "SPORT 5 AI", "Notícias do Esporte"],
-            "hashtags": [f"#{esporte.replace(' ', '')}", "#SPORT5AI"],
-            "playlist": f"SPORT 5 — {esporte}",
-            "categoria": "Esportes",
-            "agendamento": f"{hoje_str} 23:00 BRT",
-            "statusPublicacao": "DESATIVADO_AUTOMATICO"
-        },
-        "qa": {
-            "status": "APROVADO",
-            "checks": [
-                { "item": "1. Nomes próprios e grafia", "details": "Nomes verificados no feed." },
-                { "item": "2. Datas e cronologia", "details": f"Data corrente {hoje_str}." },
-                { "item": "3. Resultados e placares", "details": "Placar condizente com a fonte." },
-                { "item": "4. Estatísticas citadas", "details": "Dados conferidos." },
-                { "item": "5. Fontes jornalísticas", "details": f"Fonte apurada: {fonte}." },
-                { "item": "6. Coerência lógica", "details": "Roteiro em 5 minutos estruturado." },
-                { "item": "7. Português do Brasil", "details": "Em conformidade com padrão jornalístico." },
-                { "item": "8. Repetição de termos", "details": "Texto fluido." },
-                { "item": "9. Checagem de clickbait", "details": "Sem sensacionalismo falso." },
-                { "item": "10. Direitos autorais", "details": "Sinalização de verificação de mídias." },
-                { "item": "11. Informações sem confirmação", "details": "Dúvidas isoladas." }
-            ]
+        "reliability": {
+            "score": 45, "status": "PENDENTE", "statusLabel": "🟠 A VERIFICAR",
+            "approvalStatus": "AGUARDANDO_APROVACAO", "lastChecked": now_local.strftime("%d/%m/%Y %H:%M"),
+            "nextCheck": "Após checagem editorial", "contradicoes": "Ainda não verificada",
+            "bloqueioProducao": True, "mensagemBloqueio": "Pauta RSS não pode virar roteiro/publicação sem confirmação."
         }
     }
 
-def sincronizar_com_banco(db_path):
-    if not os.path.exists(db_path):
-        return {"novas": 0, "total": 0, "msg": "Arquivo de banco de dados não encontrado."}
-        
-    with open(db_path, "r", encoding="utf-8") as f:
-        pautas_existentes = json.load(f)
-        
-    titulos_existentes = {p["title"].lower().strip() for p in pautas_existentes}
-    
-    novas_noticias = buscar_noticias_rss()
-    pautas_adicionadas = []
-    
-    for i, n in enumerate(novas_noticias, 1):
-        t_clean = n["titulo"].lower().strip()
-        if t_clean in titulos_existentes:
+
+def sincronizar_com_banco(db_path=DB_FILE):
+    """Sincroniza só notícias recentes reais; nunca renova data de uma notícia antiga."""
+    global memory_db, last_sync_time, last_sync_attempt, last_sync_success, last_sync_error
+    now_local = _local_now()
+    last_sync_attempt = now_local.strftime("%d/%m/%Y %H:%M:%S")
+    last_sync_error = None
+    existing = load_db()
+    if not isinstance(existing, list):
+        existing = []
+
+    known_urls = set()
+    known_titles = set()
+    for item in existing:
+        # Atualiza somente a classificação temporal, com base na data original real.
+        # Nunca altera data de publicação nem data do acontecimento.
+        if item.get("publishedAtISO"):
+            published = _parse_data_publicacao(item.get("publishedAtISO"))
+            if published:
+                age_hours = (datetime.now(timezone.utc) - published).total_seconds() / 3600
+                if age_hours <= 24:
+                    item["recency"] = "ULTIMAS_24H"
+                elif age_hours <= 48:
+                    item["recency"] = "ULTIMAS_48H"
+                else:
+                    item["recency"] = "HISTORICO"
+        url = (item.get("sourceUrl") or "").split("?utm_")[0].rstrip("/")
+        if url.startswith(("http://", "https://")):
+            known_urls.add(url)
+        title = _normalizar_titulo(item.get("title", ""))
+        if title:
+            known_titles.add(title)
+
+    try:
+        raw_items = buscar_noticias_rss()
+    except Exception as exc:
+        last_sync_error = f"{type(exc).__name__}: {str(exc)[:250]}"
+        print(f"[LIVE ENGINE] Sincronização falhou: {last_sync_error}", flush=True)
+        return {"novas": 0, "total": len(existing), "msg": "Falha ao consultar os feeds. As pautas existentes foram preservadas.",
+                "pautas": existing, "erro": last_sync_error}
+
+    if feed_health and not any(item.get("ok") for item in feed_health.values()):
+        last_sync_error = "Nenhum feed RSS respondeu com sucesso; verifique os logs e URLs das fontes."
+        print(f"[LIVE ENGINE] {last_sync_error}", flush=True)
+        return {"novas": 0, "total": len(existing),
+                "msg": "Nenhuma fonte RSS respondeu. As notícias existentes foram preservadas sem atualizar suas datas.",
+                "pautas": existing, "erro": last_sync_error, "feeds": feed_health}
+
+    new_items = []
+    for raw in raw_items:
+        url_key = raw["link"].split("?utm_")[0].rstrip("/")
+        title_key = _normalizar_titulo(raw["titulo"])
+        if url_key in known_urls or title_key in known_titles:
             continue
-            
-        pauta_pronta = enriquecer_pauta(n, i)
-        pautas_adicionadas.append(pauta_pronta)
-        titulos_existentes.add(t_clean)
-        
-    if pautas_adicionadas:
-        pautas_finais = pautas_adicionadas + pautas_existentes
-        with open(db_path, "w", encoding="utf-8") as f:
-            json.dump(pautas_finais, f, indent=2, ensure_ascii=False)
-        print(f"[LIVE ENGINE] {len(pautas_adicionadas)} novas pautas adicionadas ao banco de dados!")
-        return {"novas": len(pautas_adicionadas), "total": len(pautas_finais), "msg": f"{len(pautas_adicionadas)} novas notícias ao vivo ingeridas."}
+        pauta = enriquecer_pauta(raw, len(new_items) + 1)
+        new_items.append(pauta)
+        known_urls.add(url_key)
+        known_titles.add(title_key)
+
+    if new_items:
+        # Keep new RSS discoveries first; retain old items as archive, without touching their dates.
+        merged = new_items + existing
+        save_db(merged[:500])
+        message = f"{len(new_items)} notícias recentes capturadas. Todas aguardam checagem factual."
     else:
-        print("[LIVE ENGINE] Nenhuma notícia inédita ou rede externa offline. Base auditada preservada.")
-        return {"novas": 0, "total": len(pautas_existentes), "msg": "Base de dados atualizada. Nenhuma pauta nova no momento ou rede em espera."}
+        # Critical fix: no fake timestamp updates when feeds have no new articles.
+        merged = existing
+        message = "Consulta concluída; nenhum artigo novo dentro da janela de 48 horas."
+
+    last_sync_time = now_local.strftime("%d/%m/%Y %H:%M")
+    last_sync_success = last_sync_time
+    print(f"[LIVE ENGINE] {message} Total no banco: {len(merged)}", flush=True)
+    return {"novas": len(new_items), "total": len(merged), "msg": message, "pautas": merged,
+            "feeds": feed_health, "last_sync": last_sync_time}
 
 def load_db():
+    global memory_db
+    if memory_db and len(memory_db) > 0:
+        return memory_db
     if os.path.exists(DB_FILE):
         try:
             with open(DB_FILE, "r", encoding="utf-8") as f:
-                return json.load(f)
+                memory_db = json.load(f)
+                return memory_db
         except Exception as e:
             print(f"[SERVER] Erro ao ler database.json: {e}")
     return []
 
+
+def marcar_base_legada_como_arquivo():
+    """Dados antigos sem data original confiável não devem aparecer como notícias novas/verificadas."""
+    global memory_db
+    db = load_db()
+    changed = False
+    for pauta in db:
+        if pauta.get("id", "").startswith("rss-") and pauta.get("publishedAtISO"):
+            continue
+        if pauta.get("recency") != "HISTORICO" or pauta.get("statusVerificacao") == "IN_VERIFICATION":
+            pauta["recency"] = "HISTORICO"
+            pauta["statusVerificacao"] = "IN_VERIFICATION"
+            pauta["statusVerificacaoLabel"] = "🟠 ARQUIVO — DATA/FONTE A REVALIDAR"
+            pauta["workflowStatus"] = "EM_VERIFICACAO"
+            pauta["verifiedType"] = "LEGACY_UNVERIFIED"
+            pauta["scoreConfiabilidade"] = min(int(pauta.get("scoreConfiabilidade", 45) or 45), 45)
+            pauta["dataAtualizado"] = pauta.get("dataAtualizado", "")
+            pauta["legacyNotice"] = "Registro herdado da base anterior. Não considerar notícia atual sem revalidação."
+            changed = True
+    if changed:
+        save_db(db)
+        print("[MIGRAÇÃO] Registros antigos sem timestamp original foram arquivados para não parecerem atuais.", flush=True)
+
 def save_db(data):
+    global memory_db
+    memory_db = data
     try:
         with open(DB_FILE, "w", encoding="utf-8") as f:
             json.dump(data, f, ensure_ascii=False, indent=2)
     except Exception as e:
-        print(f"[SERVER] Erro ao salvar database.json: {e}")
+        print(f"[SERVER] Nota ao salvar em disco: {e}")
 
 def load_correcoes():
     if os.path.exists(CORRECOES_FILE):
         try:
             with open(CORRECOES_FILE, "r", encoding="utf-8") as f:
                 return json.load(f)
-        except:
+        except Exception:
             pass
-    return [
-        {
-            "dataHora": "06/10/2026 22:45",
-            "pauta": "Hugo Calderano bate Dimitrij Ovtcharov",
-            "erroOriginal": "Parcial do 2º set divulgada inicialmente como 11-8",
-            "infoCorrigida": "Súmula oficial homologou 11-9 (11-9, 11-9, 11-8)",
-            "fonte": "WTT Match Centre Oficial",
-            "responsavel": "Plantão SPORT 5",
-            "status": "Retificado"
-        }
-    ]
+    return []
 
 def save_correcoes(data):
     try:
@@ -458,14 +475,12 @@ def save_correcoes(data):
 
 def background_auto_sync():
     global last_sync_time
-    print("[SERVER] Agendador em tempo real ativo (ciclo: 5 min).")
-    # Disparo imediato na inicialização do servidor
+    print(f"[SERVER] Agendador de feeds ativo (ciclo: {auto_sync_interval_seconds // 60} min).", flush=True)
     try:
         with sync_lock:
             print("[SERVER BOOT] Executando varredura inicial nos feeds da internet...")
             res = sincronizar_com_banco(DB_FILE)
-            last_sync_time = datetime.now().strftime("%d/%m/%Y %H:%M")
-            print(f"[SERVER BOOT] Concluído: {res.get('msg')}")
+            print(f"[SERVER BOOT] Concluído: {res.get('msg')}", flush=True)
     except Exception as e:
         print(f"[SERVER BOOT] Nota na varredura inicial: {e}")
 
@@ -473,21 +488,17 @@ def background_auto_sync():
         try:
             time.sleep(auto_sync_interval_seconds)
             with sync_lock:
-                print("[SERVER AUTO-SYNC] Executando varredura em tempo real nos feeds...")
+                print("[SERVER AUTO-SYNC] Disparando atualização periódica dos feeds...")
                 res = sincronizar_com_banco(DB_FILE)
-                last_sync_time = datetime.now().strftime("%d/%m/%Y %H:%M")
-                print(f"[SERVER AUTO-SYNC] Concluído: {res.get('msg')}")
+                print(f"[SERVER AUTO-SYNC] Concluído: {res.get('msg')}", flush=True)
         except Exception as e:
-            print(f"[SERVER AUTO-SYNC] Erro no ciclo: {e}")
+            print(f"[SERVER AUTO-SYNC] Erro durante sincronização: {e}")
 
 class Sport5APIHandler(http.server.SimpleHTTPRequestHandler):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, directory=BASE_DIR, **kwargs)
-
     def end_headers(self):
         self.send_header('Access-Control-Allow-Origin', '*')
-        self.send_header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE')
-        self.send_header('Access-Control-Allow-Headers', 'Content-Type, Authorization')
+        self.send_header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
+        self.send_header('Access-Control-Allow-Headers', 'Content-Type')
         super().end_headers()
 
     def do_OPTIONS(self):
@@ -495,15 +506,48 @@ class Sport5APIHandler(http.server.SimpleHTTPRequestHandler):
         self.end_headers()
 
     def do_GET(self):
+        try:
+            self._do_GET_impl()
+        except Exception as e:
+            import traceback
+            print('EXCEPTION IN DO_GET:', e, traceback.format_exc(), flush=True)
+
+    def _do_GET_impl(self):
         parsed = urllib.parse.urlparse(self.path)
         path = parsed.path
 
         if path.startswith("/api/"):
             self.handle_api_get(path, urllib.parse.parse_qs(parsed.query))
         else:
-            if path in ["/", "", "/index.html"]:
-                self.path = "/sport5_ai.html"
-            super().do_GET()
+            if path in ["/", "", "/index.html", "/sport5_ai.html"]:
+                try:
+                    db = load_db()
+                    html_file = "sport5_ai.html" if os.path.exists("sport5_ai.html") else "index.html"
+                    with open(html_file, "r", encoding="utf-8") as f:
+                        content = f.read()
+
+                    # Injetar dinamicamente as pautas mais recentes em INITIAL_PAUTAS
+                    pattern = r'const INITIAL_PAUTAS\s*=\s*\[.*?\];\s*(?=\s*(?:class Sport5App|const|let|var|function))'
+                    replacement = 'const INITIAL_PAUTAS = ' + json.dumps(db, ensure_ascii=False) + ';'
+                    content = re.sub(pattern, replacement, content, flags=re.DOTALL)
+
+                    content_bytes = content.encode("utf-8")
+                    self.send_response(200)
+                    self.send_header("Content-Type", "text/html; charset=utf-8")
+                    self.send_header("Cache-Control", "no-cache, no-store, must-revalidate, max-age=0")
+                    self.send_header("Pragma", "no-cache")
+                    self.send_header("Expires", "0")
+                    self.send_header("Content-Length", str(len(content_bytes)))
+                    self.end_headers()
+                    self.wfile.write(content_bytes)
+                    return
+                except Exception as e:
+                    print(f"[SERVER] Erro ao servir HTML dinâmico: {e}", flush=True)
+                    if path in ["/", "", "/index.html"]:
+                        self.path = "/sport5_ai.html"
+                    super().do_GET()
+            else:
+                super().do_GET()
 
     def do_POST(self):
         parsed = urllib.parse.urlparse(self.path)
@@ -521,10 +565,13 @@ class Sport5APIHandler(http.server.SimpleHTTPRequestHandler):
             self.send_error(404, "Not Found")
 
     def send_json(self, data, status=200):
+        body = json.dumps(data, ensure_ascii=False).encode('utf-8')
         self.send_response(status)
         self.send_header('Content-Type', 'application/json; charset=utf-8')
+        self.send_header('Cache-Control', 'no-cache, no-store, must-revalidate, max-age=0')
+        self.send_header('Content-Length', str(len(body)))
         self.end_headers()
-        self.wfile.write(json.dumps(data, ensure_ascii=False).encode('utf-8'))
+        self.wfile.write(body)
 
     def handle_api_get(self, path, params):
         global last_sync_time
@@ -533,19 +580,32 @@ class Sport5APIHandler(http.server.SimpleHTTPRequestHandler):
         if path == "/api/status":
             self.send_json({
                 "status": "online",
-                "versao": "SPORT 5 AI V2.5 / V3 Live Newsroom",
+                "versao": "SPORT 5 AI — RSS FIX / FACT CHECK PENDENTE",
                 "total_pautas": len(db),
                 "last_sync": last_sync_time,
-                "auto_sync_interval_min": auto_sync_interval_seconds // 60,
-                "motor_scraping": "ACTIVE",
-                "message": "Servidor SPORT 5 AI operando e pronto para raspagem ao vivo da internet."
+                "last_sync_attempt": last_sync_attempt,
+                "last_sync_success": last_sync_success,
+                "last_sync_error": last_sync_error,
+                "auto_sync_interval_min": max(1, auto_sync_interval_seconds // 60),
+                "motor_scraping": "ACTIVE" if last_sync_success else "STARTING_OR_FAILED",
+                "feeds": feed_health,
+                "message": "O servidor está online. Notícias capturadas via RSS ficam pendentes até confirmação factual."
             })
 
         elif path == "/api/pautas":
+            esporte = params.get("esporte", [None])[0]
+            status = params.get("status", [None])[0]
+
+            filtered = db
+            if esporte and esporte != "TODOS":
+                filtered = [p for p in filtered if p.get("sport") == esporte]
+            if status and status != "TODOS":
+                filtered = [p for p in filtered if p.get("statusVerificacao") == status]
+
             self.send_json({
                 "status": "success",
-                "count": len(db),
-                "pautas": db
+                "count": len(filtered),
+                "pautas": filtered
             })
 
         elif path == "/api/correcoes":
@@ -580,14 +640,17 @@ class Sport5APIHandler(http.server.SimpleHTTPRequestHandler):
             with sync_lock:
                 print("[API] Requisição de sincronização ao vivo recebida...")
                 res = sincronizar_com_banco(DB_FILE)
-                last_sync_time = datetime.now().strftime("%d/%m/%Y %H:%M")
                 db_updated = load_db()
                 self.send_json({
-                    "status": "success",
+                    "status": "success" if not res.get("erro") else "partial",
                     "novas_pautas": res.get("novas", 0),
                     "total_pautas": len(db_updated),
                     "mensagem": res.get("msg"),
-                    "last_sync": last_sync_time
+                    "last_sync": last_sync_time,
+                    "last_sync_attempt": last_sync_attempt,
+                    "erro": res.get("erro"),
+                    "feeds": res.get("feeds", feed_health),
+                    "pautas": db_updated
                 })
 
         elif path == "/api/pautas/aprovar":
@@ -631,7 +694,7 @@ class Sport5APIHandler(http.server.SimpleHTTPRequestHandler):
                 "pauta": data.get("pauta", "Pauta Desconhecida"),
                 "erroOriginal": data.get("erroOriginal", ""),
                 "infoCorrigida": data.get("infoCorrigida", ""),
-                "fonte": data.get("fonte", "Fonte Oficial"),
+                "fonte": data.get("fonte", "Apuração Oficial"),
                 "responsavel": data.get("responsavel", "Plantão SPORT 5"),
                 "status": "Retificado"
             }
@@ -653,11 +716,13 @@ if __name__ == "__main__":
     print(f"Sincronização:  POST http://localhost:{PORT}/api/sync/live")
     print(f"==================================================")
     
+    marcar_base_legada_como_arquivo()
     t = threading.Thread(target=background_auto_sync, daemon=True)
     t.start()
 
-    socketserver.TCPServer.allow_reuse_address = True
-    with socketserver.TCPServer(("", PORT), Sport5APIHandler) as httpd:
+    http.server.ThreadingHTTPServer.allow_reuse_address = True
+    with http.server.ThreadingHTTPServer(("", PORT), Sport5APIHandler) as httpd:
+        print("HTTP SERVER LISTENING ON PORT", PORT, flush=True)
         try:
             httpd.serve_forever()
         except KeyboardInterrupt:

@@ -1,0 +1,16 @@
+SPORT 5 AI — CORREÇÕES APLICADAS
+
+1. Porta local: servidor padrão e links do navegador usam localhost:8000.
+2. RSS/Atom: interpretação de link Atom por href, data real de publicação e filtro de 48 horas.
+3. Fontes: tentativas, erros e quantidade de feeds funcionando expostos em /api/status.
+4. Datas: a sincronização não altera datas de notícias antigas quando não há novos itens.
+5. Duplicidade: deduplicação por URL e título normalizado.
+6. Fact check: RSS isolado cria pauta IN_VERIFICATION, confiança 45/100 e bloqueio de produção; não recebe selo VERIFIED.
+7. Arquivo legado: registros sem timestamp original são marcados HISTORICO e não aparecem como notícia recente.
+8. Frontend: cache desabilitado nas consultas, atualiza mesmo quando a API retorna lista vazia, seleciona apenas pautas atuais e mostra diagnóstico de feeds.
+9. Offline: botão não simula sincronização; informa que o backend está offline.
+10. Testes executados: compilação Python, verificação sintática JavaScript e teste RSS simulado com artigo recente + artigo antigo.
+
+IMPORTANTE
+- As fontes RSS são apenas descoberta de pautas. A confirmação jornalística exige checagem da matéria original e, idealmente, fonte primária ou segunda fonte independente.
+- Em hospedagem gratuita, a instância pode dormir e o disco pode ser efêmero; não é garantia de monitoramento 24/7.
